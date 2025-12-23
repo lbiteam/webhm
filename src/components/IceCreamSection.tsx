@@ -35,7 +35,8 @@ const IceCreamSection = () => {
         <div className="text-center mb-16">
           <h2 className="section-title">Honeyman Ice Cream</h2>
           <p className="text-muted-foreground max-w-2xl mx-auto">
-            Experience the perfect blend of pure honey and premium ice cream - naturally sweetened, incredibly delicious
+          World's first ice cream made only with pure honey. No refined sugar. No guilt. Just rich, creamy indulgence that's as good for you as it tastes.
+
           </p>
         </div>
 

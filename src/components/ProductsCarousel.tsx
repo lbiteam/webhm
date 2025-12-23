@@ -78,9 +78,11 @@ const ProductsCarousel = () => {
     <section id="products" className="py-24 bg-background relative overflow-hidden">
       <div className="container mx-auto px-6">
         <div className="text-center mb-12">
-          <h2 className="section-title">Our Products</h2>
+          <h2 className="section-title">Honeyman Honey
+          </h2>
           <p className="text-muted-foreground max-w-2xl mx-auto">
-            Discover our range of premium, 100% pure honey varieties sourced from the finest apiaries
+          Harvested from diverse landscapes, crafted with care to deliver purity, aroma, and authentic sweetness.
+
           </p>
         </div>
 

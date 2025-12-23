@@ -1,15 +1,15 @@
 import { Gift, Heart, Briefcase, Sparkles } from "lucide-react";
 import gift1 from "@/assets/gifting/Artboard 5 (1).jpg";
-import gift2 from "@/assets/gifting/Gemini_Generated_Image_2ym99p2ym99p2ym9.png";
-import gift3 from "@/assets/gifting/Gemini_Generated_Image_3kzt2n3kzt2n3kzt (1).png";
-import gift4 from "@/assets/gifting/Gemini_Generated_Image_3mj9393mj9393mj9 (1).png";
-import gift5 from "@/assets/gifting/WhatsApp Image 2025-11-20 at 12.17.54.jpeg";
+import gift2 from "@/assets/gifting/gifting-3.webp";
+import gift3 from "@/assets/gifting/gifting-2.webp";
+import gift4 from "@/assets/gifting/gifting-1.webp";
+import gift5 from "@/assets/gifting/honeyman-packaging.webp";
 
 const giftCategories = [
   {
     id: 1,
     name: "Wedding",
-    description: "Sweet beginnings for the newlyweds. Elegant gift boxes perfect for wedding favors and celebrations.",
+    description: " Make your celebrations unforgettable with artisan hampers that blend tradition and elegance. From premium honey to gourmet sweets, each gift reflects the sweetness of new beginnings.",
     icon: Heart,
     color: "from-rose-400 to-pink-500",
     bgPattern: "🌸",
@@ -17,7 +17,7 @@ const giftCategories = [
   {
     id: 2,
     name: "Celebration",
-    description: "Mark every milestone with sweetness. Perfect for birthdays, anniversaries, and special moments.",
+    description: "Mark life's joyful milestones with gifts that bring warmth and delight. Festivals, birthdays, anniversaries—our curated collections add meaning to every cherished moment.",
     icon: Sparkles,
     color: "from-amber-400 to-orange-500",
     bgPattern: "🎉",
@@ -25,7 +25,7 @@ const giftCategories = [
   {
     id: 3,
     name: "Corporate",
-    description: "Impress clients and appreciate employees with premium honey gift sets for business occasions.",
+    description: " Show gratitude and build lasting impressions with premium corporate hampers. Thoughtfully designed for clients, partners, and teams—a gift that reflects professionalism and care.",
     icon: Briefcase,
     color: "from-slate-500 to-slate-700",
     bgPattern: "💼",
@@ -33,7 +33,7 @@ const giftCategories = [
   {
     id: 4,
     name: "Wellness",
-    description: "The gift of health and natural goodness. Curated wellness boxes for those who care.",
+    description: "Give the gift of health with our wellness collections. Packed with immunity boosters, natural tonics, and honey-powered nourishment—because wellness is the most thoughtful gift of all.",
     icon: Gift,
     color: "from-emerald-400 to-teal-500",
     bgPattern: "🌿",
@@ -68,7 +68,8 @@ const GiftingSection = () => {
             </span>
             <h2 className="section-title">Gifting Collection</h2>
             <p className="text-muted-foreground max-w-2xl leading-relaxed mt-4">
-              Spread sweetness and joy with our beautifully curated honey gift sets for every occasion. Choose from elegant wedding boxes, celebration hampers, corporate sets, and wellness collections.
+            Celebrate every moment with gifts that reflect care, quality, and wellness—beautifully packaged and sweetened only with nature's purest ingredient.
+
             </p>
 
             <div className="grid grid-cols-2 gap-4 mt-8">

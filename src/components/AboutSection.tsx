@@ -33,7 +33,7 @@ const AboutSection = () => {
                 <div className="absolute bottom-6 left-6 right-6">
                   <div className="bg-white/90 backdrop-blur-sm rounded-xl p-4 shadow-lg">
                     <h4 className="font-display text-xl font-medium text-foreground">
-                      3rd Generation Beekeeper
+                      2nd Generation Beekeeper
                     </h4>
                     <p className="text-muted-foreground text-sm">
                       Founder & Master Honey Artisan
@@ -54,19 +54,19 @@ const AboutSection = () => {
             
             <div className="space-y-4">
               <h3 className="font-display text-2xl font-medium text-foreground">
-                Honeyman - 3rd Generation with Bees
+                Honeyman - 2nd Generation with Bees
               </h3>
               <p className="text-muted-foreground leading-relaxed">
-                B.Green production is a private honey Garden with its own production, we have been producing honey for 
-                3 generations. We are committed to bringing you the purest, most natural honey products.
+              In 1980, our founder, the late Sardar Jagjit Singh Kapoor, began with a simple belief—that purity should never be compromised. What started as a small apiary in Punjab grew into a trusted name across 50+ countries, built on integrity, craftsmanship, and an unwavering respect for nature.
+
               </p>
               <p className="text-muted-foreground leading-relaxed">
-                The bees naturally collect nectar, and the honey retains its original characteristics and 
-                health benefits. We don't use any artificial additives or preservatives.
+              Today, his son, Mr. Shahzada Singh Kapoor—a globally recognized authority with 30 years in beekeeping and exports—is channeling that legacy into something revolutionary: India's most trusted refined sugar-free ecosystem.
+
               </p>
               <p className="text-muted-foreground leading-relaxed">
-                Our family has been perfecting the art of beekeeping for decades, passing down traditional 
-                knowledge combined with modern sustainable practices.
+              With over 100+ stores nationwide and a franchise model empowering entrepreneurs across India, Honeyman is more than a brand. It's a movement towards a healthier, guilt-free future.
+
               </p>
             </div>
             

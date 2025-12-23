@@ -14,21 +14,21 @@ const slides = [
   },
   {
     image: honeyTea,
-    title: "Pure",
-    subtitle: "Natural",
-    description: "100% organic honey straight from the hive to your table."
+    title: "World's First ",
+    subtitle: "Ice Cream",
+    description: "Made Only with Pure Honey. No refined sugar."
   },
   {
     image: honeyPour,
-    title: "Taste",
-    subtitle: "Sweetness",
-    description: "Add natural sweetness to your favorite meals and drinks."
+    title: "World's Largest",
+    subtitle: "Ecosystem",
+    description: "of Refined Sugar-Free Products"
   },
   {
     image: honeyGranola,
-    title: "Sweet",
-    subtitle: "Moments",
-    description: "Add natural sweetness to your favorite meals and drinks."
+    title: "Own a Fastest",
+    subtitle: "Growing Franchise.",
+    description: "100+ outlets. 4 models. Complete support."
   }
 ];
 

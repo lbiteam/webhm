@@ -72,40 +72,40 @@ const franchiseModels = [
 const supportFeatures = [
   {
     icon: BookOpen,
-    title: "Pre-Opening Support",
+    title: "Launch & Setup",
     items: [
-      "Site selection assistance",
-      "Operational guidance",
-      "Branding & design",
-      "Staff training",
-      "Grand opening support",
+      "Location and market evaluation support",
+      "In-house outlet design and layout planning",
+      "Owner and staff training before opening",
+      "Coordinated brand-led launch assistance",
+     
     ],
   },
   {
     icon: Package,
-    title: "Product Support",
+    title: "Operations & Performance",
     items: [
-      "Timely product delivery",
-      "Research-backed offerings",
-      "Fresh exciting menu",
-      "POS inventory management",
+      "Ongoing operational guidance and reviews",
+      "Performance tracking with expert feedback",
+      "Process standardisation across outlets",
+      "Support to improve efficiency and consistency",
     ],
   },
   {
     icon: Settings,
-    title: "Cutting-Edge Technology",
+    title: "Technology & Systems",
     items: [
-      "Online marketing solutions",
-      "Advanced management tools",
-      "Seamless billing system",
-      "POS software",
+      "Integrated POS and billing solutions",
+      "Inventory management for reduced wastage",
+      "Sales tracking and business insights",
+      "Tools that simplify daily operations",
     ],
   },
   {
     icon: Headphones,
     title: "Training & Audit Support",
     items: [
-      "Regular staff training",
+      "Periodic product and service audits",
       "Expert-led audits",
       "Feedback & improvement",
       "Quality assurance",
@@ -113,12 +113,12 @@ const supportFeatures = [
   },
   {
     icon: TrendingUp,
-    title: "Post-Opening Support",
+    title: "Marketing & Visibility",
     items: [
-      "Operational support",
-      "Strategic sales guidance",
-      "Marketing campaigns",
-      "Inventory management",
+      "Central brand campaigns and promotions",
+      "Digital and social media visibility support",
+      "Local market activation strategies",
+      
     ],
   },
   {
@@ -305,7 +305,7 @@ const Franchise = () => {
         <div className="container mx-auto px-6 relative z-10">
           <div className="text-center mb-16">
             <h2 className="font-display text-4xl md:text-5xl font-bold text-foreground mb-4">
-              <span className="italic text-honey-dark">Comprehensive</span> Franchise Support System
+              <span className="italic text-honey-dark">Built To Support You.</span> Designed To Scale.
             </h2>
             <div className="w-16 h-1 bg-honey mx-auto" />
           </div>
@@ -314,15 +314,15 @@ const Franchise = () => {
             {supportFeatures.map((support, index) => (
               <div key={index} className="group">
                 <div className="flex items-start gap-4">
-                  <div className="w-14 h-14 rounded-full bg-emerald-100 flex items-center justify-center flex-shrink-0 group-hover:bg-honey/20 transition-colors">
-                    <support.icon className="w-7 h-7 text-emerald-600 group-hover:text-honey-dark transition-colors" />
+                  <div className="w-14 h-14 rounded-full bg-honey/20 flex items-center justify-center flex-shrink-0 transition-colors">
+                    <support.icon className="w-7 h-7 text-honey  transition-colors" />
                   </div>
                   <div>
                     <h3 className="font-bold text-lg text-foreground mb-3">{support.title}</h3>
                     <ul className="space-y-2">
                       {support.items.map((item, iIndex) => (
                         <li key={iIndex} className="text-muted-foreground text-sm flex items-start gap-2">
-                          <span className="w-1.5 h-1.5 rounded-full bg-emerald-500 mt-2 flex-shrink-0" />
+                          <span className="w-1.5 h-1.5 rounded-full bg-honey mt-2 flex-shrink-0" />
                           {item}
                         </li>
                       ))}

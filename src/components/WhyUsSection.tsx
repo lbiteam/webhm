@@ -47,12 +47,14 @@ const WhyUsSection = () => {
           {/* Right: Content - 2/3 width on md+ */}
           <div className="w-full md:w-2/3 px-2 md:px-6 text-center md:text-left">
             <h2 className="text-2xl md:text-3xl font-extrabold text-honey mb-2 uppercase tracking-wide">
-              HONEYMAN HONEY - WORLD'S NO. 1 HONEY
+            Nature's Sweetness Begins with Bees
             </h2>
-            <p className="text-xs text-muted-foreground mb-4">*As per global syndicate study report of Honey Category 2024-2025</p>
+            <p className="text-xs text-muted-foreground mb-4">Honey bees don't just make honey—they sustain life</p>
 
             <p className="text-sm md:text-base text-foreground mb-6 leading-relaxed">
-              You might not have taken notice, but Honeyman Honey has been a part of your breakfast, lunch and dinner for over 3 decades. Some people thank honey for weight management* and enhancing the taste of their foods. Honeyman Honey has been sourcing nature’s best pure honey from diverse locations in India.
+            They pollinate a third of the food we eat and produce the purest form of natural sweetness. By choosing honey, we protect these vital guardians while building a healthier, sugar-free future for generations to come.
+
+
             </p>
 
            

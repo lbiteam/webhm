@@ -65,9 +65,10 @@ const FranchiseSection = () => {
           <span className="inline-block px-4 py-2 bg-honey/20 rounded-full text-honey-dark font-medium text-sm mb-4">
             Business Opportunity
           </span>
-          <h2 className="section-title">Franchise Models</h2>
+          <h2 className="section-title">Franchise Models Built To Scale</h2>
           <p className="text-muted-foreground max-w-2xl mx-auto">
-            Join the Honeyman family with Ice Cream Carts, Cafes & Retail Outlets - start your sweet journey to success with our proven franchise models
+          Own world’s 1st honey-based ice cream business, designed for various cities, budgets, and ambitions. From compact kiosks to full-format cafes, every Honeyman model is system-driven, product-led, and supported end-to-end for consistent growth.
+
           </p>
         </div>
 

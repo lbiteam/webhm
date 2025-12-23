@@ -9,12 +9,12 @@ import celebrationCategory from "@/assets/gifting/celebration-category.webp";
 import wellnessCategory from "@/assets/gifting/wellness-category.webp";
 import baklawaRange from "@/assets/gifting/baklawa-range.webp";
 import fusionSweets from "@/assets/gifting/fusion-sweets.webp";
-import giftBox1 from "@/assets/gifting/Artboard 5 (1).jpg";
-import giftBox2 from "@/assets/gifting/Gemini_Generated_Image_2ym99p2ym99p2ym9.png";
-import giftBox3 from "@/assets/gifting/Gemini_Generated_Image_3kzt2n3kzt2n3kzt (1).png";
-import giftBox4 from "@/assets/gifting/Gemini_Generated_Image_3mj9393mj9393mj9 (1).png";
-import giftBox5 from "@/assets/gifting/gift-box.webp";
-import giftBag from "@/assets/gifting/WhatsApp Image 2025-11-20 at 12.17.54.jpeg";
+import giftBox1 from "@/assets/gifting/gift-box.webp";
+import giftBox2 from "@/assets/gifting/gifting-3.webp";
+import giftBox3 from "@/assets/gifting/gifting-2.webp";
+import giftBox4 from "@/assets/gifting/gifting-1.webp";
+import giftBox5 from "@/assets/gifting/Artboard 5 (1).jpg";
+import giftBag from "@/assets/gifting/honeyman-packaging.webp";
 import christmasImg from "@/assets/calendar/christhmas.webp";
 import newYearImg from "@/assets/calendar/new year.jpg";
 import lohriImg from "@/assets/calendar/lohri.webp";
@@ -119,8 +119,8 @@ const Gifting = () => {
               <span className="block text-primary italic">Gifting</span>
             </h1>
             <p className="text-lg md:text-xl text-white/80 mb-10 leading-relaxed">
-              Curated gift boxes featuring our finest honey collections and artisan sweets. 
-              Perfect for every occasion and celebration.
+            At Honeyman Gifting, we believe every gift should be personal, purposeful, and unforgettable.
+
             </p>
             <div className="flex flex-wrap gap-4">
               <button className="group px-8 py-4 bg-primary text-white rounded-lg font-medium uppercase tracking-wider text-sm hover:bg-primary/90 transition-all flex items-center gap-3">
@@ -139,7 +139,7 @@ const Gifting = () => {
       </section>
 
       {/* Promotional Banner */}
-      <section className="bg-gradient-to-r from-[#8B0000] via-[#DC143C] to-[#8B0000] py-4 relative overflow-hidden">
+      <section className="bg-[#8c3100]/90 py-4 relative overflow-hidden">
         <div className="absolute inset-0 opacity-20">
           <div className="absolute top-0 left-10 text-4xl animate-pulse">🎄</div>
           <div className="absolute top-0 right-10 text-4xl animate-pulse">🎄</div>

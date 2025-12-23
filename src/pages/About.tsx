@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import { ChevronLeft, ChevronRight, Award, Globe, Store, Newspaper, Download, ShieldCheck, Headphones, CreditCard, Truck, Instagram, Facebook, Youtube } from "lucide-react";
+import { ChevronLeft, ChevronRight, Award, Globe, Store, Newspaper, Download, ShieldCheck, Headphones, CreditCard, Truck, Instagram, Facebook, Youtube, Globe2Icon, User2Icon } from "lucide-react";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import Bee from "@/components/Bee";
@@ -91,20 +91,20 @@ const socialFeedPosts = [
 const features = [
   {
     icon: ShieldCheck,
-    title: "30-Day, No-Risk Money-Back Assurance",
+    title: " 45+ Years of Trust & Expertise",
   },
   {
-    icon: Headphones,
-    title: "24/7 Expert Help, Always Just a Click Away",
+    icon: Globe,
+    title: "World's Largest Refined Sugar-Free Ecosystem",
   },
   {
-    icon: CreditCard,
-    title: "Flexible Payments with Various Credit Card",
+    icon: Globe2Icon,
+    title: "100% Pure & Natural Honey",
   },
   {
-    icon: Truck,
-    title: "Quick, No-Cost Delivery & Setup Included",
-  },
+    icon: User2Icon,
+    title: "Empowering Entrepreneurs, Building Communities",
+  }
 ];
 
 const About = () => {
@@ -173,7 +173,7 @@ const About = () => {
                   <p className="text-sm text-muted-foreground">Years of Legacy</p>
                 </div>
                 <div className="text-center">
-                  <span className="text-4xl font-display font-bold text-primary">25+</span>
+                  <span className="text-4xl font-display font-bold text-primary">100+</span>
                   <p className="text-sm text-muted-foreground">Stores Nationwide</p>
                 </div>
                 <div className="text-center">
@@ -239,7 +239,8 @@ const About = () => {
               <div className="absolute -bottom-12 left-6 right-6 bg-white rounded-xl shadow-lg p-6 border border-honey/20">
                 <h3 className="font-display text-2xl font-bold text-foreground mb-3">Our Vision</h3>
                 <p className="text-muted-foreground leading-relaxed text-sm">
-                  With <span className="text-primary font-semibold">25+ stores</span> and rapid nationwide expansion via the FOFO model, HONEYMAN is spearheading a culinary revolution. From award-winning honeys to gourmet spreads and wellness essentials, we are a movement for a <span className="text-primary font-semibold">healthier, sugar-free future</span>.
+                Our vision is<span className="text-primary font-semibold"> bold and unapologetic</span>  to build <span className="text-primary font-semibold"> the world's largest and most trusted ecosystem of honey-based products,</span> redefining how sweetness is consumed across the globe. From Indian households to international markets, we aim to make honey the universal symbol of health, sustainability, and positive change.
+
                 </p>
               </div>
             </div>
