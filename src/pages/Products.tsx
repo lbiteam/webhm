@@ -22,7 +22,7 @@ import ginger from "@/assets/Products/ginger-kahwa.webp";
 import badam from "@/assets/Products/Badam-kahwa.webp";
 import kahwaBanner from "@/assets/Products/kahwa-banner.webp";
 import kesar from "@/assets/Products/kesar-kahwa.webp";
-import heroBanner from "@/assets/Products/Product Hero Banner copy.webp";
+import heroBanner from "@/assets/Products/Product_banner.webp";
 import meliferaBanner from "@/assets/Products/melifera-banner.webp";
 import sheaBodyButter from "@/assets/Products/Shea & Vitamin E Body butters.webp";
 import vitaminCFaceWash from "@/assets/Products/Vitamin C Face washes.webp";
@@ -65,12 +65,14 @@ export default function Products() {
       
       <main className="flex-1">
       {/* --- HERO SECTION --- */}
-      <section className="relative w-full overflow-hidden pt-24 flex items-center justify-center bg-[#f9dc8d]/40">
-        <img
-          src={heroBanner}
-          alt="Honeyman Hero"
-          className="w-full h-auto object-contain max-h-[75vh]"
-        />
+      <section className="relative w-full overflow-hidden pt-24 bg-[#f9dc8d]/40" style={{ marginLeft: 0, marginRight: 0, paddingLeft: 0, paddingRight: 0 }}>
+        <div className="w-full h-[500px] md:h-[700px] lg:h-[800px]">
+          <img
+            src={heroBanner}
+            alt="Honeyman Hero"
+            className="w-full h-full object-cover block"
+          />
+        </div>
       </section>
 
       {/* --- DISCOUNT SLIDER --- */}

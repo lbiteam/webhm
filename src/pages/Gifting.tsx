@@ -123,13 +123,11 @@ const Gifting = () => {
 
             </p>
             <div className="flex flex-wrap gap-4">
-              <button className="group px-8 py-4 bg-primary text-white rounded-lg font-medium uppercase tracking-wider text-sm hover:bg-primary/90 transition-all flex items-center gap-3">
+              <button className="group px-8 py-4 bg-primary text-white rounded-lg font-medium uppercase tracking-wider text-sm hover:bg-primary/90 transition-all flex items-center gap-3" onClick={() => window.open('https://honeymanstore.com/product-category/gifting/', '_blank')}>
                 <Gift className="w-5 h-5" />
                 Explore Collection
               </button>
-              <button className="px-8 py-4 border border-white/40 text-white rounded-lg font-medium uppercase tracking-wider text-sm hover:bg-white/10 transition-colors">
-                Custom Orders
-              </button>
+           
             </div>
           </div>
         </div>
@@ -362,12 +360,12 @@ const Gifting = () => {
                 {giftingCategories.map((category) => {
                   const IconComponent = category.icon;
                   return (
-                    <div key={category.id} className="min-w-full px-4">
-                      <div className="relative h-[550px] md:h-[650px] overflow-hidden group rounded-2xl">
+                    <div key={category.id} className="min-w-full px-2 sm:px-4">
+                      <div className="relative h-[400px] sm:h-[500px] md:h-[600px] lg:h-[650px] overflow-hidden group rounded-2xl bg-[#2a1810]/10">
                         <img 
                           src={category.image} 
                           alt={category.name}
-                          className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
+                          className="w-full h-full object-contain sm:object-contain transition-transform duration-700 group-hover:scale-[1.02]"
                         />
                         <div className="absolute inset-0 bg-gradient-to-t from-[#2a1810]/90 via-[#2a1810]/30 to-transparent" />
                         <div className="absolute bottom-0 left-0 right-0 p-8 md:p-12">
@@ -377,7 +375,7 @@ const Gifting = () => {
                             </div>
                             <div className="h-px flex-1 bg-white/30"></div>
                           </div>
-                          <h3 className="font-display text-3xl md:text-4xl text-white mb-2">{category.title}</h3>
+                        
                           <p className="text-white/80 text-lg mb-6">{category.subtitle}</p>
                           {/* <button className="px-8 py-3 bg-white text-[#2a1810] font-medium uppercase tracking-wider text-sm hover:bg-primary hover:text-white transition-colors">
                             Explore {category.name}
@@ -530,10 +528,10 @@ const Gifting = () => {
             Contact us for bulk orders, custom packaging, and personalized gift solutions
           </p>
           <div className="flex flex-wrap justify-center gap-4">
-            <button className="px-10 py-4 bg-white text-[#2a1810] font-medium uppercase tracking-wider text-sm hover:bg-white/90 transition-colors">
+            <button className="px-10 py-4 bg-white text-[#2a1810] font-medium uppercase tracking-wider text-sm hover:bg-white/90 transition-colors" onClick={() => window.open('/contact-us', '_blank')}>
               Get a Quote
             </button>
-            <button className="px-10 py-4 border-2 border-white text-white font-medium uppercase tracking-wider text-sm hover:bg-white/10 transition-colors">
+            <button className="px-10 py-4 border-2 border-white text-white font-medium uppercase tracking-wider text-sm hover:bg-white/10 transition-colors" onClick={() => window.open('https://honeymanstore.com/wp-content/uploads/2025/12/HoneymanGifting-Catalog-1_compressed.pdf', '_blank')}>
               Download Catalogue
             </button>
           </div>

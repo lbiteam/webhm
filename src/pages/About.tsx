@@ -173,7 +173,7 @@ const About = () => {
                   <p className="text-sm text-muted-foreground">Years of Legacy</p>
                 </div>
                 <div className="text-center">
-                  <span className="text-4xl font-display font-bold text-primary">100+</span>
+                  <span className="text-4xl font-display font-bold text-primary">123+</span>
                   <p className="text-sm text-muted-foreground">Stores Nationwide</p>
                 </div>
                 <div className="text-center">
@@ -299,7 +299,7 @@ const About = () => {
                 HONEYMAN's premium honey products and wellness essentials.
               </p>
               <a 
-                href="https://www.honeyman.in/wp-content/uploads/2025/09/Honeyman-Magazine.pdf"
+                href="https://honeymanstore.com/wp-content/uploads/2025/12/Honeyman-Magazine-1.pdf"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="inline-flex items-center gap-3 bg-honey hover:bg-honey-dark text-foreground font-semibold px-8 py-4 rounded-full transition-all shadow-lg hover:shadow-xl"

@@ -2,7 +2,7 @@ import { useState } from "react";
 import { Link, useLocation } from "react-router-dom";
 import { Menu, X } from "lucide-react";
 import { Sheet, SheetContent, SheetTrigger } from "@/components/ui/sheet";
-import logo from "@/assets/honeyman-new-logo.webp";
+import logo from "@/assets/Honeyman-logo.webp";
 
 const Header = () => {
   const location = useLocation();
@@ -85,7 +85,7 @@ const Header = () => {
       <div className="container mx-auto px-6 sm:px-6 h-24 flex item-center">
         <nav className="flex items-center justify-between w-full">
           <Link to="/" className="flex items-center gap-2 ">
-            <img src={logo} alt="Honeyman" className="h-16 sm:h-12 md:h-20 w-auto object-contain scale-150" />
+            <img src={logo} alt="Honeyman" className="h-16 sm:h-12 md:h-20 w-auto object-contain scale-[1.75]" />
           </Link>
           
           {/* Desktop Navigation */}
