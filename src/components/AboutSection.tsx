@@ -1,16 +1,20 @@
 import Bee from "./Bee";
 import founderImage from "@/assets/founder.jpg";
+import hivebg from "@/assets/honey-bg.webp";
 
 const AboutSection = () => {
   return (
     <section id="about" className="py-24 bg-cream relative overflow-hidden">
-      {/* Background pattern */}
-      <div className="absolute inset-0 honeycomb-pattern opacity-30" />
+      {/* Background image with low opacity and an overlay to soften it */}
+      <div className="absolute inset-0 opacity-30">
+        <img src={hivebg} alt="Hive background" className="w-full h-full object-cover" />
+        <div className="absolute inset-0 bg-cream/50" />
+      </div>
       
-      <Bee className="absolute top-20 right-[10%]" size={32} />
-      <Bee className="absolute bottom-32 left-[8%]" size={24} />
+      <Bee className="absolute top-20 right-[10%] z-20" size={32} />
+      <Bee className="absolute bottom-32 left-[8%] z-20" size={24} />
       
-      <div className="container mx-auto px-6 relative z-10">
+      <div className="container mx-auto px-6 relative z-20">
         <div className="grid lg:grid-cols-2 gap-16 items-center">
           {/* Founder Image */}
           <div className="relative order-2 lg:order-1">

@@ -35,14 +35,28 @@ const Footer = () => {
           backgroundBlendMode: 'soft-light',
         }}
       >
+        {/* Hexagon pattern background */}
+        <div className="absolute inset-0 pointer-events-none opacity-15">
+          <svg className="w-full h-full" preserveAspectRatio="none">
+            <defs>
+              <pattern id="footerHexagonBg" x="0" y="0" width="40" height="34.64" patternUnits="userSpaceOnUse">
+                <polygon points="20,0 40,8.66 40,25.98 20,34.64 0,25.98 0,8.66" fill="none" stroke="hsl(45 100% 85%)" strokeWidth="0.5" opacity="0.6"/>
+                <polygon points="20,34.64 40,43.3 40,60.62 20,69.28 0,60.62 0,43.3" fill="none" stroke="hsl(45 100% 85%)" strokeWidth="0.5" opacity="0.6"/>
+                <polygon points="10,17.32 30,25.98 30,43.3 10,51.96 -10,43.3 -10,25.98" fill="none" stroke="hsl(45 100% 85%)" strokeWidth="0.5" opacity="0.6"/>
+              </pattern>
+            </defs>
+            <rect width="100%" height="100%" fill="url(#footerHexagonBg)"/>
+          </svg>
+        </div>
+        
         {/* Overlay for better readability */}
         <div className="absolute inset-0 bg-[#8c3100]/90" />
         
         {/* Bees */}
-        <Bee className="absolute top-6 left-[12%]" size={26} />
-        <Bee className="absolute top-14 right-[18%]" size={22} />
-        <Bee className="absolute bottom-20 left-[65%]" size={24} />
-        <Bee className="absolute top-20 left-[40%]" size={20} />
+        <Bee className="absolute top-6 left-[12%] z-20" size={26} />
+        <Bee className="absolute top-14 right-[18%] z-20" size={22} />
+        <Bee className="absolute bottom-20 left-[65%] z-20" size={24} />
+        <Bee className="absolute top-20 left-[40%] z-20" size={20} />
 
         <div className="container mx-auto px-6 relative z-10">
           {/* Top Section - Logo and Social */}
@@ -108,25 +122,13 @@ const Footer = () => {
           </div>
         </div>
 
-        {/* Honeycomb pattern overlay */}
-        <div className="absolute bottom-20 left-0 right-0 h-24 pointer-events-none opacity-20">
-          <svg viewBox="0 0 200 100" className="w-full h-full" preserveAspectRatio="xMidYMid slice">
-            <defs>
-              <pattern id="footerHoneycomb" x="0" y="0" width="40" height="69.28" patternUnits="userSpaceOnUse">
-                <polygon points="20,0 40,11.55 40,34.64 20,46.19 0,34.64 0,11.55" fill="none" stroke="hsl(30 30% 15%)" strokeWidth="1" opacity="0.4"/>
-                <polygon points="20,46.19 40,57.74 40,80.83 20,92.38 0,80.83 0,57.74" fill="none" stroke="hsl(30 30% 15%)" strokeWidth="1" opacity="0.4"/>
-              </pattern>
-            </defs>
-            <rect width="100%" height="100%" fill="url(#footerHoneycomb)"/>
-          </svg>
-        </div>
       </div>
 
       {/* Copyright Bar - Yellow Background */}
       <div className="bg-[#f9dc8d] py-4">
         <div className="container mx-auto px-6">
           <p className="text-center text-[#2a1810] text-xs md:text-sm font-medium">
-            © 2025 Honeyman. All rights reserved. | Designed & Developed with 🍯
+            © 2025 Honeyman. All rights reserved. 
           </p>
         </div>
       </div>

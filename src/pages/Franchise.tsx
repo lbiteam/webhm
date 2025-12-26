@@ -5,7 +5,7 @@ import Bee from "@/components/Bee";
 import iceCreamParlour from "@/assets/franchise/ice-cream-parlour.webp";
 import iceCreamStanding from "@/assets/franchise/ice-cream-standing.webp";
 import iceCreamCart from "@/assets/franchise/ice-cream-cart.webp";
-import cafeOutlet from "@/assets/franchise/cafe-outlet.jpeg";
+import cafeOutlet from "@/assets/franchise/cafe-outlet.webp";
 import cafeKiosk from "@/assets/franchise/cafe-kiosk.jpeg";
 import cafeTrailer from "@/assets/franchise/cafe-trailer.jpeg";
 import iceCreamPattern from "@/assets/our-franchise-system.webp";
@@ -474,7 +474,7 @@ const Franchise = () => {
                   <img 
                     src={format.image} 
                     alt={format.name} 
-                    className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
+                    className="w-full h-full object-cover object-top transition-transform duration-500 group-hover:scale-105"
                   />
                 </div>
                 <h3 className="font-display text-xl font-bold text-white mb-1">
