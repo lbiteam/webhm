@@ -438,7 +438,7 @@ const Gifting = () => {
             <p className="text-white/90 text-lg md:text-xl max-w-xl mx-auto mb-8">
               Every gift wrapped with elegance, crafted to create lasting impressions
             </p>
-            <button className="px-10 py-4 bg-primary text-white  rounded-xl font-medium uppercase tracking-wider text-sm hover:bg-primary/90 transition-colors">
+            <button className="px-10 py-4 bg-primary text-white  rounded-xl font-medium uppercase tracking-wider text-sm hover:bg-primary/90 transition-colors" onClick={() => window.open('https://honeymanstore.com/shop', '_blank')}>
               Create Your Gift
             </button>
           </div>

@@ -70,7 +70,7 @@ export default function Products() {
           <img
             src={heroBanner}
             alt="Honeyman Hero"
-            className="w-full h-full object-cover block"
+            className="w-full h-full object-cover block px-autp"
           />
         </div>
       </section>

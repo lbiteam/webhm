@@ -24,7 +24,7 @@ const franchiseModels = [
   {
     name: "Ice Cream Parlour",
     tagline: "Premium Experience",
-    investment: "₹15-25 Lakhs",
+    investment: "₹10-15 Lakhs",
     image: iceCreamParlour,
     color: "from-honey to-honey-dark",
     popular: true,
@@ -40,7 +40,7 @@ const franchiseModels = [
   {
     name: "Ice Cream Standing",
     tagline: "Event Partner",
-    investment: "₹5-10 Lakhs",
+    investment: "₹75 thousand",
     image: iceCreamStanding,
     color: "from-amber-500 to-orange-600",
     features: [
@@ -55,7 +55,7 @@ const franchiseModels = [
   {
     name: "Ice Cream Cart",
     tagline: "Mobile Business",
-    investment: "₹2-5 Lakhs",
+    investment: "₹2.5 Lakhs",
     image: iceCreamCart,
     color: "from-emerald-400 to-teal-500",
     features: [

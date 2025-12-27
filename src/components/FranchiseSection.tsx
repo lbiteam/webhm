@@ -5,7 +5,7 @@ const franchiseModels = [
   {
     name: "Basic",
     tagline: "Perfect Start",
-    investment: "₹2-5 Lakhs",
+    investment: "₹2.5-5 Lakhs",
     color: "from-emerald-400 to-teal-500",
     features: [
       "Small retail outlet",
@@ -16,9 +16,9 @@ const franchiseModels = [
     ],
   },
   {
-    name: "Starter",
+    name: "Medium",
     tagline: "Growing Business",
-    investment: "₹5-10 Lakhs",
+    investment: "₹8-12 Lakhs",
     color: "from-honey to-honey-dark",
     popular: true,
     features: [
@@ -32,9 +32,9 @@ const franchiseModels = [
     ],
   },
   {
-    name: "Master",
+    name: "Bigger",
     tagline: "Premium Partner",
-    investment: "₹15-25 Lakhs",
+    investment: "₹15-30 Lakhs",
     color: "from-amber-600 to-orange-700",
     features: [
       "Flagship store",
