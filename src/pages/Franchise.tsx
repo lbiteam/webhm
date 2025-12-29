@@ -228,7 +228,7 @@ const Franchise = () => {
     setCurrentPage(1);
   }, [searchTerm, selectedRegion]);
   return (
-    <div className="min-h-screen bg-cream">
+    <div className="min-h-screen bg-cream overflow-x-hidden">
       <Header />
       
       {/* Hero Section with Video */}
@@ -259,13 +259,13 @@ const Franchise = () => {
       </section>
 
       {/* 100+ Outlets Counter */}
-      <section className="py-16 bg-gradient-to-r from-honey to-honey-dark">
+      <section className="py-16 bg-gradient-to-r from-honey to-honey-dark overflow-hidden">
         <div className="container mx-auto px-6">
           <div className="flex flex-col md:flex-row items-center justify-center gap-8 md:gap-16">
             <div className="flex items-center gap-4">
               <Store className="w-16 h-16 text-foreground" />
               <div>
-                <h2 className="font-display text-5xl md:text-6xl font-bold text-foreground">100+</h2>
+                <h2 className="font-display text-5xl md:text-6xl font-bold text-foreground">130+</h2>
                 <p className="text-foreground/80 font-medium">Outlets Nationwide</p>
               </div>
             </div>
@@ -337,7 +337,7 @@ const Franchise = () => {
 
 
       {/* Franchise Models - Apsara Style */}
-      <section className="py-24 bg-cream relative overflow-hidden">
+      <section className="py-24 bg-cream relative overflow-x-hidden overflow-y-visible">
         {/* Background image with cream opacity */}
         <div 
           className="absolute inset-0 opacity-10"
@@ -365,15 +365,15 @@ const Franchise = () => {
           {/* Apsara-style layout with circular images */}
           <div className="flex flex-col lg:flex-row items-center justify-between gap-8 mb-16">
             {/* Left side - overlapping circular images */}
-           <div className="relative w-full h-[400px] flex items-center justify-center">
+           <div className="relative w-full h-[400px] flex items-center justify-center overflow-hidden">
 
-              <div className="absolute left-0 top-0 w-48 h-48 md:w-56 md:h-56 rounded-full overflow-hidden border-4 border-white shadow-2xl z-10">
+              <div className="absolute left-0 top-0 w-32 h-32 sm:w-40 sm:h-40 md:w-56 md:h-56 rounded-full overflow-hidden border-4 border-white shadow-2xl z-10">
                 <img src={iceCreamParlour} alt="Ice Cream Parlour" className="w-full h-full object-cover" />
               </div>
-              <div className="absolute left-20 top-24 md:left-28 md:top-28 w-44 h-44 md:w-52 md:h-52 rounded-full overflow-hidden border-4 border-white shadow-2xl z-20">
+              <div className="absolute left-12 top-24 sm:left-16 sm:top-20 md:left-28 md:top-28 w-28 h-28 sm:w-36 sm:h-36 md:w-52 md:h-52 rounded-full overflow-hidden border-4 border-white shadow-2xl z-20">
                 <img src={iceCreamStanding} alt="Ice Cream Standing" className="w-full h-full object-cover" />
               </div>
-              <div className="absolute left-8 top-48 md:left-12 md:top-56 w-40 h-40 md:w-48 md:h-48 rounded-full overflow-hidden border-4 border-white shadow-2xl z-30">
+              <div className="absolute left-4 top-44 sm:left-6 sm:top-48 md:left-12 md:top-56 w-24 h-24 sm:w-32 sm:h-32 md:w-48 md:h-48 rounded-full overflow-hidden border-4 border-white shadow-2xl z-30">
                 <img src={iceCreamCart} alt="Ice Cream Cart" className="w-full h-full object-cover" />
               </div>
             </div>
@@ -387,9 +387,9 @@ const Franchise = () => {
             </div>
 
             {/* Right side - single large circular image */}
-            <div className="w-full flex justify-center">
+            <div className="w-full flex justify-center overflow-hidden">
 
-              <div className="w-56 h-56 md:w-72 md:h-72 rounded-full overflow-hidden border-4 border-white shadow-2xl">
+              <div className="w-40 h-40 sm:w-48 sm:h-48 md:w-72 md:h-72 rounded-full overflow-hidden border-4 border-white shadow-2xl">
                 <img src={iceCreamParlour} alt="Honeyman Store" className="w-full h-full object-cover" />
               </div>
             </div>
@@ -459,7 +459,7 @@ const Franchise = () => {
      
      
       {/* Our Unique Format Section */}
-      <section className="py-20 bg-gradient-to-r from-honey to-honey-dark">
+      <section className="py-20 bg-gradient-to-r from-honey to-honey-dark overflow-hidden">
         <div className="container mx-auto px-6">
           <div className="text-center mb-12">
             <h2 className="font-display text-4xl md:text-5xl font-bold text-white">
@@ -537,8 +537,8 @@ const Franchise = () => {
           </div>
 
           {/* Stores Display - Table on desktop, Cards on mobile */}
-          <div className="hidden md:block overflow-x-auto bg-white rounded-lg shadow-lg">
-            <table className="w-full">
+          <div className="hidden md:block overflow-x-auto bg-white rounded-lg shadow-lg max-w-full">
+            <table className="w-full min-w-full">
               <thead className="bg-honey/10">
                 <tr>
                   <th className="px-6 py-4 text-left text-sm font-semibold text-foreground">S.No</th>
@@ -664,7 +664,7 @@ const Franchise = () => {
 
 
   {/* Our Outlets Gallery */}
-      <section className="py-24 bg-white relative overflow-hidden"
+      <section className="py-24 bg-white relative overflow-x-hidden overflow-y-visible"
       >
         {/* Decorative Bees */}
         <Bee className="absolute top-12 right-8 z-10" size={32} />
@@ -683,9 +683,9 @@ const Franchise = () => {
           </div>
 
           {/* Carousel Container */}
-          <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="relative max-w-7xl mx-auto px-2 sm:px-4 lg:px-8">
             {/* Carousel */}
-            <div className="overflow-hidden rounded-2xl shadow-2xl">
+            <div className="overflow-hidden rounded-2xl shadow-2xl w-full">
               <div 
                 className="flex transition-transform duration-500 ease-in-out"
                 style={{ transform: `translateX(-${outletCarouselIndex * (100 / responsiveImagesPerView)}%)` }}
@@ -693,10 +693,10 @@ const Franchise = () => {
                 {outletImages.map((image, index) => (
                   <div 
                     key={index} 
-                    className={`flex-shrink-0 px-1 sm:px-2 ${
-                      responsiveImagesPerView === 1 ? 'w-full' : 
-                      responsiveImagesPerView === 2 ? 'w-1/2' : 
-                      responsiveImagesPerView === 4 ? 'w-1/4' : 'w-1/4'
+                    className={`flex-shrink-0 ${
+                      responsiveImagesPerView === 1 ? 'w-full px-0' : 
+                      responsiveImagesPerView === 2 ? 'w-1/2 px-1' : 
+                      responsiveImagesPerView === 4 ? 'w-1/4 px-1 sm:px-2' : 'w-1/4 px-1 sm:px-2'
                     }`}
                   >
                     <div className="aspect-[3/4] rounded-xl overflow-hidden shadow-lg hover:shadow-xl transition-shadow duration-300">
@@ -714,20 +714,20 @@ const Franchise = () => {
             {/* Navigation Buttons */}
             <button
               onClick={prevOutletSlide}
-              className="absolute left-2 sm:left-4 top-1/2 -translate-y-1/2 w-10 h-10 sm:w-12 sm:h-12 bg-white/90 backdrop-blur-sm rounded-full shadow-lg hover:bg-white transition-all duration-300 flex items-center justify-center text-honey-dark hover:scale-110 disabled:opacity-50 disabled:cursor-not-allowed"
+              className="absolute left-1 sm:left-2 md:left-4 top-1/2 -translate-y-1/2 w-8 h-8 sm:w-10 sm:h-10 md:w-12 md:h-12 bg-white/90 backdrop-blur-sm rounded-full shadow-lg hover:bg-white transition-all duration-300 flex items-center justify-center text-honey-dark hover:scale-110 disabled:opacity-50 disabled:cursor-not-allowed z-10"
               disabled={outletCarouselIndex === 0}
             >
-              <svg className="w-5 h-5 sm:w-6 sm:h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <svg className="w-4 h-4 sm:w-5 sm:h-5 md:w-6 md:h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 19l-7-7 7-7" />
               </svg>
             </button>
             
             <button
               onClick={nextOutletSlide}
-              className="absolute right-2 sm:right-4 top-1/2 -translate-y-1/2 w-10 h-10 sm:w-12 sm:h-12 bg-white/90 backdrop-blur-sm rounded-full shadow-lg hover:bg-white transition-all duration-300 flex items-center justify-center text-honey-dark hover:scale-110 disabled:opacity-50 disabled:cursor-not-allowed"
+              className="absolute right-1 sm:right-2 md:right-4 top-1/2 -translate-y-1/2 w-8 h-8 sm:w-10 sm:h-10 md:w-12 md:h-12 bg-white/90 backdrop-blur-sm rounded-full shadow-lg hover:bg-white transition-all duration-300 flex items-center justify-center text-honey-dark hover:scale-110 disabled:opacity-50 disabled:cursor-not-allowed z-10"
               disabled={outletCarouselIndex >= outletImages.length - responsiveImagesPerView}
             >
-              <svg className="w-5 h-5 sm:w-6 sm:h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <svg className="w-4 h-4 sm:w-5 sm:h-5 md:w-6 md:h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
               </svg>
             </button>
@@ -753,7 +753,7 @@ const Franchise = () => {
       
 
       {/* CTA Section - Compact */}
-      <section className="py-12 bg-gradient-to-r from-honey to-honey-dark">
+      <section className="py-12 bg-gradient-to-r from-honey to-honey-dark overflow-hidden">
         <div className="container mx-auto px-6 text-center">
           <h2 className="font-display text-2xl md:text-3xl font-bold text-foreground mb-4">
             Ready to Start Your Sweet Journey?
@@ -765,7 +765,7 @@ const Franchise = () => {
             <button className="bg-foreground text-white px-6 py-3 rounded-xl font-medium hover:bg-foreground/90 transition-all" onClick={() => window.location.href = '/contact-us'}>
               Apply Now
             </button>
-            <button className="border-2 border-foreground text-foreground px-6 py-3 rounded-xl font-medium hover:bg-foreground/10 transition-all" onClick={() => window.location.href = 'https://www.honeyman.in/wp-content/uploads/2025/09/Honeyman-Magazine.pdf'}>
+            <button className="border-2 border-foreground text-foreground px-6 py-3 rounded-xl font-medium hover:bg-foreground/10 transition-all" onClick={() => window.location.href = 'https://honeymanstore.com/wp-content/uploads/2025/12/franchise-pdf-1.pdf'}>
               Download Brochure
             </button>
           </div>

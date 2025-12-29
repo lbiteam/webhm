@@ -10,6 +10,7 @@ import Franchise from "./pages/Franchise";
 import Gifting from "./pages/Gifting";
 import Products from "./pages/Products";
 import NotFound from "./pages/NotFound";
+import FloatingOrderButton from "./components/FloatingOrderButton";
 
 const queryClient = new QueryClient();
 
@@ -29,6 +30,7 @@ const App = () => (
           {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
           <Route path="*" element={<NotFound />} />
         </Routes>
+        <FloatingOrderButton />
       </BrowserRouter>
     </TooltipProvider>
   </QueryClientProvider>

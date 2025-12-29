@@ -89,18 +89,18 @@ const Header = () => {
           </Link>
           
           {/* Desktop Navigation */}
-          <ul className="hidden md:flex items-center gap-8">
+          <ul className="hidden lg:flex items-center gap-8">
             <NavItems />
           </ul>
 
           <div className="flex items-center gap-4">
-            <button className="honey-btn hidden md:block" onClick={() => window.location.href = 'https://honeymanstore.com/'} >
+            <button className="honey-btn hidden lg:block" onClick={() => window.location.href = 'https://honeymanstore.com/'} >
               Order Now
             </button>
 
-            {/* Mobile Menu */}
+            {/* Mobile & Tablet Menu */}
             <Sheet open={isOpen} onOpenChange={setIsOpen}>
-              <SheetTrigger asChild className="md:hidden">
+              <SheetTrigger asChild className="lg:hidden">
                 <button className="p-2 text-foreground hover:text-primary transition-colors">
                   <Menu className="h-6 w-6" />
                 </button>

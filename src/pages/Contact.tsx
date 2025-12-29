@@ -315,7 +315,7 @@ const Contact = () => {
                   { icon: Phone, title: "Phone", details: ["+91 96503 05025"] },
                   { icon: Mail, title: "Email", details: ["hello@honeyman.in", "support@honeyman.in"] },
                   { icon: MapPin, title: "Address", details: ["HONEYMAN Headquarters", "Gurugram, India"] },
-                  { icon: Clock, title: "Business Hours", details: ["Mon - Sat: 9:00 AM - 6:00 PM"] },
+                  { icon: Clock, title: "Business Hours", details: ["Mon - Sun: 10:00 AM - 7:00 PM"] },
                 ].map((info, index) => (
                   <div 
                     key={index}

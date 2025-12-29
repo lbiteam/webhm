@@ -173,7 +173,7 @@ const About = () => {
                   <p className="text-sm text-muted-foreground">Years of Legacy</p>
                 </div>
                 <div className="text-center">
-                  <span className="text-4xl font-display font-bold text-primary">125+</span>
+                  <span className="text-4xl font-display font-bold text-primary">130+</span>
                   <p className="text-sm text-muted-foreground">Stores Nationwide</p>
                 </div>
                 <div className="text-center">

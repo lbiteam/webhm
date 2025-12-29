@@ -65,15 +65,15 @@ export default function Products() {
       
       <main className="flex-1">
       {/* --- HERO SECTION --- */}
-      <section className="relative w-full overflow-hidden pt-24 bg-[#f9dc8d]/40" style={{ marginLeft: 0, marginRight: 0, paddingLeft: 0, paddingRight: 0 }}>
-        <div className="w-full h-[500px] md:h-[700px] lg:h-[800px]">
-          <img
-            src={heroBanner}
-            alt="Honeyman Hero"
-            className="w-full h-full object-cover block px-autp"
-          />
-        </div>
-      </section>
+      <section className="relative w-full overflow-hidden pt-24 bg-[#f9dc8d]/40">
+  <div className="relative w-full h-[400px] md:h-[700px] lg:h-[800px]">
+    <img 
+      src={heroBanner} 
+      alt="Honeyman Hero" 
+      className="absolute inset-0 w-full h-full object-cover md:object-contain lg:object-cover"
+    />
+  </div>
+</section>
 
       {/* --- DISCOUNT SLIDER --- */}
       <section className="relative overflow-hidden bg-[#8c3100] py-4">
