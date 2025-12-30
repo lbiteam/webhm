@@ -9,7 +9,7 @@ const giftCategories = [
   {
     id: 1,
     name: "Wedding",
-    description: " Make your celebrations unforgettable with artisan hampers that blend tradition and elegance. From premium honey to gourmet sweets, each gift reflects the sweetness of new beginnings.",
+    description: " Celebrate new beginnings with elegant hampers of premium honey and gourmet delights that reflect tradition and sweetness.",
     icon: Heart,
     color: "from-rose-400 to-pink-500",
     bgPattern: "🌸",
@@ -17,7 +17,7 @@ const giftCategories = [
   {
     id: 2,
     name: "Celebration",
-    description: "Mark life's joyful milestones with gifts that bring warmth and delight. Festivals, birthdays, anniversaries—our curated collections add meaning to every cherished moment.",
+    description: "Mark every milestone with thoughtfully curated gifts that bring warmth to festivals, birthdays, and anniversaries",
     icon: Sparkles,
     color: "from-amber-400 to-orange-500",
     bgPattern: "🎉",
@@ -25,7 +25,7 @@ const giftCategories = [
   {
     id: 3,
     name: "Corporate",
-    description: " Show gratitude and build lasting impressions with premium corporate hampers. Thoughtfully designed for clients, partners, and teams—a gift that reflects professionalism and care.",
+    description: " Premium corporate hampers designed to express appreciation and build lasting professional relationships.",
     icon: Briefcase,
     color: "from-slate-500 to-slate-700",
     bgPattern: "💼",
@@ -33,7 +33,7 @@ const giftCategories = [
   {
     id: 4,
     name: "Wellness",
-    description: "Give the gift of health with our wellness collections. Packed with immunity boosters, natural tonics, and honey-powered nourishment—because wellness is the most thoughtful gift of all.",
+    description: "Support health and vitality with honey-powered wellness gifts crafted for everyday nourishment.",
     icon: Gift,
     color: "from-emerald-400 to-teal-500",
     bgPattern: "🌿",
@@ -77,8 +77,8 @@ const GiftingSection = () => {
                 const IconComponent = category.icon;
                 return (
                   <div key={category.id} className="flex items-start gap-3 bg-white rounded-xl p-4 shadow-sm">
-                    <div className={`w-10 h-10 rounded-lg bg-gradient-to-br ${category.color} flex items-center justify-center text-white`}>
-                      <IconComponent className="w-5 h-5" />
+                    <div className={`w-10 h-10 rounded-xl bg-gradient-to-br ${category.color} flex items-center justify-center text-white`}>
+                      <IconComponent className="w-8 h-8" />
                     </div>
                     <div>
                       <h4 className="font-medium text-foreground text-sm">{category.name}</h4>

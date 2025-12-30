@@ -8,16 +8,17 @@ import Bee from "./Bee";
 const slides = [
   {
     video: "/videos/hero-honey.webm",
-    title: "Our",
-    subtitle: "Honey",
-    description: "Perfect for breakfast. Good instead of sugar. Tasty and healthy!"
-  },
-  {
-    image: honeyTea,
     title: "World's First ",
     subtitle: "Ice Cream",
     description: "Made Only with Pure Honey. No refined sugar."
   },
+  {
+     image: honeyTea,
+    title: " India's Largest",
+    subtitle: "Ranges Of Honey",
+    description: "A Legacy Since 1980, Trusted by Generations"
+  },
+  
   {
     image: honeyPour,
     title: "World's Largest",
@@ -28,7 +29,7 @@ const slides = [
     image: honeyGranola,
     title: "Own a Fastest",
     subtitle: "Growing Franchise.",
-    description: "100+ outlets. 4 models. Complete support."
+    description: "130+ outlets. 4 models. Complete support."
   }
 ];
 
@@ -96,7 +97,7 @@ const HeroSlider = () => {
             >
               {index === currentSlide && (
                 <>
-                  <h1 className="font-display text-6xl md:text-8xl font-medium text-foreground mb-6 leading-tight">
+                  <h1 className="font-display text-5xl md:text-7xl font-medium text-foreground mb-6 leading-tight">
                     <span className="italic">{slide.title}</span>
                     <br />
                     <span className="text-primary text-shadow-honey">{slide.subtitle}</span>

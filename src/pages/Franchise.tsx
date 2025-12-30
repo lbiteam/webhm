@@ -86,9 +86,9 @@ const supportFeatures = [
     title: "Operations & Performance",
     items: [
       "Ongoing operational guidance and reviews",
-      "Performance tracking with expert feedback",
+      "Track performance with expert insights",
       "Process standardisation across outlets",
-      "Support to improve efficiency and consistency",
+      "Support to improve efficiency",
     ],
   },
   {
@@ -116,9 +116,9 @@ const supportFeatures = [
     title: "Marketing & Visibility",
     items: [
       "Central brand campaigns and promotions",
-      "Digital and social media visibility support",
+      "Online visibility support",
       "Local market activation strategies",
-      
+       "Launch & Promotional Support",
     ],
   },
   {
@@ -195,6 +195,42 @@ const Franchise = () => {
     window.addEventListener('resize', handleResize);
     return () => window.removeEventListener('resize', handleResize);
   }, [outletCarouselIndex, outletImages.length]);
+
+  // Hash scroll functionality
+  useEffect(() => {
+    const scrollToHash = () => {
+      const hash = window.location.hash;
+      if (hash) {
+        // Remove the # symbol
+        const id = hash.substring(1);
+        const element = document.getElementById(id);
+        if (element) {
+          // Small delay to ensure page is fully rendered
+          setTimeout(() => {
+            const headerOffset = 100; // Adjust based on your header height
+            const elementPosition = element.getBoundingClientRect().top;
+            const offsetPosition = elementPosition + window.pageYOffset - headerOffset;
+
+            window.scrollTo({
+              top: offsetPosition,
+              behavior: 'smooth'
+            });
+          }, 100);
+        }
+      }
+    };
+
+    // Scroll on mount
+    scrollToHash();
+
+    // Listen for hash changes
+    const handleHashChange = () => {
+      scrollToHash();
+    };
+
+    window.addEventListener('hashchange', handleHashChange);
+    return () => window.removeEventListener('hashchange', handleHashChange);
+  }, []);
 
   const nextOutletSlide = () => {
     setOutletCarouselIndex((prev) => 
@@ -490,7 +526,7 @@ const Franchise = () => {
     
 
 {/* Store Operatives Section */}
-      <section className="py-24 bg-cream">
+      <section className="py-24 bg-cream " id="store-locator">
         <div className="container mx-auto px-6">
           <div className="text-center mb-12 sm:mb-16">
             <span className="inline-block px-3 sm:px-4 py-2 bg-honey/20 rounded-full text-honey-dark font-medium text-xs sm:text-sm mb-4">

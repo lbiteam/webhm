@@ -207,8 +207,8 @@
  {
   "S.No": 35,
   "City": "Karnataka",
-  "Region": "Banglore",
-  "Address": "Cafe Zaara, 2nd Floor, UB City, Vittal Mallya Road, Bangalore. 560001"
+  "Region": "Bengaluru",
+  "Address": "Cafe Zaara, 2nd Floor, UB City, Vittal Mallya Road, Bengaluru. 560001"
  },
  {
   "S.No": 36,
@@ -219,7 +219,7 @@
  {
   "S.No": 37,
   "City": "Madurai",
-  "Region": "Tamil nadu",
+  "Region": "Tamil Nadu",
   "Address": "519\/2,Aarthi complex,11th East cross street,Annanagr"
  },
  {
@@ -249,7 +249,7 @@
  {
   "S.No": 42,
   "City": "Ganganagar",
-  "Region": "RAJASTHAN",
+  "Region": "Rajasthan",
   "Address": "1-C Ravindra Path Near Chanderlpok Dhabha Sri Ganganagar - 335001"
  },
  {
@@ -297,7 +297,7 @@
  {
   "S.No": 50,
   "City": "Nalaganda",
-  "Region": "Hydrabad",
+  "Region": "Hyderabad",
   "Address": "7-1\/GH\/NRC\/43\/6 Beside Sadhana Infinity International School, Nallagandla, Hyderabad - 502034"
  },
  {

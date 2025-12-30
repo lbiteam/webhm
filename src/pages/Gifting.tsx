@@ -367,12 +367,12 @@ const Gifting = () => {
                           alt={category.name}
                           className="w-full h-full object-contain sm:object-contain transition-transform duration-700 group-hover:scale-[1.02]"
                         />
-                        <div className="absolute inset-0 bg-gradient-to-t from-[#2a1810]/90 via-[#2a1810]/30 to-transparent" />
+                        <div className="absolute inset-0 bg-gradient-to-t from-[#2a1810]/40 via-[#2a1810]/30 to-transparent" />
                         <div className="absolute bottom-0 left-0 right-0 p-8 md:p-12">
                           <div className="flex items-center gap-3 mb-4">
-                            <div className="w-12 h-12 bg-primary/90 flex items-center justify-center">
+                            {/* <div className="w-12 h-12 bg-primary/90 flex items-center justify-center">
                               <IconComponent className="w-6 h-6 text-white" />
-                            </div>
+                            </div> */}
                             <div className="h-px flex-1 bg-white/30"></div>
                           </div>
                         

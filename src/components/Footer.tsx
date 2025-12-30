@@ -1,7 +1,7 @@
 import { Link } from "react-router-dom";
 import Bee from "./Bee";
 import honeyDipper from "@/assets/honey-dipper.jpg";
-import logo from "@/assets/honeyman-new-logo.webp";
+import logo from "@/assets/Honeyman-logo.webp";
 import { Instagram, Facebook, Youtube, Twitter } from "lucide-react";
 
 const footerLinks = [
@@ -9,7 +9,7 @@ const footerLinks = [
   { name: "About Us", href: "/about-us" },
   { name: "Franchise", href: "/franchise" },
   { name: "Gifting", href: "/gifting" },
-  { name: "Our Media", href: "/about-us#media" },
+  { name: "Our Media", href: "/about-us#media-coverage" },
   { name: "Store Locator", href: "/franchise#store-locator" },
   { name: "Contact Us", href: "/contact-us" },
 ];
@@ -59,19 +59,30 @@ const Footer = () => {
         <Bee className="absolute top-20 left-[40%] z-20" size={20} />
 
         <div className="container mx-auto px-6 relative z-10">
-          {/* Top Section - Logo and Social */}
-          <div className="flex flex-col md:flex-row items-center justify-between gap-8 mb-10">
+          {/* Top Section - Logo, Tagline, and Social */}
+          <div className="flex flex-col md:grid md:grid-cols-3 items-center gap-8 mb-10">
             {/* Logo */}
-            <Link to="/" className="flex-shrink-0">
-              <img 
-                src={logo} 
-                alt="Honeyman" 
-                className="h-16 md:h-20 w-auto object-contain  scale-150"
-              />
-            </Link>
+            <div className="flex flex-col items-center md:items-start gap-2 md:col-start-1">
+              <Link to="/" className="flex-shrink-0">
+                <img 
+                  src={logo} 
+                  alt="Honeyman" 
+                  className="h-16 md:h-20 w-auto object-contain  scale-[1.75]"
+                />
+              </Link>
+              {/* Tagline - visible on mobile, below logo */}
+              <p className="text-white font-display text-sm md:hidden font-medium text-center">
+                The house of premium Products
+              </p>
+            </div>
+
+            {/* Tagline - centered on desktop */}
+            <p className="hidden md:block text-white font-display text-lg font-semibold text-center md:col-start-2">
+              The house of premium Products
+            </p>
 
             {/* Follow Us - Right Side */}
-            <div className="flex flex-col items-center md:items-end gap-3">
+            <div className="flex flex-col items-center md:items-end gap-3 md:col-start-3">
               <h4 className="font-display text-lg font-semibold text-white">
                 Follow Us
               </h4>
@@ -128,7 +139,7 @@ const Footer = () => {
       <div className="bg-[#f9dc8d] py-4">
         <div className="container mx-auto px-6">
           <p className="text-center text-[#2a1810] text-xs md:text-sm font-medium">
-            © 2025 Honeyman. All rights reserved. 
+            © 2025 Honeyman Foods Private Limited. All rights reserved. 
           </p>
         </div>
       </div>

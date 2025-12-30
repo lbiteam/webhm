@@ -178,13 +178,14 @@ const Contact = () => {
                       value={formData.name}
                       onChange={handleChange}
                       maxLength={100}
+                      required={true}
                       className="w-full px-4 py-3 rounded-lg border border-border bg-background text-foreground placeholder:text-muted-foreground focus:ring-2 focus:ring-primary focus:border-transparent transition-all"
                       placeholder="Your name"
                     />
                   </div>
                   <div>
                     <label htmlFor="email" className="block text-sm font-medium text-foreground mb-2">
-                      Email <span className="text-destructive">*</span>
+                      Email 
                     </label>
                     <input
                       type="email"
@@ -202,8 +203,9 @@ const Contact = () => {
                 <div className="grid sm:grid-cols-2 gap-5">
                   <div>
                     <label htmlFor="phone" className="block text-sm font-medium text-foreground mb-2">
-                      Phone
+                      Phone<span className="text-destructive">*</span>
                     </label>
+                    
                     <input
                       type="tel"
                       id="phone"
@@ -211,6 +213,7 @@ const Contact = () => {
                       value={formData.phone}
                       onChange={handleChange}
                       maxLength={20}
+                      required={true}
                       className="w-full px-4 py-3 rounded-lg border border-border bg-background text-foreground placeholder:text-muted-foreground focus:ring-2 focus:ring-primary focus:border-transparent transition-all"
                       placeholder="+91 1234567890"
                     />
@@ -231,6 +234,7 @@ const Contact = () => {
                     />
                   </div>
                 </div>
+                
 
                 <div>
                   <label htmlFor="subject" className="block text-sm font-medium text-foreground mb-2">
@@ -355,15 +359,14 @@ const Contact = () => {
         <div className="bg-gradient-to-r from-honey to-honey-dark py-16 px-8 flex items-center justify-center">
           <div className="text-center max-w-md">
             <h2 className="font-display text-3xl md:text-4xl font-bold text-black mb-4">
-              Questions? Cravings?
+            Find a Honeyman Store
             </h2>
             <h3 className="font-display text-2xl md:text-3xl font-bold text-black mb-4">
-              We're here to help!
+            Near You
             </h3>
             <div className="w-20 h-1 bg-black mx-auto mb-6"></div>
             <p className="text-black/80 mb-8 text-lg">
-              We will answer any questions you may right here.<br />
-              Reach out for a cool conversation.
+            Locate your nearest store and enjoy our honey-based delights with ease.
             </p>
             <button className="bg-orange-700 hover:bg-orange-800 text-white font-bold px-8 py-3 text-sm uppercase tracking-wider transition-colors rounded-2xl" onClick={() => window.location.href = '/franchise#store-locator'}>
               Store Locator
@@ -375,14 +378,16 @@ const Contact = () => {
         <div className="bg-gradient-to-br from-orange-200 to-yellow-100 py-16 px-8 flex items-center justify-center">
           <div className="text-center max-w-md">
             <h2 className="font-display text-3xl md:text-4xl font-bold text-black mb-4">
-              Successful franchise?
+            Explore Our Range
             </h2>
             <h3 className="font-display text-2xl md:text-3xl font-bold text-black mb-4">
-              Let's go through product togrether!
+             of Honey-Based Products
+
             </h3>
             <div className="w-20 h-1 bg-black mx-auto mb-6"></div>
             <p className="text-black/80 mb-8 text-lg">
-              See Our Products Now.
+            Discover the full ecosystem of refined sugar-free products, sweetened only with natural honey.
+
             </p>
             <button className="bg-orange-700 hover:bg-orange-800 text-white font-bold px-8 py-3 text-sm uppercase tracking-wider transition-colors rounded-2xl" onClick={() => window.location.href = '/products'}>
               view Now

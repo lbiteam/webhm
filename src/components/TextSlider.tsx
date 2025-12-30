@@ -28,7 +28,7 @@ const TextSlider = () => {
           {[...textSliderItems, ...textSliderItems].map((item, index) => (
             <div
               key={index}
-              className="text-yellow-400 font-semibold text-sm flex items-center gap-3 flex-shrink-0"
+              className="text-[#8c3100] font-semibold text-sm flex items-center gap-3 flex-shrink-0"
             >
               <span>{item}</span>
               <span className="text-lg">•</span>

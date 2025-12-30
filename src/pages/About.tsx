@@ -7,6 +7,7 @@ import Bee from "@/components/Bee";
 // Owner image
 import ownerImage from "@/assets/owner-bees.jpg";
 import productsImage from "@/assets/wide-range-of-purity-about.webp";
+import farmImage from "@/assets/Honey farm.webp";
 
 // Award images
 import awardPm from "@/assets/awards/award-pm.webp";
@@ -49,22 +50,22 @@ const awards = [
 ];
 
 const platforms = [
-  { name: "Flipkart", logo: flipkart },
-  { name: "Amazon", logo: Amazon },
-  { name: "Snapdeal", logo: Snapdeal },
-  { name: "Blinkit", logo: blinkit },
+  { name: "Flipkart", logo: flipkart, link: "https://www.flipkart.com/" },
+  { name: "Amazon", logo: Amazon, link: "https://www.amazon.com/honeyman-indiahttps://www.amazon.in/s?k=HONEYMAN&crid=10WJOG836CU6E&sprefix=honeyman%2Caps%2C360&ref=nb_sb_noss_1" },
+  { name: "Snapdeal", logo: Snapdeal, link: "https://www.snapdeal.com/search?clickSrc=top_searches&keyword=honeyman%20honey&categoryId=0&vertical=p&noOfResults=20&SRPID=topsearch&sort=rlvncy" },
+  { name: "Blinkit", logo: blinkit, link: "https://blinkit.com/prn/honeyman-multi-flower-honey/prid/716424" },
 
 ];
 
 const mediaLogos = [
-  "ANI News",
-  "The Print",
-  "Ahmedabad Times",
-  "Hindustan Times",
-  "Economic Times",
-  "Business Standard",
-  "NDTV",
-  "India Today",
+  { name: "ANI News", link: "https://www.aninews.in/news/business/honeyman-revolutionizes-indias-food-industry-with-honey-sweetened-products-announces-nationwide-franchise-expansion20250728140940/" },
+  { name: "The Print", link: "https://theprint.in/ani-press-releases/honeyman-revolutionizes-indias-food-industry-with-honey-sweetened-products-announces-nationwide-franchise-expansion/2704754/" },
+  { name: "Big News Network", link: "https://www.bignewsnetwork.com/news/278472286/honeyman-revolutionizes-india-food-industry-with-honey-sweetened-products-announces-nationwide-franchise-expansion" },
+  { name: "Jio News", link: "https://jionews.com/headline/68873c780780ab8622b6ccb4" },
+  { name: "Google News", link: "https://news.google.com/search?q=Honeyman%20Revolutionizes&amp;hl=en-IN&amp;gl=IN&amp;ceid=IN%3Aen" },
+  { name: "UP 18 News", link: "https://up18news.com/honeyman-revolutionizes-india-food-industry-with-honey-sweetned-products-announces-nationwide-franchise-expansion/" },
+  { name: "RepublicNews Today", link: "https://republicnewstoday.com/honeyman-revolutionizes-indias-food-industry-with-honey-sweetened-products-announces-nationwide-franchise-expansion/" },
+  { name: "US World Today", link: "https://www.usworldtoday.com/news/honeyman-revolutionizes-indias-food-industry-with-honey-sweetened-products-announces-nationwide-franchise-expansion20250728140934" },
 ];
 
 const mediaArticles = [
@@ -91,7 +92,7 @@ const socialFeedPosts = [
 const features = [
   {
     icon: ShieldCheck,
-    title: " 45+ Years of Trust & Expertise",
+    title: " 46+ Years of Trust & Expertise",
   },
   {
     icon: Globe,
@@ -99,7 +100,7 @@ const features = [
   },
   {
     icon: Globe2Icon,
-    title: "100% Pure & Natural Honey",
+    title: "100% Raw & Natural Honey",
   },
   {
     icon: User2Icon,
@@ -124,6 +125,42 @@ const About = () => {
       setCurrentMedia((prev) => (prev + 1) % mediaArticles.length);
     }, 4000);
     return () => clearInterval(interval);
+  }, []);
+
+  // Hash scroll functionality
+  useEffect(() => {
+    const scrollToHash = () => {
+      const hash = window.location.hash;
+      if (hash) {
+        // Remove the # symbol
+        const id = hash.substring(1);
+        const element = document.getElementById(id);
+        if (element) {
+          // Small delay to ensure page is fully rendered
+          setTimeout(() => {
+            const headerOffset = 100; // Adjust based on your header height
+            const elementPosition = element.getBoundingClientRect().top;
+            const offsetPosition = elementPosition + window.pageYOffset - headerOffset;
+
+            window.scrollTo({
+              top: offsetPosition,
+              behavior: 'smooth'
+            });
+          }, 100);
+        }
+      }
+    };
+
+    // Scroll on mount
+    scrollToHash();
+
+    // Listen for hash changes
+    const handleHashChange = () => {
+      scrollToHash();
+    };
+
+    window.addEventListener('hashchange', handleHashChange);
+    return () => window.removeEventListener('hashchange', handleHashChange);
   }, []);
 
   const nextAward = () => setCurrentAward((prev) => (prev + 1) % awards.length);
@@ -169,7 +206,7 @@ const About = () => {
 
               <div className="flex flex-wrap gap-6">
                 <div className="text-center">
-                  <span className="text-4xl font-display font-bold text-primary">45+</span>
+                  <span className="text-4xl font-display font-bold text-primary">46+</span>
                   <p className="text-sm text-muted-foreground">Years of Legacy</p>
                 </div>
                 <div className="text-center">
@@ -177,8 +214,8 @@ const About = () => {
                   <p className="text-sm text-muted-foreground">Stores Nationwide</p>
                 </div>
                 <div className="text-center">
-                  <span className="text-4xl font-display font-bold text-primary">100%</span>
-                  <p className="text-sm text-muted-foreground">Pure Natural</p>
+                  <span className="text-4xl font-display font-bold text-primary">300+</span>
+                  <p className="text-sm text-muted-foreground">SKU's</p>
                 </div>
               </div>
             </div>
@@ -201,7 +238,7 @@ const About = () => {
                     <h4 className="font-display text-xl font-bold text-foreground">
                       Mr. Shahzada Singh Kapoor
                     </h4>
-                    <p className="text-primary font-medium">Global Honey Authority</p>
+                    <p className="text-primary font-medium">Honeyman Of India</p>
                     <p className="text-muted-foreground text-sm mt-1">
                       Founder & Visionary Leader, HONEYMAN
                     </p>
@@ -229,7 +266,7 @@ const About = () => {
             <div className="relative pt-12">
               <div className="relative rounded-2xl overflow-hidden shadow-2xl h-96">
                 <img 
-                  src={productsImage} 
+                  src={farmImage} 
                   alt="Our Products Collection" 
                   className="w-full h-full  object-cover object-center"
                 />
@@ -330,6 +367,7 @@ const About = () => {
                 <img 
                   src={platform.logo} 
                   alt={platform.name}
+                  onClick={() => window.open(platform.link, '_blank')}
                   className="max-h-20 max-w-48 object-contain drop-shadow-md group-hover:drop-shadow-lg rounded-lg"
                 />
               </div>
@@ -425,7 +463,7 @@ const About = () => {
       </section>
 
       {/* Media Coverage */}
-      <section className="py-24  bg-gradient-to-b from-honey/10 to-cream relative overflow-hidden">
+      <section className="py-24  bg-gradient-to-b from-honey/10 to-cream relative overflow-hidden " id="media-coverage">
         <div className="container mx-auto px-6">
           <div className="flex items-center justify-center gap-4 mb-12">
             <Newspaper className="w-10 h-10 text-primary" />
@@ -486,15 +524,32 @@ const About = () => {
                   Featured In
                 </h3>
                 <div className="grid grid-cols-2 md:grid-cols-4 gap-3">
-                  {mediaLogos.map((logo, index) => (
-                    <div 
-                      key={logo}
-                      className="bg-white rounded-xl p-3 shadow-md hover:shadow-lg transition-all hover:-translate-y-1 text-center"
-                      style={{ animationDelay: `${index * 0.1}s` }}
-                    >
-                      <span className="font-semibold text-foreground text-xs">{logo}</span>
-                    </div>
-                  ))}
+                  {mediaLogos.map((logo, index) => {
+                    const content = (
+                      <div 
+                        className="bg-white rounded-xl p-3 shadow-md hover:shadow-lg transition-all hover:-translate-y-1 text-center"
+                        style={{ animationDelay: `${index * 0.1}s` }}
+                      >
+                        <span className="font-semibold text-foreground text-xs">{logo.name}</span>
+                      </div>
+                    );
+                    
+                    return logo.link ? (
+                      <a
+                        key={logo.name}
+                        href={logo.link}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="block"
+                      >
+                        {content}
+                      </a>
+                    ) : (
+                      <div key={logo.name}>
+                        {content}
+                      </div>
+                    );
+                  })}
                 </div>
               </div>
               

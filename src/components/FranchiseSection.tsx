@@ -67,7 +67,9 @@ const FranchiseSection = () => {
           </span>
           <h2 className="section-title">Franchise Models Built To Scale</h2>
           <p className="text-muted-foreground max-w-2xl mx-auto">
-          Own world’s 1st honey-based ice cream business, designed for various cities, budgets, and ambitions. From compact kiosks to full-format cafes, every Honeyman model is system-driven, product-led, and supported end-to-end for consistent growth.
+        
+          Own the world’s first honey-based ice cream business, designed for various cities, budgets, and ambitions. Our system-driven, product-led model comes fully supported for consistent growth.
+
 
           </p>
         </div>
