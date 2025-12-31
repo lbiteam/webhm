@@ -2,7 +2,7 @@ import { useState, useEffect } from "react";
 import honeyTea from "@/assets/honey-tea.jpg";
 import honeyPour from "@/assets/honey-pour.jpg";
 import honeyGranola from "@/assets/honey-granola.jpg";
-import newYearImage from "@/assets/honeyman-happy-new-year copy.webp";
+import newYearImage from "@/assets/honeyman-happy-new-year-copy.webp";
 import HoneyDrip from "./HoneyDrip";
 import Bee from "./Bee";
 
