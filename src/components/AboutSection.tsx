@@ -40,7 +40,7 @@ const AboutSection = () => {
                       2nd Generation Beekeeper
                     </h4>
                     <p className="text-muted-foreground text-sm">
-                      Founder & Master Honey Artisan
+                      Honeyman Of India 
                     </p>
                   </div>
                 </div>
@@ -69,7 +69,7 @@ const AboutSection = () => {
 
               </p>
               <p className="text-muted-foreground leading-relaxed">
-              With over 100+ stores nationwide and a franchise model empowering entrepreneurs across India, Honeyman is more than a brand. It's a movement towards a healthier, guilt-free future.
+              With over 150+ stores nationwide and a franchise model empowering entrepreneurs across India, Honeyman is more than a brand. It's a movement towards a healthier, guilt-free future.
 
               </p>
             </div>

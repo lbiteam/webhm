@@ -29,7 +29,7 @@ const slides = [
     image: honeyGranola,
     title: "Own a Fastest",
     subtitle: "Growing Franchise.",
-    description: "130+ outlets. 4 models. Complete support."
+    description: "150+ outlets. 4 models. Complete support."
   }
 ];
 

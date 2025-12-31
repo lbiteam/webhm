@@ -72,13 +72,13 @@ const Footer = () => {
               </Link>
               {/* Tagline - visible on mobile, below logo */}
               <p className="text-white font-display text-sm md:hidden font-medium text-center">
-                The house of premium Products
+                The House of Premium Products
               </p>
             </div>
 
             {/* Tagline - centered on desktop */}
             <p className="hidden md:block text-white font-display text-lg font-semibold text-center md:col-start-2">
-              The house of premium Products
+              The House of Premium Products
             </p>
 
             {/* Follow Us - Right Side */}

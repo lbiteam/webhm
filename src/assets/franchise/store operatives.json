@@ -311,7 +311,30 @@
   "City": "Noida",
   "Region": "UP",
   "Address": "D 2006, 20th Floor D Tower, Logix Blossom Country, Sector 137, Noida 201304"
- }
+ },
+ {
+    "S.No": 53,
+    "City": "Delhi",
+    "Region": "Delhi",
+    "Address": "Wyn Venture Pvt Ltd Plot no 3 Dwarka Sector 10 Delhi Pincode - 110075"
+   },
+   {
+    "S.No": 54,
+    "City": "Nagavara",
+    "Region": " Karnataka",
+    "Address": "Fitness Empire - Bhimaneni towers,2nd floor,14th cross road,Above Zudio Chanakya layout,opposites, Manyata Tech Park Rd, Nagavara, Bengaluru, Karnataka 560045, LandMark - Above Zudio Showroom"
+   },{
+    "S.No": 55,
+    "City": "Vishakhapatnam",
+    "Region": "Andra Pradesh",
+    "Address": "Bharath Kumar,Hangout Cafe, First floor Clubhouse, MVV and MK Park, Kurmanapalem, Visakhapatnam 530046"
+   },{
+    "S.No": 56,
+    "City": "Kadapa",
+    "Region": "Andra Pradesh",
+    "Address": "36/256-88,Bharat Nagar,Chinnachowk,VTC;Cuddapah,PO;Chinnachowk,District;Cuddapah,State;Andhra Pradesh,PIN CODE;516002"
+   }
+ 
 ]
 
  
