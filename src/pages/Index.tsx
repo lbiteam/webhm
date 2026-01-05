@@ -12,6 +12,7 @@ import HoneymanStoreSection from "@/components/HoneymanStoreSection";
 import Footer from "@/components/Footer";
 import Bee from "@/components/Bee";
 import honeycombImage from "@/assets/index-gap-image.jpg";
+import Honeyjourney from "@/components/Honeyjourney";
 
 const Index = () => {
   return (
@@ -23,7 +24,9 @@ const Index = () => {
         
         
         
+        
         <WhyUsSection />
+        <Honeyjourney />
         <ProductsCarousel />
         <AboutSection />
         <IceCreamSection />
