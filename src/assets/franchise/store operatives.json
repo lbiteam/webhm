@@ -333,7 +333,19 @@
     "City": "Kadapa",
     "Region": "Andra Pradesh",
     "Address": "36/256-88,Bharat Nagar,Chinnachowk,VTC;Cuddapah,PO;Chinnachowk,District;Cuddapah,State;Andhra Pradesh,PIN CODE;516002"
-   }
+   },
+   {
+      "S.No": 57,
+      "City": "Haldwani",
+      "Region": "Uttrakhand",
+      "Address": "D58 Chandramauli Group, 38, Ward 12, Shankar Hospital , Rampur Road, Haldwani "
+     },
+     {
+      "S.No": 58,
+      "City": "Nagpur",
+      "Region": "Maharashtra",
+      "Address": "pincode 440024 plot no 69,miry layout opposite paris city, Nagpur Maharashtra"
+     }
  
 ]
 

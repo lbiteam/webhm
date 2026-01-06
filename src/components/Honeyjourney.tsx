@@ -4,15 +4,15 @@ import { ChevronLeft, ChevronRight } from "lucide-react";
 import Bee from "./Bee";
 import productBanner from "@/assets/Products/Product_banner.webp";
 import honeyBanner from "@/assets/Products/honey-banner.webp";
-import himalayanHoney from "@/assets/Products/himalayan-honey.webp";
+import himalayanHoney from "@/assets/honeyman_journey/Screenshot 2026-01-06 131207 copy.webp";
 import blackForestHoney from "@/assets/Products/black-forest-honey.webp";
-import kesarKahwa from "@/assets/Products/kesar-kahwa.webp";
+import kesarKahwa from "@/assets/honeyman_journey/Screenshot 2026-01-06 131149 copy.webp";
 import gingerKahwa from "@/assets/Products/ginger-kahwa.webp";
-import badamKahwa from "@/assets/Products/Badam-kahwa.webp";
+import badamKahwa from "@/assets/honeyman_journey/award-entrepreneur.webp";
 import strawberry from "@/assets/Products/strawberry.webp";
-import orangeJam from "@/assets/Products/orange-jam.webp";
+import orangeJam from "@/assets/honeyman_journey/Screenshot 2026-01-06 131409 copy.webp";
 import pineapple from "@/assets/Products/pineapple.webp";
-import amlaTonic from "@/assets/Products/amla-tonic.webp";
+import amlaTonic from "@/assets/honeyman_journey/Screenshot 2026-01-06 131239 copy.webp";
 import hivebg from "@/assets/honey-bg.webp";
 
 const timeline = [
@@ -199,7 +199,7 @@ export default function HoneymanTimeline() {
                         <img 
                           src={item.icon} 
                           alt={item.title}
-                          className="w-full h-full object-cover rounded-full"
+                          className="w-full h-full object-cover rounded-lg"
                         />
                       </motion.div>
                     </div>

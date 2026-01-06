@@ -2,16 +2,16 @@ import { useState, useEffect } from "react";
 import honeyTea from "@/assets/honey-tea.jpg";
 import honeyPour from "@/assets/honey-pour.jpg";
 import honeyGranola from "@/assets/honey-granola.jpg";
-import newYearImage from "@/assets/honeyman-happy-new-year-copy.webp";
+import newYearImage from "@/assets/150 franchise outlets for website..webp";
 import HoneyDrip from "./HoneyDrip";
 import Bee from "./Bee";
 
 const slides = [
   {
     image: newYearImage,
-    title: "Happy New Year",
-    subtitle: "2026",
-    description: "150+ outlets across India."
+    title: "150+ outlets ",
+    subtitle: "across India",
+    description: " 1000+ outlets in India by 2026"
   },
   {
     video: "/videos/hero-honey.webm",
