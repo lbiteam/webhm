@@ -1,6 +1,6 @@
 import { useState, useEffect } from "react";
-import icecreamCollection from "@/assets/icecream-collection.jpg";
-import icecreamHero from "@/assets/icecream-hero.jpg";
+import icecreamCollection from "@/assets/icecream-collection.webp";
+import icecreamHero from "@/assets/icecream-hero.webp";
 import butterScotch from "@/assets/ice-creams/BUTTER SCOTCH (1).webp";
 import chocoAlmonds from "@/assets/ice-creams/CHOCO ALMONDS.webp";
 import strawberry from "@/assets/ice-creams/STRAWBERRY (1).webp";

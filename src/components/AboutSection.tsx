@@ -1,5 +1,5 @@
 import Bee from "./Bee";
-import founderImage from "@/assets/founder.jpg";
+import founderImage from "@/assets/founder.webp";
 import hivebg from "@/assets/honey-bg.webp";
 
 const AboutSection = () => {

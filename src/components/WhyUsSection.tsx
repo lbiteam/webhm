@@ -1,4 +1,4 @@
-import realisticBee from "@/assets/bee.png";
+import realisticBee from "@/assets/bee.webp";
 import hivebg from "@/assets/honey-bg.webp";
 
 const features = [
