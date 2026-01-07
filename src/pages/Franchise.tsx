@@ -301,7 +301,7 @@ const Franchise = () => {
             <div className="flex items-center gap-4">
               <Store className="w-16 h-16 text-foreground" />
               <div>
-                <h2 className="font-display text-5xl md:text-6xl font-bold text-foreground">130+</h2>
+                <h2 className="font-display text-5xl md:text-6xl font-bold text-foreground">150+</h2>
                 <p className="text-foreground/80 font-medium">Outlets Nationwide</p>
               </div>
             </div>

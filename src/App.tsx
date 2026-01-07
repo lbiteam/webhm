@@ -11,6 +11,7 @@ import Gifting from "./pages/Gifting";
 import Products from "./pages/Products";
 import NotFound from "./pages/NotFound";
 import FloatingOrderButton from "./components/FloatingOrderButton";
+import AnalyticsTracker from "./components/AnalyticsTracker";
 
 const queryClient = new QueryClient();
 
@@ -20,6 +21,7 @@ const App = () => (
       <Toaster />
       <Sonner />
       <BrowserRouter>
+        <AnalyticsTracker />
         <Routes>
           <Route path="/" element={<Index />} />
           <Route path="/about-us" element={<About />} />

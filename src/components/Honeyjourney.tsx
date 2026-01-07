@@ -25,7 +25,7 @@ const timeline = [
   { year: "2015", color: "#B45309", title: "Biggest Exporter", desc: "APEDA India's Largest Honey Exporter for 13+ years.", icon: orangeJam },
   { year: "2018", color: "#B45309", title: "Brand Innovation", desc: "Coca-Cola Trophy for Best Retail Concept in Mumbai.", icon: pineapple },
   { year: "2023", color: "#B45309", title: "D2C Excellence", desc: "Top 100 D2C Brands of the Year – 2023.", icon: amlaTonic },
-  { year: "2025", color: "#B45309", title: "100+ Outlets", desc: "Successfully expanded to 100+ outlets across India.", icon: honeyBanner },
+  { year: "2025", color: "#B45309", title: "100+ Outlets", desc: "Successfully expanded to 150+ outlets across India.", icon: honeyBanner },
   { year: "2026", color: "#B45309", title: "Mission 1000+ 🚀", desc: "Scaling globally while educating the world about bees.", icon: productBanner },
 ];
 
