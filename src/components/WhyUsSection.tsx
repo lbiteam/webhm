@@ -47,7 +47,7 @@ const WhyUsSection = () => {
           {/* Right: Content - 2/3 width on md+ */}
           <div className="w-full md:w-2/3 px-2 md:px-6 text-center md:text-left">
             <h2 className="text-2xl md:text-3xl font-extrabold text-honey mb-2 uppercase tracking-wide">
-            One of India’s Trusted Pure & Organic Honey Brands
+            Best Honey Brand in India – Why Honeyman Leads in Purity
             </h2>
             <p className="text-xs text-muted-foreground mb-4">Honeyman is one of India’s leading honey brands offering 100% pure, raw & organic honey sourced directly from Indian beekeepers.</p>
 
