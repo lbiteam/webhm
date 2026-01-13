@@ -5,43 +5,45 @@ import honeyGranola from "@/assets/honey-granola.jpg";
 import newYearImage from "@/assets/150 franchise outlets for website..webp";
 import HoneyDrip from "./HoneyDrip";
 import Bee from "./Bee";
-
-const slides = [
-  {
-    image: newYearImage,
-    title: "150+ outlets ",
-    subtitle: "across India",
-    description: " 1000+ outlets in India by 2026"
-  },
-  {
-    video: "/videos/hero-honey.webm",
-    title: "World's First ",
-    subtitle: "Ice Cream",
-    description: "Made Only with Pure Honey. No refined sugar."
-  },
-  {
-     image: honeyTea,
-    title: " India's Largest",
-    subtitle: "Ranges Of Honey",
-    description: "A Legacy Since 1980, Trusted by Generations"
-  },
-  
-  {
-    image: honeyPour,
-    title: "World's Largest",
-    subtitle: "Ecosystem",
-    description: "of Refined Sugar-Free Products"
-  },
-  {
-    image: honeyGranola,
-    title: "Own a Fastest",
-    subtitle: "Growing Franchise.",
-    description: "150+ outlets. 4 models. Complete support."
-  }
-];
+import { useLanguage } from "@/contexts/LanguageContext";
 
 const HeroSlider = () => {
+  const { t } = useLanguage();
   const [currentSlide, setCurrentSlide] = useState(0);
+
+  const slides = [
+    {
+      image: newYearImage,
+      title: t("heroSlider.slide1.title"),
+      subtitle: t("heroSlider.slide1.subtitle"),
+      description: t("heroSlider.slide1.description")
+    },
+    {
+      video: "/videos/hero-honey.webm",
+      title: t("heroSlider.slide2.title"),
+      subtitle: t("heroSlider.slide2.subtitle"),
+      description: t("heroSlider.slide2.description")
+    },
+    {
+       image: honeyTea,
+      title: t("heroSlider.slide3.title"),
+      subtitle: t("heroSlider.slide3.subtitle"),
+      description: t("heroSlider.slide3.description")
+    },
+    
+    {
+      image: honeyPour,
+      title: t("heroSlider.slide4.title"),
+      subtitle: t("heroSlider.slide4.subtitle"),
+      description: t("heroSlider.slide4.description")
+    },
+    {
+      image: honeyGranola,
+      title: t("heroSlider.slide5.title"),
+      subtitle: t("heroSlider.slide5.subtitle"),
+      description: t("heroSlider.slide5.description")
+    }
+  ];
 
   useEffect(() => {
     const timer = setInterval(() => {

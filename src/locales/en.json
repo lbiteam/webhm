@@ -1,0 +1,761 @@
+{
+  "header": {
+    "home": "Home",
+    "about": "About",
+    "products": "Products",
+    "franchise": "Franchise",
+    "gifting": "Gifting",
+    "contact": "Contact",
+    "orderNow": "Order Now"
+  },
+  "heroSlider": {
+    "slide1": {
+      "title": "150+ outlets ",
+      "subtitle": "across India",
+      "description": " 1000+ outlets in India by 2026"
+    },
+    "slide2": {
+      "title": "World's First ",
+      "subtitle": "Ice Cream",
+      "description": "Made Only with Pure Honey. No refined sugar."
+    },
+    "slide3": {
+      "title": " India's Largest",
+      "subtitle": "Ranges Of Honey",
+      "description": "A Legacy Since 1980, Trusted by Generations"
+    },
+    "slide4": {
+      "title": "World's Largest",
+      "subtitle": "Ecosystem",
+      "description": "of Refined Sugar-Free Products"
+    },
+    "slide5": {
+      "title": "Own a Fastest",
+      "subtitle": "Growing Franchise.",
+      "description": "150+ outlets. 4 models. Complete support."
+    }
+  },
+  "textSlider": {
+    "item1": "🐝 100% Pure & Unfiltered Honey",
+    "item2": "✨ No Heating to Cut Corners",
+    "item3": "🌱 Gentle Bee Colony Management",
+    "item4": "🌍 Sustainable Farming Practices",
+    "item5": "⚡ No Processing for Taste!",
+    "item6": "🔒 Focused Bee Conservation",
+    "item7": "💯 100% Pure, No Additives"
+  },
+  "whyUs": {
+    "title": "Best Honey Brand in India – Why Honeyman Leads in Purity",
+    "subtitle": "Honeyman is one of India's leading honey brands offering 100% pure, raw & organic honey sourced directly from Indian beekeepers.",
+    "description": "Honeyman is one of India's trusted honey brands, offering pure, raw and organic honey sourced responsibly from Indian beekeepers. By protecting honey bees and following sustainable practices, we deliver chemical-free honey that supports both human health and nature's balance."
+  },
+  "aboutSection": {
+    "title": "About Us",
+    "subtitle": "Honeyman - 2nd Generation with Bees",
+    "description1": "In 1980, our founder, the late Sardar Jagjit Singh Kapoor, began with a simple belief—that purity should never be compromised. What started as a small apiary in Punjab grew into a trusted name across 50+ countries, built on integrity, craftsmanship, and an unwavering respect for nature.",
+    "description2": "Today, his son, Mr. Shahzada Singh Kapoor—a globally recognized authority with 30 years in beekeeping and exports—is channeling that legacy into something revolutionary: India's most trusted refined sugar-free ecosystem.",
+    "description3": "With over 150+ stores nationwide and a franchise model empowering entrepreneurs across India, Honeyman is more than a brand. It's a movement towards a healthier, guilt-free future.",
+    "button": "Learn Our Story",
+    "founderTag": "2nd Generation Beekeeper",
+    "founderSubtag": "Honeyman Of India"
+  },
+  "productsCarousel": {
+    "title": "Honeyman Honey",
+    "description": "Harvested from diverse landscapes, crafted with care to deliver purity, aroma, and authentic sweetness.",
+    "pureBadge": "100% PURE",
+    "netWeight": "Net Weight:",
+    "products": {
+      "vanTulsi": {
+        "name": "Van Tulsi Honey",
+        "description": "Rich in antioxidants with a unique herbal flavor from wild tulsi plants."
+      },
+      "organic": {
+        "name": "Organic Honey",
+        "description": "100% certified organic honey from pristine beekeeping farms."
+      },
+      "blackForest": {
+        "name": "Black Forest Honey",
+        "description": "Dark and rich honey harvested from the depths of forest regions."
+      },
+      "himalayan": {
+        "name": "Himalayan Honey",
+        "description": "Pure honey from the pristine heights of the Himalayan mountains."
+      },
+      "sidr": {
+        "name": "Sidr Honey",
+        "description": "Premium honey from the rare Sidr tree, known for its medicinal properties."
+      }
+    }
+  },
+  "iceCreamSection": {
+    "title": "Honeyman Ice Cream",
+    "description": "World's first ice cream made only with pure honey. No refined sugar. No guilt. Just rich, creamy indulgence that's as good for you as it tastes.",
+    "collectionTitle": "Natural Flavors Collection",
+    "collectionSubtitle": "Strawberry • Tutti Frutti • Mango • Blueberry & more",
+    "premiumTitle": "Premium Quality",
+    "premiumSubtitle": "The House of Premium Ice Cream",
+    "flavors": {
+      "butterScotch": "Butter Scotch",
+      "chocoAlmonds": "Choco Almonds",
+      "strawberry": "Strawberry",
+      "tiramisu": "Tiramisu",
+      "tutiFruti": "Tutti Frutti",
+      "vanilla": "Vanilla",
+      "wildBlueberry": "Wild Blueberry"
+    }
+  },
+  "franchiseSection": {
+    "badge": "Business Opportunity",
+    "title": "Franchise Models Built To Scale",
+    "description": "Own the world's first honey-based ice cream business, designed for various cities, budgets, and ambitions. Our system-driven, product-led model comes fully supported for consistent growth.",
+    "models": {
+      "basic": {
+        "name": "Basic",
+        "tagline": "Perfect Start",
+        "investment": "₹2.5-5 Lakhs",
+        "features": {
+          "1": "Small retail outlet",
+          "2": "Basic product range",
+          "3": "Training & support",
+          "4": "Marketing materials",
+          "5": "Territory exclusivity"
+        }
+      },
+      "medium": {
+        "name": "Medium",
+        "tagline": "Growing Business",
+        "investment": "₹8-12 Lakhs",
+        "popular": "MOST POPULAR",
+        "features": {
+          "1": "Medium-sized store",
+          "2": "Full product range",
+          "3": "Comprehensive training",
+          "4": "Marketing support",
+          "5": "Territory exclusivity",
+          "6": "Dedicated account manager",
+          "7": "Ice cream counter option"
+        }
+      },
+      "bigger": {
+        "name": "Bigger",
+        "tagline": "Premium Partner",
+        "investment": "₹15-30 Lakhs",
+        "features": {
+          "1": "Flagship store",
+          "2": "Complete product portfolio",
+          "3": "Extensive training program",
+          "4": "Full marketing package",
+          "5": "Regional exclusivity",
+          "6": "Multiple outlet rights",
+          "7": "Ice cream parlor setup",
+          "8": "Priority support 24/7"
+        }
+      }
+    },
+    "getStarted": "Get Started",
+    "helpText": "Have questions? We're here to help you start your franchise journey",
+    "requestInfo": "Request Franchise Info"
+  },
+  "giftingSection": {
+    "badge": "Perfect Presents",
+    "title": "Gifting Collection",
+    "description": "Celebrate every moment with gifts that reflect care, quality, and wellness—beautifully packaged and sweetened only with nature's purest ingredient.",
+    "customize": "Customize Your Gifting",
+    "personalized": "Personalized Boxes",
+    "bulkOrders": "Bulk orders & corporate requests handled",
+    "categories": {
+      "wedding": {
+        "name": "Wedding",
+        "description": " Celebrate new beginnings with elegant hampers of premium honey and gourmet delights that reflect tradition and sweetness."
+      },
+      "celebration": {
+        "name": "Celebration",
+        "description": "Mark every milestone with thoughtfully curated gifts that bring warmth to festivals, birthdays, and anniversaries"
+      },
+      "corporate": {
+        "name": "Corporate",
+        "description": " Premium corporate hampers designed to express appreciation and build lasting professional relationships."
+      },
+      "wellness": {
+        "name": "Wellness",
+        "description": "Support health and vitality with honey-powered wellness gifts crafted for everyday nourishment."
+      }
+    }
+  },
+  "reviewsSection": {
+    "title": "Reviews"
+  },
+  "honeymanStoreSection": {
+    "title": "Explore Our Complete",
+    "titleHighlight": "Collection at Honeyman Store",
+    "description": "While this site showcases our story, heritage, and values, our complete range of premium honey products, delicious spreads, and specialty items are available at our dedicated e-commerce store.",
+    "features": {
+      "1": "100% Pure & Organic Honey",
+      "2": "Wide Variety of Products",
+      "3": "Fast & Secure Checkout",
+      "4": "Nationwide Delivery"
+    },
+    "visitStore": "Visit Honeyman Store",
+    "subtext": "Discover all our products, special offers, and exclusive deals on our e-commerce platform.",
+    "tagline": "Bringing Premium Honey to Your Doorstep"
+  },
+  "honeyjourney": {
+    "title": "🐝 Honeyman Journey",
+    "subtitle": "From Legacy to Global Mission",
+    "timeline": {
+      "1971": {
+        "title": "The Legacy Begins",
+        "desc": "Founded in memory of S. Jagjit Singh Kapoor (Honeyking)."
+      },
+      "1985": {
+        "title": "Beekeeping Core",
+        "desc": "Established India's strongest beekeeping base & organic clusters."
+      },
+      "1995": {
+        "title": "R&D & Quality",
+        "desc": "Set up advanced R&D labs ensuring international-grade purity."
+      },
+      "2005": {
+        "title": "Global Leader",
+        "desc": "Exported 4000 tons of honey in a single day—a world record."
+      },
+      "2010": {
+        "title": "World Recognition",
+        "desc": "Honored by Apimondia for Best Honey in the World."
+      },
+      "2013": {
+        "title": "Organic Excellence",
+        "desc": "Won Best Organic Honey in the World at BIOFACH, Germany."
+      },
+      "2015": {
+        "title": "Biggest Exporter",
+        "desc": "APEDA India's Largest Honey Exporter for 13+ years."
+      },
+      "2018": {
+        "title": "Brand Innovation",
+        "desc": "Coca-Cola Trophy for Best Retail Concept in Mumbai."
+      },
+      "2023": {
+        "title": "D2C Excellence",
+        "desc": "Top 100 D2C Brands of the Year – 2023."
+      },
+      "2025": {
+        "title": "100+ Outlets",
+        "desc": "Successfully expanded to 150+ outlets across India."
+      },
+      "2026": {
+        "title": "Mission 1000+ 🚀",
+        "desc": "Scaling globally while educating the world about bees."
+      }
+    }
+  },
+  "floatingOrderButton": {
+    "text": "Order"
+  },
+  "footer": {
+    "store": "Store",
+    "aboutUs": "About Us",
+    "franchise": "Franchise",
+    "gifting": "Gifting",
+    "ourMedia": "Our Media",
+    "storeLocator": "Store Locator",
+    "contactUs": "Contact Us",
+    "followUs": "Follow Us",
+    "tagline": "The House of Premium Products",
+    "copyright": "© 2025 Honeyman Foods Private Limited. All rights reserved."
+  },
+  "notFound": {
+    "title": "404",
+    "message": "Oops! Page not found",
+    "returnHome": "Return to Home"
+  },
+  "aboutPage": {
+    "est": "Est. 1980",
+    "title": "HONEYMAN",
+    "subtitle": "A Legacy of Purity",
+    "description1": "Rooted in Punjab since 1980, the late",
+    "founderName": "Sardar Jagjit Singh Kapoor",
+    "description1Cont": "founded HONEYMAN on a commitment to purity, transforming a local apiary into a global leader.",
+    "description2": "Today, after 45 years, his son,",
+    "sonName": "Mr. Shahzada Singh Kapoor",
+    "description2Cont": "a global honey authority, drives a revolutionary vision: building India's most trusted consumer wellness brand.",
+    "description3": "His mission is creating",
+    "mission": "The World's Largest Ecosystem of Refined Sugar-Free Products",
+    "description3Cont": ", sweetened only with pure, natural honey.",
+    "yearsLegacy": "Years of Legacy",
+    "storesNationwide": "Stores Nationwide",
+    "skus": "SKU's",
+    "founderTitle": "Mr. Shahzada Singh Kapoor",
+    "founderSubtitle": "Honeyman Of India",
+    "founderRole": "Founder & Visionary Leader, HONEYMAN",
+    "visionTitle": "Our Vision",
+    "visionText": "Our vision is",
+    "visionBold1": "bold and unapologetic",
+    "visionText2": "to build",
+    "visionBold2": "the world's largest and most trusted ecosystem of honey-based products,",
+    "visionText3": "redefining how sweetness is consumed across the globe. From Indian households to international markets, we aim to make honey the universal symbol of health, sustainability, and positive change.",
+    "whyChooseTitle": "Why Choose Honeyman",
+    "features": {
+      "1": "46+ Years of Trust & Expertise",
+      "2": "World's Largest Refined Sugar-Free Ecosystem",
+      "3": "100% Raw & Natural Honey",
+      "4": "Empowering Entrepreneurs, Building Communities"
+    },
+    "catalogueTitle": "Explore Our Products",
+    "catalogueDescription": "Download our complete product catalogue to discover the full range of HONEYMAN's premium honey products and wellness essentials.",
+    "downloadCatalogue": "Download Catalogue",
+    "platformsTitle": "Happiness Delivered to your footsteps",
+    "orderNow": "Order now and get it delivered instantly! 🚚",
+    "awardsTitle": "Awards & Recognition",
+    "mediaTitle": "Media Coverage",
+    "featuredIn": "Featured In",
+    "globalRecognition": "Global Recognition",
+    "globalRecognitionText": "HONEYMAN has been recognized by national and international media for its commitment to quality, purity, and innovation.",
+    "mediaFeatures": "Media Features",
+    "nationalAwards": "National Awards",
+    "instagramTitle": "Instagram Captures",
+    "awards": {
+      "pm": "Meeting with Hon'ble Prime Minister Narendra Modi",
+      "yogi": "CM Yogi Ji at Honeyman's Stall - Yuva Enclave 2025",
+      "punjab": "Recognition from Government of Punjab",
+      "entrepreneur": "Entrepreneur D2C 100 Award",
+      "minister": "Meeting with Hon'ble Union Minister",
+      "india": "India Food Processing Expo"
+    },
+    "mediaArticles": {
+      "ani": "ANI News Coverage",
+      "loktej": "Loktej English Coverage"
+    }
+  },
+  "franchisePage": {
+    "heroBadge": "Partner With Us",
+    "heroTitle": "Franchise",
+    "heroTitleHighlight": "Opportunity",
+    "heroDescription": "Join India's fastest-growing premium ice cream brand and be a part of our sweet success story",
+    "outlets": "Outlets Nationwide",
+    "happyCustomers": "Happy Customers Daily",
+    "citiesCovered": "Cities Covered",
+    "supportTitle": "Built To Support You.",
+    "supportSubtitle": "Designed To Scale.",
+    "supportFeatures": {
+      "launch": {
+        "title": "Launch & Setup",
+        "items": {
+          "1": "Location and market evaluation support",
+          "2": "In-house outlet design and layout planning",
+          "3": "Owner and staff training before opening",
+          "4": "Coordinated brand-led launch assistance"
+        }
+      },
+      "operations": {
+        "title": "Operations & Performance",
+        "items": {
+          "1": "Ongoing operational guidance and reviews",
+          "2": "Track performance with expert insights",
+          "3": "Process standardisation across outlets",
+          "4": "Support to improve efficiency"
+        }
+      },
+      "technology": {
+        "title": "Technology & Systems",
+        "items": {
+          "1": "Integrated POS and billing solutions",
+          "2": "Inventory management for reduced wastage",
+          "3": "Sales tracking and business insights",
+          "4": "Tools that simplify daily operations"
+        }
+      },
+      "training": {
+        "title": "Training & Audit Support",
+        "items": {
+          "1": "Periodic product and service audits",
+          "2": "Expert-led audits",
+          "3": "Feedback & improvement",
+          "4": "Quality assurance"
+        }
+      },
+      "marketing": {
+        "title": "Marketing & Visibility",
+        "items": {
+          "1": "Central brand campaigns and promotions",
+          "2": "Online visibility support",
+          "3": "Local market activation strategies",
+          "4": "Launch & Promotional Support"
+        }
+      },
+      "social": {
+        "title": "Social Media Presence",
+        "items": {
+          "1": "New flavour updates",
+          "2": "Store opening promotions",
+          "3": "Special offers visibility",
+          "4": "Customer engagement"
+        }
+      }
+    },
+    "modelsTitle": "Franchise Models",
+    "modelsDescription": "Select the franchise model that best fits your investment capacity and business goals",
+    "chooseModels": "Choose Your Models",
+    "models": {
+      "parlour": {
+        "name": "Ice Cream Parlour",
+        "tagline": "Premium Experience",
+        "investment": "₹10-15 Lakhs",
+        "popular": "MOST POPULAR",
+        "features": {
+          "1": "Flagship store setup",
+          "2": "Complete product portfolio",
+          "3": "Premium interior design",
+          "4": "Full marketing package",
+          "5": "Regional exclusivity",
+          "6": "Priority support 24/7"
+        }
+      },
+      "standing": {
+        "name": "Ice Cream Standing",
+        "tagline": "Event Partner",
+        "investment": "₹75 thousand",
+        "features": {
+          "1": "Portable display unit",
+          "2": "Event-ready setup",
+          "3": "Full product range",
+          "4": "Marketing materials",
+          "5": "Territory exclusivity",
+          "6": "Dedicated support"
+        }
+      },
+      "cart": {
+        "name": "Ice Cream Cart",
+        "tagline": "Mobile Business",
+        "investment": "₹2.5 Lakhs",
+        "features": {
+          "1": "Custom branded cart",
+          "2": "Basic product range",
+          "3": "Training & support",
+          "4": "Marketing materials",
+          "5": "Flexible locations",
+          "6": "Low investment start"
+        }
+      }
+    },
+    "uniqueFormatTitle": "Our Unique Format",
+    "formats": {
+      "outlet": {
+        "name": "Outlet",
+        "size": "300 Sq.Ft. – 600 Sq.Ft."
+      },
+      "kiosk": {
+        "name": "Indoor & Outdoor Kiosk",
+        "size": "10.5 Ft. x 10.5 Ft. (approx.)"
+      },
+      "trailer": {
+        "name": "Honeyman Trailer",
+        "size": "15 Ft. x 8 Ft. (approx.)"
+      }
+    },
+    "storeOperatives": {
+      "badge": "Our Network",
+      "title": "Store Operatives",
+      "description": "Explore our extensive network of store operatives across India",
+      "searchPlaceholder": "Search by city or address...",
+      "allRegions": "All Regions",
+      "showing": "Showing",
+      "of": "of",
+      "stores": "stores",
+      "tableHeaders": {
+        "sno": "S.No",
+        "city": "City",
+        "region": "Region",
+        "address": "Address"
+      },
+      "previous": "Previous",
+      "next": "Next"
+    },
+    "outletsGallery": {
+      "badge": "Our Outlets",
+      "title": "Our Outlets Gallery",
+      "description": "Discover our beautifully designed outlets across the country"
+    },
+    "ctaTitle": "Ready to Start Your Sweet Journey?",
+    "ctaDescription": "Join our growing family of successful franchise partners",
+    "applyNow": "Apply Now",
+    "downloadBrochure": "Download Brochure",
+    "investment": "Investment",
+    "getStarted": "Get Started"
+  },
+  "giftingPage": {
+    "heroBadge": "Premium Collection",
+    "heroTitle": "The Art of",
+    "heroTitleHighlight": "Gifting",
+    "heroDescription": "At Honeyman Gifting, we believe every gift should be personal, purposeful, and unforgettable.",
+    "exploreCollection": "Explore Collection",
+    "promoBanner": "Ho ho ho! Free delivery! Save extra by choosing",
+    "freeDelivery": "FREE delivery",
+    "promoBannerCont": "time slot. 🎉",
+    "celebrationsTitle": "Upcoming Celebrations",
+    "celebrationsSubtitle": "Gift something sweet for every festive occasion",
+    "celebrations": {
+      "christmas": "Christmas",
+      "newYear": "New Year",
+      "lohri": "Lohri",
+      "sankranti": "Makar Sankranti",
+      "pongal": "Pongal"
+    },
+    "whatWeOffer": {
+      "title": "What We Offer",
+      "subtitle": "Choose from our exquisite range of gifting options",
+      "honeyBottles": {
+        "title": "Honey Bottles",
+        "desc": "Premium pure honey in elegant bottles"
+      },
+      "giftBaskets": {
+        "title": "Gift Baskets",
+        "desc": "Curated hampers for every occasion"
+      },
+      "sweetBoxes": {
+        "title": "Sweet Boxes",
+        "desc": "Traditional sweets crafted with honey"
+      }
+    },
+    "giftBoxesTitle": "Exquisite Gift Boxes",
+    "giftBoxesSubtitle": "Handcrafted luxury boxes designed to make every moment unforgettable",
+    "categories": {
+      "badge": "For Every Occasion",
+      "title": "Gifting Categories",
+      "subtitle": "From intimate weddings to corporate celebrations, find the perfect gift",
+      "wedding": {
+        "title": "Wedding Gifting",
+        "subtitle": "Sweet Beginnings for the Newlyweds"
+      },
+      "corporate": {
+        "title": "Corporate Gifting",
+        "subtitle": "Strengthen Bonds with Appreciation"
+      },
+      "celebration": {
+        "title": "Celebration Gifting",
+        "subtitle": "Mark Every Milestone with Sweetness"
+      },
+      "wellness": {
+        "title": "Wellness Gifting",
+        "subtitle": "Gift Health & Natural Goodness"
+      }
+    },
+    "signaturePackaging": {
+      "title": "Signature Packaging",
+      "description": "Every gift wrapped with elegance, crafted to create lasting impressions",
+      "button": "Create Your Gift"
+    },
+    "whyChoose": {
+      "title": "Why Choose Honeyman Gifts",
+      "subtitle": "Every gift tells a story of purity, tradition, and heartfelt warmth",
+      "features": {
+        "1": {
+          "title": "Crafted with Love",
+          "desc": "Each gift box curated with attention to every detail"
+        },
+        "2": {
+          "title": "Premium Packaging",
+          "desc": "Elegant boxes that make unwrapping special"
+        },
+        "3": {
+          "title": "100% Pure Honey",
+          "desc": "Only the finest natural honey from trusted sources"
+        },
+        "4": {
+          "title": "Fully Customizable",
+          "desc": "Personalize with custom messages and selections"
+        }
+      }
+    },
+    "sweetsCollection": {
+      "badge": "Artisan Sweets",
+      "title": "Premium Sweets Collection",
+      "subtitle": "Handcrafted with pure honey and the finest ingredients",
+      "baklawa": {
+        "name": "Baklawa Collection",
+        "description": "Traditional Middle Eastern delights crafted with pure honey"
+      },
+      "fusion": {
+        "name": "Fusion Sweets",
+        "description": "Innovative honey-infused sweet creations"
+      }
+    },
+    "ctaTitle": "Ready to Create the Perfect Gift?",
+    "ctaDescription": "Contact us for bulk orders, custom packaging, and personalized gift solutions",
+    "getQuote": "Get a Quote",
+    "downloadCatalogue": "Download Catalogue"
+  },
+  "productsPage": {
+    "discountBanner": "10% DISCOUNT BEFORE NEW YEAR",
+    "honey": {
+      "himalayan": {
+        "name": "Himalayan Honey",
+        "description": "Wild nectar from high altitude blossoms."
+      },
+      "blackForest": {
+        "name": "Black Forest",
+        "description": "Dense, dark honey with woody undertones."
+      },
+      "organicRaw": {
+        "name": "Organic Raw",
+        "description": "Unprocessed and unfiltered purity."
+      }
+    },
+    "iceCream": {
+      "butterscotch": {
+        "name": "Butterscotch",
+        "description": "Creamy caramel delight sweetened with honey."
+      },
+      "strawberry": {
+        "name": "Strawberry",
+        "description": "Fresh berry sweetness, zero refined sugar."
+      },
+      "tuttiFrutti": {
+        "name": "Tutti Frutti",
+        "description": "Fruit medley with natural honey."
+      }
+    },
+    "jams": {
+      "strawberry": {
+        "name": "Strawberry Jam",
+        "description": "Rich berry chunks and honey."
+      },
+      "orange": {
+        "name": "Orange Marmalade",
+        "description": "Zesty peel and citrus sweetness."
+      },
+      "pineapple": {
+        "name": "Pineapple Jam",
+        "description": "A tropical honey-infused delight."
+      }
+    },
+    "kahwa": {
+      "ginger": {
+        "name": "Ginger Kahwa",
+        "description": "Traditional spice and honey mix."
+      },
+      "badam": {
+        "name": "Badam Kahwa",
+        "description": "Rich almond and saffron warmth."
+      },
+      "kesari": {
+        "name": "Kesari Kahwa",
+        "description": "Rich kesari and saffron warmth."
+      }
+    },
+    "beauty": {
+      "shea": {
+        "name": "Shea & Vitamin E Body Butter",
+        "description": "Infused with honey for deep nourishment."
+      },
+      "vitaminC": {
+        "name": "Vitamin C Face Wash",
+        "description": "Brightening cleanser with honey infusion."
+      },
+      "showerGel": {
+        "name": "Wild Aqua Shower Gel",
+        "description": "Refreshing cleanse with natural honey."
+      }
+    },
+    "tonics": {
+      "amla": {
+        "name": "Amla Tonic",
+        "description": "Vitamin C Boost for immunity."
+      },
+      "lemon": {
+        "name": "Lemon Tonic",
+        "description": "Refreshing detox and energy."
+      },
+      "tulsi": {
+        "name": "Tulsi Honey",
+        "description": "Ancient herbal healing blend."
+      }
+    },
+    "sauces": {
+      "bbq": {
+        "name": "BBQ Honey Sauce",
+        "description": "Smoky and sweet honey-infused BBQ sauce."
+      },
+      "ketchup": {
+        "name": "Tomato Ketchup with Honey",
+        "description": "Classic ketchup sweetened with natural honey."
+      },
+      "kalonji": {
+        "name": "Kalonji Tamatar Chutney",
+        "description": "Spiced tomato chutney with kalonji seeds."
+      }
+    },
+    "footerTitle": "LOVE OUR COLLECTION?",
+    "footerDescription": "Discover our complete product range, check live availability, and place your order directly at our official store.",
+    "goToStore": "Go to Honeymanstore.com"
+  },
+  "contactPage": {
+    "sendMessage": "Send us a Message",
+    "name": "Name",
+    "namePlaceholder": "Your name",
+    "email": "Email",
+    "emailPlaceholder": "your@email.com",
+    "phone": "Phone",
+    "phonePlaceholder": "+91 1234567890",
+    "location": "Location",
+    "locationPlaceholder": "Your city or location",
+    "subject": "Subject",
+    "selectSubject": "Select a subject",
+    "subjects": {
+      "general": "General Inquiry",
+      "franchise": "Franchise Opportunity",
+      "corporate": "Corporate Gifting",
+      "support": "Customer Support"
+    },
+    "message": "Message",
+    "messagePlaceholder": "How can we help you?",
+    "sending": "Sending...",
+    "sendMessageButton": "Send Message",
+    "companyName": "Honeyman Foods Pvt. Ltd.",
+    "companyAddress": "Unit No. 106, First Floor, IRIS Tech Park, Sector – 48,<br />Gurugram – Sohna Road, Gurugram – 122018",
+    "contactInfoTitle": "Contact Information",
+    "contactInfoDescription": "Reach out to us through any of the following channels. Our team is ready to assist you with all your queries.",
+    "contactMethods": {
+      "phone": {
+        "title": "Phone",
+        "details": ["+91 96503 05025"]
+      },
+      "email": {
+        "title": "Email",
+        "details": ["hello@honeyman.in", "support@honeyman.in"]
+      },
+      "address": {
+        "title": "Address",
+        "details": ["HONEYMAN Headquarters", "Gurugram, India"]
+      },
+      "hours": {
+        "title": "Business Hours",
+        "details": ["Mon - Sun: 10:00 AM - 7:00 PM"]
+      }
+    },
+    "storeLocator": {
+      "title": "Find a Honeyman Store",
+      "subtitle": "Near You",
+      "description": "Locate your nearest store and enjoy our honey-based delights with ease.",
+      "button": "Store Locator"
+    },
+    "exploreRange": {
+      "title": "Explore Our Range",
+      "subtitle": "of Honey-Based Products",
+      "description": "Discover the full ecosystem of refined sugar-free products, sweetened only with natural honey.",
+      "button": "view Now"
+    },
+    "toast": {
+      "requiredFields": "Please fill required fields",
+      "requiredFieldsDesc": "Name, email and message are required.",
+      "invalidEmail": "Invalid email",
+      "invalidEmailDesc": "Please enter a valid email address.",
+      "configError": "Configuration Error",
+      "configErrorDesc": "Contact form is not properly configured. Please try again later.",
+      "success": "Message Sent Successfully!",
+      "successDesc": "Thank you, {name}! We've received your message and will get back to you soon.",
+      "received": "Message Received!",
+      "receivedDesc": "Thank you for contacting us. We'll get back to you soon. (Note: Database connection issue)"
+    }
+  }
+}

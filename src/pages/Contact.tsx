@@ -3,6 +3,7 @@ import { Mail, Phone, MapPin, Clock, Send, Loader2 } from "lucide-react";
 import { useToast } from "@/hooks/use-toast";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
+import { useLanguage } from "@/contexts/LanguageContext";
 import { createClient } from '@supabase/supabase-js';
 
 // Initialize Supabase client directly
@@ -26,6 +27,7 @@ interface ContactFormData {
 }
 
 const Contact = () => {
+  const { t } = useLanguage();
   const { toast } = useToast();
   const [formData, setFormData] = useState<ContactFormData>({
     name: "",
@@ -49,8 +51,8 @@ const Contact = () => {
     // Basic validation
     if (!formData.name.trim() || !formData.email.trim() || !formData.message.trim()) {
       toast({
-        title: "Please fill required fields",
-        description: "Name, email and message are required.",
+        title: t("contactPage.toast.requiredFields"),
+        description: t("contactPage.toast.requiredFieldsDesc"),
         variant: "destructive",
       });
       return;
@@ -60,8 +62,8 @@ const Contact = () => {
     const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
     if (!emailRegex.test(formData.email)) {
       toast({
-        title: "Invalid email",
-        description: "Please enter a valid email address.",
+        title: t("contactPage.toast.invalidEmail"),
+        description: t("contactPage.toast.invalidEmailDesc"),
         variant: "destructive",
       });
       return;
@@ -70,8 +72,8 @@ const Contact = () => {
     // Check if Supabase is configured
     if (!supabaseUrl || !supabaseKey) {
       toast({
-        title: "Configuration Error",
-        description: "Contact form is not properly configured. Please try again later.",
+        title: t("contactPage.toast.configError"),
+        description: t("contactPage.toast.configErrorDesc"),
         variant: "destructive",
       });
       return;
@@ -101,8 +103,8 @@ const Contact = () => {
 
       // Success notification
       toast({
-        title: "Message Sent Successfully!",
-        description: `Thank you, ${formData.name}! We've received your message and will get back to you soon.`,
+        title: t("contactPage.toast.success"),
+        description: t("contactPage.toast.successDesc").replace("{name}", formData.name),
         duration: 5000,
       });
 
@@ -123,8 +125,8 @@ const Contact = () => {
       await new Promise(resolve => setTimeout(resolve, 1000));
       
       toast({
-        title: "Message Received!",
-        description: "Thank you for contacting us. We'll get back to you soon. (Note: Database connection issue)",
+        title: t("contactPage.toast.received"),
+        description: t("contactPage.toast.receivedDesc"),
       });
       
       setFormData({
@@ -161,7 +163,7 @@ const Contact = () => {
             {/* Contact Form */}
             <div className="bg-card rounded-2xl p-8 shadow-soft">
               <h2 className="font-display text-2xl md:text-3xl font-medium text-foreground mb-6">
-                Send us a Message
+                {t("contactPage.sendMessage")}
               </h2>
               
               <form onSubmit={handleSubmit} className="space-y-5">
@@ -169,7 +171,7 @@ const Contact = () => {
                 <div className="grid sm:grid-cols-2 gap-5">
                   <div>
                     <label htmlFor="name" className="block text-sm font-medium text-foreground mb-2">
-                      Name <span className="text-destructive">*</span>
+                      {t("contactPage.name")} <span className="text-destructive">*</span>
                     </label>
                     <input
                       type="text"
@@ -180,12 +182,12 @@ const Contact = () => {
                       maxLength={100}
                       required={true}
                       className="w-full px-4 py-3 rounded-lg border border-border bg-background text-foreground placeholder:text-muted-foreground focus:ring-2 focus:ring-primary focus:border-transparent transition-all"
-                      placeholder="Your name"
+                      placeholder={t("contactPage.namePlaceholder")}
                     />
                   </div>
                   <div>
                     <label htmlFor="email" className="block text-sm font-medium text-foreground mb-2">
-                      Email 
+                      {t("contactPage.email")} 
                     </label>
                     <input
                       type="email"
@@ -195,7 +197,7 @@ const Contact = () => {
                       onChange={handleChange}
                       maxLength={255}
                       className="w-full px-4 py-3 rounded-lg border border-border bg-background text-foreground placeholder:text-muted-foreground focus:ring-2 focus:ring-primary focus:border-transparent transition-all"
-                      placeholder="your@email.com"
+                      placeholder={t("contactPage.emailPlaceholder")}
                     />
                   </div>
                 </div>
@@ -203,7 +205,7 @@ const Contact = () => {
                 <div className="grid sm:grid-cols-2 gap-5">
                   <div>
                     <label htmlFor="phone" className="block text-sm font-medium text-foreground mb-2">
-                      Phone<span className="text-destructive">*</span>
+                      {t("contactPage.phone")}<span className="text-destructive">*</span>
                     </label>
                     
                     <input
@@ -215,12 +217,12 @@ const Contact = () => {
                       maxLength={20}
                       required={true}
                       className="w-full px-4 py-3 rounded-lg border border-border bg-background text-foreground placeholder:text-muted-foreground focus:ring-2 focus:ring-primary focus:border-transparent transition-all"
-                      placeholder="+91 1234567890"
+                      placeholder={t("contactPage.phonePlaceholder")}
                     />
                   </div>
                   <div>
                     <label htmlFor="location" className="block text-sm font-medium text-foreground mb-2">
-                      Location
+                      {t("contactPage.location")}
                     </label>
                     <input
                       type="text"
@@ -230,7 +232,7 @@ const Contact = () => {
                       onChange={handleChange}
                       maxLength={100}
                       className="w-full px-4 py-3 rounded-lg border border-border bg-background text-foreground placeholder:text-muted-foreground focus:ring-2 focus:ring-primary focus:border-transparent transition-all"
-                      placeholder="Your city or location"
+                      placeholder={t("contactPage.locationPlaceholder")}
                     />
                   </div>
                 </div>
@@ -238,7 +240,7 @@ const Contact = () => {
 
                 <div>
                   <label htmlFor="subject" className="block text-sm font-medium text-foreground mb-2">
-                    Subject
+                    {t("contactPage.subject")}
                   </label>
                   <select
                     id="subject"
@@ -247,17 +249,17 @@ const Contact = () => {
                     onChange={handleChange}
                     className="w-full px-4 py-3 rounded-lg border border-border bg-background text-foreground focus:ring-2 focus:ring-primary focus:border-transparent transition-all"
                   >
-                    <option value="">Select a subject</option>
-                    <option value="general">General Inquiry</option>
-                    <option value="franchise">Franchise Opportunity</option>
-                    <option value="corporate">Corporate Gifting</option>
-                    <option value="support">Customer Support</option>
+                    <option value="">{t("contactPage.selectSubject")}</option>
+                    <option value="general">{t("contactPage.subjects.general")}</option>
+                    <option value="franchise">{t("contactPage.subjects.franchise")}</option>
+                    <option value="corporate">{t("contactPage.subjects.corporate")}</option>
+                    <option value="support">{t("contactPage.subjects.support")}</option>
                   </select>
                 </div>
                 
                 <div>
                   <label htmlFor="message" className="block text-sm font-medium text-foreground mb-2">
-                    Message <span className="text-destructive">*</span>
+                    {t("contactPage.message")} <span className="text-destructive">*</span>
                   </label>
                   <textarea
                     id="message"
@@ -267,7 +269,7 @@ const Contact = () => {
                     maxLength={1000}
                     rows={5}
                     className="w-full px-4 py-3 rounded-lg border border-border bg-background text-foreground placeholder:text-muted-foreground focus:ring-2 focus:ring-primary focus:border-transparent transition-all resize-none"
-                    placeholder="How can we help you?"
+                    placeholder={t("contactPage.messagePlaceholder")}
                   />
                 </div>
                 
@@ -279,12 +281,12 @@ const Contact = () => {
                   {isSubmitting ? (
                     <>
                       <Loader2 className="w-5 h-5 animate-spin" />
-                      Sending...
+                      {t("contactPage.sending")}
                     </>
                   ) : (
                     <>
                       <Send className="w-5 h-5" />
-                      Send Message
+                      {t("contactPage.sendMessageButton")}
                     </>
                   )}
                 </button>
@@ -293,12 +295,9 @@ const Contact = () => {
               {/* Company Address */}
               <div className="mt-8 bg-card rounded-lg p-6 shadow-soft">
                 <h3 className="font-display text-2xl md:text-3xl font-bold text-foreground mb-4">
-                  Honeyman Foods Pvt. Ltd.
+                  {t("contactPage.companyName")}
                 </h3>
-                <address className="text-muted-foreground text-sm leading-relaxed not-italic">
-                  Unit No. 106, First Floor, IRIS Tech Park, Sector – 48,<br />
-                  Gurugram – Sohna Road, Gurugram – 122018
-                </address>
+                <address className="text-muted-foreground text-sm leading-relaxed not-italic" dangerouslySetInnerHTML={{ __html: t("contactPage.companyAddress") }} />
               </div>
             </div>
 
@@ -307,19 +306,19 @@ const Contact = () => {
               {/* ... your existing contact info JSX ... */}
               <div>
                 <h2 className="font-display text-2xl md:text-3xl font-medium text-foreground mb-6">
-                  Contact Information
+                  {t("contactPage.contactInfoTitle")}
                 </h2>
                 <p className="text-muted-foreground mb-8">
-                  Reach out to us through any of the following channels. Our team is ready to assist you with all your queries.
+                  {t("contactPage.contactInfoDescription")}
                 </p>
               </div>
 
               <div className="grid sm:grid-cols-2 gap-6">
                 {[
-                  { icon: Phone, title: "Phone", details: ["+91 96503 05025"] },
-                  { icon: Mail, title: "Email", details: ["hello@honeyman.in", "support@honeyman.in"] },
-                  { icon: MapPin, title: "Address", details: ["HONEYMAN Headquarters", "Gurugram, India"] },
-                  { icon: Clock, title: "Business Hours", details: ["Mon - Sun: 10:00 AM - 7:00 PM"] },
+                  { icon: Phone, title: t("contactPage.contactMethods.phone.title"), details: ["+91 96503 05025"] },
+                  { icon: Mail, title: t("contactPage.contactMethods.email.title"), details: ["hello@honeyman.in", "support@honeyman.in"] },
+                  { icon: MapPin, title: t("contactPage.contactMethods.address.title"), details: [t("contactPage.contactMethods.address.details.0"), t("contactPage.contactMethods.address.details.1")] },
+                  { icon: Clock, title: t("contactPage.contactMethods.hours.title"), details: [t("contactPage.contactMethods.hours.details.0")] },
                 ].map((info, index) => (
                   <div 
                     key={index}
@@ -359,17 +358,17 @@ const Contact = () => {
         <div className="bg-gradient-to-r from-honey to-honey-dark py-16 px-8 flex items-center justify-center">
           <div className="text-center max-w-md">
             <h2 className="font-display text-3xl md:text-4xl font-bold text-black mb-4">
-            Find a Honeyman Store
+              {t("contactPage.storeLocator.title")}
             </h2>
             <h3 className="font-display text-2xl md:text-3xl font-bold text-black mb-4">
-            Near You
+              {t("contactPage.storeLocator.subtitle")}
             </h3>
             <div className="w-20 h-1 bg-black mx-auto mb-6"></div>
             <p className="text-black/80 mb-8 text-lg">
-            Locate your nearest store and enjoy our honey-based delights with ease.
+              {t("contactPage.storeLocator.description")}
             </p>
             <button className="bg-orange-700 hover:bg-orange-800 text-white font-bold px-8 py-3 text-sm uppercase tracking-wider transition-colors rounded-2xl" onClick={() => window.location.href = '/franchise#store-locator'}>
-              Store Locator
+              {t("contactPage.storeLocator.button")}
             </button>
           </div>
         </div>
@@ -378,19 +377,17 @@ const Contact = () => {
         <div className="bg-gradient-to-br from-orange-200 to-yellow-100 py-16 px-8 flex items-center justify-center">
           <div className="text-center max-w-md">
             <h2 className="font-display text-3xl md:text-4xl font-bold text-black mb-4">
-            Explore Our Range
+              {t("contactPage.exploreRange.title")}
             </h2>
             <h3 className="font-display text-2xl md:text-3xl font-bold text-black mb-4">
-             of Honey-Based Products
-
+              {t("contactPage.exploreRange.subtitle")}
             </h3>
             <div className="w-20 h-1 bg-black mx-auto mb-6"></div>
             <p className="text-black/80 mb-8 text-lg">
-            Discover the full ecosystem of refined sugar-free products, sweetened only with natural honey.
-
+              {t("contactPage.exploreRange.description")}
             </p>
             <button className="bg-orange-700 hover:bg-orange-800 text-white font-bold px-8 py-3 text-sm uppercase tracking-wider transition-colors rounded-2xl" onClick={() => window.location.href = '/products'}>
-              view Now
+              {t("contactPage.exploreRange.button")}
             </button>
           </div>
         </div>

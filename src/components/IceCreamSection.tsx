@@ -8,19 +8,21 @@ import tiramisu from "@/assets/ice-creams/TIRAMISU (1) (1).webp";
 import tutiFruti from "@/assets/ice-creams/TUTI FRUTI.webp";
 import vanilla from "@/assets/ice-creams/VANILLA (1).webp";
 import wildBlueberry from "@/assets/ice-creams/WILD BLUEBERRY (1).webp";
-
-const iceCreamFlavors = [
-  { image: butterScotch, name: "Butter Scotch" },
-  { image: chocoAlmonds, name: "Choco Almonds" },
-  { image: strawberry, name: "Strawberry" },
-  { image: tiramisu, name: "Tiramisu" },
-  { image: tutiFruti, name: "Tutti Frutti" },
-  { image: vanilla, name: "Vanilla" },
-  { image: wildBlueberry, name: "Wild Blueberry" },
-];
+import { useLanguage } from "@/contexts/LanguageContext";
 
 const IceCreamSection = () => {
+  const { t } = useLanguage();
   const [currentIndex, setCurrentIndex] = useState(0);
+
+  const iceCreamFlavors = [
+    { image: butterScotch, name: t("iceCreamSection.flavors.butterScotch") },
+    { image: chocoAlmonds, name: t("iceCreamSection.flavors.chocoAlmonds") },
+    { image: strawberry, name: t("iceCreamSection.flavors.strawberry") },
+    { image: tiramisu, name: t("iceCreamSection.flavors.tiramisu") },
+    { image: tutiFruti, name: t("iceCreamSection.flavors.tutiFruti") },
+    { image: vanilla, name: t("iceCreamSection.flavors.vanilla") },
+    { image: wildBlueberry, name: t("iceCreamSection.flavors.wildBlueberry") },
+  ];
 
   useEffect(() => {
     const timer = setInterval(() => {
@@ -33,10 +35,9 @@ const IceCreamSection = () => {
     <section id="icecream" className="py-24 bg-background relative overflow-hidden">
       <div className="container mx-auto px-6">
         <div className="text-center mb-16">
-          <h2 className="section-title">Honeyman Ice Cream</h2>
+          <h2 className="section-title">{t("iceCreamSection.title")}</h2>
           <p className="text-muted-foreground max-w-2xl mx-auto">
-          World's first ice cream made only with pure honey. No refined sugar. No guilt. Just rich, creamy indulgence that's as good for you as it tastes.
-
+          {t("iceCreamSection.description")}
           </p>
         </div>
 
@@ -53,10 +54,10 @@ const IceCreamSection = () => {
               <div className="absolute inset-0 bg-gradient-to-t from-foreground/60 via-transparent to-transparent" />
               <div className="absolute bottom-6 left-6 right-6">
                 <h3 className="font-display text-2xl font-medium text-white mb-2">
-                  Natural Flavors Collection
+                  {t("iceCreamSection.collectionTitle")}
                 </h3>
                 <p className="text-white/80 text-sm">
-                  Strawberry • Tutti Frutti • Mango • Blueberry & more
+                  {t("iceCreamSection.collectionSubtitle")}
                 </p>
               </div>
             </div>
@@ -74,10 +75,10 @@ const IceCreamSection = () => {
               <div className="absolute inset-0 bg-gradient-to-t from-foreground/60 via-transparent to-transparent" />
               <div className="absolute bottom-6 left-6 right-6">
                 <h3 className="font-display text-2xl font-medium text-white mb-2">
-                  Premium Quality
+                  {t("iceCreamSection.premiumTitle")}
                 </h3>
                 <p className="text-white/80 text-sm">
-                  The House of Premium Ice Cream
+                  {t("iceCreamSection.premiumSubtitle")}
                 </p>
               </div>
             </div>

@@ -3,25 +3,27 @@ import Bee from "./Bee";
 import honeyDipper from "@/assets/honey-dipper.jpg";
 import logo from "@/assets/Honeyman-logo.webp";
 import { Instagram, Facebook, Youtube, Twitter } from "lucide-react";
-
-const footerLinks = [
-  { name: "Store", href: "/#products" },
-  { name: "About Us", href: "/about-us" },
-  { name: "Franchise", href: "/franchise" },
-  { name: "Gifting", href: "/gifting" },
-  { name: "Our Media", href: "/about-us#media-coverage" },
-  { name: "Store Locator", href: "/franchise#store-locator" },
-  { name: "Contact Us", href: "/contact-us" },
-];
-
-const socialLinks = [
-  { name: "Instagram", href: "https://www.instagram.com/honeymanstore?igsh=dngwa2kwOHQwemY4", icon: Instagram },
-  { name: "Facebook", href: "https://www.facebook.com/share/1DWS51coyk/", icon: Facebook },
-  { name: "YouTube", href: "https://youtube.com/@honeymanstore?si=4MRShuPf2K9GA3Y0", icon: Youtube },
- 
-];
+import { useLanguage } from "@/contexts/LanguageContext";
 
 const Footer = () => {
+  const { t } = useLanguage();
+
+  const footerLinks = [
+    { name: t("footer.store"), href: "/#products" },
+    { name: t("footer.aboutUs"), href: "/about-us" },
+    { name: t("footer.franchise"), href: "/franchise" },
+    { name: t("footer.gifting"), href: "/gifting" },
+    { name: t("footer.ourMedia"), href: "/about-us#media-coverage" },
+    { name: t("footer.storeLocator"), href: "/franchise#store-locator" },
+    { name: t("footer.contactUs"), href: "/contact-us" },
+  ];
+
+  const socialLinks = [
+    { name: "Instagram", href: "https://www.instagram.com/honeymanstore?igsh=dngwa2kwOHQwemY4", icon: Instagram },
+    { name: "Facebook", href: "https://www.facebook.com/share/1DWS51coyk/", icon: Facebook },
+    { name: "YouTube", href: "https://youtube.com/@honeymanstore?si=4MRShuPf2K9GA3Y0", icon: Youtube },
+  ];
+
   return (
     <footer className="relative overflow-hidden">
       {/* Main footer content with background */}
@@ -72,19 +74,19 @@ const Footer = () => {
               </Link>
               {/* Tagline - visible on mobile, below logo */}
               <p className="text-white font-display text-sm md:hidden font-medium text-center">
-                The House of Premium Products
+                {t("footer.tagline")}
               </p>
             </div>
 
             {/* Tagline - centered on desktop */}
             <p className="hidden md:block text-white font-display text-lg font-semibold text-center md:col-start-2">
-              The House of Premium Products
+              {t("footer.tagline")}
             </p>
 
             {/* Follow Us - Right Side */}
             <div className="flex flex-col items-center md:items-end gap-3 md:col-start-3">
               <h4 className="font-display text-lg font-semibold text-white">
-                Follow Us
+                {t("footer.followUs")}
               </h4>
               <div className="flex gap-3">
                 {socialLinks.map((link, index) => (
@@ -139,7 +141,7 @@ const Footer = () => {
       <div className="bg-[#f9dc8d] py-4">
         <div className="container mx-auto px-6">
           <p className="text-center text-[#2a1810] text-xs md:text-sm font-medium">
-            © 2025 Honeyman Foods Private Limited. All rights reserved. 
+            {t("footer.copyright")}
           </p>
         </div>
       </div>

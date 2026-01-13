@@ -2,6 +2,7 @@ import { Check, MapPin, Users, Store, Headphones, TrendingUp, Settings, BookOpen
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import Bee from "@/components/Bee";
+import { useLanguage } from "@/contexts/LanguageContext";
 import iceCreamParlour from "@/assets/franchise/ice-cream-parlour.webp";
 import iceCreamStanding from "@/assets/franchise/ice-cream-standing.webp";
 import iceCreamCart from "@/assets/franchise/ice-cream-cart.webp";
@@ -20,144 +21,8 @@ import storeOperatives from "@/assets/franchise/store operatives.json";
 
 import { useState, useMemo, useEffect } from "react";
 
-const franchiseModels = [
-  {
-    name: "Ice Cream Parlour",
-    tagline: "Premium Experience",
-    investment: "₹10-15 Lakhs",
-    image: iceCreamParlour,
-    color: "from-honey to-honey-dark",
-    popular: true,
-    features: [
-      "Flagship store setup",
-      "Complete product portfolio",
-      "Premium interior design",
-      "Full marketing package",
-      "Regional exclusivity",
-      "Priority support 24/7",
-    ],
-  },
-  {
-    name: "Ice Cream Standing",
-    tagline: "Event Partner",
-    investment: "₹75 thousand",
-    image: iceCreamStanding,
-    color: "from-amber-500 to-orange-600",
-    features: [
-      "Portable display unit",
-      "Event-ready setup",
-      "Full product range",
-      "Marketing materials",
-      "Territory exclusivity",
-      "Dedicated support",
-    ],
-  },
-  {
-    name: "Ice Cream Cart",
-    tagline: "Mobile Business",
-    investment: "₹2.5 Lakhs",
-    image: iceCreamCart,
-    color: "from-emerald-400 to-teal-500",
-    features: [
-      "Custom branded cart",
-      "Basic product range",
-      "Training & support",
-      "Marketing materials",
-      "Flexible locations",
-      "Low investment start",
-    ],
-  },
-];
-
-const supportFeatures = [
-  {
-    icon: BookOpen,
-    title: "Launch & Setup",
-    items: [
-      "Location and market evaluation support",
-      "In-house outlet design and layout planning",
-      "Owner and staff training before opening",
-      "Coordinated brand-led launch assistance",
-     
-    ],
-  },
-  {
-    icon: Package,
-    title: "Operations & Performance",
-    items: [
-      "Ongoing operational guidance and reviews",
-      "Track performance with expert insights",
-      "Process standardisation across outlets",
-      "Support to improve efficiency",
-    ],
-  },
-  {
-    icon: Settings,
-    title: "Technology & Systems",
-    items: [
-      "Integrated POS and billing solutions",
-      "Inventory management for reduced wastage",
-      "Sales tracking and business insights",
-      "Tools that simplify daily operations",
-    ],
-  },
-  {
-    icon: Headphones,
-    title: "Training & Audit Support",
-    items: [
-      "Periodic product and service audits",
-      "Expert-led audits",
-      "Feedback & improvement",
-      "Quality assurance",
-    ],
-  },
-  {
-    icon: TrendingUp,
-    title: "Marketing & Visibility",
-    items: [
-      "Central brand campaigns and promotions",
-      "Online visibility support",
-      "Local market activation strategies",
-       "Launch & Promotional Support",
-    ],
-  },
-  {
-    icon: Share2,
-    title: "Social Media Presence",
-    items: [
-      "New flavour updates",
-      "Store opening promotions",
-      "Special offers visibility",
-      "Customer engagement",
-    ],
-  },
-];
-
-// const cafePhotos = [
-//   elanphoto1,
-//   elanphoto2,
-//   elanphoto3,
-// ];
-
-const uniqueFormats = [
-  {
-    name: "Outlet",
-    size: "300 Sq.Ft. – 600 Sq.Ft.",
-    image: cafeOutlet,
-  },
-  {
-    name: "Indoor & Outdoor Kiosk",
-    size: "10.5 Ft. x 10.5 Ft. (approx.)",
-    image: cafeKiosk,
-  },
-  {
-    name: "Honeyman Trailer",
-    size: "15 Ft. x 8 Ft. (approx.)",
-    image: cafeTrailer,
-  },
-];
-
 const Franchise = () => {
+  const { t } = useLanguage();
 
   const [activePhotoIndex, setActivePhotoIndex] = useState(0);
   const [currentPage, setCurrentPage] = useState(1);
@@ -167,6 +32,137 @@ const Franchise = () => {
   const itemsPerPage = 4;
 
   const outletImages = [elanphoto1, elanphoto2, elanphoto3, elanphoto4, elanphoto5];
+
+  const franchiseModels = [
+    {
+      name: t("franchisePage.models.parlour.name"),
+      tagline: t("franchisePage.models.parlour.tagline"),
+      investment: t("franchisePage.models.parlour.investment"),
+      image: iceCreamParlour,
+      color: "from-honey to-honey-dark",
+      popular: true,
+      features: [
+        t("franchisePage.models.parlour.features.1"),
+        t("franchisePage.models.parlour.features.2"),
+        t("franchisePage.models.parlour.features.3"),
+        t("franchisePage.models.parlour.features.4"),
+        t("franchisePage.models.parlour.features.5"),
+        t("franchisePage.models.parlour.features.6"),
+      ],
+    },
+    {
+      name: t("franchisePage.models.standing.name"),
+      tagline: t("franchisePage.models.standing.tagline"),
+      investment: t("franchisePage.models.standing.investment"),
+      image: iceCreamStanding,
+      color: "from-amber-500 to-orange-600",
+      features: [
+        t("franchisePage.models.standing.features.1"),
+        t("franchisePage.models.standing.features.2"),
+        t("franchisePage.models.standing.features.3"),
+        t("franchisePage.models.standing.features.4"),
+        t("franchisePage.models.standing.features.5"),
+        t("franchisePage.models.standing.features.6"),
+      ],
+    },
+    {
+      name: t("franchisePage.models.cart.name"),
+      tagline: t("franchisePage.models.cart.tagline"),
+      investment: t("franchisePage.models.cart.investment"),
+      image: iceCreamCart,
+      color: "from-emerald-400 to-teal-500",
+      features: [
+        t("franchisePage.models.cart.features.1"),
+        t("franchisePage.models.cart.features.2"),
+        t("franchisePage.models.cart.features.3"),
+        t("franchisePage.models.cart.features.4"),
+        t("franchisePage.models.cart.features.5"),
+        t("franchisePage.models.cart.features.6"),
+      ],
+    },
+  ];
+
+  const supportFeatures = [
+    {
+      icon: BookOpen,
+      title: t("franchisePage.supportFeatures.launch.title"),
+      items: [
+        t("franchisePage.supportFeatures.launch.items.1"),
+        t("franchisePage.supportFeatures.launch.items.2"),
+        t("franchisePage.supportFeatures.launch.items.3"),
+        t("franchisePage.supportFeatures.launch.items.4"),
+      ],
+    },
+    {
+      icon: Package,
+      title: t("franchisePage.supportFeatures.operations.title"),
+      items: [
+        t("franchisePage.supportFeatures.operations.items.1"),
+        t("franchisePage.supportFeatures.operations.items.2"),
+        t("franchisePage.supportFeatures.operations.items.3"),
+        t("franchisePage.supportFeatures.operations.items.4"),
+      ],
+    },
+    {
+      icon: Settings,
+      title: t("franchisePage.supportFeatures.technology.title"),
+      items: [
+        t("franchisePage.supportFeatures.technology.items.1"),
+        t("franchisePage.supportFeatures.technology.items.2"),
+        t("franchisePage.supportFeatures.technology.items.3"),
+        t("franchisePage.supportFeatures.technology.items.4"),
+      ],
+    },
+    {
+      icon: Headphones,
+      title: t("franchisePage.supportFeatures.training.title"),
+      items: [
+        t("franchisePage.supportFeatures.training.items.1"),
+        t("franchisePage.supportFeatures.training.items.2"),
+        t("franchisePage.supportFeatures.training.items.3"),
+        t("franchisePage.supportFeatures.training.items.4"),
+      ],
+    },
+    {
+      icon: TrendingUp,
+      title: t("franchisePage.supportFeatures.marketing.title"),
+      items: [
+        t("franchisePage.supportFeatures.marketing.items.1"),
+        t("franchisePage.supportFeatures.marketing.items.2"),
+        t("franchisePage.supportFeatures.marketing.items.3"),
+        t("franchisePage.supportFeatures.marketing.items.4"),
+      ],
+    },
+    {
+      icon: Share2,
+      title: t("franchisePage.supportFeatures.social.title"),
+      items: [
+        t("franchisePage.supportFeatures.social.items.1"),
+        t("franchisePage.supportFeatures.social.items.2"),
+        t("franchisePage.supportFeatures.social.items.3"),
+        t("franchisePage.supportFeatures.social.items.4"),
+      ],
+    },
+  ];
+
+  const uniqueFormats = [
+    {
+      name: t("franchisePage.formats.outlet.name"),
+      size: t("franchisePage.formats.outlet.size"),
+      image: cafeOutlet,
+    },
+    {
+      name: t("franchisePage.formats.kiosk.name"),
+      size: t("franchisePage.formats.kiosk.size"),
+      image: cafeKiosk,
+    },
+    {
+      name: t("franchisePage.formats.trailer.name"),
+      size: t("franchisePage.formats.trailer.size"),
+      image: cafeTrailer,
+    },
+  ];
+
   const imagesPerView = 4;
 
   // Responsive images per view
@@ -282,15 +278,14 @@ const Franchise = () => {
         
         <div className="relative z-10 h-full flex flex-col items-center justify-center text-center px-6">
           <span className="inline-block px-6 py-2 bg-honey/90 rounded-full text-foreground font-medium text-sm mb-6 animate-fade-in">
-            Partner With Us
+            {t("franchisePage.heroBadge")}
           </span>
           <h1 className="font-display text-5xl md:text-7xl font-bold text-white mb-6 animate-fade-in">
-            Franchise <span className="text-honey">Opportunity</span>
+            {t("franchisePage.heroTitle")} <span className="text-honey">{t("franchisePage.heroTitleHighlight")}</span>
           </h1>
           <p className="text-white/90 text-lg md:text-xl max-w-2xl mb-8 animate-fade-in">
-            Join India's fastest-growing premium ice cream brand and be a part of our sweet success story
+            {t("franchisePage.heroDescription")}
           </p>
-         
         </div>
       </section>
 
@@ -302,7 +297,7 @@ const Franchise = () => {
               <Store className="w-16 h-16 text-foreground" />
               <div>
                 <h2 className="font-display text-5xl md:text-6xl font-bold text-foreground">150+</h2>
-                <p className="text-foreground/80 font-medium">Outlets Nationwide</p>
+                <p className="text-foreground/80 font-medium">{t("franchisePage.outlets")}</p>
               </div>
             </div>
             <div className="hidden md:block w-px h-20 bg-foreground/30" />
@@ -310,7 +305,7 @@ const Franchise = () => {
               <Users className="w-16 h-16 text-foreground" />
               <div>
                 <h2 className="font-display text-5xl md:text-6xl font-bold text-foreground">50K+</h2>
-                <p className="text-foreground/80 font-medium">Happy Customers Daily</p>
+                <p className="text-foreground/80 font-medium">{t("franchisePage.happyCustomers")}</p>
               </div>
             </div>
             <div className="hidden md:block w-px h-20 bg-foreground/30" />
@@ -318,7 +313,7 @@ const Franchise = () => {
               <MapPin className="w-16 h-16 text-foreground" />
               <div>
                 <h2 className="font-display text-5xl md:text-6xl font-bold text-foreground">25+</h2>
-                <p className="text-foreground/80 font-medium">Cities Covered</p>
+                <p className="text-foreground/80 font-medium">{t("franchisePage.citiesCovered")}</p>
               </div>
             </div>
           </div>
@@ -341,7 +336,7 @@ const Franchise = () => {
         <div className="container mx-auto px-6 relative z-10">
           <div className="text-center mb-16">
             <h2 className="font-display text-4xl md:text-5xl font-bold text-foreground mb-4">
-              <span className="italic text-honey-dark">Built To Support You.</span> Designed To Scale.
+              <span className="italic text-honey-dark">{t("franchisePage.supportTitle")}</span> {t("franchisePage.supportSubtitle")}
             </h2>
             <div className="w-16 h-1 bg-honey mx-auto" />
           </div>
@@ -391,10 +386,9 @@ const Franchise = () => {
         
         <div className="container mx-auto px-6 relative z-10">
           <div className="text-center mb-16">
-           
-            <h2 className="section-title">Franchise Models</h2>
+            <h2 className="section-title">{t("franchisePage.modelsTitle")}</h2>
             <p className="text-muted-foreground max-w-2xl mx-auto">
-              Select the franchise model that best fits your investment capacity and business goals
+              {t("franchisePage.modelsDescription")}
             </p>
           </div>
 
@@ -417,7 +411,7 @@ const Franchise = () => {
             {/* Center title */}
             <div className="text-center lg:flex-1">
               <h3 className="font-display text-center text-2xl md:text-5xl font-bold text-foreground">
-                Choose Your Models
+                {t("franchisePage.chooseModels")}
               </h3>
               <div className="w-16 h-1 bg-honey mx-auto mt-4" />
             </div>
@@ -442,7 +436,7 @@ const Franchise = () => {
               >
                 {model.popular && (
                   <div className="absolute top-4 right-4 bg-honey text-foreground text-xs font-bold px-3 py-1 rounded-full z-20">
-                    MOST POPULAR
+                    {t("franchisePage.models.parlour.popular")}
                   </div>
                 )}
                 
@@ -463,7 +457,7 @@ const Franchise = () => {
                 {/* Content */}
                 <div className="p-6">
                   <div className="flex items-center justify-between mb-4">
-                    <span className="text-muted-foreground text-sm">Investment</span>
+                    <span className="text-muted-foreground text-sm">{t("franchisePage.investment")}</span>
                     <span className="font-bold text-lg text-honey-dark">{model.investment}</span>
                   </div>
                   
@@ -483,7 +477,7 @@ const Franchise = () => {
                       ? 'bg-honey text-foreground hover:bg-honey-dark' 
                       : 'bg-cream text-foreground hover:bg-honey/20'
                   }`} onClick={() => window.location.href = '/contact-us'}>
-                    Get Started
+                    {t("franchisePage.getStarted")}
                   </button>
                 </div>
               </div>
@@ -499,7 +493,7 @@ const Franchise = () => {
         <div className="container mx-auto px-6">
           <div className="text-center mb-12">
             <h2 className="font-display text-4xl md:text-5xl font-bold text-white">
-              Our Unique Format
+              {t("franchisePage.uniqueFormatTitle")}
             </h2>
           </div>
 
@@ -530,11 +524,11 @@ const Franchise = () => {
         <div className="container mx-auto px-6">
           <div className="text-center mb-12 sm:mb-16">
             <span className="inline-block px-3 sm:px-4 py-2 bg-honey/20 rounded-full text-honey-dark font-medium text-xs sm:text-sm mb-4">
-              Our Network
+              {t("franchisePage.storeOperatives.badge")}
             </span>
-            <h2 className="section-title">Store Operatives</h2>
+            <h2 className="section-title">{t("franchisePage.storeOperatives.title")}</h2>
             <p className="text-muted-foreground max-w-2xl mx-auto text-sm sm:text-base">
-              Explore our extensive network of store operatives across India
+              {t("franchisePage.storeOperatives.description")}
             </p>
           </div>
 
@@ -544,7 +538,7 @@ const Franchise = () => {
               <Search className="absolute left-3 top-1/2 transform -translate-y-1/2 text-muted-foreground w-4 h-4 sm:w-5 sm:h-5" />
               <input
                 type="text"
-                placeholder="Search by city or address..."
+                placeholder={t("franchisePage.storeOperatives.searchPlaceholder")}
                 value={searchTerm}
                 onChange={(e) => setSearchTerm(e.target.value)}
                 className="w-full pl-9 sm:pl-10 pr-4 py-3 border border-border rounded-lg focus:ring-2 focus:ring-honey focus:border-transparent text-sm sm:text-base"
@@ -557,7 +551,7 @@ const Franchise = () => {
                 onChange={(e) => setSelectedRegion(e.target.value)}
                 className="w-full pl-9 sm:pl-10 pr-4 py-3 border border-border rounded-lg focus:ring-2 focus:ring-honey focus:border-transparent appearance-none text-sm sm:text-base"
               >
-                <option value="">All Regions</option>
+                <option value="">{t("franchisePage.storeOperatives.allRegions")}</option>
                 {regions.map(region => (
                   <option key={region} value={region}>{region}</option>
                 ))}
@@ -568,7 +562,7 @@ const Franchise = () => {
           {/* Results Count */}
           <div className="text-center mb-8">
             <p className="text-muted-foreground">
-              Showing {paginatedStores.length} of {filteredStores.length} stores
+              {t("franchisePage.storeOperatives.showing")} {paginatedStores.length} {t("franchisePage.storeOperatives.of")} {filteredStores.length} {t("franchisePage.storeOperatives.stores")}
             </p>
           </div>
 
@@ -577,10 +571,10 @@ const Franchise = () => {
             <table className="w-full min-w-full">
               <thead className="bg-honey/10">
                 <tr>
-                  <th className="px-6 py-4 text-left text-sm font-semibold text-foreground">S.No</th>
-                  <th className="px-6 py-4 text-left text-sm font-semibold text-foreground">City</th>
-                  <th className="px-6 py-4 text-left text-sm font-semibold text-foreground">Region</th>
-                  <th className="px-6 py-4 text-left text-sm font-semibold text-foreground">Address</th>
+                  <th className="px-6 py-4 text-left text-sm font-semibold text-foreground">{t("franchisePage.storeOperatives.tableHeaders.sno")}</th>
+                  <th className="px-6 py-4 text-left text-sm font-semibold text-foreground">{t("franchisePage.storeOperatives.tableHeaders.city")}</th>
+                  <th className="px-6 py-4 text-left text-sm font-semibold text-foreground">{t("franchisePage.storeOperatives.tableHeaders.region")}</th>
+                  <th className="px-6 py-4 text-left text-sm font-semibold text-foreground">{t("franchisePage.storeOperatives.tableHeaders.address")}</th>
                 </tr>
               </thead>
               <tbody className="divide-y divide-border">
@@ -623,7 +617,7 @@ const Franchise = () => {
                   disabled={currentPage === 1}
                   className="px-3 sm:px-4 py-2 border border-border rounded-lg hover:bg-muted disabled:opacity-50 disabled:cursor-not-allowed text-sm"
                 >
-                  Previous
+                  {t("franchisePage.storeOperatives.previous")}
                 </button>
                 
                 <div className="flex gap-1">
@@ -647,7 +641,7 @@ const Franchise = () => {
                   disabled={currentPage === totalPages}
                   className="px-3 sm:px-4 py-2 border border-border rounded-lg hover:bg-muted disabled:opacity-50 disabled:cursor-not-allowed text-sm"
                 >
-                  Next
+                  {t("franchisePage.storeOperatives.next")}
                 </button>
               </div>
             </div>
@@ -710,11 +704,11 @@ const Franchise = () => {
         <div className="container mx-auto px-6 relative z-20">
           <div className="text-center mb-12 sm:mb-16">
             <span className="inline-block px-3 sm:px-4 py-2 bg-honey/20 rounded-full text-honey-dark font-medium text-xs sm:text-sm mb-4">
-              Our Outlets
+              {t("franchisePage.outletsGallery.badge")}
             </span>
-            <h2 className="section-title">Our Outlets Gallery</h2>
+            <h2 className="section-title">{t("franchisePage.outletsGallery.title")}</h2>
             <p className="text-muted-foreground max-w-2xl mx-auto text-sm sm:text-base">
-              Discover our beautifully designed outlets across the country
+              {t("franchisePage.outletsGallery.description")}
             </p>
           </div>
 
@@ -792,17 +786,17 @@ const Franchise = () => {
       <section className="py-12 bg-gradient-to-r from-honey to-honey-dark overflow-hidden">
         <div className="container mx-auto px-6 text-center">
           <h2 className="font-display text-2xl md:text-3xl font-bold text-foreground mb-4">
-            Ready to Start Your Sweet Journey?
+            {t("franchisePage.ctaTitle")}
           </h2>
           <p className="text-foreground/80 max-w-xl mx-auto mb-6">
-            Join our growing family of successful franchise partners
+            {t("franchisePage.ctaDescription")}
           </p>
           <div className="flex flex-col sm:flex-row gap-3 justify-center">
             <button className="bg-foreground text-white px-6 py-3 rounded-xl font-medium hover:bg-foreground/90 transition-all" onClick={() => window.location.href = '/contact-us'}>
-              Apply Now
+              {t("franchisePage.applyNow")}
             </button>
             <button className="border-2 border-foreground text-foreground px-6 py-3 rounded-xl font-medium hover:bg-foreground/10 transition-all" onClick={() => window.location.href = 'https://honeymanstore.com/wp-content/uploads/2025/12/franchise-pdf-1.pdf'}>
-              Download Brochure
+              {t("franchisePage.downloadBrochure")}
             </button>
           </div>
         </div>

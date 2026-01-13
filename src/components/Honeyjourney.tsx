@@ -2,6 +2,7 @@ import { useState, useEffect } from "react";
 import { motion } from "framer-motion";
 import { ChevronLeft, ChevronRight } from "lucide-react";
 import Bee from "./Bee";
+import { useLanguage } from "@/contexts/LanguageContext";
 import productBanner from "@/assets/Products/Product_banner.webp";
 import honeyBanner from "@/assets/Products/honey-banner.webp";
 import himalayanHoney from "@/assets/honeyman_journey/Screenshot 2026-01-06 131207 copy.webp";
@@ -15,22 +16,23 @@ import pineapple from "@/assets/Products/pineapple.webp";
 import amlaTonic from "@/assets/honeyman_journey/Screenshot 2026-01-06 131239 copy.webp";
 import hivebg from "@/assets/honey-bg.webp";
 
-const timeline = [
-  { year: "1971", color: "#B45309", title: "The Legacy Begins", desc: "Founded in memory of S. Jagjit Singh Kapoor (Honeyking).", icon: himalayanHoney },
-  { year: "1985", color: "#B45309", title: "Beekeeping Core", desc: "Established India's strongest beekeeping base & organic clusters.", icon: blackForestHoney },
-  { year: "1995", color: "#B45309", title: "R&D & Quality", desc: "Set up advanced R&D labs ensuring international-grade purity.", icon: kesarKahwa },
-  { year: "2005", color: "#B45309", title: "Global Leader", desc: "Exported 4000 tons of honey in a single day—a world record.", icon: gingerKahwa },
-  { year: "2010", color: "#B45309", title: "World Recognition", desc: "Honored by Apimondia for Best Honey in the World.", icon: badamKahwa },
-  { year: "2013", color: "#B45309", title: "Organic Excellence", desc: "Won Best Organic Honey in the World at BIOFACH, Germany.", icon: strawberry },
-  { year: "2015", color: "#B45309", title: "Biggest Exporter", desc: "APEDA India's Largest Honey Exporter for 13+ years.", icon: orangeJam },
-  { year: "2018", color: "#B45309", title: "Brand Innovation", desc: "Coca-Cola Trophy for Best Retail Concept in Mumbai.", icon: pineapple },
-  { year: "2023", color: "#B45309", title: "D2C Excellence", desc: "Top 100 D2C Brands of the Year – 2023.", icon: amlaTonic },
-  { year: "2025", color: "#B45309", title: "100+ Outlets", desc: "Successfully expanded to 150+ outlets across India.", icon: honeyBanner },
-  { year: "2026", color: "#B45309", title: "Mission 1000+ 🚀", desc: "Scaling globally while educating the world about bees.", icon: productBanner },
-];
-
 export default function HoneymanTimeline() {
+  const { t } = useLanguage();
   const [currentIndex, setCurrentIndex] = useState(0);
+
+  const timeline = [
+    { year: "1971", color: "#B45309", title: t("honeyjourney.timeline.1971.title"), desc: t("honeyjourney.timeline.1971.desc"), icon: himalayanHoney },
+    { year: "1985", color: "#B45309", title: t("honeyjourney.timeline.1985.title"), desc: t("honeyjourney.timeline.1985.desc"), icon: blackForestHoney },
+    { year: "1995", color: "#B45309", title: t("honeyjourney.timeline.1995.title"), desc: t("honeyjourney.timeline.1995.desc"), icon: kesarKahwa },
+    { year: "2005", color: "#B45309", title: t("honeyjourney.timeline.2005.title"), desc: t("honeyjourney.timeline.2005.desc"), icon: gingerKahwa },
+    { year: "2010", color: "#B45309", title: t("honeyjourney.timeline.2010.title"), desc: t("honeyjourney.timeline.2010.desc"), icon: badamKahwa },
+    { year: "2013", color: "#B45309", title: t("honeyjourney.timeline.2013.title"), desc: t("honeyjourney.timeline.2013.desc"), icon: strawberry },
+    { year: "2015", color: "#B45309", title: t("honeyjourney.timeline.2015.title"), desc: t("honeyjourney.timeline.2015.desc"), icon: orangeJam },
+    { year: "2018", color: "#B45309", title: t("honeyjourney.timeline.2018.title"), desc: t("honeyjourney.timeline.2018.desc"), icon: pineapple },
+    { year: "2023", color: "#B45309", title: t("honeyjourney.timeline.2023.title"), desc: t("honeyjourney.timeline.2023.desc"), icon: amlaTonic },
+    { year: "2025", color: "#B45309", title: t("honeyjourney.timeline.2025.title"), desc: t("honeyjourney.timeline.2025.desc"), icon: honeyBanner },
+    { year: "2026", color: "#B45309", title: t("honeyjourney.timeline.2026.title"), desc: t("honeyjourney.timeline.2026.desc"), icon: productBanner },
+  ];
   const [isMobile, setIsMobile] = useState(false);
 
   useEffect(() => {
@@ -104,9 +106,9 @@ export default function HoneymanTimeline() {
       {/* HEADER - Centered */}
       <div className="text-center mb-16">
         <h2 className="section-title">
-          🐝 Honeyman Journey
+          {t("honeyjourney.title")}
         </h2>
-        <p className="text-muted-foreground">From Legacy to Global Mission</p>
+        <p className="text-muted-foreground">{t("honeyjourney.subtitle")}</p>
       </div>
 
       {/* Desktop View - Full Timeline */}

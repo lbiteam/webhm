@@ -1,6 +1,7 @@
 import Bee from "@/components/Bee";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
+import { useLanguage } from "@/contexts/LanguageContext";
 
 // Product images
 import himalayan from "@/assets/Products/himalayan-honey.webp";
@@ -59,6 +60,7 @@ const ProductCard = ({ product }: { product: Product }) => (
 );
 
 export default function Products() {
+  const { t } = useLanguage();
   return (
     <div className="min-h-screen bg-white flex flex-col">
       <Header />
@@ -83,7 +85,7 @@ export default function Products() {
           <div className="flex items-center justify-center gap-3">
             <span className="text-white font-bold text-lg md:text-xl animate-pulse">🎉</span>
             <p className="text-white font-bold text-base md:text-lg text-center">
-              10% DISCOUNT BEFORE NEW YEAR
+              {t("productsPage.discountBanner")}
             </p>
             <span className="text-white font-bold text-lg md:text-xl animate-pulse">🎉</span>
           </div>
@@ -101,9 +103,9 @@ export default function Products() {
               <img src={honeyBanner} alt="Honey" className="rounded-3xl shadow-lg h-[450px] w-full object-cover" />
             </div>
             <div className="w-full lg:w-2/3 grid grid-cols-1 sm:grid-cols-3 gap-8">
-              <ProductCard product={{id: 'h1', name: 'Himalayan Honey', image: himalayan, description: 'Wild nectar from high altitude blossoms.'}} />
-              <ProductCard product={{id: 'h2', name: 'Black Forest', image: blackForest, description: 'Dense, dark honey with woody undertones.'}} />
-              <ProductCard product={{id: 'h3', name: 'Organic Raw', image: vantulsi, description: 'Unprocessed and unfiltered purity.'}} />
+              <ProductCard product={{id: 'h1', name: t("productsPage.honey.himalayan.name"), image: himalayan, description: t("productsPage.honey.himalayan.description")}} />
+              <ProductCard product={{id: 'h2', name: t("productsPage.honey.blackForest.name"), image: blackForest, description: t("productsPage.honey.blackForest.description")}} />
+              <ProductCard product={{id: 'h3', name: t("productsPage.honey.organicRaw.name"), image: vantulsi, description: t("productsPage.honey.organicRaw.description")}} />
             </div>
           </div>
         </div>
@@ -115,10 +117,9 @@ export default function Products() {
           <div className="flex flex-col lg:flex-row gap-12 items-center">
             {/* Products on Left */}
             <div className="w-full lg:w-2/3 grid grid-cols-1 sm:grid-cols-3 gap-8">
-              <ProductCard product={{id: 'ic1', name: 'Butterscotch', image: butterscotch, description: 'Creamy caramel delight sweetened with honey.'}} />
-              <ProductCard product={{id: 'ic2', name: 'Strawberry', image: strawberryIceCream, description: 'Fresh berry sweetness, zero refined sugar.'}} />
-              <ProductCard product={{id: 'ic3', name: 'Tutti Frutti', image: tuttiFrutti, description: 'Fruit medley with natural honey.'}} />
-              
+              <ProductCard product={{id: 'ic1', name: t("productsPage.iceCream.butterscotch.name"), image: butterscotch, description: t("productsPage.iceCream.butterscotch.description")}} />
+              <ProductCard product={{id: 'ic2', name: t("productsPage.iceCream.strawberry.name"), image: strawberryIceCream, description: t("productsPage.iceCream.strawberry.description")}} />
+              <ProductCard product={{id: 'ic3', name: t("productsPage.iceCream.tuttiFrutti.name"), image: tuttiFrutti, description: t("productsPage.iceCream.tuttiFrutti.description")}} />
             </div>
             {/* Banner on Right */}
             <div className="w-full lg:w-1/3">
@@ -140,9 +141,9 @@ export default function Products() {
               <img src={jamsBanner} alt="Jams" className="rounded-3xl shadow-lg h-[450px] w-full object-cover" />
             </div>
             <div className="w-full lg:w-2/3 grid grid-cols-1 sm:grid-cols-3 gap-8">
-              <ProductCard product={{id: 'j1', name: 'Strawberry Jam', image: strawberry, description: 'Rich berry chunks and honey.'}} />
-              <ProductCard product={{id: 'j2', name: 'Orange Marmalade', image: orangeJam, description: 'Zesty peel and citrus sweetness.'}} />
-              <ProductCard product={{id: 'j3', name: 'Pineapple Jam', image: pineapple, description: 'A tropical honey-infused delight.'}} />
+              <ProductCard product={{id: 'j1', name: t("productsPage.jams.strawberry.name"), image: strawberry, description: t("productsPage.jams.strawberry.description")}} />
+              <ProductCard product={{id: 'j2', name: t("productsPage.jams.orange.name"), image: orangeJam, description: t("productsPage.jams.orange.description")}} />
+              <ProductCard product={{id: 'j3', name: t("productsPage.jams.pineapple.name"), image: pineapple, description: t("productsPage.jams.pineapple.description")}} />
             </div>
           </div>
         </div>
@@ -159,9 +160,9 @@ export default function Products() {
           <div className="flex flex-col lg:flex-row gap-12 items-center">
             {/* 2 Products on Left */}
             <div className="w-full lg:w-2/3 grid grid-cols-1 sm:grid-cols-3 gap-8">
-              <ProductCard product={{id: 'k1', name: 'Ginger Kahwa', image: ginger, description: 'Traditional spice and honey mix.'}} />
-              <ProductCard product={{id: 'k2', name: 'Badam Kahwa', image: badam, description: 'Rich almond and saffron warmth.'}} />
-              <ProductCard product={{id: 'k3', name: 'Kesari Kahwa', image: kesar, description: 'Rich kesari and saffron warmth.'}} />
+              <ProductCard product={{id: 'k1', name: t("productsPage.kahwa.ginger.name"), image: ginger, description: t("productsPage.kahwa.ginger.description")}} />
+              <ProductCard product={{id: 'k2', name: t("productsPage.kahwa.badam.name"), image: badam, description: t("productsPage.kahwa.badam.description")}} />
+              <ProductCard product={{id: 'k3', name: t("productsPage.kahwa.kesari.name"), image: kesar, description: t("productsPage.kahwa.kesari.description")}} />
             </div>
             {/* Banner on Right */}
             <div className="w-full lg:w-1/3">
@@ -184,9 +185,9 @@ export default function Products() {
               <img src={meliferaBanner} alt="Mellifera Beauty" className="rounded-3xl shadow-lg h-[450px] w-full object-cover" />
             </div>
             <div className="w-full lg:w-2/3 grid grid-cols-1 sm:grid-cols-3 gap-8">
-              <ProductCard product={{id: 'm1', name: 'Shea & Vitamin E Body Butter', image: sheaBodyButter, description: 'Infused with honey for deep nourishment.'}} />
-              <ProductCard product={{id: 'm2', name: 'Vitamin C Face Wash', image: vitaminCFaceWash, description: 'Brightening cleanser with honey infusion.'}} />
-              <ProductCard product={{id: 'm3', name: 'Wild Aqua Shower Gel', image: wildAquaShowerGel, description: 'Refreshing cleanse with natural honey.'}} />
+              <ProductCard product={{id: 'm1', name: t("productsPage.beauty.shea.name"), image: sheaBodyButter, description: t("productsPage.beauty.shea.description")}} />
+              <ProductCard product={{id: 'm2', name: t("productsPage.beauty.vitaminC.name"), image: vitaminCFaceWash, description: t("productsPage.beauty.vitaminC.description")}} />
+              <ProductCard product={{id: 'm3', name: t("productsPage.beauty.showerGel.name"), image: wildAquaShowerGel, description: t("productsPage.beauty.showerGel.description")}} />
             </div>
           </div>
         </div>
@@ -198,9 +199,9 @@ export default function Products() {
           <div className="flex flex-col lg:flex-row gap-12 items-center">
             {/* 3 Products on Left */}
             <div className="w-full lg:w-2/3 grid grid-cols-1 sm:grid-cols-3 gap-8">
-              <ProductCard product={{id: 't1', name: 'Amla Tonic', image: amla, description: 'Vitamin C Boost for immunity.'}} />
-              <ProductCard product={{id: 't2', name: 'Lemon Tonic', image: lemon, description: 'Refreshing detox and energy.'}} />
-              <ProductCard product={{id: 't3', name: 'Tulsi Honey', image: tulsi, description: 'Ancient herbal healing blend.'}} />
+              <ProductCard product={{id: 't1', name: t("productsPage.tonics.amla.name"), image: amla, description: t("productsPage.tonics.amla.description")}} />
+              <ProductCard product={{id: 't2', name: t("productsPage.tonics.lemon.name"), image: lemon, description: t("productsPage.tonics.lemon.description")}} />
+              <ProductCard product={{id: 't3', name: t("productsPage.tonics.tulsi.name"), image: tulsi, description: t("productsPage.tonics.tulsi.description")}} />
             </div>
             {/* Banner on Right */}
             <div className="w-full lg:w-1/3">
@@ -221,9 +222,9 @@ export default function Products() {
               <img src={sauceBanner} alt="Sauces" className="rounded-3xl shadow-lg h-[450px] w-full object-cover" />
             </div>
             <div className="w-full lg:w-2/3 grid grid-cols-1 sm:grid-cols-3 gap-8">
-              <ProductCard product={{id: 's1', name: 'BBQ Honey Sauce', image: bbqSauce, description: 'Smoky and sweet honey-infused BBQ sauce.'}} />
-              <ProductCard product={{id: 's2', name: 'Tomato Ketchup with Honey', image: tomatoKetchup, description: 'Classic ketchup sweetened with natural honey.'}} />
-              <ProductCard product={{id: 's3', name: 'Kalonji Tamatar Chutney', image: kalonjiSauce, description: 'Spiced tomato chutney with kalonji seeds.'}} />
+              <ProductCard product={{id: 's1', name: t("productsPage.sauces.bbq.name"), image: bbqSauce, description: t("productsPage.sauces.bbq.description")}} />
+              <ProductCard product={{id: 's2', name: t("productsPage.sauces.ketchup.name"), image: tomatoKetchup, description: t("productsPage.sauces.ketchup.description")}} />
+              <ProductCard product={{id: 's3', name: t("productsPage.sauces.kalonji.name"), image: kalonjiSauce, description: t("productsPage.sauces.kalonji.description")}} />
             </div>
           </div>
         </div>
@@ -235,15 +236,15 @@ export default function Products() {
         <Bee className="absolute bottom-8 right-[12%] z-10" size={24} />
         <Bee className="absolute top-1/2 left-[8%] z-10" size={22} />
         <div className="container mx-auto px-6 relative z-20">
-          <h2 className="text-3xl font-black text-white mb-4">LOVE OUR COLLECTION?</h2>
+          <h2 className="text-3xl font-black text-white mb-4">{t("productsPage.footerTitle")}</h2>
           <p className="text-white/90 text-lg mb-8 max-w-2xl mx-auto font-medium">
-            Discover our complete product range, check live availability, and place your order directly at our official store.
+            {t("productsPage.footerDescription")}
           </p>
           <a 
             href="https://honeymanstore.com" 
             className="inline-block bg-[#ffe248] text-[#8c3100] font-black px-12 py-4 rounded-full shadow-lg hover:bg-[#f9dc8d] transition-colors uppercase tracking-widest"
           >
-            Go to Honeymanstore.com
+            {t("productsPage.goToStore")}
           </a>
         </div>
       </section>

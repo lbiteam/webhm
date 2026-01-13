@@ -2,6 +2,7 @@ import { useState, useEffect } from "react";
 import { ChevronLeft, ChevronRight, Gift, Heart, Briefcase, Sparkles, Leaf, Star } from "lucide-react";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
+import { useLanguage } from "@/contexts/LanguageContext";
 import heroImage from "@/assets/gifting/hero-christmas.webp";
 import weddingCategory from "@/assets/gifting/wedding-category.webp";
 import corporateCategory from "@/assets/gifting/corporate-category.webp";
@@ -24,60 +25,61 @@ import basketImg from "@/assets/gifting/basket.webp";
 import bottlesImg from "@/assets/gifting/bottles.webp";
 import boxesImg from "@/assets/gifting/boxes.webp";
 
-const giftingCategories = [
-  {
-    id: 1,
-    name: "Wedding",
-    title: "Wedding Gifting",
-    subtitle: "Sweet Beginnings for the Newlyweds",
-    image: weddingCategory,
-    icon: Heart,
-  },
-  {
-    id: 2,
-    name: "Corporate",
-    title: "Corporate Gifting",
-    subtitle: "Strengthen Bonds with Appreciation",
-    image: corporateCategory,
-    icon: Briefcase,
-  },
-  {
-    id: 3,
-    name: "Celebration",
-    title: "Celebration Gifting",
-    subtitle: "Mark Every Milestone with Sweetness",
-    image: celebrationCategory,
-    icon: Sparkles,
-  },
-  {
-    id: 4,
-    name: "Wellness",
-    title: "Wellness Gifting",
-    subtitle: "Gift Health & Natural Goodness",
-    image: wellnessCategory,
-    icon: Leaf,
-  },
-];
-
-const giftBoxImages = [giftBox1, giftBox2, giftBox3, giftBox4,giftBox5];
-
-const sweetsCategories = [
-  {
-    id: 1,
-    name: "Baklawa Collection",
-    description: "Traditional Middle Eastern delights crafted with pure honey",
-    image: baklawaRange,
-  },
-  {
-    id: 2,
-    name: "Fusion Sweets",
-    description: "Innovative honey-infused sweet creations",
-    image: fusionSweets,
-  },
-];
-
 const Gifting = () => {
+  const { t } = useLanguage();
   const [currentSlide, setCurrentSlide] = useState(0);
+
+  const giftingCategories = [
+    {
+      id: 1,
+      name: "Wedding",
+      title: t("giftingPage.categories.wedding.title"),
+      subtitle: t("giftingPage.categories.wedding.subtitle"),
+      image: weddingCategory,
+      icon: Heart,
+    },
+    {
+      id: 2,
+      name: "Corporate",
+      title: t("giftingPage.categories.corporate.title"),
+      subtitle: t("giftingPage.categories.corporate.subtitle"),
+      image: corporateCategory,
+      icon: Briefcase,
+    },
+    {
+      id: 3,
+      name: "Celebration",
+      title: t("giftingPage.categories.celebration.title"),
+      subtitle: t("giftingPage.categories.celebration.subtitle"),
+      image: celebrationCategory,
+      icon: Sparkles,
+    },
+    {
+      id: 4,
+      name: "Wellness",
+      title: t("giftingPage.categories.wellness.title"),
+      subtitle: t("giftingPage.categories.wellness.subtitle"),
+      image: wellnessCategory,
+      icon: Leaf,
+    },
+  ];
+
+  const giftBoxImages = [giftBox1, giftBox2, giftBox3, giftBox4,giftBox5];
+
+  const sweetsCategories = [
+    {
+      id: 1,
+      name: t("giftingPage.sweetsCollection.baklawa.name"),
+      description: t("giftingPage.sweetsCollection.baklawa.description"),
+      image: baklawaRange,
+    },
+    {
+      id: 2,
+      name: t("giftingPage.sweetsCollection.fusion.name"),
+      description: t("giftingPage.sweetsCollection.fusion.description"),
+      image: fusionSweets,
+    },
+  ];
 
   useEffect(() => {
     const timer = setInterval(() => {
@@ -112,20 +114,19 @@ const Gifting = () => {
           <div className="max-w-2xl pt-20">
             <div className="flex items-center gap-2 mb-6">
               <div className="h-px w-12 bg-primary/60"></div>
-              <span className="text-primary font-medium tracking-widest uppercase text-sm">Premium Collection</span>
+              <span className="text-primary font-medium tracking-widest uppercase text-sm">{t("giftingPage.heroBadge")}</span>
             </div>
             <h1 className="font-display text-5xl md:text-6xl lg:text-7xl text-white mb-6 leading-tight">
-              The Art of
-              <span className="block text-primary italic">Gifting</span>
+              {t("giftingPage.heroTitle")}
+              <span className="block text-primary italic">{t("giftingPage.heroTitleHighlight")}</span>
             </h1>
             <p className="text-lg md:text-xl text-white/80 mb-10 leading-relaxed">
-            At Honeyman Gifting, we believe every gift should be personal, purposeful, and unforgettable.
-
+              {t("giftingPage.heroDescription")}
             </p>
             <div className="flex flex-wrap gap-4">
               <button className="group px-8 py-4 bg-primary text-white rounded-lg font-medium uppercase tracking-wider text-sm hover:bg-primary/90 transition-all flex items-center gap-3" onClick={() => window.open('https://honeymanstore.com/product-category/gifting/', '_blank')}>
                 <Gift className="w-5 h-5" />
-                Explore Collection
+                {t("giftingPage.exploreCollection")}
               </button>
            
             </div>
@@ -152,7 +153,7 @@ const Gifting = () => {
               <span className="text-[#FFD700] font-bold text-sm uppercase tracking-wider">Free Delivery</span>
             </div>
             <p className="text-center font-medium text-sm md:text-base">
-              🎉 <span className="font-bold">Ho ho ho!</span> Free delivery! Save extra by choosing <span className="text-[#FFD700] font-bold">FREE delivery</span> time slot. 🎉
+              🎉 <span className="font-bold">{t("giftingPage.promoBanner")}</span> <span className="text-[#FFD700] font-bold">{t("giftingPage.freeDelivery")}</span> {t("giftingPage.promoBannerCont")}
             </p>
             <div className="hidden md:flex items-center gap-2 bg-[#FFD700]/20 px-4 py-2 rounded-lg border border-[#FFD700]/40">
               <span className="text-[#FFD700] font-bold text-sm uppercase tracking-wider">Free Delivery</span>
@@ -166,20 +167,20 @@ const Gifting = () => {
         <div className="container mx-auto px-6">
           <div className="text-center mb-12">
             <h2 className="font-display text-3xl md:text-4xl text-[#2a1810] mb-3">
-              Upcoming Celebrations
+              {t("giftingPage.celebrationsTitle")}
             </h2>
             <p className="text-[#5a4a42]">
-              Gift something sweet for every festive occasion
+              {t("giftingPage.celebrationsSubtitle")}
             </p>
           </div>
 
           <div className="grid grid-cols-2 md:grid-cols-5 gap-4 md:gap-6">
             {[
-              { date: "25", month: "DEC", name: "Christmas", color: "from-red-500 to-green-600" },
-              { date: "1", month: "JAN", name: "New Year", color: "from-emerald-500 to-teal-600" },
-              { date: "13", month: "JAN", name: "Lohri", color: "from-orange-400 to-amber-500" },
-              { date: "14", month: "JAN", name: "Makar Sankranti", color: "from-amber-400 to-yellow-500" },
-              { date: "14-17", month: "JAN", name: "Pongal", color: "from-green-500 to-lime-500" },
+              { date: "25", month: "DEC", name: t("giftingPage.celebrations.christmas"), color: "from-red-500 to-green-600" },
+              { date: "1", month: "JAN", name: t("giftingPage.celebrations.newYear"), color: "from-emerald-500 to-teal-600" },
+              { date: "13", month: "JAN", name: t("giftingPage.celebrations.lohri"), color: "from-orange-400 to-amber-500" },
+              { date: "14", month: "JAN", name: t("giftingPage.celebrations.sankranti"), color: "from-amber-400 to-yellow-500" },
+              { date: "14-17", month: "JAN", name: t("giftingPage.celebrations.pongal"), color: "from-green-500 to-lime-500" },
             ].map((celebration, index) => (
               <div 
                 key={index}
@@ -224,18 +225,18 @@ const Gifting = () => {
               <div className="h-px w-16 bg-primary/40"></div>
             </div>
             <h2 className="font-display text-4xl md:text-5xl text-[#2a1810] mb-4">
-              What We Offer
+              {t("giftingPage.whatWeOffer.title")}
             </h2>
             <p className="text-[#5a4a42] max-w-2xl mx-auto text-lg">
-              Choose from our exquisite range of gifting options
+              {t("giftingPage.whatWeOffer.subtitle")}
             </p>
           </div>
 
           <div className="grid md:grid-cols-3 gap-8">
             {[
-              { title: "Honey Bottles", desc: "Premium pure honey in elegant bottles", image: bottlesImg },
-              { title: "Gift Baskets", desc: "Curated hampers for every occasion", image: basketImg },
-              { title: "Sweet Boxes", desc: "Traditional sweets crafted with honey", image: boxesImg },
+              { title: t("giftingPage.whatWeOffer.honeyBottles.title"), desc: t("giftingPage.whatWeOffer.honeyBottles.desc"), image: bottlesImg },
+              { title: t("giftingPage.whatWeOffer.giftBaskets.title"), desc: t("giftingPage.whatWeOffer.giftBaskets.desc"), image: basketImg },
+              { title: t("giftingPage.whatWeOffer.sweetBoxes.title"), desc: t("giftingPage.whatWeOffer.sweetBoxes.desc"), image: boxesImg },
             ].map((item, index) => (
               <div 
                 key={index}
@@ -268,10 +269,10 @@ const Gifting = () => {
               <div className="h-px w-16 bg-primary/40"></div>
             </div>
             <h2 className="font-display text-3xl md:text-4xl text-[#2a1810] mb-4">
-              Exquisite Gift Boxes
+              {t("giftingPage.giftBoxesTitle")}
             </h2>
             <p className="text-[#5a4a42] max-w-2xl mx-auto text-base">
-              Handcrafted luxury boxes designed to make every moment unforgettable
+              {t("giftingPage.giftBoxesSubtitle")}
             </p>
           </div>
 
@@ -342,12 +343,12 @@ const Gifting = () => {
       <section className="py-24 bg-gradient-to-b from-[#f5f0eb] to-[#faf8f5]">
         <div className="container mx-auto px-6">
           <div className="text-center mb-16">
-            <span className="text-primary font-medium tracking-widest uppercase text-sm">For Every Occasion</span>
+            <span className="text-primary font-medium tracking-widest uppercase text-sm">{t("giftingPage.categories.badge")}</span>
             <h2 className="font-display text-4xl md:text-5xl text-[#2a1810] mt-4 mb-4">
-              Gifting Categories
+              {t("giftingPage.categories.title")}
             </h2>
             <p className="text-[#5a4a42] max-w-2xl mx-auto">
-              From intimate weddings to corporate celebrations, find the perfect gift
+              {t("giftingPage.categories.subtitle")}
             </p>
           </div>
 
@@ -433,13 +434,13 @@ const Gifting = () => {
         <div className="relative z-10 container mx-auto px-6 h-full flex items-center justify-center text-center">
           <div>
             <h2 className="font-display text-4xl md:text-6xl text-white mb-6">
-              Signature Packaging
+              {t("giftingPage.signaturePackaging.title")}
             </h2>
             <p className="text-white/90 text-lg md:text-xl max-w-xl mx-auto mb-8">
-              Every gift wrapped with elegance, crafted to create lasting impressions
+              {t("giftingPage.signaturePackaging.description")}
             </p>
             <button className="px-10 py-4 bg-primary text-white  rounded-xl font-medium uppercase tracking-wider text-sm hover:bg-primary/90 transition-colors" onClick={() => window.open('https://honeymanstore.com/shop', '_blank')}>
-              Create Your Gift
+              {t("giftingPage.signaturePackaging.button")}
             </button>
           </div>
         </div>
@@ -450,19 +451,19 @@ const Gifting = () => {
         <div className="container mx-auto px-6">
           <div className="text-center mb-16">
             <h2 className="font-display text-4xl md:text-5xl text-white mb-4">
-              Why Choose Honeyman Gifts
+              {t("giftingPage.whyChoose.title")}
             </h2>
             <p className="text-white/70 max-w-2xl mx-auto">
-              Every gift tells a story of purity, tradition, and heartfelt warmth
+              {t("giftingPage.whyChoose.subtitle")}
             </p>
           </div>
 
           <div className="grid md:grid-cols-4 gap-8">
             {[
-              { icon: Heart, title: "Crafted with Love", desc: "Each gift box curated with attention to every detail" },
-              { icon: Gift, title: "Premium Packaging", desc: "Elegant boxes that make unwrapping special" },
-              { icon: Leaf, title: "100% Pure Honey", desc: "Only the finest natural honey from trusted sources" },
-              { icon: Sparkles, title: "Fully Customizable", desc: "Personalize with custom messages and selections" },
+              { icon: Heart, title: t("giftingPage.whyChoose.features.1.title"), desc: t("giftingPage.whyChoose.features.1.desc") },
+              { icon: Gift, title: t("giftingPage.whyChoose.features.2.title"), desc: t("giftingPage.whyChoose.features.2.desc") },
+              { icon: Leaf, title: t("giftingPage.whyChoose.features.3.title"), desc: t("giftingPage.whyChoose.features.3.desc") },
+              { icon: Sparkles, title: t("giftingPage.whyChoose.features.4.title"), desc: t("giftingPage.whyChoose.features.4.desc") },
             ].map((item, index) => (
               <div key={index} className="text-center group">
                 <div className="w-20 h-20 border border-primary/30 flex items-center justify-center mx-auto mb-6 group-hover:bg-primary/10 transition-colors">
@@ -482,14 +483,14 @@ const Gifting = () => {
           <div className="text-center mb-16">
             <div className="flex items-center justify-center gap-4 mb-6">
               <div className="h-px w-16 bg-primary/40"></div>
-              <span className="text-primary font-medium tracking-widest uppercase text-sm">Artisan Sweets</span>
+              <span className="text-primary font-medium tracking-widest uppercase text-sm">{t("giftingPage.sweetsCollection.badge")}</span>
               <div className="h-px w-16 bg-primary/40"></div>
             </div>
             <h2 className="font-display text-4xl md:text-5xl text-[#2a1810] mb-4">
-              Premium Sweets Collection
+              {t("giftingPage.sweetsCollection.title")}
             </h2>
             <p className="text-[#5a4a42] max-w-2xl mx-auto">
-              Handcrafted with pure honey and the finest ingredients
+              {t("giftingPage.sweetsCollection.subtitle")}
             </p>
           </div>
 
@@ -522,17 +523,17 @@ const Gifting = () => {
       <section className="py-20 bg-primary">
         <div className="container mx-auto px-6 text-center">
           <h2 className="font-display text-3xl md:text-5xl text-white mb-6">
-            Ready to Create the Perfect Gift?
+            {t("giftingPage.ctaTitle")}
           </h2>
           <p className="text-white/90 max-w-xl mx-auto mb-10 text-lg">
-            Contact us for bulk orders, custom packaging, and personalized gift solutions
+            {t("giftingPage.ctaDescription")}
           </p>
           <div className="flex flex-wrap justify-center gap-4">
             <button className="px-10 py-4 bg-white text-[#2a1810] font-medium uppercase tracking-wider text-sm hover:bg-white/90 transition-colors" onClick={() => window.open('/contact-us', '_blank')}>
-              Get a Quote
+              {t("giftingPage.getQuote")}
             </button>
             <button className="px-10 py-4 border-2 border-white text-white font-medium uppercase tracking-wider text-sm hover:bg-white/10 transition-colors" onClick={() => window.open('https://honeymanstore.com/wp-content/uploads/2025/12/HoneymanGifting-Catalog-1_compressed.pdf', '_blank')}>
-              Download Catalogue
+              {t("giftingPage.downloadCatalogue")}
             </button>
           </div>
         </div>

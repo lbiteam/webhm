@@ -1,55 +1,57 @@
 import { Check } from "lucide-react";
 import iceCreamPattern from "@/assets/franchise-bg  image.jpg";
-
-const franchiseModels = [
-  {
-    name: "Basic",
-    tagline: "Perfect Start",
-    investment: "₹2.5-5 Lakhs",
-    color: "from-emerald-400 to-teal-500",
-    features: [
-      "Small retail outlet",
-      "Basic product range",
-      "Training & support",
-      "Marketing materials",
-      "Territory exclusivity",
-    ],
-  },
-  {
-    name: "Medium",
-    tagline: "Growing Business",
-    investment: "₹8-12 Lakhs",
-    color: "from-honey to-honey-dark",
-    popular: true,
-    features: [
-      "Medium-sized store",
-      "Full product range",
-      "Comprehensive training",
-      "Marketing support",
-      "Territory exclusivity",
-      "Dedicated account manager",
-      "Ice cream counter option",
-    ],
-  },
-  {
-    name: "Bigger",
-    tagline: "Premium Partner",
-    investment: "₹15-30 Lakhs",
-    color: "from-amber-600 to-orange-700",
-    features: [
-      "Flagship store",
-      "Complete product portfolio",
-      "Extensive training program",
-      "Full marketing package",
-      "Regional exclusivity",
-      "Multiple outlet rights",
-      "Ice cream parlor setup",
-      "Priority support 24/7",
-    ],
-  },
-];
+import { useLanguage } from "@/contexts/LanguageContext";
 
 const FranchiseSection = () => {
+  const { t } = useLanguage();
+
+  const franchiseModels = [
+    {
+      name: t("franchiseSection.models.basic.name"),
+      tagline: t("franchiseSection.models.basic.tagline"),
+      investment: t("franchiseSection.models.basic.investment"),
+      color: "from-emerald-400 to-teal-500",
+      features: [
+        t("franchiseSection.models.basic.features.1"),
+        t("franchiseSection.models.basic.features.2"),
+        t("franchiseSection.models.basic.features.3"),
+        t("franchiseSection.models.basic.features.4"),
+        t("franchiseSection.models.basic.features.5"),
+      ],
+    },
+    {
+      name: t("franchiseSection.models.medium.name"),
+      tagline: t("franchiseSection.models.medium.tagline"),
+      investment: t("franchiseSection.models.medium.investment"),
+      color: "from-honey to-honey-dark",
+      popular: true,
+      features: [
+        t("franchiseSection.models.medium.features.1"),
+        t("franchiseSection.models.medium.features.2"),
+        t("franchiseSection.models.medium.features.3"),
+        t("franchiseSection.models.medium.features.4"),
+        t("franchiseSection.models.medium.features.5"),
+        t("franchiseSection.models.medium.features.6"),
+        t("franchiseSection.models.medium.features.7"),
+      ],
+    },
+    {
+      name: t("franchiseSection.models.bigger.name"),
+      tagline: t("franchiseSection.models.bigger.tagline"),
+      investment: t("franchiseSection.models.bigger.investment"),
+      color: "from-amber-600 to-orange-700",
+      features: [
+        t("franchiseSection.models.bigger.features.1"),
+        t("franchiseSection.models.bigger.features.2"),
+        t("franchiseSection.models.bigger.features.3"),
+        t("franchiseSection.models.bigger.features.4"),
+        t("franchiseSection.models.bigger.features.5"),
+        t("franchiseSection.models.bigger.features.6"),
+        t("franchiseSection.models.bigger.features.7"),
+        t("franchiseSection.models.bigger.features.8"),
+      ],
+    },
+  ];
   return (
     <section id="franchise" className="py-24 bg-cream relative overflow-hidden">
       {/* Ice cream pattern background with shading */}
@@ -63,14 +65,11 @@ const FranchiseSection = () => {
       <div className="container mx-auto px-6 relative z-10">
         <div className="text-center mb-16">
           <span className="inline-block px-4 py-2 bg-honey/20 rounded-full text-honey-dark font-medium text-sm mb-4">
-            Business Opportunity
+            {t("franchiseSection.badge")}
           </span>
-          <h2 className="section-title">Franchise Models Built To Scale</h2>
+          <h2 className="section-title">{t("franchiseSection.title")}</h2>
           <p className="text-muted-foreground max-w-2xl mx-auto">
-        
-          Own the world’s first honey-based ice cream business, designed for various cities, budgets, and ambitions. Our system-driven, product-led model comes fully supported for consistent growth.
-
-
+          {t("franchiseSection.description")}
           </p>
         </div>
 
@@ -85,7 +84,7 @@ const FranchiseSection = () => {
               {/* Popular badge */}
               {model.popular && (
                 <div className="absolute top-4 right-4 bg-honey text-foreground text-xs font-bold px-3 py-1 rounded-full">
-                  MOST POPULAR
+                  {t("franchiseSection.models.medium.popular")}
                 </div>
               )}
               
@@ -114,7 +113,7 @@ const FranchiseSection = () => {
                     ? 'bg-honey text-foreground hover:bg-honey-dark' 
                     : 'bg-cream text-foreground hover:bg-honey/20'
                 }`} onClick={() => window.location.href = '/contact-us'}>
-                  Get Started
+                  {t("franchiseSection.getStarted")}
                 </button>
               </div>
             </div>
@@ -123,10 +122,10 @@ const FranchiseSection = () => {
 
         <div className="text-center mt-12">
           <p className="text-muted-foreground mb-4">
-            Have questions? We're here to help you start your franchise journey
+            {t("franchiseSection.helpText")}
           </p>
           <button className="honey-btn" onClick={() => window.location.href = '/franchise'}>
-            Request Franchise Info
+            {t("franchiseSection.requestInfo")}
           </button>
         </div>
       </div>

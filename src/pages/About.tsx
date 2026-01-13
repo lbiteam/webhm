@@ -3,6 +3,7 @@ import { ChevronLeft, ChevronRight, Award, Globe, Store, Newspaper, Download, Sh
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import Bee from "@/components/Bee";
+import { useLanguage } from "@/contexts/LanguageContext";
 
 // Owner image
 import ownerImage from "@/assets/owner-bees.jpg";
@@ -40,16 +41,22 @@ import socialPost10 from "@/assets/about-us/honeyman-multiflower.webp";
 import socialPost11 from "@/assets/about-us/honeyman-sauces.webp";
 import socialPost12 from "@/assets/about-us/honeyman-world-no.1.webp";
 
-const awards = [
-  { image: awardPm, title: "Meeting with Hon'ble Prime Minister Narendra Modi" },
-  { image: awardYogi, title: "CM Yogi Ji at Honeyman's Stall - Yuva Enclave 2025" },
-  { image: awardPunjab, title: "Recognition from Government of Punjab" },
-  { image: awardEntrepreneur, title: "Entrepreneur D2C 100 Award" },
-  { image: awardMinister, title: "Meeting with Hon'ble Union Minister" },
-  { image: awardIndia, title: "India Food Processing Expo" },
-];
+const About = () => {
+  const { t } = useLanguage();
+  const [currentAward, setCurrentAward] = useState(0);
+  const [currentPlatform, setCurrentPlatform] = useState(0);
+  const [currentMedia, setCurrentMedia] = useState(0);
 
-const platforms = [
+  const awards = [
+    { image: awardPm, title: t("aboutPage.awards.pm") },
+    { image: awardYogi, title: t("aboutPage.awards.yogi") },
+    { image: awardPunjab, title: t("aboutPage.awards.punjab") },
+    { image: awardEntrepreneur, title: t("aboutPage.awards.entrepreneur") },
+    { image: awardMinister, title: t("aboutPage.awards.minister") },
+    { image: awardIndia, title: t("aboutPage.awards.india") },
+  ];
+
+  const platforms = [
   { name: "Flipkart", logo: flipkart, link: "https://www.flipkart.com/" },
   { name: "Amazon", logo: Amazon, link: "https://www.amazon.com/honeyman-indiahttps://www.amazon.in/s?k=HONEYMAN&crid=10WJOG836CU6E&sprefix=honeyman%2Caps%2C360&ref=nb_sb_noss_1" },
   { name: "Snapdeal", logo: Snapdeal, link: "https://www.snapdeal.com/search?clickSrc=top_searches&keyword=honeyman%20honey&categoryId=0&vertical=p&noOfResults=20&SRPID=topsearch&sort=rlvncy" },
@@ -68,12 +75,12 @@ const mediaLogos = [
   { name: "US World Today", link: "https://www.usworldtoday.com/news/honeyman-revolutionizes-indias-food-industry-with-honey-sweetened-products-announces-nationwide-franchise-expansion20250728140934" },
 ];
 
-const mediaArticles = [
-  { image: mediaAni, title: "ANI News Coverage", source: "ANI" },
-  { image: mediaLoktej, title: "Loktej English Coverage", source: "Loktej" },
-];
+  const mediaArticles = [
+    { image: mediaAni, title: t("aboutPage.mediaArticles.ani"), source: "ANI" },
+    { image: mediaLoktej, title: t("aboutPage.mediaArticles.loktej"), source: "Loktej" },
+  ];
 
-const socialFeedPosts = [
+  const socialFeedPosts = [
   { image: socialPost1, link: "https://www.instagram.com/p/DRO5DCdE2Bx/?igsh=Mm53NmtzOWx2NGVi" },
   { image: socialPost2, link: "https://www.instagram.com/p/DP251a9EyCR/?utm_source=ig_web_copy_link&igsh=MzRlODBiNWFlZA==" },
   { image: socialPost3, link: "https://www.instagram.com/p/DP0YGRYk0xV/?utm_source=ig_web_copy_link&igsh=MzRlODBiNWFlZA==" },
@@ -89,29 +96,24 @@ const socialFeedPosts = [
  
 ];
 
-const features = [
-  {
-    icon: ShieldCheck,
-    title: " 46+ Years of Trust & Expertise",
-  },
-  {
-    icon: Globe,
-    title: "World's Largest Refined Sugar-Free Ecosystem",
-  },
-  {
-    icon: Globe2Icon,
-    title: "100% Raw & Natural Honey",
-  },
-  {
-    icon: User2Icon,
-    title: "Empowering Entrepreneurs, Building Communities",
-  }
-];
-
-const About = () => {
-  const [currentAward, setCurrentAward] = useState(0);
-  const [currentPlatform, setCurrentPlatform] = useState(0);
-  const [currentMedia, setCurrentMedia] = useState(0);
+  const features = [
+    {
+      icon: ShieldCheck,
+      title: t("aboutPage.features.1"),
+    },
+    {
+      icon: Globe,
+      title: t("aboutPage.features.2"),
+    },
+    {
+      icon: Globe2Icon,
+      title: t("aboutPage.features.3"),
+    },
+    {
+      icon: User2Icon,
+      title: t("aboutPage.features.4"),
+    }
+  ];
 
   useEffect(() => {
     const interval = setInterval(() => {
@@ -183,39 +185,39 @@ const About = () => {
             {/* Content */}
             <div className="space-y-8">
               <div>
-                <span className="text-primary font-medium text-lg">Est. 1980</span>
+                <span className="text-primary font-medium text-lg">{t("aboutPage.est")}</span>
                 <h1 className="font-display text-5xl md:text-6xl font-bold text-foreground mt-2">
-                  HONEYMAN
+                  {t("aboutPage.title")}
                 </h1>
                 <p className="text-2xl text-honey-dark font-medium mt-2">
-                  A Legacy of Purity
+                  {t("aboutPage.subtitle")}
                 </p>
               </div>
               
               <div className="space-y-4 text-muted-foreground leading-relaxed">
                 <p>
-                  Rooted in Punjab since 1980, the late <strong className="text-foreground">Sardar Jagjit Singh Kapoor</strong> founded HONEYMAN on a commitment to purity, transforming a local apiary into a global leader.
+                  {t("aboutPage.description1")} <strong className="text-foreground">{t("aboutPage.founderName")}</strong> {t("aboutPage.description1Cont")}
                 </p>
                 <p>
-                  Today, after 45 years, his son, <strong className="text-foreground">Mr. Shahzada Singh Kapoor</strong>, a global honey authority, drives a revolutionary vision: building India's most trusted consumer wellness brand.
+                  {t("aboutPage.description2")} <strong className="text-foreground">{t("aboutPage.sonName")}</strong>, {t("aboutPage.description2Cont")}
                 </p>
                 <p>
-                  His mission is creating <strong className="text-foreground">The World's Largest Ecosystem of Refined Sugar-Free Products</strong>, sweetened only with pure, natural honey.
+                  {t("aboutPage.description3")} <strong className="text-foreground">{t("aboutPage.mission")}</strong> {t("aboutPage.description3Cont")}
                 </p>
               </div>
 
               <div className="flex flex-wrap gap-6">
                 <div className="text-center">
                   <span className="text-4xl font-display font-bold text-primary">46+</span>
-                  <p className="text-sm text-muted-foreground">Years of Legacy</p>
+                  <p className="text-sm text-muted-foreground">{t("aboutPage.yearsLegacy")}</p>
                 </div>
                 <div className="text-center">
                   <span className="text-4xl font-display font-bold text-primary">150+</span>
-                  <p className="text-sm text-muted-foreground">Stores Nationwide</p>
+                  <p className="text-sm text-muted-foreground">{t("aboutPage.storesNationwide")}</p>
                 </div>
                 <div className="text-center">
                   <span className="text-4xl font-display font-bold text-primary">300+</span>
-                  <p className="text-sm text-muted-foreground">SKU's</p>
+                  <p className="text-sm text-muted-foreground">{t("aboutPage.skus")}</p>
                 </div>
               </div>
             </div>
@@ -236,11 +238,11 @@ const About = () => {
                 <div className="absolute bottom-6 left-6 right-6">
                   <div className="bg-white/95 backdrop-blur-sm rounded-xl p-5 shadow-lg">
                     <h4 className="font-display text-xl font-bold text-foreground">
-                      Mr. Shahzada Singh Kapoor
+                      {t("aboutPage.founderTitle")}
                     </h4>
-                    <p className="text-primary font-medium">Honeyman Of India</p>
+                    <p className="text-primary font-medium">{t("aboutPage.founderSubtitle")}</p>
                     <p className="text-muted-foreground text-sm mt-1">
-                      Founder & Visionary Leader, HONEYMAN
+                      {t("aboutPage.founderRole")}
                     </p>
                   </div>
                 </div>
@@ -274,17 +276,16 @@ const About = () => {
               </div>
               
               <div className="absolute -bottom-12 left-6 right-6 bg-white rounded-xl shadow-lg p-6 border border-honey/20">
-                <h3 className="font-display text-2xl font-bold text-foreground mb-3">Our Vision</h3>
+                <h3 className="font-display text-2xl font-bold text-foreground mb-3">{t("aboutPage.visionTitle")}</h3>
                 <p className="text-muted-foreground leading-relaxed text-sm">
-                Our vision is<span className="text-primary font-semibold"> bold and unapologetic</span>  to build <span className="text-primary font-semibold"> the world's largest and most trusted ecosystem of honey-based products,</span> redefining how sweetness is consumed across the globe. From Indian households to international markets, we aim to make honey the universal symbol of health, sustainability, and positive change.
-
+                {t("aboutPage.visionText")}<span className="text-primary font-semibold"> {t("aboutPage.visionBold1")}</span> {t("aboutPage.visionText2")} <span className="text-primary font-semibold"> {t("aboutPage.visionBold2")}</span> {t("aboutPage.visionText3")}
                 </p>
               </div>
             </div>
 
             {/* Right: Features in Window Grid */}
             <div className="space-y-6">
-              <h3 className="font-display text-3xl font-bold text-foreground">Why Choose Honeyman</h3>
+              <h3 className="font-display text-3xl font-bold text-foreground">{t("aboutPage.whyChooseTitle")}</h3>
               <div className="grid grid-cols-2 gap-4">
                 {features.map((feature, index) => (
                   <div 
@@ -329,11 +330,10 @@ const About = () => {
             
             <div className="text-center md:text-left space-y-6">
               <h2 className="font-display text-4xl font-bold text-white">
-                Explore Our Products
+                {t("aboutPage.catalogueTitle")}
               </h2>
               <p className="text-white/80 text-lg leading-relaxed">
-                Download our complete product catalogue to discover the full range of 
-                HONEYMAN's premium honey products and wellness essentials.
+                {t("aboutPage.catalogueDescription")}
               </p>
               <a 
                 href="https://honeymanstore.com/wp-content/uploads/2025/12/Honeyman-Magazine-1.pdf"
@@ -342,7 +342,7 @@ const About = () => {
                 className="inline-flex items-center gap-3 bg-honey hover:bg-honey-dark text-foreground font-semibold px-8 py-4 rounded-full transition-all shadow-lg hover:shadow-xl"
               >
                 <Download className="w-5 h-5" />
-                Download Catalogue
+                {t("aboutPage.downloadCatalogue")}
               </a>
             </div>
           </div>
@@ -353,9 +353,7 @@ const About = () => {
       <section className="py-20 bg-gradient-to-b from-honey/10 to-cream relative overflow-hidden">
         <div className="container mx-auto px-6">
           <div className="text-center mb-12">
-            <h2 className="font-display text-4xl font-bold text-primary mb-2">Happiness Delivered to your footsteps</h2>
-
-       
+            <h2 className="font-display text-4xl font-bold text-primary mb-2">{t("aboutPage.platformsTitle")}</h2>
           </div>
           
           <div className="flex flex-wrap justify-center items-center gap-12 max-w-5xl mx-auto">
@@ -375,7 +373,7 @@ const About = () => {
           </div>
           
           <div className="text-center mt-12">
-            <p className="text-foreground font-semibold text-lg">Order now and get it delivered instantly! 🚚</p>
+            <p className="text-foreground font-semibold text-lg">{t("aboutPage.orderNow")}</p>
           </div>
         </div>
       </section>
@@ -393,7 +391,7 @@ const About = () => {
         <div className="container mx-auto px-6 relative z-20">
           <div className="flex items-center justify-center gap-4 mb-12">
             <Award className="w-10 h-10 text-primary" />
-            <h2 className="font-display text-4xl font-bold text-background">Awards & Recognition</h2>
+            <h2 className="font-display text-4xl font-bold text-background">{t("aboutPage.awardsTitle")}</h2>
           </div>
           
           <div className="relative max-w-4xl mx-auto">
@@ -467,7 +465,7 @@ const About = () => {
         <div className="container mx-auto px-6">
           <div className="flex items-center justify-center gap-4 mb-12">
             <Newspaper className="w-10 h-10 text-primary" />
-            <h2 className="font-display text-4xl font-bold text-foreground">Media Coverage</h2>
+            <h2 className="font-display text-4xl font-bold text-foreground">{t("aboutPage.mediaTitle")}</h2>
           </div>
           
           <div className="grid lg:grid-cols-2 gap-12 items-start">
@@ -521,7 +519,7 @@ const About = () => {
             <div className="space-y-8">
               <div>
                 <h3 className="font-display text-2xl font-semibold text-foreground mb-4">
-                  Featured In
+                  {t("aboutPage.featuredIn")}
                 </h3>
                 <div className="grid grid-cols-2 md:grid-cols-4 gap-3">
                   {mediaLogos.map((logo, index) => {
@@ -557,20 +555,20 @@ const About = () => {
                 <div className="flex items-center gap-4 mb-4">
                   <Globe className="w-10 h-10 text-primary" />
                   <h3 className="font-display text-xl font-semibold text-foreground">
-                    Global Recognition
+                    {t("aboutPage.globalRecognition")}
                   </h3>
                 </div>
                 <p className="text-muted-foreground leading-relaxed mb-4 text-sm">
-                  HONEYMAN has been recognized by national and international media for its commitment to quality, purity, and innovation.
+                  {t("aboutPage.globalRecognitionText")}
                 </p>
                 <div className="grid grid-cols-2 gap-3">
                   <div className="bg-white/80 rounded-lg p-3 text-center">
                     <span className="text-2xl font-display font-bold text-primary">50+</span>
-                    <p className="text-xs text-muted-foreground">Media Features</p>
+                    <p className="text-xs text-muted-foreground">{t("aboutPage.mediaFeatures")}</p>
                   </div>
                   <div className="bg-white/80 rounded-lg p-3 text-center">
                     <span className="text-2xl font-display font-bold text-primary">10+</span>
-                    <p className="text-xs text-muted-foreground">National Awards</p>
+                    <p className="text-xs text-muted-foreground">{t("aboutPage.nationalAwards")}</p>
                   </div>
                 </div>
               </div>
@@ -587,9 +585,8 @@ const About = () => {
         
         <div className="container mx-auto px-6 relative z-10">
           <div className="text-center mb-16">
-            
             <h2 className="font-display text-4xl md:text-5xl font-bold text-foreground mb-4">
-              Instagram Captures
+              {t("aboutPage.instagramTitle")}
             </h2>
            
             {/* Social Media Links */}

@@ -2,8 +2,10 @@ import { ArrowRight } from "lucide-react";
 import Bee from "./Bee";
 import storeProductsImage from "@/assets/honeymanstore-products.webp";
 import honeyBg from "@/assets/honeyman-store-bg.webp";
+import { useLanguage } from "@/contexts/LanguageContext";
 
 const HoneymanStoreSection = () => {
+  const { t } = useLanguage();
   const handleStoreNavigation = () => {
     window.open("https://www.honeymanstore.com", "_blank");
   };
@@ -41,12 +43,12 @@ const HoneymanStoreSection = () => {
           <div className="space-y-6 flex flex-col justify-center h-full">
             <div className="space-y-4">
               <h2 className="section-title text-4xl md:text-5xl">
-                Explore Our Complete
-                <span className="block text-primary mt-2">Collection at Honeyman Store</span>
+                {t("honeymanStoreSection.title")}
+                <span className="block text-primary mt-2">{t("honeymanStoreSection.titleHighlight")}</span>
               </h2>
               
               <p className="text-lg text-muted-foreground leading-relaxed">
-                While this site showcases our story, heritage, and values, our complete range of premium honey products, delicious spreads, and specialty items are available at our dedicated e-commerce store.
+                {t("honeymanStoreSection.description")}
               </p>
             </div>
 
@@ -56,28 +58,28 @@ const HoneymanStoreSection = () => {
                 <div className="flex-shrink-0 w-6 h-6 rounded-full bg-primary/20 flex items-center justify-center mt-0.5">
                   <div className="w-2 h-2 rounded-full bg-primary"></div>
                 </div>
-                <p className="text-foreground">100% Pure & Organic Honey</p>
+                <p className="text-foreground">{t("honeymanStoreSection.features.1")}</p>
               </div>
               
               <div className="flex items-start gap-3">
                 <div className="flex-shrink-0 w-6 h-6 rounded-full bg-primary/20 flex items-center justify-center mt-0.5">
                   <div className="w-2 h-2 rounded-full bg-primary"></div>
                 </div>
-                <p className="text-foreground">Wide Variety of Products</p>
+                <p className="text-foreground">{t("honeymanStoreSection.features.2")}</p>
               </div>
               
               <div className="flex items-start gap-3">
                 <div className="flex-shrink-0 w-6 h-6 rounded-full bg-primary/20 flex items-center justify-center mt-0.5">
                   <div className="w-2 h-2 rounded-full bg-primary"></div>
                 </div>
-                <p className="text-foreground">Fast & Secure Checkout</p>
+                <p className="text-foreground">{t("honeymanStoreSection.features.3")}</p>
               </div>
               
               <div className="flex items-start gap-3">
                 <div className="flex-shrink-0 w-6 h-6 rounded-full bg-primary/20 flex items-center justify-center mt-0.5">
                   <div className="w-2 h-2 rounded-full bg-primary"></div>
                 </div>
-                <p className="text-foreground">Nationwide Delivery</p>
+                <p className="text-foreground">{t("honeymanStoreSection.features.4")}</p>
               </div>
             </div>
 
@@ -87,14 +89,14 @@ const HoneymanStoreSection = () => {
                 onClick={handleStoreNavigation}
                 className="group inline-flex items-center gap-2 px-8 py-4 bg-gradient-to-r from-primary to-accent text-white rounded-full font-semibold hover:shadow-lg hover:shadow-primary/30 transform hover:scale-105 transition-all duration-300"
               >
-                Visit Honeyman Store
+                {t("honeymanStoreSection.visitStore")}
                 <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
               </button>
             </div>
 
             {/* Subtext */}
             <p className="text-sm text-muted-foreground italic">
-              Discover all our products, special offers, and exclusive deals on our e-commerce platform.
+              {t("honeymanStoreSection.subtext")}
             </p>
           </div>
         </div>
@@ -102,7 +104,7 @@ const HoneymanStoreSection = () => {
         {/* Bottom accent */}
         <div className="mt-16 pt-16 border-t border-border/30 flex items-center justify-center gap-2 text-muted-foreground">
           <div className="h-1 w-12 bg-gradient-to-r from-primary to-transparent rounded"></div>
-          <span className="text-sm">Bringing Premium Honey to Your Doorstep</span>
+          <span className="text-sm">{t("honeymanStoreSection.tagline")}</span>
           <div className="h-1 w-12 bg-gradient-to-l from-primary to-transparent rounded"></div>
         </div>
       </div>

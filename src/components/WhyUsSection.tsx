@@ -1,5 +1,6 @@
 import realisticBee from "@/assets/bee.webp";
 import hivebg from "@/assets/honey-bg.webp";
+import { useLanguage } from "@/contexts/LanguageContext";
 
 const features = [
   {
@@ -20,6 +21,8 @@ const features = [
 ];
 
 const WhyUsSection = () => {
+  const { t } = useLanguage();
+  
   return (
     <section id="why-us" className="py-10 bg-cream relative overflow-hidden">
       {/* background image with low opacity and an overlay to soften it */}
@@ -47,14 +50,12 @@ const WhyUsSection = () => {
           {/* Right: Content - 2/3 width on md+ */}
           <div className="w-full md:w-2/3 px-2 md:px-6 text-center md:text-left">
             <h2 className="text-2xl md:text-3xl font-extrabold text-honey mb-2 uppercase tracking-wide">
-            Best Honey Brand in India – Why Honeyman Leads in Purity
+            {t("whyUs.title")}
             </h2>
-            <p className="text-xs text-muted-foreground mb-4">Honeyman is one of India’s leading honey brands offering 100% pure, raw & organic honey sourced directly from Indian beekeepers.</p>
+            <p className="text-xs text-muted-foreground mb-4">{t("whyUs.subtitle")}</p>
 
             <p className="text-sm md:text-base text-foreground mb-6 leading-relaxed">
-            Honeyman is one of India’s trusted honey brands, offering pure, raw and organic honey sourced responsibly from Indian beekeepers. By protecting honey bees and following sustainable practices, we deliver chemical-free honey that supports both human health and nature’s balance.
-
-
+            {t("whyUs.description")}
             </p>
 
            

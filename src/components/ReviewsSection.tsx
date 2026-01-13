@@ -1,6 +1,10 @@
 import Bee from "./Bee";
+import { useLanguage } from "@/contexts/LanguageContext";
 
-const reviews = [
+const ReviewsSection = () => {
+  const { t } = useLanguage();
+
+  const reviews = [
   {
     name: "Shubham Mishra",
     rating: 5,
@@ -24,7 +28,6 @@ const reviews = [
   }
 ];
 
-const ReviewsSection = () => {
   return (
     <section id="reviews" className="py-24 bg-secondary relative overflow-hidden">
       {/* Honeycomb wave at top */}
@@ -37,7 +40,7 @@ const ReviewsSection = () => {
       
       <div className="container mx-auto px-6 relative">
         <div className="text-center mb-16">
-          <h2 className="section-title">Reviews</h2>
+          <h2 className="section-title">{t("reviewsSection.title")}</h2>
         </div>
         
         <div className="grid md:grid-cols-3 gap-8 max-w-5xl mx-auto">

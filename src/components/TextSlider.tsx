@@ -1,24 +1,26 @@
 import { useEffect, useState } from "react";
-
-const textSliderItems = [
-  "🐝 100% Pure & Unfiltered Honey",
-  "✨ No Heating to Cut Corners",
-  "🌱 Gentle Bee Colony Management",
-  "🌍 Sustainable Farming Practices",
-  "⚡ No Processing for Taste!",
-  "🔒 Focused Bee Conservation",
-  "💯 100% Pure, No Additives",
-];
+import { useLanguage } from "@/contexts/LanguageContext";
 
 const TextSlider = () => {
+  const { t } = useLanguage();
   const [currentIndex, setCurrentIndex] = useState(0);
+
+  const textSliderItems = [
+    t("textSlider.item1"),
+    t("textSlider.item2"),
+    t("textSlider.item3"),
+    t("textSlider.item4"),
+    t("textSlider.item5"),
+    t("textSlider.item6"),
+    t("textSlider.item7"),
+  ];
 
   useEffect(() => {
     const interval = setInterval(() => {
       setCurrentIndex((prev) => (prev + 1) % textSliderItems.length);
     }, 4000);
     return () => clearInterval(interval);
-  }, []);
+  }, [textSliderItems.length]);
 
   return (
     <section className="relative overflow-hidden bg-background py-3">

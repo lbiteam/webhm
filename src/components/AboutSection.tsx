@@ -1,8 +1,10 @@
 import Bee from "./Bee";
 import founderImage from "@/assets/founder.webp";
 import hivebg from "@/assets/honey-bg.webp";
+import { useLanguage } from "@/contexts/LanguageContext";
 
 const AboutSection = () => {
+  const { t } = useLanguage();
   return (
     <section id="about" className="py-24 bg-cream relative overflow-hidden">
       {/* Background image with low opacity and an overlay to soften it */}
@@ -37,10 +39,10 @@ const AboutSection = () => {
                 <div className="absolute bottom-6 left-6 right-6">
                   <div className="bg-white/90 backdrop-blur-sm rounded-xl p-4 shadow-lg">
                     <h4 className="font-display text-xl font-medium text-foreground">
-                      2nd Generation Beekeeper
+                      {t("aboutSection.founderTag")}
                     </h4>
                     <p className="text-muted-foreground text-sm">
-                      Honeyman Of India 
+                      {t("aboutSection.founderSubtag")}
                     </p>
                   </div>
                 </div>
@@ -54,28 +56,25 @@ const AboutSection = () => {
           
           {/* Content */}
           <div className="space-y-6 order-1 lg:order-2">
-            <h2 className="section-title">About Us</h2>
+            <h2 className="section-title">{t("aboutSection.title")}</h2>
             
             <div className="space-y-4">
               <h3 className="font-display text-2xl font-medium text-foreground">
-                Honeyman - 2nd Generation with Bees
+                {t("aboutSection.subtitle")}
               </h3>
               <p className="text-muted-foreground leading-relaxed">
-              In 1980, our founder, the late Sardar Jagjit Singh Kapoor, began with a simple belief—that purity should never be compromised. What started as a small apiary in Punjab grew into a trusted name across 50+ countries, built on integrity, craftsmanship, and an unwavering respect for nature.
-
+              {t("aboutSection.description1")}
               </p>
               <p className="text-muted-foreground leading-relaxed">
-              Today, his son, Mr. Shahzada Singh Kapoor—a globally recognized authority with 30 years in beekeeping and exports—is channeling that legacy into something revolutionary: India's most trusted refined sugar-free ecosystem.
-
+              {t("aboutSection.description2")}
               </p>
               <p className="text-muted-foreground leading-relaxed">
-              With over 150+ stores nationwide and a franchise model empowering entrepreneurs across India, Honeyman is more than a brand. It's a movement towards a healthier, guilt-free future.
-
+              {t("aboutSection.description3")}
               </p>
             </div>
             
             <button className="honey-btn" onClick={() => window.location.href = '/about-us'}>
-              Learn Our Story
+              {t("aboutSection.button")}
             </button>
           </div>
         </div>

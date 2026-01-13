@@ -5,47 +5,49 @@ import organicHoney from "@/assets/organic-honey.webp";
 import blackForestHoney from "@/assets/black-forest-honey.webp";
 import himalayanHoney from "@/assets/himalayan-honey.webp";
 import sidrHoney from "@/assets/sidr-honey.webp";
-
-const products = [
-  {
-    id: 1,
-    name: "Van Tulsi Honey",
-    description: "Rich in antioxidants with a unique herbal flavor from wild tulsi plants.",
-    weight: "250g",
-    image: vanTulsiHoney,
-  },
-  {
-    id: 2,
-    name: "Organic Honey",
-    description: "100% certified organic honey from pristine beekeeping farms.",
-    weight: "250g",
-    image: organicHoney,
-  },
-  {
-    id: 3,
-    name: "Black Forest Honey",
-    description: "Dark and rich honey harvested from the depths of forest regions.",
-    weight: "250g",
-    image: blackForestHoney,
-  },
-  {
-    id: 4,
-    name: "Himalayan Honey",
-    description: "Pure honey from the pristine heights of the Himalayan mountains.",
-    weight: "250g",
-    image: himalayanHoney,
-  },
-  {
-    id: 5,
-    name: "Sidr Honey",
-    description: "Premium honey from the rare Sidr tree, known for its medicinal properties.",
-    weight: "250g",
-    image: sidrHoney,
-  },
-];
+import { useLanguage } from "@/contexts/LanguageContext";
 
 const ProductsCarousel = () => {
+  const { t } = useLanguage();
   const [currentIndex, setCurrentIndex] = useState(0);
+
+  const products = [
+    {
+      id: 1,
+      name: t("productsCarousel.products.vanTulsi.name"),
+      description: t("productsCarousel.products.vanTulsi.description"),
+      weight: "250g",
+      image: vanTulsiHoney,
+    },
+    {
+      id: 2,
+      name: t("productsCarousel.products.organic.name"),
+      description: t("productsCarousel.products.organic.description"),
+      weight: "250g",
+      image: organicHoney,
+    },
+    {
+      id: 3,
+      name: t("productsCarousel.products.blackForest.name"),
+      description: t("productsCarousel.products.blackForest.description"),
+      weight: "250g",
+      image: blackForestHoney,
+    },
+    {
+      id: 4,
+      name: t("productsCarousel.products.himalayan.name"),
+      description: t("productsCarousel.products.himalayan.description"),
+      weight: "250g",
+      image: himalayanHoney,
+    },
+    {
+      id: 5,
+      name: t("productsCarousel.products.sidr.name"),
+      description: t("productsCarousel.products.sidr.description"),
+      weight: "250g",
+      image: sidrHoney,
+    },
+  ];
   const [itemsPerView, setItemsPerView] = useState(3);
 
   useEffect(() => {
@@ -78,11 +80,10 @@ const ProductsCarousel = () => {
     <section id="products" className="py-24 bg-background relative overflow-hidden">
       <div className="container mx-auto px-6">
         <div className="text-center mb-12">
-          <h2 className="section-title">Honeyman Honey
+          <h2 className="section-title">{t("productsCarousel.title")}
           </h2>
           <p className="text-muted-foreground max-w-2xl mx-auto">
-          Harvested from diverse landscapes, crafted with care to deliver purity, aroma, and authentic sweetness.
-
+          {t("productsCarousel.description")}
           </p>
         </div>
 
@@ -124,7 +125,7 @@ const ProductsCarousel = () => {
                         className="w-full h-64 object-contain group-hover:scale-105 transition-transform duration-500"
                       />
                       <div className="absolute top-4 left-4 bg-red-500 text-white text-xs font-bold px-3 py-1 rounded-full">
-                        100% PURE
+                        {t("productsCarousel.pureBadge")}
                       </div>
                     </div>
                     
@@ -137,7 +138,7 @@ const ProductsCarousel = () => {
                     </p>
                     <div className="flex items-center justify-between">
                       <span className="text-sm text-muted-foreground">
-                        Net Weight: {product.weight}
+                        {t("productsCarousel.netWeight")} {product.weight}
                       </span>
                      
                     </div>

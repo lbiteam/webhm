@@ -1,13 +1,22 @@
 import { useState } from "react";
 import { Link, useLocation } from "react-router-dom";
-import { Menu, X } from "lucide-react";
+import { Menu, X, Languages } from "lucide-react";
 import { Sheet, SheetContent, SheetTrigger } from "@/components/ui/sheet";
+import {
+  Select,
+  SelectContent,
+  SelectItem,
+  SelectTrigger,
+  SelectValue,
+} from "@/components/ui/select";
+import { useLanguage } from "@/contexts/LanguageContext";
 import logo from "@/assets/Honeyman-logo.webp";
 
 const Header = () => {
   const location = useLocation();
   const isHomePage = location.pathname === "/";
   const [isOpen, setIsOpen] = useState(false);
+  const { language, setLanguage, t } = useLanguage();
 
   const scrollToSection = (sectionId: string) => {
     if (!isHomePage) {
@@ -29,7 +38,7 @@ const Header = () => {
           className="text-foreground/80 hover:text-primary transition-colors font-medium"
           onClick={() => mobile && setIsOpen(false)}
         >
-          Home
+          {t("header.home")}
         </Link>
       </li>
       <li>
@@ -38,7 +47,7 @@ const Header = () => {
           className="text-foreground/80 hover:text-primary transition-colors font-medium"
           onClick={() => mobile && setIsOpen(false)}
         >
-          About
+          {t("header.about")}
         </Link>
       </li>
       <li>
@@ -47,7 +56,7 @@ const Header = () => {
           className="text-foreground/80 hover:text-primary transition-colors font-medium"
           onClick={() => mobile && setIsOpen(false)}
         >
-          Products
+          {t("header.products")}
         </Link>
       </li>
       <li>
@@ -56,7 +65,7 @@ const Header = () => {
           className="text-foreground/80 hover:text-primary transition-colors font-medium"
           onClick={() => mobile && setIsOpen(false)}
         >
-          Franchise
+          {t("header.franchise")}
         </Link>
       </li>
       <li>
@@ -65,7 +74,7 @@ const Header = () => {
           className="text-foreground/80 hover:text-primary transition-colors font-medium"
           onClick={() => mobile && setIsOpen(false)}
         >
-          Gifting
+          {t("header.gifting")}
         </Link>
       </li>
       <li>
@@ -74,7 +83,7 @@ const Header = () => {
           className="text-foreground/80 hover:text-primary transition-colors font-medium"
           onClick={() => mobile && setIsOpen(false)}
         >
-          Contact
+          {t("header.contact")}
         </Link>
       </li>
     </>
@@ -94,8 +103,24 @@ const Header = () => {
           </ul>
 
           <div className="flex items-center gap-4">
+            {/* Language Selector */}
+            <Select value={language} onValueChange={(value) => setLanguage(value as "en" | "hi")}>
+              <SelectTrigger className="w-[120px] h-10 border-border bg-background/50 hover:bg-background/80">
+                <div className="flex items-center gap-2">
+                  <Languages className="h-4 w-4" />
+                  <SelectValue>
+                    {language === "en" ? "English" : "हिंदी"}
+                  </SelectValue>
+                </div>
+              </SelectTrigger>
+              <SelectContent>
+                <SelectItem value="en">English</SelectItem>
+                <SelectItem value="hi">हिंदी</SelectItem>
+              </SelectContent>
+            </Select>
+
             <button className="honey-btn hidden lg:block" onClick={() => window.location.href = 'https://honeymanstore.com/'} >
-              Order Now
+              {t("header.orderNow")}
             </button>
 
             {/* Mobile & Tablet Menu */}
@@ -111,7 +136,7 @@ const Header = () => {
                     <NavItems mobile />
                   </ul>
                   <button className="honey-btn w-full" onClick={() => setIsOpen(false)}>
-                    Order Now
+                    {t("header.orderNow")}
                   </button>
                 </div>
               </SheetContent>
