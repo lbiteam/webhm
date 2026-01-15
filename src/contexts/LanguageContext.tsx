@@ -1,6 +1,6 @@
 import { createContext, useContext, useState, useEffect, ReactNode } from "react";
 
-type Language = "en" | "hi";
+type Language = "en" | "hi" | "pun";
 
 interface LanguageContextType {
   language: Language;
@@ -40,6 +40,8 @@ export const LanguageProvider = ({ children }: LanguageProviderProps) => {
           translationsData = (await import("../locales/en.json")).default;
         } else if (language === "hi") {
           translationsData = (await import("../locales/hi.json")).default;
+        } else if (language === "pun") {
+          translationsData = (await import("../locales/pun.json")).default;
         } else {
           translationsData = (await import("../locales/en.json")).default;
         }

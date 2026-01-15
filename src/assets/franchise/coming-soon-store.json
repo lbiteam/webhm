@@ -1,0 +1,605 @@
+[
+ {
+  "Sr No": 1,
+  "Address": "# 277-284 , 1st cross , Neeladri Nagar , Electronic City Phase 1 , Bengaluru- 560100",
+  "City": "Banglore",
+  "State": "Karnataka"
+ },
+ {
+  "Sr No": 2,
+  "Address": "Not decided",
+  "City": "Navi mumbai",
+  "State": "Maharashtra"
+ },
+ {
+  "Sr No": 3,
+  "Address": "Gaur World Smart street Greater Noida",
+  "City": "noida",
+  "State": "Uttar Pradesh"
+ },
+ {
+  "Sr No": 4,
+  "Address": "128\/11, Opp to Sanjay Van, H2 Block , Kidwai Nagar, Kanpur (U.P) - 208011",
+  "City": "Kanpur",
+  "State": "Uttar Pradesh"
+ },
+ {
+  "Sr No": 5,
+  "Address": "4 Sai Leela Shah Apartment Court Road, Oppisite Hotel Regancy Ullasnagar 421003 Dist Thane . Maharastra ",
+  "City": "Ulhasnagar",
+  "State": "Maharashtra"
+ },
+ {
+  "Sr No": 6,
+  "Address": "Dankeen Gunj , chinwa ka inara, Near kake ki Hatti, Mirzapur Uttarpradesh\nPin Coad: 231001",
+  "City": "Mirzapur",
+  "State": "Uttar Pradesh"
+ },
+ {
+  "Sr No": 7,
+  "Address": "64, Rajasva Colony Near NeelKanth Mahadev Mandir Ratlam 457001",
+  "City": "Ratlam",
+  "State": "Madhya Pradesh"
+ },
+ {
+  "Sr No": 8,
+  "Address": "1090 Chauraha, Chatori Galli, Jiamau, Lucknow, Uttar Pradesh 226001",
+  "City": "Lucknow",
+  "State": "Uttar Pradesh"
+ },
+ {
+  "Sr No": 9,
+  "Address": "Civic centre Bhillai",
+  "City": "Bhillai",
+  "State": "Chhattisgarh"
+ },
+ {
+  "Sr No": 10,
+  "Address": "Shop no 5 , Sahyog Daignostics Centre , Underground floor, Yash park apartments, near Tarodekar Cahmbers, Nanded",
+  "City": "Nanded",
+  "State": "Maharashtra"
+ },
+ {
+  "Sr No": 11,
+  "Address": "Adab city colony, Near karim hotel, haridwar road",
+  "City": "Najibabad, Bijnour",
+  "State": "Uttar Pradesh"
+ },
+ {
+  "Sr No": 12,
+  "Address": " NEAR CANARA BANK,MAIN ROAD, Shaheed Bhagat Singh Nagar, Banga, Punjab, pincode -144505",
+  "City": "Banga",
+  "State": "Punjab"
+ },
+ {
+  "Sr No": 13,
+  "Address": "Praful Tiwari, Aditya Lake View Hotel Sanjay Road Pincode - 470003",
+  "City": "Sagar ",
+  "State": "Madhya Pradesh"
+ },
+ {
+  "Sr No": 14,
+  "Address": "English Bazaar, Malda, West Bengal,732101",
+  "City": "Malda",
+  "State": "West Bengal"
+ },
+ {
+  "Sr No": 15,
+  "Address": "Vinod Vasant Shastri\n\n409, Kamdhenu Siddhi Mahatma Society, Lane no. 4\nKothrud, Pune\nPincode: 411 038",
+  "City": "Pune",
+  "State": "Maharashtra"
+ },
+ {
+  "Sr No": 16,
+  "Address": "Ulhasnagar, Thane, Maharashtra",
+  "City": "Thane",
+  "State": "Maharashtra"
+ },
+ {
+  "Sr No": 17,
+  "Address": "A-1 chain factory chauraha, mariampur road,shastri nagar, kanpur,208005 infront of dilbag rose garden",
+  "City": "Kanpur",
+  "State": "Uttar Pradesh"
+ },
+ {
+  "Sr No": 18,
+  "Address": "Near KDA Bazaar, Dr Chaudhary Building, Jajmau, Kanpur-208007",
+  "City": "Kanpur",
+  "State": "Uttar Pradesh"
+ },
+ {
+  "Sr No": 19,
+  "Address": "Mumbai",
+  "City": "Mumbai",
+  "State": "Maharashtra"
+ },
+ {
+  "Sr No": 20,
+  "Address": "Kukattpally y junction (Heydrabad)Telangana",
+  "City": "Heydrabad",
+  "State": "Telangana"
+ },
+ {
+  "Sr No": 21,
+  "Address": "location not yet final ",
+  "City": "Pune",
+  "State": "Maharashtra"
+ },
+ {
+  "Sr No": 22,
+  "Address": "RIDIT TRADERS \nGaur World Smart Street \nAGF 216 Gr-Noida (West) Uttar Pradesh.201318",
+  "City": "Greater Noida",
+  "State": "Uttar Pradesh"
+ },
+ {
+  "Sr No": 23,
+  "Address": "Panipat",
+  "City": "Panipat",
+  "State": "Haryana"
+ },
+ {
+  "Sr No": 24,
+  "Address": "Gaya Bihar ",
+  "City": "Gaya",
+  "State": "Bihar"
+ },
+ {
+  "Sr No": 25,
+  "Address": "Bahraich, Uttar Pradesh",
+  "City": "Bahraich",
+  "State": "Uttar Pradesh"
+ },
+ {
+  "Sr No": 26,
+  "Address": "Kanpur",
+  "City": "Kanpur",
+  "State": "Uttar Pradesh"
+ },
+ {
+  "Sr No": 27,
+  "Address": "Bhatta bazaar,opposite kali bari mandir,Purnea 854301",
+  "City": "Purnea",
+  "State": "Bihar"
+ },
+ {
+  "Sr No": 28,
+  "Address": "Store no. 17A ,Ground floor, fairmount fortune one mall, 317 B, Czech Colony, Sanath Nagar, Hyderabad, Telangana 500018.\nLandmark:Near Erragadda Metro Station",
+  "City": "Hyderabad",
+  "State": "Telangana"
+ },
+ {
+  "Sr No": 29,
+  "Address": "Sona Bakkery and sweets, Suryapet , Telangana, Hyderabad-508213",
+  "City": "hyderabad",
+  "State": "Telangana"
+ },
+ {
+  "Sr No": 30,
+  "Address": "Sandalpur road kumhrar (Patna)",
+  "City": "Patna",
+  "State": "Bihar"
+ },
+ {
+  "Sr No": 31,
+  "Address": "Village Katil,Roop nagar,Near fish farm,",
+  "City": "RUttar Pradeshnagar",
+  "State": "Punjab"
+ },
+ {
+  "Sr No": 32,
+  "Address": "cross colors, No.201Arcot road, Virugambakkam, Chennai-600092, Opp: DMart",
+  "City": "Chennai",
+  "State": "Tamil Nadu"
+ },
+ {
+  "Sr No": 33,
+  "Address": "564\/2, Vijay Laxmi Nagar,Sitapur 261001",
+  "City": "Sitapur",
+  "State": "Madhya Pradesh"
+ },
+ {
+  "Sr No": 34,
+  "Address": "H.no.290, Mera Khurd,Buldana Maharastra, 443201",
+  "City": "Chikli",
+  "State": "Maharashtra"
+ },
+ {
+  "Sr No": 35,
+  "Address": "15  B.D.O Market\nMalwa Road\nFerozPur city, Punjab-152002",
+  "City": "Feroz Pur",
+  "State": "Punjab"
+ },
+ {
+  "Sr No": 36,
+  "Address": "Bangalore (Looking for space)",
+  "City": "Bangalore ",
+  "State": "Karnataka"
+ },
+ {
+  "Sr No": 37,
+  "Address": "Near sahara sweets, Indrayani Nagar, Bhosari, Pune, Maharashtra 411039",
+  "City": "Pune ",
+  "State": "Maharashtra"
+ },
+ {
+  "Sr No": 38,
+  "Address": "Gumma,kotkhai ,district- shimla",
+  "City": "Gumma",
+  "State": "Himachal Pradesh "
+ },
+ {
+  "Sr No": 39,
+  "Address": "Bela Chowk,Bela road,RUttar Pradeshnagar,Punjab pin code- 140001",
+  "City": "Roopnagar",
+  "State": "Punjab"
+ },
+ {
+  "Sr No": 40,
+  "Address": "H.No.5-5-270\/2D,Parshibandam,Sambhani Nagar",
+  "City": "Khammam-507001",
+  "State": "Telangana"
+ },
+ {
+  "Sr No": 41,
+  "Address": "Sanyag Bhawan deshbandUttar Pradeshura  behind friends school itarsi m. P. (461111)",
+  "City": "mp",
+  "State": "Madhya Pradesh"
+ },
+ {
+  "Sr No": 42,
+  "Address": "Elan Miracal,Sec 84,Gurgaon",
+  "City": "Gurgaon",
+  "State": "Haryana"
+ },
+ {
+  "Sr No": 43,
+  "Address": "kanpur Uttar Pradesh",
+  "City": "kanpur",
+  "State": "Uttar Pradesh"
+ },
+ {
+  "Sr No": 44,
+  "Address": "Kurukshetra,Haryana (searching location)",
+  "City": "Kurukshetra",
+  "State": "Haryana"
+ },
+ {
+  "Sr No": 45,
+  "Address": "Bidar, Karnataka(searching location)",
+  "City": "Bidar",
+  "State": "Karnataka"
+ },
+ {
+  "Sr No": 46,
+  "Address": "Gujarat,Surat",
+  "City": "Surat ",
+  "State": "Gujarat"
+ },
+ {
+  "Sr No": 47,
+  "Address": "Bihar",
+  "City": "Bihar",
+  "State": "Bihar"
+ },
+ {
+  "Sr No": 48,
+  "Address": "1\/7, Valtavadai Street 78-KK Nagar, Chennai",
+  "City": "Chennai",
+  "State": "Tamil Nadu"
+ },
+ {
+  "Sr No": 49,
+  "Address": "Ujjain, Madhya Pradesh",
+  "City": "Ujjain",
+  "State": "Madhya Pradesh"
+ },
+ {
+  "Sr No": 50,
+  "Address": "Dala bazar, dala pnb bank,petrahi, dalla,sonbhadra, Uttar Pradesh",
+  "City": "Sonbhadra",
+  "State": "Uttar Pradesh"
+ },
+ {
+  "Sr No": 51,
+  "Address": "Uttar Pradesh, kannauj",
+  "City": "Kannauj",
+  "State": "Uttar Pradesh"
+ },
+ {
+  "Sr No": 52,
+  "Address": "Parbhani, Maharashtra",
+  "City": "Parbhani",
+  "State": "Maharashtra"
+ },
+ {
+  "Sr No": 53,
+  "Address": "Tilak Nagar Colony Mahuvabag Ghazipur \n233001\nReliance Smart Bazar \nRoadways bus stand Agarwal Pailesh Ghazipur",
+  "City": "Ghazipur",
+  "State": "Uttar Pradesh"
+ },
+ {
+  "Sr No": 54,
+  "Address": "Om Bakers , Infront Naveen Medical Store, Labour Colony, Hathras Uttar Pradesh 204101",
+  "City": "Hathras",
+  "State": "Uttar Pradesh"
+ },
+ {
+  "Sr No": 55,
+  "Address": "White field, Bangalore, Karnataka ",
+  "City": "Bangalore ",
+  "State": "Karnataka"
+ },
+ {
+  "Sr No": 56,
+  "Address": "Flat no:-308, Block:-A, Panda Recidency, Infront of Indian Petrol Pump, Ranga Bazaar, Satyabhamapur, Kharoda, Odisha(Note:-This address is as per Aadhar card, Shop address will be provided very soon)",
+  "City": "Kharoda",
+  "State": "Odisha"
+ },
+ {
+  "Sr No": 57,
+  "Address": "2nd floor, Flat No:- 78\/1, Sunshine Properties, Nagavara Main Road, Manyatha Tech Park, Chanukya Layout, Bengaluru, Karnataka- 560045",
+  "City": "Nagavara, Bangalore",
+  "State": "Karnataka"
+ },
+ {
+  "Sr No": 58,
+  "Address": "Hotel Ramayan Inn. Rishikesh, Uttrakhand.",
+  "City": "rishikesh",
+  "State": "Uttrakhand"
+ },
+ {
+  "Sr No": 59,
+  "Address": "Aurangabad, Maharashtra",
+  "City": "Aurangabad",
+  "State": "Maharashtra"
+ },
+ {
+  "Sr No": 60,
+  "Address": "The Mople Square, \nTea post\nShop number-2 Ground Floor\nTavra Road, Bharuch, 392001",
+  "City": "Bharuch",
+  "State": "Gujarat"
+ },
+ {
+  "Sr No": 61,
+  "Address": "Mirchari Kalyan jewellers, Katihar, Bihar, Pin-854105\n",
+  "City": "Katihar",
+  "State": "Bihar"
+ },
+ {
+  "Sr No": 62,
+  "Address": "Shop no 7,Ground floor,CSC-4,Sector-2,Rohini,Delhi",
+  "City": "Rohini",
+  "State": "Delhi"
+ },
+ {
+  "Sr No": 63,
+  "Address": "153,Ward no 26,Near behind bunkar sung badi,Durg,",
+  "City": "Durg",
+  "State": "Chhattisgarh"
+ },
+ {
+  "Sr No": 64,
+  "Address": "110,Banu villa behind ISA Masjid,Qadry colony, Amrit Sagar garden road,Tripoliya ga",
+  "City": "Ratlam",
+  "State": "Madhya Pradesh"
+ },
+ {
+  "Sr No": 65,
+  "Address": "FLOOR NO C1\/604,FORTUNE KASTURI,ROAD\/HOSHANGABAD ROAD BHOPAL,LANDMARK SAGAR EDAN GARDEN,",
+  "City": "Bhopal",
+  "State": "Madhya Pradesh"
+ },
+ {
+  "Sr No": 66,
+  "Address": "Nagpur, Maharashtra",
+  "City": "Nagpur",
+  "State": "Maharashtra"
+ },
+ {
+  "Sr No": 67,
+  "Address": "House no.274 kot mohhala Ganaur sonipatHaryana 131101",
+  "City": "Sonipat",
+  "State": "Haryana"
+ },
+ {
+  "Sr No": 68,
+  "Address": "House no.274 kot mohhala Ganaur sonipat-Haryana 131101",
+  "City": "Sonipat",
+  "State": "Haryana"
+ },
+ {
+  "Sr No": 69,
+  "Address": "Village- Khapa kala, Post office manadehi District -Mandla MP (481665)",
+  "City": "Mandla",
+  "State": "Madhya Pradesh"
+ },
+ {
+  "Sr No": 70,
+  "Address": "Jabalpur Madhya pardesh",
+  "City": "JabalPur",
+  "State": "Madhya Pradesh"
+ },
+ {
+  "Sr No": 71,
+  "Address": "Chhatarpur, Madhya Pradesh - 471001",
+  "City": "Chhatarpur",
+  "State": "Madhya Pradesh"
+ },
+ {
+  "Sr No": 72,
+  "Address": "Punjab mohali",
+  "City": "Mohali",
+  "State": "Punjab"
+ },
+ {
+  "Sr No": 73,
+  "Address": "MalkanGidi, Odisha",
+  "City": "MalkanGidi",
+  "State": "Odisha"
+ },
+ {
+  "Sr No": 74,
+  "Address": "Mp VIDISHA",
+  "City": "Vidisha",
+  "State": "Madhya Pradesh"
+ },
+ {
+  "Sr No": 75,
+  "Address": "14.no koti shivpuri m.p\nPin code 473551",
+  "City": "Shivpuri",
+  "State": "Madhya Pradesh"
+ },
+ {
+  "Sr No": 76,
+  "Address": "Hyderabad",
+  "City": "Hyderabad",
+  "State": "Telangana"
+ },
+ {
+  "Sr No": 77,
+  "Address": "Building No.\/Flat No.: 00\nName Of Premises\/Building: JP CHOWK MIRGANJ\nRoad\/Street: Station Road\nNearby Landmark: RAILWAY STASTION\nCity\/Town\/Village: Mirganj\nDistrict: Gopalganj\nState: Bihar\nPIN Code: 841438",
+  "City": "Gopalganj",
+  "State": "Bihar"
+ },
+ {
+  "Sr No": 78,
+  "Address": "Gujarat valsad pin code 396001",
+  "City": "Valsad",
+  "State": "Gujarat"
+ },
+ {
+  "Sr No": 79,
+  "Address": "Noida, Uttar Pradesh",
+  "City": "Noida",
+  "State": "Uttar Pradesh"
+ },
+ {
+  "Sr No": 80,
+  "Address": "Flat 1202, B4 building, Guardian Eastern Meadows, KHARADI, Pune, Maharashtra \n411014",
+  "City": "Pune",
+  "State": "Maharashtra"
+ },
+ {
+  "Sr No": 81,
+  "Address": "1st ward joshi street....\nNear shankara mata\nHarapanahalli (tq)\nVijaynagara (district",
+  "City": "Harapanahalli ",
+  "State": "Karnataka"
+ },
+ {
+  "Sr No": 82,
+  "Address": " Grocery Point, Maharaja Ranjit Singh Colony, Street No. 5, Barnala Road, Badrukhan, Sangrur (Pb.) 148001",
+  "City": "Sangrur",
+  "State": "Punjab"
+ },
+ {
+  "Sr No": 83,
+  "Address": "A.B Road, guljhara, dhamond ,( M.P ) pin code no - 454552",
+  "City": "Dhamnod",
+  "State": "Madhya Pradesh"
+ },
+ {
+  "Sr No": 84,
+  "Address": "Bengaluru, Karnataka - 560089",
+  "City": "Benglore",
+  "State": "Karnataka"
+ },
+ {
+  "Sr No": 85,
+  "Address": "Bhilwara, Rajasthan",
+  "City": "Bhilwara",
+  "State": "Rajasthan"
+ },
+ {
+  "Sr No": 86,
+  "Address": "Surat, Gujarat",
+  "City": "Surat",
+  "State": "Gujarat"
+ },
+ {
+  "Sr No": 87,
+  "Address": "Floor No;C1\/604,Flat no:C1\/604Fortune Kasturi,Hosangabad road",
+  "City": "indore",
+  "State": "Madhya Pradesh"
+ },
+ {
+  "Sr No": 88,
+  "Address": "Flat no 1213,Building Near prachin shiv mandir,Street Deahraj colony ( Adress not confirm)",
+  "City": "Gurgaon",
+  "State": "Haryana"
+ },
+ {
+  "Sr No": 89,
+  "Address": "Dwarka ",
+  "City": "Dwarka",
+  "State": "Delhi"
+ },
+ {
+  "Sr No": 90,
+  "Address": "Rewa",
+  "City": "Rewa",
+  "State": "Madhya Pradesh"
+ },
+ {
+  "Sr No": 91,
+  "Address": "noida",
+  "City": "noida",
+  "State": "Uttar Pradesh"
+ },
+ {
+  "Sr No": 92,
+  "Address": "Ghaziyabad",
+  "City": "Ghaziyabad",
+  "State": "Uttar Pradesh"
+ },
+ {
+  "Sr No": 93,
+  "Address": "ulhasnagar",
+  "City": "ulhasnagar",
+  "State": "Maharashtra"
+ },
+ {
+  "Sr No": 94,
+  "Address": "Amikapur ( Chhattisgarh ) ",
+  "City": "Amikapur ",
+  "State": "Chhattisgarh"
+ },
+ {
+  "Sr No": 95,
+  "Address": "Shop no.62,Jagdish market opposite Allahabad Bank High court, Prayagraj",
+  "City": "Pragyraj ",
+  "State": "Uttar Pradesh"
+ },
+ {
+  "Sr No": 96,
+  "Address": "Astha Medicare,Reti street Lal masjid road Moradabad 244001",
+  "City": "Moradabad",
+  "State": "Uttar Pradesh"
+ },
+ {
+  "Sr No": 97,
+  "Address": "Hyderabad",
+  "City": "Hyderabad",
+  "State": "Telangana"
+ },
+ {
+  "Sr No": 98,
+  "Address": "Shop No- 05,  New Grain Market, Opposite Sector -14 Gate No -02, Sirsa Road, Hisar-125001",
+  "City": "Hisar",
+  "State": "Haryana"
+ }
+ ,
+ {
+    "Sr No": 99,
+    "Address": "Greater noida",
+    "City": "Noida",
+    "State": "Uttar Pradesh"
+   }
+ ,
+ {
+    "Sr No": 100,
+    "Address": "Hotel Aapla 7/12,Purna Road, Pokharni Nanded-431601",
+    "City": "Nanded",
+    "State": "Maharashtra"
+   }
+
+]

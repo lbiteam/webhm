@@ -18,8 +18,12 @@ import elanphoto3 from "@/assets/cafe-image.webp";
 import elanphoto4 from "@/assets/cafe-2.webp";
 import elanphoto5 from "@/assets/cafe-3.webp";
 import storeOperatives from "@/assets/franchise/store operatives.json";
+import iceCreamCartmodel from "@/assets/franchise/honeyman-cart-model-1.webp";
+import iceCreamCartmodel2 from "@/assets/franchise/honeyman-cart-model-2.webp";
+import iceCreamCartmodel3 from "@/assets/franchise/honeyman-ice-creamcart-model-3.webp";
 
 import { useState, useMemo, useEffect } from "react";
+import StoreLocator from "@/components/Store-Locator";
 
 const Franchise = () => {
   const { t } = useLanguage();
@@ -160,6 +164,21 @@ const Franchise = () => {
       name: t("franchisePage.formats.trailer.name"),
       size: t("franchisePage.formats.trailer.size"),
       image: cafeTrailer,
+    },
+    {
+      name: t("franchisePage.formats.cart.name"),
+      size: t("franchisePage.formats.cart.size"),
+      image: iceCreamCartmodel,
+    },
+    {
+      name: t("franchisePage.formats.cart2.name"),
+      size: t("franchisePage.formats.cart2.size"),
+      image: iceCreamCartmodel2,
+    },
+    {
+      name: t("franchisePage.formats.cart3.name"),
+      size: t("franchisePage.formats.cart3.size"),
+      image: iceCreamCartmodel3,
     },
   ];
 
@@ -520,7 +539,8 @@ const Franchise = () => {
     
 
 {/* Store Operatives Section */}
-      <section className="py-24 bg-cream " id="store-locator">
+   <StoreLocator id = "store-locator" />
+      {/* <section className="py-24 bg-cream " id="store-locator">
         <div className="container mx-auto px-6">
           <div className="text-center mb-12 sm:mb-16">
             <span className="inline-block px-3 sm:px-4 py-2 bg-honey/20 rounded-full text-honey-dark font-medium text-xs sm:text-sm mb-4">
@@ -532,7 +552,7 @@ const Franchise = () => {
             </p>
           </div>
 
-          {/* Filters */}
+          
           <div className="flex flex-col sm:flex-row gap-4 mb-8 max-w-4xl mx-auto">
             <div className="flex-1 relative">
               <Search className="absolute left-3 top-1/2 transform -translate-y-1/2 text-muted-foreground w-4 h-4 sm:w-5 sm:h-5" />
@@ -559,14 +579,14 @@ const Franchise = () => {
             </div>
           </div>
 
-          {/* Results Count */}
+        
           <div className="text-center mb-8">
             <p className="text-muted-foreground">
               {t("franchisePage.storeOperatives.showing")} {paginatedStores.length} {t("franchisePage.storeOperatives.of")} {filteredStores.length} {t("franchisePage.storeOperatives.stores")}
             </p>
           </div>
 
-          {/* Stores Display - Table on desktop, Cards on mobile */}
+          
           <div className="hidden md:block overflow-x-auto bg-white rounded-lg shadow-lg max-w-full">
             <table className="w-full min-w-full">
               <thead className="bg-honey/10">
@@ -590,7 +610,7 @@ const Franchise = () => {
             </table>
           </div>
 
-          {/* Mobile Card Layout */}
+          
           <div className="md:hidden space-y-4">
             {paginatedStores.map((store, index) => (
               <div key={store["S.No"]} className="bg-white rounded-lg shadow-lg p-4 border border-border">
@@ -608,7 +628,7 @@ const Franchise = () => {
             ))}
           </div>
 
-          {/* Pagination */}
+          
           {totalPages > 1 && (
             <div className="flex flex-col sm:flex-row justify-center items-center gap-4 mt-8">
               <div className="flex gap-2">
@@ -647,7 +667,7 @@ const Franchise = () => {
             </div>
           )}
         </div>
-      </section>
+      </section> */}
       
 
       {/* <section className="py-24 bg-gradient-to-r from-honey to-honey-dark">

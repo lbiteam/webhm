@@ -1,6 +1,6 @@
 import { Link } from "react-router-dom";
 import Bee from "./Bee";
-import honeyDipper from "@/assets/honey-dipper.jpg";
+import honeyDipper from "@/assets/honey-dipper.webp";
 import logo from "@/assets/Honeyman-logo.webp";
 import { Instagram, Facebook, Youtube, Twitter } from "lucide-react";
 import { useLanguage } from "@/contexts/LanguageContext";

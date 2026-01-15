@@ -14,7 +14,7 @@
  },
  {
   "S.No": 3,
-  "City": "Punjab",
+  "City": "Fategarh",
   "Region": "Punjab",
   "Address": "Motia Khan Back Side Prema Welding Works Opp Avtar Foundery  GT Road. 147301"
  },
@@ -38,38 +38,38 @@
  },
  {
   "S.No": 7,
-  "City": "Delhi",
-  "Region": "Delhi  ",
+  "City": "South Delhi",
+  "Region": "Delhi",
   "Address": "F 7 , East of Kailash, Opp Metro Station, Next to first Cry, South Delhi"
  },
  {
   "S.No": 8,
-  "City": "Delhi",
-  "Region": "Delhi  ",
+  "City": "Rohini",
+  "Region": "Delhi",
   "Address": "Cafe Rico, Sec 18, Rohini, Delhi"
  },
  {
   "S.No": 9,
   "City": "Noida ",
-  "Region": "UP",
+  "Region": "Uttar Pradesh",
   "Address": "Sec 122, Opp DPS 201316, Noida (UP)"
  },
  {
   "S.No": 10,
   "City": "Lucknow",
-  "Region": "UP",
+  "Region": "Uttar Pradesh",
   "Address": "The Cuisine Cafe, Gomti Nagar, Lucknow (UP)"
  },
  {
   "S.No": 11,
   "City": "Saharanpur",
-  "Region": "UP",
+  "Region": "Uttar Pradesh", 
   "Address": "Momos Streat, Delhi Road, opp South City, Saharanpur (UP)"
  },
  {
   "S.No": 12,
   "City": "Agra",
-  "Region": "UP",
+  "Region": "Uttar Pradesh",
   "Address": "Shop No.- S-4, Sadar Bazar, Taj Road, The Master Chef Restaurant, Agra Cantt, Agra (UP)"
  },
  {
@@ -104,7 +104,7 @@
  },
  {
   "S.No": 18,
-  "City": "Delhi",
+  "City": "Vijay Nagar",
   "Region": "Delhi",
   "Address": "House no. 2\/52 , Shop No . C, Vijay nagar double story 110009 Delhi"
  },
@@ -117,7 +117,7 @@
  {
   "S.No": 20,
   "City": "Bhopal",
-  "Region": "MP",
+  "Region": "Madhya Pradesh",
   "Address": "Tukkiezzz Casa, E-6, In front of Wellness Forever. Bhopal - Pin code - 462016"
  },
  {
@@ -147,7 +147,7 @@
  {
   "S.No": 25,
   "City": "Ghaziabad",
-  "Region": "UP",
+  "Region": "Uttar Pradesh",
   "Address": "H-226 Govindpuram Ghaziabaad Near Kusum Venkat Hall."
  },
  {
@@ -171,7 +171,7 @@
  {
   "S.No": 29,
   "City": "Damoh",
-  "Region": "MP",
+  "Region": "Madhya Pradesh",
   "Address": "Salt n pepper restaurant,near Central school, beside of dr. Manish patel's clinic, Imalia, Damoh, Madhya Pradesh 470661"
  },
  {
@@ -182,7 +182,7 @@
  },
  {
   "S.No": 31,
-  "City": "Delhi",
+  "City": "Rohini",
   "Region": "Delhi",
   "Address": "Shop no.3 prashant vihar block a-54 opp lancer convent school sector -14 rohini new delhi -110085"
  },
@@ -195,19 +195,19 @@
  {
   "S.No": 33,
   "City": "Mumbai",
-  "Region": "Maharastra",
+  "Region": "Maharashtra",
   "Address": "Shop No. 6, Opposite Axis Bank, Shital Smit, CHS, Ashok Nagar Kandivali East, Mumbai-400101"
  },
  {
   "S.No": 34,
-  "City": "South 24 pargana.",
+  "City": "South 24 Parganas",
   "Region": "West Bengal",
   "Address": "10\/48, Paraui das Para Road, Nabapally 10th lane, Sarsoona, PO:-Sarsoona, Dist:- South 24 Parganas, WB:-0700061"
  },
  {
   "S.No": 35,
-  "City": "Karnataka",
-  "Region": "Bengaluru",
+  "City": "Bengaluru",
+  "Region": "Karnataka",
   "Address": "Cafe Zaara, 2nd Floor, UB City, Vittal Mallya Road, Bengaluru. 560001"
  },
  {
@@ -279,7 +279,7 @@
  {
   "S.No": 47,
   "City": "Lucknow",
-  "Region": "UP",
+  "Region": "Uttar Pradesh",
   "Address": "River Front Cafe, Shop 5A, Marine Drive, Gomti River Front , Lucknow Uttar Pradesh ,226010"
  },
  {
@@ -309,12 +309,12 @@
  {
   "S.No": 52,
   "City": "Noida",
-  "Region": "UP",
+  "Region": "Uttar Pradesh",
   "Address": "D 2006, 20th Floor D Tower, Logix Blossom Country, Sector 137, Noida 201304"
  },
  {
     "S.No": 53,
-    "City": "Delhi",
+    "City": "Dwarka",
     "Region": "Delhi",
     "Address": "Wyn Venture Pvt Ltd Plot no 3 Dwarka Sector 10 Delhi Pincode - 110075"
    },

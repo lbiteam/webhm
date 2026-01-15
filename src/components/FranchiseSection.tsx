@@ -1,5 +1,5 @@
 import { Check } from "lucide-react";
-import iceCreamPattern from "@/assets/franchise-bg  image.jpg";
+import iceCreamPattern from "@/assets/franchise-bg  image.webp";
 import { useLanguage } from "@/contexts/LanguageContext";
 
 const FranchiseSection = () => {
