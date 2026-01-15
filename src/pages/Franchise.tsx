@@ -1,4 +1,4 @@
-import { Check, MapPin, Users, Store, Headphones, TrendingUp, Settings, BookOpen, Package, Share2, Search, Filter } from "lucide-react";
+import { Check, MapPin, Users, Store, Headphones, TrendingUp, Settings, BookOpen, Package, Share2, Search, Filter, Loader2 } from "lucide-react";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import Bee from "@/components/Bee";
@@ -17,7 +17,6 @@ import elanphoto2 from "@/assets/cafe-hm.webp";
 import elanphoto3 from "@/assets/cafe-image.webp";
 import elanphoto4 from "@/assets/cafe-2.webp";
 import elanphoto5 from "@/assets/cafe-3.webp";
-import storeOperatives from "@/assets/franchise/store operatives.json";
 import iceCreamCartmodel from "@/assets/franchise/honeyman-cart-model-1.webp";
 import iceCreamCartmodel2 from "@/assets/franchise/honeyman-cart-model-2.webp";
 import iceCreamCartmodel3 from "@/assets/franchise/honeyman-ice-creamcart-model-3.webp";
@@ -33,6 +32,9 @@ const Franchise = () => {
   const [searchTerm, setSearchTerm] = useState("");
   const [selectedRegion, setSelectedRegion] = useState("");
   const [outletCarouselIndex, setOutletCarouselIndex] = useState(0);
+  const [storeOperatives, setStoreOperatives] = useState<any[]>([]);
+  const [isLoadingStores, setIsLoadingStores] = useState(true);
+  const [storeLoadError, setStoreLoadError] = useState<string | null>(null);
   const itemsPerPage = 4;
 
   const outletImages = [elanphoto1, elanphoto2, elanphoto3, elanphoto4, elanphoto5];
@@ -184,6 +186,27 @@ const Franchise = () => {
 
   const imagesPerView = 4;
 
+  // Load store operatives JSON data
+  useEffect(() => {
+    const loadStoreData = async () => {
+      setIsLoadingStores(true);
+      setStoreLoadError(null);
+      
+      try {
+        const data = await import("@/assets/franchise/store operatives.json");
+        setStoreOperatives(data.default || data || []);
+      } catch (error) {
+        console.error("Failed to load store operatives:", error);
+        setStoreLoadError("Failed to load store data. Please try refreshing the page.");
+        setStoreOperatives([]);
+      } finally {
+        setIsLoadingStores(false);
+      }
+    };
+
+    loadStoreData();
+  }, []);
+
   // Responsive images per view
   const getImagesPerView = () => {
     if (typeof window !== 'undefined') {
@@ -260,24 +283,25 @@ const Franchise = () => {
   };
 
   const filteredStores = useMemo(() => {
-    return storeOperatives.filter(store => {
+    return (storeOperatives || []).filter(store => {
       const matchesSearch = searchTerm === "" || 
-        store.City.toLowerCase().includes(searchTerm.toLowerCase()) ||
-        store.Address.toLowerCase().includes(searchTerm.toLowerCase());
+        (store.City && store.City.toLowerCase().includes(searchTerm.toLowerCase())) ||
+        (store.Address && store.Address.toLowerCase().includes(searchTerm.toLowerCase()));
       const matchesRegion = selectedRegion === "" || store.Region === selectedRegion;
       return matchesSearch && matchesRegion;
     });
-  }, [searchTerm, selectedRegion]);
+  }, [searchTerm, selectedRegion, storeOperatives]);
 
   const totalPages = Math.ceil(filteredStores.length / itemsPerPage);
   const startIndex = (currentPage - 1) * itemsPerPage;
   const paginatedStores = filteredStores.slice(startIndex, startIndex + itemsPerPage);
 
-  const regions = [...new Set(storeOperatives.map(store => store.Region))].sort();
+  const regions = [...new Set((storeOperatives || []).map(store => store.Region).filter(Boolean))].sort();
 
   useEffect(() => {
     setCurrentPage(1);
   }, [searchTerm, selectedRegion]);
+
   return (
     <div className="min-h-screen bg-cream overflow-x-hidden">
       <Header />
@@ -338,9 +362,9 @@ const Franchise = () => {
           </div>
         </div>
       </section>
- {/* Comprehensive Support Section */}
 
-       <section className="py-24 bg-white relative overflow-hidden">
+      {/* Comprehensive Support Section */}
+      <section className="py-24 bg-white relative overflow-hidden">
         {/* Background ice cream pattern with 10% opacity */}
         <div 
           className="absolute inset-0 opacity-10"
@@ -365,7 +389,7 @@ const Franchise = () => {
               <div key={index} className="group">
                 <div className="flex items-start gap-4">
                   <div className="w-14 h-14 rounded-full bg-honey/20 flex items-center justify-center flex-shrink-0 transition-colors">
-                    <support.icon className="w-7 h-7 text-honey  transition-colors" />
+                    <support.icon className="w-7 h-7 text-honey transition-colors" />
                   </div>
                   <div>
                     <h3 className="font-bold text-lg text-foreground mb-3">{support.title}</h3>
@@ -384,7 +408,6 @@ const Franchise = () => {
           </div>
         </div>
       </section>
-
 
       {/* Franchise Models - Apsara Style */}
       <section className="py-24 bg-cream relative overflow-x-hidden overflow-y-visible">
@@ -414,8 +437,7 @@ const Franchise = () => {
           {/* Apsara-style layout with circular images */}
           <div className="flex flex-col lg:flex-row items-center justify-between gap-8 mb-16">
             {/* Left side - overlapping circular images */}
-           <div className="relative w-full h-[400px] flex items-center justify-center overflow-hidden">
-
+            <div className="relative w-full h-[400px] flex items-center justify-center overflow-hidden">
               <div className="absolute left-0 top-0 w-32 h-32 sm:w-40 sm:h-40 md:w-56 md:h-56 rounded-full overflow-hidden border-4 border-white shadow-2xl z-10">
                 <img src={iceCreamParlour} alt="Ice Cream Parlour" className="w-full h-full object-cover" />
               </div>
@@ -437,7 +459,6 @@ const Franchise = () => {
 
             {/* Right side - single large circular image */}
             <div className="w-full flex justify-center overflow-hidden">
-
               <div className="w-40 h-40 sm:w-48 sm:h-48 md:w-72 md:h-72 rounded-full overflow-hidden border-4 border-white shadow-2xl">
                 <img src={iceCreamParlour} alt="Honeyman Store" className="w-full h-full object-cover" />
               </div>
@@ -504,8 +525,6 @@ const Franchise = () => {
           </div>
         </div>
       </section>
-
-     
      
       {/* Our Unique Format Section */}
       <section className="py-20 bg-gradient-to-r from-honey to-honey-dark overflow-hidden">
@@ -536,186 +555,11 @@ const Franchise = () => {
         </div>
       </section>
 
-    
+      {/* Store Operatives Section - Now using StoreLocator component */}
+      <StoreLocator id="store-locator" />
 
-{/* Store Operatives Section */}
-   <StoreLocator id = "store-locator" />
-      {/* <section className="py-24 bg-cream " id="store-locator">
-        <div className="container mx-auto px-6">
-          <div className="text-center mb-12 sm:mb-16">
-            <span className="inline-block px-3 sm:px-4 py-2 bg-honey/20 rounded-full text-honey-dark font-medium text-xs sm:text-sm mb-4">
-              {t("franchisePage.storeOperatives.badge")}
-            </span>
-            <h2 className="section-title">{t("franchisePage.storeOperatives.title")}</h2>
-            <p className="text-muted-foreground max-w-2xl mx-auto text-sm sm:text-base">
-              {t("franchisePage.storeOperatives.description")}
-            </p>
-          </div>
-
-          
-          <div className="flex flex-col sm:flex-row gap-4 mb-8 max-w-4xl mx-auto">
-            <div className="flex-1 relative">
-              <Search className="absolute left-3 top-1/2 transform -translate-y-1/2 text-muted-foreground w-4 h-4 sm:w-5 sm:h-5" />
-              <input
-                type="text"
-                placeholder={t("franchisePage.storeOperatives.searchPlaceholder")}
-                value={searchTerm}
-                onChange={(e) => setSearchTerm(e.target.value)}
-                className="w-full pl-9 sm:pl-10 pr-4 py-3 border border-border rounded-lg focus:ring-2 focus:ring-honey focus:border-transparent text-sm sm:text-base"
-              />
-            </div>
-            <div className="sm:w-64 relative">
-              <Filter className="absolute left-3 top-1/2 transform -translate-y-1/2 text-muted-foreground w-4 h-4 sm:w-5 sm:h-5" />
-              <select
-                value={selectedRegion}
-                onChange={(e) => setSelectedRegion(e.target.value)}
-                className="w-full pl-9 sm:pl-10 pr-4 py-3 border border-border rounded-lg focus:ring-2 focus:ring-honey focus:border-transparent appearance-none text-sm sm:text-base"
-              >
-                <option value="">{t("franchisePage.storeOperatives.allRegions")}</option>
-                {regions.map(region => (
-                  <option key={region} value={region}>{region}</option>
-                ))}
-              </select>
-            </div>
-          </div>
-
-        
-          <div className="text-center mb-8">
-            <p className="text-muted-foreground">
-              {t("franchisePage.storeOperatives.showing")} {paginatedStores.length} {t("franchisePage.storeOperatives.of")} {filteredStores.length} {t("franchisePage.storeOperatives.stores")}
-            </p>
-          </div>
-
-          
-          <div className="hidden md:block overflow-x-auto bg-white rounded-lg shadow-lg max-w-full">
-            <table className="w-full min-w-full">
-              <thead className="bg-honey/10">
-                <tr>
-                  <th className="px-6 py-4 text-left text-sm font-semibold text-foreground">{t("franchisePage.storeOperatives.tableHeaders.sno")}</th>
-                  <th className="px-6 py-4 text-left text-sm font-semibold text-foreground">{t("franchisePage.storeOperatives.tableHeaders.city")}</th>
-                  <th className="px-6 py-4 text-left text-sm font-semibold text-foreground">{t("franchisePage.storeOperatives.tableHeaders.region")}</th>
-                  <th className="px-6 py-4 text-left text-sm font-semibold text-foreground">{t("franchisePage.storeOperatives.tableHeaders.address")}</th>
-                </tr>
-              </thead>
-              <tbody className="divide-y divide-border">
-                {paginatedStores.map((store, index) => (
-                  <tr key={store["S.No"]} className="hover:bg-muted/50 transition-colors">
-                    <td className="px-6 py-4 text-sm text-foreground">{store["S.No"]}</td>
-                    <td className="px-6 py-4 text-sm font-medium text-foreground">{store.City}</td>
-                    <td className="px-6 py-4 text-sm text-muted-foreground">{store.Region}</td>
-                    <td className="px-6 py-4 text-sm text-muted-foreground max-w-md">{store.Address}</td>
-                  </tr>
-                ))}
-              </tbody>
-            </table>
-          </div>
-
-          
-          <div className="md:hidden space-y-4">
-            {paginatedStores.map((store, index) => (
-              <div key={store["S.No"]} className="bg-white rounded-lg shadow-lg p-4 border border-border">
-                <div className="flex justify-between items-start mb-3">
-                  <div>
-                    <h3 className="font-semibold text-foreground text-lg">{store.City}</h3>
-                    <p className="text-sm text-muted-foreground">{store.Region}</p>
-                  </div>
-                  <span className="text-sm font-medium text-honey-dark bg-honey/10 px-2 py-1 rounded">
-                    #{store["S.No"]}
-                  </span>
-                </div>
-                <p className="text-sm text-muted-foreground leading-relaxed">{store.Address}</p>
-              </div>
-            ))}
-          </div>
-
-          
-          {totalPages > 1 && (
-            <div className="flex flex-col sm:flex-row justify-center items-center gap-4 mt-8">
-              <div className="flex gap-2">
-                <button
-                  onClick={() => setCurrentPage(prev => Math.max(prev - 1, 1))}
-                  disabled={currentPage === 1}
-                  className="px-3 sm:px-4 py-2 border border-border rounded-lg hover:bg-muted disabled:opacity-50 disabled:cursor-not-allowed text-sm"
-                >
-                  {t("franchisePage.storeOperatives.previous")}
-                </button>
-                
-                <div className="flex gap-1">
-                  {Array.from({ length: totalPages }, (_, i) => i + 1).map(page => (
-                    <button
-                      key={page}
-                      onClick={() => setCurrentPage(page)}
-                      className={`px-2 sm:px-3 py-2 rounded-lg text-sm ${
-                        currentPage === page
-                          ? 'bg-honey text-white'
-                          : 'border border-border hover:bg-muted'
-                      }`}
-                    >
-                      {page}
-                    </button>
-                  ))}
-                </div>
-                
-                <button
-                  onClick={() => setCurrentPage(prev => Math.min(prev + 1, totalPages))}
-                  disabled={currentPage === totalPages}
-                  className="px-3 sm:px-4 py-2 border border-border rounded-lg hover:bg-muted disabled:opacity-50 disabled:cursor-not-allowed text-sm"
-                >
-                  {t("franchisePage.storeOperatives.next")}
-                </button>
-              </div>
-            </div>
-          )}
-        </div>
-      </section> */}
-      
-
-      {/* <section className="py-24 bg-gradient-to-r from-honey to-honey-dark">
-        <div className="container mx-auto px-6">
-          <div className="text-center mb-16">
-            <span className="inline-block px-4 py-2 bg-honey/20 rounded-full text-honey-dark font-medium text-sm mb-4">
-              Our Outlets
-            </span>
-            <h2 className="section-title">Our Cafes Gallery</h2>
-            <p className="text-muted-foreground max-w-2xl mx-auto">
-              Take a look at our beautifully designed cafes spread across India
-            </p>
-          </div>
-
-          
-          <div className="relative max-w-4xl mx-auto mb-8 bg-cream">
-            <div className="aspect-video rounded-3xl overflow-hidden shadow-2xl">
-              <img 
-                src={cafePhotos[activePhotoIndex]} 
-                alt="Cafe Gallery" 
-                className="w-full h-full object-contain transition-all duration-500"
-              />
-            </div>
-          </div>
-
-         
-          <div className="flex justify-center gap-4">
-            {cafePhotos.map((photo, index) => (
-              <button
-                key={index}
-                onClick={() => setActivePhotoIndex(index)}
-                className={`w-24 h-16 md:w-32 md:h-20 rounded-xl overflow-hidden transition-all duration-300 ${
-                  activePhotoIndex === index 
-                    ? 'ring-4 ring-honey scale-105' 
-                    : 'opacity-60 hover:opacity-100'
-                }`}
-              >
-                <img src={photo} alt={`Cafe ${index + 1}`} className="w-full h-full object-contain" />
-              </button>
-            ))}
-          </div>
-        </div>
-      </section> */}
-
-
-  {/* Our Outlets Gallery */}
-      <section className="py-24 bg-white relative overflow-x-hidden overflow-y-visible"
-      >
+      {/* Our Outlets Gallery */}
+      <section className="py-24 bg-white relative overflow-x-hidden overflow-y-visible">
         {/* Decorative Bees */}
         <Bee className="absolute top-12 right-8 z-10" size={32} />
         <Bee className="absolute bottom-20 left-12 z-10" size={28} />
@@ -800,8 +644,6 @@ const Franchise = () => {
         </div>
       </section>
       
-      
-
       {/* CTA Section - Compact */}
       <section className="py-12 bg-gradient-to-r from-honey to-honey-dark overflow-hidden">
         <div className="container mx-auto px-6 text-center">

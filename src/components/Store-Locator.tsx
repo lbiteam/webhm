@@ -1,11 +1,9 @@
 import { useState, useMemo, useEffect, useRef } from "react";
-import { Search, MapPin, Navigation, Store, Clock, ExternalLink, ChevronLeft, ChevronRight, ChevronDown, Filter } from "lucide-react";
+import { Search, MapPin, Navigation, Store, Clock, ExternalLink, ChevronLeft, ChevronRight, ChevronDown, Filter, Loader2 } from "lucide-react";
 import { MapContainer, TileLayer, Marker, Popup, useMap } from "react-leaflet";
 import MarkerClusterGroup from "react-leaflet-cluster";
 import L from "leaflet";
 import "leaflet/dist/leaflet.css";
-import storeOperatives from "@/assets/franchise/store operatives.json";
-import comingSoonStores from "@/assets/franchise/coming-soon-store.json";
 import iceCreamMarker from "@/assets/franchise/icecreamloc.png";
 
 // Custom ice cream marker icon
@@ -141,14 +139,49 @@ const StoreLocator = ({ id }: StoreLocatorProps) => {
   const [currentPage, setCurrentPage] = useState(1);
   const [selectedState, setSelectedState] = useState<string>("all");
   const [isStateDropdownOpen, setIsStateDropdownOpen] = useState(false);
+  const [isLoading, setIsLoading] = useState(true);
+  const [storeOperatives, setStoreOperatives] = useState<any[]>([]);
+  const [comingSoonStores, setComingSoonStores] = useState<any[]>([]);
+  const [error, setError] = useState<string | null>(null);
   const sectionRef = useRef<HTMLElement>(null);
 
+  // Load JSON data with useEffect
+  useEffect(() => {
+    const loadData = async () => {
+      setIsLoading(true);
+      setError(null);
+      
+      try {
+        // Dynamically import the JSON files
+        const [storeData, comingData] = await Promise.all([
+          import("@/assets/franchise/store operatives.json"),
+          import("@/assets/franchise/coming-soon-store.json")
+        ]);
+        
+        // Handle both default and named exports
+        setStoreOperatives(storeData.default || storeData || []);
+        setComingSoonStores(comingData.default || comingData || []);
+      } catch (err) {
+        console.error("Failed to load store data:", err);
+        setError("Failed to load store data. Please try refreshing the page.");
+        // Set empty arrays as fallback
+        setStoreOperatives([]);
+        setComingSoonStores([]);
+      } finally {
+        setIsLoading(false);
+      }
+    };
+
+    loadData();
+  }, []);
+
+  // Use the loaded data
   const currentStores = activeTab === "operative" ? storeOperatives : comingSoonStores;
 
   // Get unique states/regions for the dropdown
   const availableStates = useMemo(() => {
     const states = new Set<string>();
-    currentStores.forEach((store: any) => {
+    (currentStores || []).forEach((store: any) => {
       const state = store.Region || store.State || "";
       if (state) states.add(state);
     });
@@ -156,7 +189,7 @@ const StoreLocator = ({ id }: StoreLocatorProps) => {
   }, [currentStores]);
 
   const filteredStores = useMemo(() => {
-    let stores = [...currentStores] as any[];
+    let stores = [...(currentStores || [])] as any[];
     
     // Filter by state first
     if (selectedState !== "all") {
@@ -328,323 +361,342 @@ const StoreLocator = ({ id }: StoreLocatorProps) => {
           </p>
         </div>
 
-        <div className="bg-white rounded-2xl shadow-xl overflow-hidden">
-          <div className="flex flex-col lg:flex-row">
-            {/* Left Panel */}
-            <div className="w-full lg:w-[400px] flex flex-col border-r border-border lg:border-r lg:border-b-0 border-b max-h-[500px] lg:max-h-none">
-              {/* Tabs - Always visible on all screens - NO overflow hidden on tabs container */}
-              <div className="flex border-b border-border flex-shrink-0 bg-white sticky top-0 z-20">
-                <button
-                  onClick={() => {
-                    setActiveTab("operative");
-                    setSelectedStore(null);
-                    setSearchTerm("");
-                    setSelectedState("all");
-                  }}
-                  className={`flex-1 w-[200px] px-3 sm:px-6 py-3 sm:py-4 font-medium text-xs sm:text-sm transition-all flex items-center justify-center gap-1 sm:gap-2 whitespace-nowrap ${
-                    activeTab === "operative"
-                      ? "bg-honey text-foreground border-b-2 border-honey-dark"
-                      : "text-muted-foreground hover:bg-muted"
-                  }`}
-                >
-                  <Store className="w-3 h-3 sm:w-4 sm:h-4 flex-shrink-0" />
-                  <span className="hidden sm:inline">Store Operative</span>
-                  <span className="sm:hidden">Operative</span>
-                  <span className="bg-honey-dark/20 text-honey-dark px-1.5 sm:px-2 py-0.5 rounded-full text-xs flex-shrink-0">
-                    {storeOperatives.length}
-                  </span>
-                </button>
-                <button
-                  onClick={() => {
-                    setActiveTab("coming");
-                    setSelectedStore(null);
-                    setSearchTerm("");
-                    setSelectedState("all");
-                  }}
-                  className={`flex-1 w-[200px] px-3 sm:px-6 py-3 sm:py-4 font-medium text-xs sm:text-sm transition-all flex items-center justify-center gap-1 sm:gap-2 whitespace-nowrap ${
-                    activeTab === "coming"
-                      ? "bg-honey text-foreground border-b-2 border-honey-dark"
-                      : "text-muted-foreground hover:bg-muted"
-                  }`}
-                >
-                  <Clock className="w-3 h-3 sm:w-4 sm:h-4 flex-shrink-0" />
-                  <span className="hidden sm:inline">Coming Soon</span>
-                  <span className="sm:hidden">Coming</span>
-                  <span className="bg-orange-500/20 text-orange-600 px-1.5 sm:px-2 py-0.5 rounded-full text-xs flex-shrink-0">
-                    {comingSoonStores.length}
-                  </span>
-                </button>
-              </div>
-
-              {/* Search and State Filter */}
-              <div className="p-4 border-b border-border space-y-3 flex-shrink-0">
-                {/* Search */}
-                <div className="relative">
-                  <Search className="absolute left-3 top-1/2 -translate-y-1/2 w-5 h-5 text-muted-foreground" />
-                  <input
-                    type="text"
-                    placeholder="Search by city, address..."
-                    value={searchTerm}
-                    onChange={(e) => setSearchTerm(e.target.value)}
-                    className="w-full pl-10 pr-4 py-3 border border-border rounded-lg focus:ring-2 focus:ring-honey focus:border-transparent bg-white"
-                  />
+        {isLoading ? (
+          <div className="bg-white rounded-2xl shadow-xl p-12 text-center">
+            <div className="flex flex-col items-center justify-center space-y-4">
+              <Loader2 className="w-12 h-12 text-honey animate-spin" />
+              <p className="text-muted-foreground">Loading store locations...</p>
+            </div>
+          </div>
+        ) : error ? (
+          <div className="bg-white rounded-2xl shadow-xl p-8 text-center">
+            <div className="text-red-500 mb-4">{error}</div>
+            <button 
+              onClick={() => window.location.reload()}
+              className="px-4 py-2 bg-honey text-foreground rounded-lg hover:bg-honey-dark transition-colors"
+            >
+              Refresh Page
+            </button>
+          </div>
+        ) : (
+          <div className="bg-white rounded-2xl shadow-xl overflow-hidden">
+            <div className="flex flex-col lg:flex-row">
+              {/* Left Panel */}
+              <div className="w-full lg:w-[400px] flex flex-col border-r border-border lg:border-r lg:border-b-0 border-b max-h-[500px] lg:max-h-none">
+                {/* Tabs - Always visible on all screens */}
+                <div className="flex border-b border-border flex-shrink-0 bg-white sticky top-0 z-20">
+                  <button
+                    onClick={() => {
+                      setActiveTab("operative");
+                      setSelectedStore(null);
+                      setSearchTerm("");
+                      setSelectedState("all");
+                    }}
+                    className={`flex-1 w-[200px] px-3 sm:px-6 py-3 sm:py-4 font-medium text-xs sm:text-sm transition-all flex items-center justify-center gap-1 sm:gap-2 whitespace-nowrap ${
+                      activeTab === "operative"
+                        ? "bg-honey text-foreground border-b-2 border-honey-dark"
+                        : "text-muted-foreground hover:bg-muted"
+                    }`}
+                  >
+                    <Store className="w-3 h-3 sm:w-4 sm:h-4 flex-shrink-0" />
+                    <span className="hidden sm:inline">Store Operative</span>
+                    <span className="sm:hidden">Operative</span>
+                    <span className="bg-honey-dark/20 text-honey-dark px-1.5 sm:px-2 py-0.5 rounded-full text-xs flex-shrink-0">
+                      {storeOperatives.length}
+                    </span>
+                  </button>
+                  <button
+                    onClick={() => {
+                      setActiveTab("coming");
+                      setSelectedStore(null);
+                      setSearchTerm("");
+                      setSelectedState("all");
+                    }}
+                    className={`flex-1 w-[200px] px-3 sm:px-6 py-3 sm:py-4 font-medium text-xs sm:text-sm transition-all flex items-center justify-center gap-1 sm:gap-2 whitespace-nowrap ${
+                      activeTab === "coming"
+                        ? "bg-honey text-foreground border-b-2 border-honey-dark"
+                        : "text-muted-foreground hover:bg-muted"
+                    }`}
+                  >
+                    <Clock className="w-3 h-3 sm:w-4 sm:h-4 flex-shrink-0" />
+                    <span className="hidden sm:inline">Coming Soon</span>
+                    <span className="sm:hidden">Coming</span>
+                    <span className="bg-orange-500/20 text-orange-600 px-1.5 sm:px-2 py-0.5 rounded-full text-xs flex-shrink-0">
+                      {comingSoonStores.length}
+                    </span>
+                  </button>
                 </div>
 
-                {/* State Filter Dropdown */}
-                <div className="relative">
-                  <button
-                    onClick={() => setIsStateDropdownOpen(!isStateDropdownOpen)}
-                    className="w-full flex items-center justify-between px-4 py-3 border border-border rounded-lg bg-white hover:bg-muted/50 transition-colors"
-                  >
-                    <div className="flex items-center gap-2">
-                      <Filter className="w-4 h-4 text-muted-foreground" />
-                      <span className={selectedState === "all" ? "text-muted-foreground" : "text-foreground font-medium"}>
-                        {selectedState === "all" ? "Filter by State/Region" : selectedState}
-                      </span>
-                    </div>
-                    <ChevronDown className={`w-4 h-4 text-muted-foreground transition-transform ${isStateDropdownOpen ? "rotate-180" : ""}`} />
-                  </button>
+                {/* Search and State Filter */}
+                <div className="p-4 border-b border-border space-y-3 flex-shrink-0">
+                  {/* Search */}
+                  <div className="relative">
+                    <Search className="absolute left-3 top-1/2 -translate-y-1/2 w-5 h-5 text-muted-foreground" />
+                    <input
+                      type="text"
+                      placeholder="Search by city, address..."
+                      value={searchTerm}
+                      onChange={(e) => setSearchTerm(e.target.value)}
+                      className="w-full pl-10 pr-4 py-3 border border-border rounded-lg focus:ring-2 focus:ring-honey focus:border-transparent bg-white"
+                    />
+                  </div>
 
-                  {/* Dropdown Menu */}
-                  {isStateDropdownOpen && (
-                    <div className="absolute top-full left-0 right-0 mt-1 bg-white border border-border rounded-lg shadow-lg z-50 max-h-60 overflow-y-auto">
-                      <button
-                        onClick={() => handleStateChange("all")}
-                        className={`w-full text-left px-4 py-3 hover:bg-honey/10 transition-colors ${
-                          selectedState === "all" ? "bg-honey/20 text-honey-dark font-medium" : "text-foreground"
-                        }`}
-                      >
-                        All States/Regions
-                      </button>
-                      {availableStates.map((state) => (
+                  {/* State Filter Dropdown */}
+                  <div className="relative">
+                    <button
+                      onClick={() => setIsStateDropdownOpen(!isStateDropdownOpen)}
+                      className="w-full flex items-center justify-between px-4 py-3 border border-border rounded-lg bg-white hover:bg-muted/50 transition-colors"
+                    >
+                      <div className="flex items-center gap-2">
+                        <Filter className="w-4 h-4 text-muted-foreground" />
+                        <span className={selectedState === "all" ? "text-muted-foreground" : "text-foreground font-medium"}>
+                          {selectedState === "all" ? "Filter by State/Region" : selectedState}
+                        </span>
+                      </div>
+                      <ChevronDown className={`w-4 h-4 text-muted-foreground transition-transform ${isStateDropdownOpen ? "rotate-180" : ""}`} />
+                    </button>
+
+                    {/* Dropdown Menu */}
+                    {isStateDropdownOpen && (
+                      <div className="absolute top-full left-0 right-0 mt-1 bg-white border border-border rounded-lg shadow-lg z-50 max-h-60 overflow-y-auto">
                         <button
-                          key={state}
-                          onClick={() => handleStateChange(state)}
-                          className={`w-full text-left px-4 py-3 hover:bg-honey/10 transition-colors border-t border-border/50 ${
-                            selectedState === state ? "bg-honey/20 text-honey-dark font-medium" : "text-foreground"
+                          onClick={() => handleStateChange("all")}
+                          className={`w-full text-left px-4 py-3 hover:bg-honey/10 transition-colors ${
+                            selectedState === "all" ? "bg-honey/20 text-honey-dark font-medium" : "text-foreground"
                           }`}
                         >
-                          {state}
+                          All States/Regions
                         </button>
-                      ))}
-                    </div>
-                  )}
-                </div>
-              </div>
-
-              {/* Store List */}
-              <div className="flex-1 overflow-y-auto min-h-0">
-                {paginatedStores.length === 0 ? (
-                  <div className="p-8 text-center text-muted-foreground">
-                    <MapPin className="w-12 h-12 mx-auto mb-4 opacity-50" />
-                    <p>No stores found matching your search.</p>
+                        {availableStates.map((state) => (
+                          <button
+                            key={state}
+                            onClick={() => handleStateChange(state)}
+                            className={`w-full text-left px-4 py-3 hover:bg-honey/10 transition-colors border-t border-border/50 ${
+                              selectedState === state ? "bg-honey/20 text-honey-dark font-medium" : "text-foreground"
+                            }`}
+                          >
+                            {state}
+                          </button>
+                        ))}
+                      </div>
+                    )}
                   </div>
-                ) : (
-                  paginatedStores.map((store: any, index: number) => {
-                    const storeId = store["S.No"] || store["Sr No"] || index;
-                    const isSelected = selectedStore && 
-                      ((selectedStore["S.No"] && selectedStore["S.No"] === storeId) || 
-                       (selectedStore["Sr No"] && selectedStore["Sr No"] === storeId) ||
-                       (!selectedStore["S.No"] && !selectedStore["Sr No"] && index === storeId));
-                    
-                    return (
-                      <div
-                        key={`${activeTab}-${storeId}-${index}`}
-                        onClick={() => handleStoreClick(store)}
-                        className={`p-4 border-b border-border cursor-pointer transition-all hover:bg-honey/5 ${
-                          isSelected ? "bg-honey/10 border-l-4 border-l-honey" : ""
-                        }`}
-                      >
-                        <div className="flex gap-3">
-                          <div className="flex-shrink-0">
-                            <img
-                              src={iceCreamMarker}
-                              alt="Store"
-                              className="w-10 h-12 object-contain"
-                            />
-                          </div>
-                          <div className="flex-1 min-w-0">
-                            <h3 className="font-bold text-honey-dark text-lg">
-                              Honeyman - {store.City}
-                            </h3>
-                            <p className="text-muted-foreground text-sm mt-1 line-clamp-2">
-                              {store.Address}
-                            </p>
-                            <p className="text-muted-foreground text-xs mt-1">
-                              {store.Region || store.State}
-                            </p>
-                            {activeTab === "operative" && (
-                              <a
-                                href={getDirectionsUrl(store)}
-                                target="_blank"
-                                rel="noopener noreferrer"
-                                className="inline-flex items-center gap-1 text-cyan-600 hover:text-cyan-700 text-sm font-medium mt-2 hover:underline"
-                                onClick={(e) => e.stopPropagation()}
-                              >
-                                <Navigation className="w-4 h-4" />
-                                Get Directions
-                                <ExternalLink className="w-3 h-3" />
-                              </a>
-                            )}
-                            {activeTab === "coming" && (
-                              <span className="inline-flex items-center gap-1 text-orange-600 text-xs font-medium mt-2">
-                                <Clock className="w-3 h-3" />
-                                Coming Soon
-                              </span>
-                            )}
+                </div>
+
+                {/* Store List */}
+                <div className="flex-1 overflow-y-auto min-h-0">
+                  {paginatedStores.length === 0 ? (
+                    <div className="p-8 text-center text-muted-foreground">
+                      <MapPin className="w-12 h-12 mx-auto mb-4 opacity-50" />
+                      <p>No stores found matching your search.</p>
+                    </div>
+                  ) : (
+                    paginatedStores.map((store: any, index: number) => {
+                      const storeId = store["S.No"] || store["Sr No"] || index;
+                      const isSelected = selectedStore && 
+                        ((selectedStore["S.No"] && selectedStore["S.No"] === storeId) || 
+                         (selectedStore["Sr No"] && selectedStore["Sr No"] === storeId) ||
+                         (!selectedStore["S.No"] && !selectedStore["Sr No"] && index === storeId));
+                      
+                      return (
+                        <div
+                          key={`${activeTab}-${storeId}-${index}`}
+                          onClick={() => handleStoreClick(store)}
+                          className={`p-4 border-b border-border cursor-pointer transition-all hover:bg-honey/5 ${
+                            isSelected ? "bg-honey/10 border-l-4 border-l-honey" : ""
+                          }`}
+                        >
+                          <div className="flex gap-3">
+                            <div className="flex-shrink-0">
+                              <img
+                                src={iceCreamMarker}
+                                alt="Store"
+                                className="w-10 h-12 object-contain"
+                              />
+                            </div>
+                            <div className="flex-1 min-w-0">
+                              <h3 className="font-bold text-honey-dark text-lg">
+                                Honeyman - {store.City}
+                              </h3>
+                              <p className="text-muted-foreground text-sm mt-1 line-clamp-2">
+                                {store.Address}
+                              </p>
+                              <p className="text-muted-foreground text-xs mt-1">
+                                {store.Region || store.State}
+                              </p>
+                              {activeTab === "operative" && (
+                                <a
+                                  href={getDirectionsUrl(store)}
+                                  target="_blank"
+                                  rel="noopener noreferrer"
+                                  className="inline-flex items-center gap-1 text-cyan-600 hover:text-cyan-700 text-sm font-medium mt-2 hover:underline"
+                                  onClick={(e) => e.stopPropagation()}
+                                >
+                                  <Navigation className="w-4 h-4" />
+                                  Get Directions
+                                  <ExternalLink className="w-3 h-3" />
+                                </a>
+                              )}
+                              {activeTab === "coming" && (
+                                <span className="inline-flex items-center gap-1 text-orange-600 text-xs font-medium mt-2">
+                                  <Clock className="w-3 h-3" />
+                                  Coming Soon
+                                </span>
+                              )}
+                            </div>
                           </div>
                         </div>
+                      );
+                    })
+                  )}
+                </div>
+
+                {/* Pagination */}
+                {totalPages > 1 && (
+                  <div className="p-4 border-t border-border bg-muted/50">
+                    <div className="flex items-center justify-between">
+                      <button
+                        onClick={() => handlePageChange(currentPage - 1)}
+                        disabled={currentPage === 1}
+                        className="flex items-center gap-1 px-3 py-2 text-sm font-medium text-muted-foreground hover:text-foreground disabled:opacity-50 disabled:cursor-not-allowed"
+                      >
+                        <ChevronLeft className="w-4 h-4" />
+                        Prev
+                      </button>
+                      
+                      <div className="flex items-center gap-1">
+                        {Array.from({ length: Math.min(5, totalPages) }, (_, i) => {
+                          let pageNum: number;
+                          if (totalPages <= 5) {
+                            pageNum = i + 1;
+                          } else if (currentPage <= 3) {
+                            pageNum = i + 1;
+                          } else if (currentPage >= totalPages - 2) {
+                            pageNum = totalPages - 4 + i;
+                          } else {
+                            pageNum = currentPage - 2 + i;
+                          }
+                          
+                          return (
+                            <button
+                              key={pageNum}
+                              onClick={() => handlePageChange(pageNum)}
+                              className={`w-8 h-8 rounded-lg text-sm font-medium transition-colors ${
+                                currentPage === pageNum
+                                  ? "bg-honey text-foreground"
+                                  : "text-muted-foreground hover:bg-muted"
+                              }`}
+                            >
+                              {pageNum}
+                            </button>
+                          );
+                        })}
                       </div>
-                    );
-                  })
+
+                      <button
+                        onClick={() => handlePageChange(currentPage + 1)}
+                        disabled={currentPage === totalPages}
+                        className="flex items-center gap-1 px-3 py-2 text-sm font-medium text-muted-foreground hover:text-foreground disabled:opacity-50 disabled:cursor-not-allowed"
+                      >
+                        Next
+                        <ChevronRight className="w-4 h-4" />
+                      </button>
+                    </div>
+                    <p className="text-xs text-muted-foreground text-center mt-2">
+                      Showing {(currentPage - 1) * ITEMS_PER_PAGE + 1}-{Math.min(currentPage * ITEMS_PER_PAGE, filteredStores.length)} of {filteredStores.length} stores
+                    </p>
+                  </div>
                 )}
               </div>
 
-              {/* Pagination */}
-              {totalPages > 1 && (
-                <div className="p-4 border-t border-border bg-muted/50">
-                  <div className="flex items-center justify-between">
-                    <button
-                      onClick={() => handlePageChange(currentPage - 1)}
-                      disabled={currentPage === 1}
-                      className="flex items-center gap-1 px-3 py-2 text-sm font-medium text-muted-foreground hover:text-foreground disabled:opacity-50 disabled:cursor-not-allowed"
-                    >
-                      <ChevronLeft className="w-4 h-4" />
-                      Prev
-                    </button>
-                    
-                    <div className="flex items-center gap-1">
-                      {Array.from({ length: Math.min(5, totalPages) }, (_, i) => {
-                        let pageNum: number;
-                        if (totalPages <= 5) {
-                          pageNum = i + 1;
-                        } else if (currentPage <= 3) {
-                          pageNum = i + 1;
-                        } else if (currentPage >= totalPages - 2) {
-                          pageNum = totalPages - 4 + i;
-                        } else {
-                          pageNum = currentPage - 2 + i;
-                        }
-                        
-                        return (
-                          <button
-                            key={pageNum}
-                            onClick={() => handlePageChange(pageNum)}
-                            className={`w-8 h-8 rounded-lg text-sm font-medium transition-colors ${
-                              currentPage === pageNum
-                                ? "bg-honey text-foreground"
-                                : "text-muted-foreground hover:bg-muted"
-                            }`}
-                          >
-                            {pageNum}
-                          </button>
-                        );
-                      })}
-                    </div>
+              {/* Map Panel */}
+              <div className="flex-1 relative bg-gray-100 min-h-[400px] sm:min-h-[450px] lg:min-h-[600px] focus-within:ring-2 focus-within:ring-honey focus-within:ring-offset-2 rounded-r-2xl lg:rounded-r-2xl rounded-l-2xl lg:rounded-l-none overflow-hidden w-full">
+                {typeof window !== 'undefined' ? (
+                  <MapContainer
+                    center={[20.5937, 78.9629]}
+                    zoom={5}
+                    style={{ height: "100%", minHeight: "400px", width: "100%", display: "block" }}
+                    scrollWheelZoom={true}
+                    zoomControl={true}
+                    className="focus:outline-none z-0"
+                  >
+                  <TileLayer
+                    attribution='&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
+                    url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
+                  />
+                  
+                  <MapController selectedStore={selectedStore} allStores={allStoreLocations} />
 
-                    <button
-                      onClick={() => handlePageChange(currentPage + 1)}
-                      disabled={currentPage === totalPages}
-                      className="flex items-center gap-1 px-3 py-2 text-sm font-medium text-muted-foreground hover:text-foreground disabled:opacity-50 disabled:cursor-not-allowed"
-                    >
-                      Next
-                      <ChevronRight className="w-4 h-4" />
-                    </button>
-                  </div>
-                  <p className="text-xs text-muted-foreground text-center mt-2">
-                    Showing {(currentPage - 1) * ITEMS_PER_PAGE + 1}-{Math.min(currentPage * ITEMS_PER_PAGE, filteredStores.length)} of {filteredStores.length} stores
-                  </p>
-                </div>
-              )}
-            </div>
-
-            {/* Map Panel */}
-            <div className="flex-1 relative bg-gray-100 min-h-[400px] sm:min-h-[450px] lg:min-h-[600px] focus-within:ring-2 focus-within:ring-honey focus-within:ring-offset-2 rounded-r-2xl lg:rounded-r-2xl rounded-l-2xl lg:rounded-l-none overflow-hidden w-full">
-              {typeof window !== 'undefined' ? (
-                <MapContainer
-                  center={[20.5937, 78.9629]}
-                  zoom={5}
-                  style={{ height: "100%", minHeight: "400px", width: "100%", display: "block" }}
-                  scrollWheelZoom={true}
-                  zoomControl={true}
-                  className="focus:outline-none z-0"
-                >
-                <TileLayer
-                  attribution='&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
-                  url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
-                />
-                
-                <MapController selectedStore={selectedStore} allStores={allStoreLocations} />
-
-                <MarkerClusterGroup
-                  chunkedLoading
-                  iconCreateFunction={createClusterCustomIcon}
-                  maxClusterRadius={60}
-                  spiderfyOnMaxZoom={true}
-                  showCoverageOnHover={false}
-                >
-                  {allStoreLocations.map((store: any, index: number) => {
-                    const coords = getCityCoords(store.City || "");
-                    return (
-                      <Marker
-                        key={`marker-${store.id || index}`}
-                        position={[coords.lat, coords.lng]}
-                        icon={iceCreamIcon}
-                        eventHandlers={{
-                          click: () => setSelectedStore(store),
-                        }}
-                      >
-                        <Popup>
-                          <div className="p-3">
-                            <div className="flex items-start gap-2">
-                              <img src={iceCreamMarker} alt="marker" className="w-8 h-10 object-contain flex-shrink-0" />
-                              <div>
-                                <h4 className="font-bold text-honey-dark text-base">
-                                  Honeyman - {store.City}
-                                </h4>
-                                <p className="text-xs text-gray-600 mt-1">
-                                  {store.Address}
-                                </p>
-                                <p className="text-xs text-gray-500 mt-0.5">
-                                  {store.Region || store.State}
-                                </p>
-                                {activeTab === "operative" && (
-                                  <a
-                                    href={getDirectionsUrl(store)}
-                                    target="_blank"
-                                    rel="noopener noreferrer"
-                                    className="inline-flex items-center gap-1 bg-cyan-600 hover:bg-cyan-700 text-white px-3 py-1.5 rounded-lg text-xs font-medium mt-2 transition-colors"
-                                  >
-                                    <Navigation className="w-3 h-3" />
-                                    Get Directions
-                                  </a>
-                                )}
-                                {activeTab === "coming" && (
-                                  <span className="inline-flex items-center gap-1 text-orange-600 text-xs font-medium mt-2">
-                                    <Clock className="w-3 h-3" />
-                                    Coming Soon
-                                  </span>
-                                )}
+                  <MarkerClusterGroup
+                    chunkedLoading
+                    iconCreateFunction={createClusterCustomIcon}
+                    maxClusterRadius={60}
+                    spiderfyOnMaxZoom={true}
+                    showCoverageOnHover={false}
+                  >
+                    {allStoreLocations.map((store: any, index: number) => {
+                      const coords = getCityCoords(store.City || "");
+                      return (
+                        <Marker
+                          key={`marker-${store.id || index}`}
+                          position={[coords.lat, coords.lng]}
+                          icon={iceCreamIcon}
+                          eventHandlers={{
+                            click: () => setSelectedStore(store),
+                          }}
+                        >
+                          <Popup>
+                            <div className="p-3">
+                              <div className="flex items-start gap-2">
+                                <img src={iceCreamMarker} alt="marker" className="w-8 h-10 object-contain flex-shrink-0" />
+                                <div>
+                                  <h4 className="font-bold text-honey-dark text-base">
+                                    Honeyman - {store.City}
+                                  </h4>
+                                  <p className="text-xs text-gray-600 mt-1">
+                                    {store.Address}
+                                  </p>
+                                  <p className="text-xs text-gray-500 mt-0.5">
+                                    {store.Region || store.State}
+                                  </p>
+                                  {activeTab === "operative" && (
+                                    <a
+                                      href={getDirectionsUrl(store)}
+                                      target="_blank"
+                                      rel="noopener noreferrer"
+                                      className="inline-flex items-center gap-1 bg-cyan-600 hover:bg-cyan-700 text-white px-3 py-1.5 rounded-lg text-xs font-medium mt-2 transition-colors"
+                                    >
+                                      <Navigation className="w-3 h-3" />
+                                      Get Directions
+                                    </a>
+                                  )}
+                                  {activeTab === "coming" && (
+                                    <span className="inline-flex items-center gap-1 text-orange-600 text-xs font-medium mt-2">
+                                      <Clock className="w-3 h-3" />
+                                      Coming Soon
+                                    </span>
+                                  )}
+                                </div>
                               </div>
                             </div>
-                          </div>
-                        </Popup>
-                      </Marker>
-                    );
-                  })}
-                </MarkerClusterGroup>
-                </MapContainer>
-              ) : (
-                <div className="w-full h-full flex items-center justify-center bg-muted/20 min-h-[400px]">
-                  <div className="text-center p-8">
-                    <MapPin className="w-12 h-12 text-muted-foreground mx-auto mb-4" />
-                    <p className="text-muted-foreground text-sm mb-2">Loading map...</p>
+                          </Popup>
+                        </Marker>
+                      );
+                    })}
+                  </MarkerClusterGroup>
+                  </MapContainer>
+                ) : (
+                  <div className="w-full h-full flex items-center justify-center bg-muted/20 min-h-[400px]">
+                    <div className="text-center p-8">
+                      <MapPin className="w-12 h-12 text-muted-foreground mx-auto mb-4" />
+                      <p className="text-muted-foreground text-sm mb-2">Loading map...</p>
+                    </div>
                   </div>
-                </div>
-              )}
+                )}
+              </div>
             </div>
           </div>
-        </div>
+        )}
       </div>
     </section>
   );
