@@ -575,7 +575,7 @@ const Franchise = () => {
       </section>
 
       {/* Store Operatives Section - Now using StoreLocator component */}
-      <StoreLocator id="store-locator" />
+      {/* <StoreLocator id="store-locator" /> */}
 
       {/* Our Outlets Gallery */}
       <section className="py-24 bg-white relative overflow-x-hidden overflow-y-visible">
