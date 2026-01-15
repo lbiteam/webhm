@@ -194,7 +194,12 @@ const Franchise = () => {
       
       try {
         const data = await import("@/assets/franchise/store operatives.json");
-        setStoreOperatives(data.default || data || []);
+        const storeArray = Array.isArray(data?.default) 
+          ? data.default 
+          : Array.isArray(data) 
+            ? data 
+            : [];
+        setStoreOperatives(storeArray);
       } catch (error) {
         console.error("Failed to load store operatives:", error);
         setStoreLoadError("Failed to load store data. Please try refreshing the page.");
@@ -234,32 +239,32 @@ const Franchise = () => {
     return () => window.removeEventListener('resize', handleResize);
   }, [outletCarouselIndex, outletImages.length]);
 
-  // Hash scroll functionality
+  // Hash scroll functionality - wait for page to be fully loaded
   useEffect(() => {
     const scrollToHash = () => {
       const hash = window.location.hash;
       if (hash) {
         // Remove the # symbol
         const id = hash.substring(1);
-        const element = document.getElementById(id);
-        if (element) {
-          // Small delay to ensure page is fully rendered
-          setTimeout(() => {
-            const headerOffset = 100; // Adjust based on your header height
+        // Wait for component to mount and render
+        setTimeout(() => {
+          const element = document.getElementById(id);
+          if (element) {
+            const headerOffset = 140; // Adjust based on your header height
             const elementPosition = element.getBoundingClientRect().top;
             const offsetPosition = elementPosition + window.pageYOffset - headerOffset;
 
             window.scrollTo({
-              top: offsetPosition,
+              top: Math.max(0, offsetPosition),
               behavior: 'smooth'
             });
-          }, 100);
-        }
+          }
+        }, 500); // Increased delay to ensure StoreLocator is mounted
       }
     };
 
-    // Scroll on mount
-    scrollToHash();
+    // Scroll on mount after a delay to ensure all components are rendered
+    const timeoutId = setTimeout(scrollToHash, 600);
 
     // Listen for hash changes
     const handleHashChange = () => {
@@ -267,7 +272,10 @@ const Franchise = () => {
     };
 
     window.addEventListener('hashchange', handleHashChange);
-    return () => window.removeEventListener('hashchange', handleHashChange);
+    return () => {
+      clearTimeout(timeoutId);
+      window.removeEventListener('hashchange', handleHashChange);
+    };
   }, []);
 
   const nextOutletSlide = () => {
@@ -283,20 +291,31 @@ const Franchise = () => {
   };
 
   const filteredStores = useMemo(() => {
-    return (storeOperatives || []).filter(store => {
+    if (!Array.isArray(storeOperatives)) return [];
+    return storeOperatives.filter(store => {
       const matchesSearch = searchTerm === "" || 
-        (store.City && store.City.toLowerCase().includes(searchTerm.toLowerCase())) ||
-        (store.Address && store.Address.toLowerCase().includes(searchTerm.toLowerCase()));
-      const matchesRegion = selectedRegion === "" || store.Region === selectedRegion;
+        (store?.City && store.City.toLowerCase().includes(searchTerm.toLowerCase())) ||
+        (store?.Address && store.Address.toLowerCase().includes(searchTerm.toLowerCase()));
+      const matchesRegion = selectedRegion === "" || store?.Region === selectedRegion;
       return matchesSearch && matchesRegion;
     });
   }, [searchTerm, selectedRegion, storeOperatives]);
 
-  const totalPages = Math.ceil(filteredStores.length / itemsPerPage);
+  const totalPages = useMemo(() => {
+    const length = Array.isArray(filteredStores) ? filteredStores.length : 0;
+    return Math.ceil(length / itemsPerPage);
+  }, [filteredStores]);
+  
   const startIndex = (currentPage - 1) * itemsPerPage;
-  const paginatedStores = filteredStores.slice(startIndex, startIndex + itemsPerPage);
+  const paginatedStores = useMemo(() => {
+    if (!Array.isArray(filteredStores)) return [];
+    return filteredStores.slice(startIndex, startIndex + itemsPerPage);
+  }, [filteredStores, startIndex]);
 
-  const regions = [...new Set((storeOperatives || []).map(store => store.Region).filter(Boolean))].sort();
+  const regions = useMemo(() => {
+    if (!Array.isArray(storeOperatives)) return [];
+    return [...new Set(storeOperatives.map(store => store?.Region).filter(Boolean))].sort();
+  }, [storeOperatives]);
 
   useEffect(() => {
     setCurrentPage(1);

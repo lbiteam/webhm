@@ -1,5 +1,5 @@
-import { useState, useEffect } from "react";
-import { motion } from "framer-motion";
+import { useState, useEffect, useRef } from "react";
+import { motion, useInView } from "framer-motion";
 import { ChevronLeft, ChevronRight } from "lucide-react";
 import Bee from "./Bee";
 import { useLanguage } from "@/contexts/LanguageContext";
@@ -19,6 +19,9 @@ import hivebg from "@/assets/honey-bg.webp";
 export default function HoneymanTimeline() {
   const { t } = useLanguage();
   const [currentIndex, setCurrentIndex] = useState(0);
+  const beeRef = useRef<SVGTextElement>(null);
+  const beeContainerRef = useRef<SVGGElement>(null);
+  const isInView = useInView(beeContainerRef, { once: true, amount: 0.3 });
 
   const timeline = [
     { year: "1971", color: "#B45309", title: t("honeyjourney.timeline.1971.title"), desc: t("honeyjourney.timeline.1971.desc"), icon: himalayanHoney },
@@ -70,6 +73,34 @@ export default function HoneymanTimeline() {
   };
   
   const pathData = createWavePath();
+
+  // Animate bee along path using CSS offsetDistance
+  useEffect(() => {
+    if (isInView && beeRef.current) {
+      const beeElement = beeRef.current;
+      let startTime: number | null = null;
+      const duration = 6000; // 6 seconds
+      
+      const animate = (timestamp: number) => {
+        if (!startTime) startTime = timestamp;
+        const progress = Math.min((timestamp - startTime) / duration, 1);
+        
+        // Ease in out function
+        const easeInOut = progress < 0.5
+          ? 2 * progress * progress
+          : 1 - Math.pow(-2 * progress + 2, 2) / 2;
+        
+        const offsetDistance = `${easeInOut * 100}%`;
+        beeElement.style.offsetDistance = offsetDistance;
+        
+        if (progress < 1) {
+          requestAnimationFrame(animate);
+        }
+      };
+      
+      requestAnimationFrame(animate);
+    }
+  }, [isInView]);
 
   const nextItem = () => {
     setCurrentIndex((prev) => (prev + 1) % numItems);
@@ -134,15 +165,24 @@ export default function HoneymanTimeline() {
               />
 
               {/* THE FLYING BEE along the path */}
-              <motion.g
-                initial={{ offsetDistance: "0%" }}
-                whileInView={{ offsetDistance: "100%" }}
-                viewport={{ once: true }}
-                transition={{ duration: 6, ease: "easeInOut" }}
-                style={{ offsetPath: `path('${pathData}')` }}
+              <g
+                ref={beeContainerRef}
+                style={{ 
+                  offsetPath: `path('${pathData}')`,
+                }}
               >
-                <text fontSize="24" y="10" x="0">🐝</text>
-              </motion.g>
+                <text
+                  ref={beeRef}
+                  fontSize="24"
+                  y="10"
+                  x="0"
+                  style={{ 
+                    offsetDistance: "0%",
+                  } as React.CSSProperties}
+                >
+                  🐝
+                </text>
+              </g>
             </svg>
 
             {/* CONTENT GRID - Nodes positioned exactly on wave path */}

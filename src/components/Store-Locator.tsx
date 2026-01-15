@@ -108,7 +108,7 @@ const MapController = ({ selectedStore, allStores }: { selectedStore: any; allSt
     if (selectedStore) {
       const coords = getCityCoords(selectedStore.City || "");
       map.flyTo([coords.lat, coords.lng], 15, { duration: 1 });
-    } else if (allStores.length > 0) {
+    } else if (allStores && Array.isArray(allStores) && allStores.length > 0) {
       // Fit bounds to show all stores with padding
       const bounds = L.latLngBounds(
         allStores.map((store: any) => {
@@ -158,9 +158,20 @@ const StoreLocator = ({ id }: StoreLocatorProps) => {
           import("@/assets/franchise/coming-soon-store.json")
         ]);
         
-        // Handle both default and named exports
-        setStoreOperatives(storeData.default || storeData || []);
-        setComingSoonStores(comingData.default || comingData || []);
+        // Handle both default and named exports, ensure arrays
+        const storeArray = Array.isArray(storeData?.default) 
+          ? storeData.default 
+          : Array.isArray(storeData) 
+            ? storeData 
+            : [];
+        const comingArray = Array.isArray(comingData?.default) 
+          ? comingData.default 
+          : Array.isArray(comingData) 
+            ? comingData 
+            : [];
+        
+        setStoreOperatives(storeArray);
+        setComingSoonStores(comingArray);
       } catch (err) {
         console.error("Failed to load store data:", err);
         setError("Failed to load store data. Please try refreshing the page.");
@@ -175,26 +186,33 @@ const StoreLocator = ({ id }: StoreLocatorProps) => {
     loadData();
   }, []);
 
-  // Use the loaded data
-  const currentStores = activeTab === "operative" ? storeOperatives : comingSoonStores;
+  // Use the loaded data - ensure arrays
+  const currentStores = useMemo(() => {
+    const stores = activeTab === "operative" ? storeOperatives : comingSoonStores;
+    return Array.isArray(stores) ? stores : [];
+  }, [activeTab, storeOperatives, comingSoonStores]);
 
   // Get unique states/regions for the dropdown
   const availableStates = useMemo(() => {
     const states = new Set<string>();
-    (currentStores || []).forEach((store: any) => {
-      const state = store.Region || store.State || "";
-      if (state) states.add(state);
-    });
+    if (Array.isArray(currentStores)) {
+      currentStores.forEach((store: any) => {
+        const state = store?.Region || store?.State || "";
+        if (state) states.add(state);
+      });
+    }
     return Array.from(states).sort();
   }, [currentStores]);
 
   const filteredStores = useMemo(() => {
-    let stores = [...(currentStores || [])] as any[];
+    if (!Array.isArray(currentStores)) return [];
+    
+    let stores = [...currentStores] as any[];
     
     // Filter by state first
     if (selectedState !== "all") {
       stores = stores.filter((store: any) => {
-        const state = (store.Region || store.State || "").toLowerCase();
+        const state = (store?.Region || store?.State || "").toLowerCase();
         return state === selectedState.toLowerCase();
       });
     }
@@ -203,9 +221,9 @@ const StoreLocator = ({ id }: StoreLocatorProps) => {
     if (searchTerm) {
       const term = searchTerm.toLowerCase();
       stores = stores.filter((store: any) => {
-        const city = (store.City || "").toLowerCase();
-        const address = (store.Address || "").toLowerCase();
-        const region = (store.Region || store.State || "").toLowerCase();
+        const city = (store?.City || "").toLowerCase();
+        const address = (store?.Address || "").toLowerCase();
+        const region = (store?.Region || store?.State || "").toLowerCase();
         return city.includes(term) || address.includes(term) || region.includes(term);
       });
     }
@@ -214,8 +232,13 @@ const StoreLocator = ({ id }: StoreLocatorProps) => {
   }, [searchTerm, currentStores, activeTab, selectedState]);
 
   // Pagination
-  const totalPages = Math.ceil(filteredStores.length / ITEMS_PER_PAGE);
+  const totalPages = useMemo(() => {
+    const length = Array.isArray(filteredStores) ? filteredStores.length : 0;
+    return Math.ceil(length / ITEMS_PER_PAGE);
+  }, [filteredStores]);
+  
   const paginatedStores = useMemo(() => {
+    if (!Array.isArray(filteredStores)) return [];
     const start = (currentPage - 1) * ITEMS_PER_PAGE;
     return filteredStores.slice(start, start + ITEMS_PER_PAGE);
   }, [filteredStores, currentPage]);
@@ -225,10 +248,13 @@ const StoreLocator = ({ id }: StoreLocatorProps) => {
     setCurrentPage(1);
   }, [activeTab, searchTerm, selectedState]);
 
-  // Handle scroll offset for header overlap
+  // Handle scroll offset for header overlap - only after data is loaded
   useEffect(() => {
+    if (isLoading) return; // Don't scroll until data is loaded
+    
     const handleHashScroll = () => {
       if (id && (window.location.hash === `#${id}` || window.location.hash === `#store-locator`)) {
+        // Wait for component to be fully rendered
         setTimeout(() => {
           if (sectionRef.current) {
             // Different offset for mobile vs desktop
@@ -242,31 +268,30 @@ const StoreLocator = ({ id }: StoreLocatorProps) => {
               behavior: 'smooth'
             });
           }
-        }, 150);
+        }, 200);
       }
     };
 
-    // Check on mount with delay to ensure DOM is ready
-    const timeoutId = setTimeout(handleHashScroll, 300);
+    // Check on mount with delay to ensure DOM is ready and data is loaded
+    const timeoutId = setTimeout(handleHashScroll, 500);
 
     // Listen for hash changes
     window.addEventListener('hashchange', handleHashScroll);
-    window.addEventListener('load', handleHashScroll);
     
     return () => {
       clearTimeout(timeoutId);
       window.removeEventListener('hashchange', handleHashScroll);
-      window.removeEventListener('load', handleHashScroll);
     };
-  }, [id]);
+  }, [id, isLoading]);
 
   // Prepare all store locations with coordinates for map (based on filtered stores)
   const allStoreLocations = useMemo(() => {
+    if (!Array.isArray(filteredStores)) return [];
     return filteredStores.map((store: any, index: number) => {
-      const coords = getCityCoords(store.City || "");
+      const coords = getCityCoords(store?.City || "");
       return {
         ...store,
-        id: store["S.No"] || store["Sr No"] || index,
+        id: store?.["S.No"] || store?.["Sr No"] || index,
         lat: coords.lat,
         lng: coords.lng
       };
@@ -402,7 +427,7 @@ const StoreLocator = ({ id }: StoreLocatorProps) => {
                     <span className="hidden sm:inline">Store Operative</span>
                     <span className="sm:hidden">Operative</span>
                     <span className="bg-honey-dark/20 text-honey-dark px-1.5 sm:px-2 py-0.5 rounded-full text-xs flex-shrink-0">
-                      {storeOperatives.length}
+                      {Array.isArray(storeOperatives) ? storeOperatives.length : 0}
                     </span>
                   </button>
                   <button
@@ -422,7 +447,7 @@ const StoreLocator = ({ id }: StoreLocatorProps) => {
                     <span className="hidden sm:inline">Coming Soon</span>
                     <span className="sm:hidden">Coming</span>
                     <span className="bg-orange-500/20 text-orange-600 px-1.5 sm:px-2 py-0.5 rounded-full text-xs flex-shrink-0">
-                      {comingSoonStores.length}
+                      {Array.isArray(comingSoonStores) ? comingSoonStores.length : 0}
                     </span>
                   </button>
                 </div>
@@ -485,7 +510,7 @@ const StoreLocator = ({ id }: StoreLocatorProps) => {
 
                 {/* Store List */}
                 <div className="flex-1 overflow-y-auto min-h-0">
-                  {paginatedStores.length === 0 ? (
+                  {!Array.isArray(paginatedStores) || paginatedStores.length === 0 ? (
                     <div className="p-8 text-center text-muted-foreground">
                       <MapPin className="w-12 h-12 mx-auto mb-4 opacity-50" />
                       <p>No stores found matching your search.</p>
@@ -603,7 +628,7 @@ const StoreLocator = ({ id }: StoreLocatorProps) => {
                       </button>
                     </div>
                     <p className="text-xs text-muted-foreground text-center mt-2">
-                      Showing {(currentPage - 1) * ITEMS_PER_PAGE + 1}-{Math.min(currentPage * ITEMS_PER_PAGE, filteredStores.length)} of {filteredStores.length} stores
+                      Showing {(currentPage - 1) * ITEMS_PER_PAGE + 1}-{Math.min(currentPage * ITEMS_PER_PAGE, Array.isArray(filteredStores) ? filteredStores.length : 0)} of {Array.isArray(filteredStores) ? filteredStores.length : 0} stores
                     </p>
                   </div>
                 )}
@@ -611,7 +636,7 @@ const StoreLocator = ({ id }: StoreLocatorProps) => {
 
               {/* Map Panel */}
               <div className="flex-1 relative bg-gray-100 min-h-[400px] sm:min-h-[450px] lg:min-h-[600px] focus-within:ring-2 focus-within:ring-honey focus-within:ring-offset-2 rounded-r-2xl lg:rounded-r-2xl rounded-l-2xl lg:rounded-l-none overflow-hidden w-full">
-                {typeof window !== 'undefined' ? (
+                {typeof window !== 'undefined' && !isLoading ? (
                   <MapContainer
                     center={[20.5937, 78.9629]}
                     zoom={5}
@@ -625,7 +650,7 @@ const StoreLocator = ({ id }: StoreLocatorProps) => {
                     url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
                   />
                   
-                  <MapController selectedStore={selectedStore} allStores={allStoreLocations} />
+                  <MapController selectedStore={selectedStore} allStores={Array.isArray(allStoreLocations) ? allStoreLocations : []} />
 
                   <MarkerClusterGroup
                     chunkedLoading
@@ -634,11 +659,11 @@ const StoreLocator = ({ id }: StoreLocatorProps) => {
                     spiderfyOnMaxZoom={true}
                     showCoverageOnHover={false}
                   >
-                    {allStoreLocations.map((store: any, index: number) => {
-                      const coords = getCityCoords(store.City || "");
+                    {Array.isArray(allStoreLocations) && allStoreLocations.map((store: any, index: number) => {
+                      const coords = getCityCoords(store?.City || "");
                       return (
                         <Marker
-                          key={`marker-${store.id || index}`}
+                          key={`marker-${store?.id || index}`}
                           position={[coords.lat, coords.lng]}
                           icon={iceCreamIcon}
                           eventHandlers={{
@@ -651,13 +676,13 @@ const StoreLocator = ({ id }: StoreLocatorProps) => {
                                 <img src={iceCreamMarker} alt="marker" className="w-8 h-10 object-contain flex-shrink-0" />
                                 <div>
                                   <h4 className="font-bold text-honey-dark text-base">
-                                    Honeyman - {store.City}
+                                    Honeyman - {store?.City || ""}
                                   </h4>
                                   <p className="text-xs text-gray-600 mt-1">
-                                    {store.Address}
+                                    {store?.Address || ""}
                                   </p>
                                   <p className="text-xs text-gray-500 mt-0.5">
-                                    {store.Region || store.State}
+                                    {store?.Region || store?.State || ""}
                                   </p>
                                   {activeTab === "operative" && (
                                     <a
