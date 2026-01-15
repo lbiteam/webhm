@@ -75,7 +75,16 @@ const cityCoordinates: Record<string, { lat: number; lng: number }> = {
   "default": { lat: 22.5, lng: 82.0 },
 };
 
-const getCityCoords = (city: string): { lat: number; lng: number } => {
+const getCityCoords = (city: string | undefined | null): { lat: number; lng: number } => {
+  if (!city || typeof city !== 'string' || city.trim() === '') {
+    // Return default coordinates for empty/undefined city
+    const baseCoords = cityCoordinates["default"];
+    return {
+      lat: baseCoords.lat + (Math.random() - 0.5) * 10,
+      lng: baseCoords.lng + (Math.random() - 0.5) * 10
+    };
+  }
+  
   const normalizedCity = city.toLowerCase().trim();
   for (const [key, coords] of Object.entries(cityCoordinates)) {
     if (normalizedCity.includes(key) || key.includes(normalizedCity)) {
@@ -89,7 +98,6 @@ const getCityCoords = (city: string): { lat: number; lng: number } => {
     lng: baseCoords.lng + (Math.random() - 0.5) * 10
   };
 };
-
 // Custom cluster icon with count
 const createClusterCustomIcon = (cluster: any) => {
   const count = cluster.getChildCount();
@@ -105,18 +113,47 @@ const MapController = ({ selectedStore, allStores }: { selectedStore: any; allSt
   const map = useMap();
 
   useEffect(() => {
-    if (selectedStore) {
-      const coords = getCityCoords(selectedStore.City || "");
+    // Ensure map is available
+    if (!map) return;
+
+    // Validate allStores is a non-empty array
+    const isValidStoresArray = allStores && 
+                               Array.isArray(allStores) && 
+                               allStores.length > 0 &&
+                               allStores.every(store => store != null);
+    
+    if (selectedStore && selectedStore.City) {
+      const coords = getCityCoords(selectedStore.City);
       map.flyTo([coords.lat, coords.lng], 15, { duration: 1 });
-    } else if (allStores && Array.isArray(allStores) && allStores.length > 0) {
-      // Fit bounds to show all stores with padding
-      const bounds = L.latLngBounds(
-        allStores.map((store: any) => {
-          const coords = getCityCoords(store.City || "");
-          return [coords.lat, coords.lng] as L.LatLngTuple;
-        })
-      );
-      map.fitBounds(bounds, { padding: [50, 50], maxZoom: 6 });
+    } else if (isValidStoresArray) {
+      try {
+        // Filter out any invalid stores before mapping
+        const validStores = allStores.filter(store => store && store.City);
+        
+        if (validStores.length === 0) {
+          // Fallback to default view if no valid stores
+          map.setView([20.5937, 78.9629], 5);
+          return;
+        }
+        
+        // Create bounds only from valid stores
+        const bounds = L.latLngBounds(
+          validStores.map((store: any) => {
+            const coords = getCityCoords(store.City);
+            return [coords.lat, coords.lng] as L.LatLngTuple;
+          })
+        );
+        
+        // Ensure bounds are valid
+        if (bounds.isValid()) {
+          map.fitBounds(bounds, { padding: [50, 50], maxZoom: 6 });
+        } else {
+          map.setView([20.5937, 78.9629], 5);
+        }
+      } catch (error) {
+        console.error('Error fitting map bounds:', error);
+        map.setView([20.5937, 78.9629], 5);
+      }
     } else {
       // Default view: Focus on India
       map.setView([20.5937, 78.9629], 5);
@@ -125,6 +162,7 @@ const MapController = ({ selectedStore, allStores }: { selectedStore: any; allSt
 
   return null;
 };
+
 
 interface StoreLocatorProps {
   id?: string;
@@ -287,15 +325,18 @@ const StoreLocator = ({ id }: StoreLocatorProps) => {
   // Prepare all store locations with coordinates for map (based on filtered stores)
   const allStoreLocations = useMemo(() => {
     if (!Array.isArray(filteredStores)) return [];
-    return filteredStores.map((store: any, index: number) => {
-      const coords = getCityCoords(store?.City || "");
-      return {
-        ...store,
-        id: store?.["S.No"] || store?.["Sr No"] || index,
-        lat: coords.lat,
-        lng: coords.lng
-      };
-    });
+    
+    return filteredStores
+      .filter((store: any) => store != null) // Filter out null/undefined
+      .map((store: any, index: number) => {
+        const coords = getCityCoords(store?.City);
+        return {
+          ...store,
+          id: store?.["S.No"] || store?.["Sr No"] || index,
+          lat: coords.lat,
+          lng: coords.lng
+        };
+      });
   }, [filteredStores]);
 
   const handleStoreClick = (store: any) => {
@@ -326,6 +367,22 @@ const StoreLocator = ({ id }: StoreLocatorProps) => {
     setIsStateDropdownOpen(false);
     setSelectedStore(null);
   };
+
+  // Add this useEffect in your StoreLocator component for debugging:
+useEffect(() => {
+  console.log('Debug - storeOperatives:', storeOperatives);
+  console.log('Debug - comingSoonStores:', comingSoonStores);
+  console.log('Debug - currentStores:', currentStores);
+  console.log('Debug - filteredStores:', filteredStores);
+  console.log('Debug - allStoreLocations:', allStoreLocations);
+  
+  // Check for undefined values that could cause .length errors
+  if (storeOperatives === undefined) console.error('storeOperatives is undefined!');
+  if (comingSoonStores === undefined) console.error('comingSoonStores is undefined!');
+  if (currentStores === undefined) console.error('currentStores is undefined!');
+  if (filteredStores === undefined) console.error('filteredStores is undefined!');
+  if (allStoreLocations === undefined) console.error('allStoreLocations is undefined!');
+}, [storeOperatives, comingSoonStores, currentStores, filteredStores, allStoreLocations]);
 
   return (
     <section 
