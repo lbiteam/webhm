@@ -1,7 +1,6 @@
 import { useState, useMemo, useEffect, useRef } from "react";
 import { Search, MapPin, Navigation, Store, Clock, ExternalLink, ChevronLeft, ChevronRight, ChevronDown, Filter, Loader2 } from "lucide-react";
 import { MapContainer, TileLayer, Marker, Popup, useMap } from "react-leaflet";
-import MarkerClusterGroup from "react-leaflet-cluster";
 import L from "leaflet";
 import "leaflet/dist/leaflet.css";
 import iceCreamMarker from "@/assets/franchise/icecreamloc.png";
@@ -77,12 +76,7 @@ const cityCoordinates: Record<string, { lat: number; lng: number }> = {
 
 const getCityCoords = (city: string | undefined | null): { lat: number; lng: number } => {
   if (!city || typeof city !== 'string' || city.trim() === '') {
-    // Return default coordinates for empty/undefined city
-    const baseCoords = cityCoordinates["default"];
-    return {
-      lat: baseCoords.lat + (Math.random() - 0.5) * 10,
-      lng: baseCoords.lng + (Math.random() - 0.5) * 10
-    };
+    return cityCoordinates["default"];
   }
   
   const normalizedCity = city.toLowerCase().trim();
@@ -91,78 +85,40 @@ const getCityCoords = (city: string | undefined | null): { lat: number; lng: num
       return coords;
     }
   }
-  // Return a slightly randomized position around center of India to spread markers
-  const baseCoords = cityCoordinates["default"];
-  return {
-    lat: baseCoords.lat + (Math.random() - 0.5) * 10,
-    lng: baseCoords.lng + (Math.random() - 0.5) * 10
-  };
-};
-// Custom cluster icon with count
-const createClusterCustomIcon = (cluster: any) => {
-  const count = cluster.getChildCount();
-  return L.divIcon({
-    html: `<div class="custom-cluster-icon">${count}</div>`,
-    className: "custom-marker-cluster",
-    iconSize: L.point(40, 40, true),
-  });
+  
+  return cityCoordinates["default"];
 };
 
-// Map controller component to handle zoom to location
-const MapController = ({ selectedStore, allStores }: { selectedStore: any; allStores: any[] }) => {
+// Component to get map instance and set it to ref, and handle initial bounds
+const MapRefSetter = ({ mapRef, allStoreLocations }: { mapRef: React.MutableRefObject<any>; allStoreLocations: any[] }) => {
   const map = useMap();
-
+  
   useEffect(() => {
-    // Ensure map is available
-    if (!map) return;
-
-    // Validate allStores is a non-empty array
-    const isValidStoresArray = allStores && 
-                               Array.isArray(allStores) && 
-                               allStores.length > 0 &&
-                               allStores.every(store => store != null);
-    
-    if (selectedStore && selectedStore.City) {
-      const coords = getCityCoords(selectedStore.City);
-      map.flyTo([coords.lat, coords.lng], 15, { duration: 1 });
-    } else if (isValidStoresArray) {
-      try {
-        // Filter out any invalid stores before mapping
-        const validStores = allStores.filter(store => store && store.City);
-        
-        if (validStores.length === 0) {
-          // Fallback to default view if no valid stores
-          map.setView([20.5937, 78.9629], 5);
-          return;
+    if (map) {
+      mapRef.current = map;
+      
+      // Set initial view to show all markers
+      if (allStoreLocations.length > 0) {
+        const validStores = allStoreLocations.filter(store => store?.City);
+        if (validStores.length > 0) {
+          const bounds = L.latLngBounds(
+            validStores.map((store: any) => {
+              const coords = getCityCoords(store.City);
+              return [coords.lat, coords.lng] as L.LatLngTuple;
+            })
+          );
+          if (bounds.isValid()) {
+            setTimeout(() => {
+              map.fitBounds(bounds, { padding: [50, 50], maxZoom: 6 });
+            }, 100);
+          }
         }
-        
-        // Create bounds only from valid stores
-        const bounds = L.latLngBounds(
-          validStores.map((store: any) => {
-            const coords = getCityCoords(store.City);
-            return [coords.lat, coords.lng] as L.LatLngTuple;
-          })
-        );
-        
-        // Ensure bounds are valid
-        if (bounds.isValid()) {
-          map.fitBounds(bounds, { padding: [50, 50], maxZoom: 6 });
-        } else {
-          map.setView([20.5937, 78.9629], 5);
-        }
-      } catch (error) {
-        console.error('Error fitting map bounds:', error);
-        map.setView([20.5937, 78.9629], 5);
       }
-    } else {
-      // Default view: Focus on India
-      map.setView([20.5937, 78.9629], 5);
     }
-  }, [selectedStore, allStores, map]);
-
+  }, [map, mapRef, allStoreLocations]);
+  
   return null;
 };
-
 
 interface StoreLocatorProps {
   id?: string;
@@ -182,6 +138,7 @@ const StoreLocator = ({ id }: StoreLocatorProps) => {
   const [comingSoonStores, setComingSoonStores] = useState<any[]>([]);
   const [error, setError] = useState<string | null>(null);
   const sectionRef = useRef<HTMLElement>(null);
+  const mapRef = useRef<any>(null);
 
   // Load JSON data with useEffect
   useEffect(() => {
@@ -190,13 +147,11 @@ const StoreLocator = ({ id }: StoreLocatorProps) => {
       setError(null);
       
       try {
-        // Dynamically import the JSON files
         const [storeData, comingData] = await Promise.all([
           import("@/assets/franchise/store operatives.json"),
           import("@/assets/franchise/coming-soon-store.json")
         ]);
         
-        // Handle both default and named exports, ensure arrays
         const storeArray = Array.isArray(storeData?.default) 
           ? storeData.default 
           : Array.isArray(storeData) 
@@ -213,7 +168,6 @@ const StoreLocator = ({ id }: StoreLocatorProps) => {
       } catch (err) {
         console.error("Failed to load store data:", err);
         setError("Failed to load store data. Please try refreshing the page.");
-        // Set empty arrays as fallback
         setStoreOperatives([]);
         setComingSoonStores([]);
       } finally {
@@ -224,13 +178,11 @@ const StoreLocator = ({ id }: StoreLocatorProps) => {
     loadData();
   }, []);
 
-  // Use the loaded data - ensure arrays
   const currentStores = useMemo(() => {
     const stores = activeTab === "operative" ? storeOperatives : comingSoonStores;
     return Array.isArray(stores) ? stores : [];
   }, [activeTab, storeOperatives, comingSoonStores]);
 
-  // Get unique states/regions for the dropdown
   const availableStates = useMemo(() => {
     const states = new Set<string>();
     if (Array.isArray(currentStores)) {
@@ -247,7 +199,6 @@ const StoreLocator = ({ id }: StoreLocatorProps) => {
     
     let stores = [...currentStores] as any[];
     
-    // Filter by state first
     if (selectedState !== "all") {
       stores = stores.filter((store: any) => {
         const state = (store?.Region || store?.State || "").toLowerCase();
@@ -255,7 +206,6 @@ const StoreLocator = ({ id }: StoreLocatorProps) => {
       });
     }
     
-    // Then filter by search term
     if (searchTerm) {
       const term = searchTerm.toLowerCase();
       stores = stores.filter((store: any) => {
@@ -267,9 +217,8 @@ const StoreLocator = ({ id }: StoreLocatorProps) => {
     }
     
     return stores;
-  }, [searchTerm, currentStores, activeTab, selectedState]);
+  }, [searchTerm, currentStores, selectedState]);
 
-  // Pagination
   const totalPages = useMemo(() => {
     const length = Array.isArray(filteredStores) ? filteredStores.length : 0;
     return Math.ceil(length / ITEMS_PER_PAGE);
@@ -281,23 +230,20 @@ const StoreLocator = ({ id }: StoreLocatorProps) => {
     return filteredStores.slice(start, start + ITEMS_PER_PAGE);
   }, [filteredStores, currentPage]);
 
-  // Reset page when tab, search or state changes
   useEffect(() => {
     setCurrentPage(1);
   }, [activeTab, searchTerm, selectedState]);
 
-  // Handle scroll offset for header overlap - only after data is loaded
+  // Handle scroll offset
   useEffect(() => {
-    if (isLoading) return; // Don't scroll until data is loaded
+    if (isLoading) return;
     
     const handleHashScroll = () => {
       if (id && (window.location.hash === `#${id}` || window.location.hash === `#store-locator`)) {
-        // Wait for component to be fully rendered
         setTimeout(() => {
           if (sectionRef.current) {
-            // Different offset for mobile vs desktop
             const isMobile = window.innerWidth < 1024;
-            const headerOffset = isMobile ? 120 : 140; // Larger offset for desktop
+            const headerOffset = isMobile ? 120 : 140;
             const elementPosition = sectionRef.current.getBoundingClientRect().top;
             const offsetPosition = elementPosition + window.pageYOffset - headerOffset;
 
@@ -310,10 +256,7 @@ const StoreLocator = ({ id }: StoreLocatorProps) => {
       }
     };
 
-    // Check on mount with delay to ensure DOM is ready and data is loaded
     const timeoutId = setTimeout(handleHashScroll, 500);
-
-    // Listen for hash changes
     window.addEventListener('hashchange', handleHashScroll);
     
     return () => {
@@ -322,38 +265,46 @@ const StoreLocator = ({ id }: StoreLocatorProps) => {
     };
   }, [id, isLoading]);
 
-  // Prepare all store locations with coordinates for map (based on filtered stores)
+  // Prepare all store locations for map
   const allStoreLocations = useMemo(() => {
     if (!Array.isArray(filteredStores)) return [];
     
-    return filteredStores
-      .filter((store: any) => store != null) // Filter out null/undefined
-      .map((store: any, index: number) => {
-        const coords = getCityCoords(store?.City);
-        return {
-          ...store,
-          id: store?.["S.No"] || store?.["Sr No"] || index,
-          lat: coords.lat,
-          lng: coords.lng
-        };
-      });
+    try {
+      return filteredStores
+        .filter((store: any) => store != null)
+        .map((store: any, index: number) => {
+          const coords = getCityCoords(store?.City);
+          return {
+            ...store,
+            id: store?.["S.No"] || store?.["Sr No"] || `store-${index}`,
+            lat: coords.lat,
+            lng: coords.lng
+          };
+        });
+    } catch (error) {
+      console.error('Error processing store locations:', error);
+      return [];
+    }
   }, [filteredStores]);
 
   const handleStoreClick = (store: any) => {
     setSelectedStore(store);
+    // Fly to the selected location
+    if (mapRef.current && store?.City) {
+      const coords = getCityCoords(store.City);
+      mapRef.current.flyTo([coords.lat, coords.lng], 15, { 
+        duration: 1,
+        animate: true 
+      });
+    }
   };
 
-  // Google Maps directions URL
   const getDirectionsUrl = (store: any) => {
-    // Create a full address string
     const fullAddress = store.Address 
       ? `${store.Address}, ${store.City}, ${store.State || store.Region}, India`
       : `${store.City}, ${store.State || store.Region}, India`;
     
-    // Encode the address for Google Maps
     const encodedAddress = encodeURIComponent(fullAddress);
-    
-    // Open Google Maps with directions
     return `https://www.google.com/maps/dir/?api=1&destination=${encodedAddress}`;
   };
 
@@ -368,21 +319,20 @@ const StoreLocator = ({ id }: StoreLocatorProps) => {
     setSelectedStore(null);
   };
 
-  // Add this useEffect in your StoreLocator component for debugging:
-useEffect(() => {
-  console.log('Debug - storeOperatives:', storeOperatives);
-  console.log('Debug - comingSoonStores:', comingSoonStores);
-  console.log('Debug - currentStores:', currentStores);
-  console.log('Debug - filteredStores:', filteredStores);
-  console.log('Debug - allStoreLocations:', allStoreLocations);
-  
-  // Check for undefined values that could cause .length errors
-  if (storeOperatives === undefined) console.error('storeOperatives is undefined!');
-  if (comingSoonStores === undefined) console.error('comingSoonStores is undefined!');
-  if (currentStores === undefined) console.error('currentStores is undefined!');
-  if (filteredStores === undefined) console.error('filteredStores is undefined!');
-  if (allStoreLocations === undefined) console.error('allStoreLocations is undefined!');
-}, [storeOperatives, comingSoonStores, currentStores, filteredStores, allStoreLocations]);
+  // Set initial map view to show all stores
+  const initialCenter = useMemo(() => {
+    if (allStoreLocations.length > 0) {
+      const validStores = allStoreLocations.filter(store => store?.City);
+      if (validStores.length > 0) {
+        const lats = validStores.map(store => getCityCoords(store.City).lat);
+        const lngs = validStores.map(store => getCityCoords(store.City).lng);
+        const avgLat = lats.reduce((a, b) => a + b, 0) / lats.length;
+        const avgLng = lngs.reduce((a, b) => a + b, 0) / lngs.length;
+        return [avgLat, avgLng] as [number, number];
+      }
+    }
+    return [20.5937, 78.9629] as [number, number];
+  }, [allStoreLocations]);
 
   return (
     <section 
@@ -392,23 +342,6 @@ useEffect(() => {
       style={{ scrollMarginTop: '140px' }}
     >
       <style>{`
-        .custom-marker-cluster {
-          background: transparent;
-        }
-        .custom-cluster-icon {
-          background: linear-gradient(135deg, #f59e0b 0%, #d97706 100%);
-          color: white;
-          width: 40px;
-          height: 40px;
-          border-radius: 50%;
-          display: flex;
-          align-items: center;
-          justify-content: center;
-          font-weight: bold;
-          font-size: 14px;
-          box-shadow: 0 4px 12px rgba(245, 158, 11, 0.4);
-          border: 3px solid white;
-        }
         .leaflet-popup-content-wrapper {
           border-radius: 12px;
           padding: 0;
@@ -421,9 +354,6 @@ useEffect(() => {
           height: 100% !important;
           width: 100% !important;
           z-index: 0;
-        }
-        .leaflet-tile-container {
-          visibility: visible !important;
         }
         @media (max-width: 1024px) {
           .leaflet-container {
@@ -465,7 +395,7 @@ useEffect(() => {
             <div className="flex flex-col lg:flex-row">
               {/* Left Panel */}
               <div className="w-full lg:w-[400px] flex flex-col border-r border-border lg:border-r lg:border-b-0 border-b max-h-[500px] lg:max-h-none">
-                {/* Tabs - Always visible on all screens */}
+                {/* Tabs */}
                 <div className="flex border-b border-border flex-shrink-0 bg-white sticky top-0 z-20">
                   <button
                     onClick={() => {
@@ -511,7 +441,6 @@ useEffect(() => {
 
                 {/* Search and State Filter */}
                 <div className="p-4 border-b border-border space-y-3 flex-shrink-0">
-                  {/* Search */}
                   <div className="relative">
                     <Search className="absolute left-3 top-1/2 -translate-y-1/2 w-5 h-5 text-muted-foreground" />
                     <input
@@ -523,7 +452,6 @@ useEffect(() => {
                     />
                   </div>
 
-                  {/* State Filter Dropdown */}
                   <div className="relative">
                     <button
                       onClick={() => setIsStateDropdownOpen(!isStateDropdownOpen)}
@@ -538,7 +466,6 @@ useEffect(() => {
                       <ChevronDown className={`w-4 h-4 text-muted-foreground transition-transform ${isStateDropdownOpen ? "rotate-180" : ""}`} />
                     </button>
 
-                    {/* Dropdown Menu */}
                     {isStateDropdownOpen && (
                       <div className="absolute top-full left-0 right-0 mt-1 bg-white border border-border rounded-lg shadow-lg z-50 max-h-60 overflow-y-auto">
                         <button
@@ -691,90 +618,64 @@ useEffect(() => {
                 )}
               </div>
 
-              {/* Map Panel */}
-              <div className="flex-1 relative bg-gray-100 min-h-[400px] sm:min-h-[450px] lg:min-h-[600px] focus-within:ring-2 focus-within:ring-honey focus-within:ring-offset-2 rounded-r-2xl lg:rounded-r-2xl rounded-l-2xl lg:rounded-l-none overflow-hidden w-full">
-                {typeof window !== 'undefined' && !isLoading ? (
-                  <MapContainer
-                    center={[20.5937, 78.9629]}
-                    zoom={5}
-                    style={{ height: "100%", minHeight: "400px", width: "100%", display: "block" }}
-                    scrollWheelZoom={true}
-                    zoomControl={true}
-                    className="focus:outline-none z-0"
-                  >
+              {/* Map Panel - SIMPLIFIED */}
+              <div className="flex-1 relative bg-gray-100 min-h-[400px] sm:min-h-[450px] lg:min-h-[600px] rounded-r-2xl lg:rounded-r-2xl rounded-l-2xl lg:rounded-l-none overflow-hidden w-full">
+                <MapContainer
+                  center={initialCenter}
+                  zoom={allStoreLocations.length > 1 ? 5 : 15}
+                  style={{ height: "100%", minHeight: "400px", width: "100%" }}
+                  scrollWheelZoom={true}
+                  zoomControl={true}
+                  className="focus:outline-none z-0"
+                >
+                  <MapRefSetter mapRef={mapRef} allStoreLocations={allStoreLocations} />
                   <TileLayer
-                    attribution='&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
+                    attribution='&copy; OpenStreetMap contributors'
                     url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
                   />
-                  
-                  <MapController selectedStore={selectedStore} allStores={Array.isArray(allStoreLocations) ? allStoreLocations : []} />
 
-                  <MarkerClusterGroup
-                    chunkedLoading
-                    iconCreateFunction={createClusterCustomIcon}
-                    maxClusterRadius={60}
-                    spiderfyOnMaxZoom={true}
-                    showCoverageOnHover={false}
-                  >
-                    {Array.isArray(allStoreLocations) && allStoreLocations.map((store: any, index: number) => {
-                      const coords = getCityCoords(store?.City || "");
-                      return (
-                        <Marker
-                          key={`marker-${store?.id || index}`}
-                          position={[coords.lat, coords.lng]}
-                          icon={iceCreamIcon}
-                          eventHandlers={{
-                            click: () => setSelectedStore(store),
-                          }}
-                        >
-                          <Popup>
-                            <div className="p-3">
-                              <div className="flex items-start gap-2">
-                                <img src={iceCreamMarker} alt="marker" className="w-8 h-10 object-contain flex-shrink-0" />
-                                <div>
-                                  <h4 className="font-bold text-honey-dark text-base">
-                                    Honeyman - {store?.City || ""}
-                                  </h4>
-                                  <p className="text-xs text-gray-600 mt-1">
-                                    {store?.Address || ""}
-                                  </p>
-                                  <p className="text-xs text-gray-500 mt-0.5">
-                                    {store?.Region || store?.State || ""}
-                                  </p>
-                                  {activeTab === "operative" && (
-                                    <a
-                                      href={getDirectionsUrl(store)}
-                                      target="_blank"
-                                      rel="noopener noreferrer"
-                                      className="inline-flex items-center gap-1 bg-cyan-600 hover:bg-cyan-700 text-white px-3 py-1.5 rounded-lg text-xs font-medium mt-2 transition-colors"
-                                    >
-                                      <Navigation className="w-3 h-3" />
-                                      Get Directions
-                                    </a>
-                                  )}
-                                  {activeTab === "coming" && (
-                                    <span className="inline-flex items-center gap-1 text-orange-600 text-xs font-medium mt-2">
-                                      <Clock className="w-3 h-3" />
-                                      Coming Soon
-                                    </span>
-                                  )}
-                                </div>
-                              </div>
-                            </div>
-                          </Popup>
-                        </Marker>
-                      );
-                    })}
-                  </MarkerClusterGroup>
-                  </MapContainer>
-                ) : (
-                  <div className="w-full h-full flex items-center justify-center bg-muted/20 min-h-[400px]">
-                    <div className="text-center p-8">
-                      <MapPin className="w-12 h-12 text-muted-foreground mx-auto mb-4" />
-                      <p className="text-muted-foreground text-sm mb-2">Loading map...</p>
-                    </div>
-                  </div>
-                )}
+                  {allStoreLocations.map((store, index) => {
+                    const coords = getCityCoords(store?.City || "");
+                    if (!coords) return null;
+
+                    return (
+                      <Marker
+                        key={`marker-${store.id}-${index}`}
+                        position={[coords.lat, coords.lng]}
+                        icon={iceCreamIcon}
+                        eventHandlers={{
+                          click: () => handleStoreClick(store),
+                        }}
+                      >
+                        <Popup>
+                          <div className="p-3">
+                            <h3 className="font-bold text-honey-dark mb-2">
+                              Honeyman - {store.City}
+                            </h3>
+                            <p className="text-sm text-muted-foreground mb-2">
+                              {store.Address}
+                            </p>
+                            <p className="text-xs text-muted-foreground mb-2">
+                              {store.Region || store.State}
+                            </p>
+                            {activeTab === "operative" && (
+                              <a
+                                href={getDirectionsUrl(store)}
+                                target="_blank"
+                                rel="noopener noreferrer"
+                                className="inline-flex items-center gap-1 text-cyan-600 hover:text-cyan-700 text-sm font-medium hover:underline"
+                              >
+                                <Navigation className="w-4 h-4" />
+                                Get Directions
+                                <ExternalLink className="w-3 h-3" />
+                              </a>
+                            )}
+                          </div>
+                        </Popup>
+                      </Marker>
+                    );
+                  })}
+                </MapContainer>
               </div>
             </div>
           </div>
