@@ -20,7 +20,7 @@ import elanphoto5 from "@/assets/cafe-3.webp";
 import iceCreamCartmodel from "@/assets/franchise/honeyman-cart-model-1.webp";
 import iceCreamCartmodel2 from "@/assets/franchise/honeyman-cart-model-2.webp";
 import iceCreamCartmodel3 from "@/assets/franchise/honeyman-ice-creamcart-model-3.webp";
-import cafe from "@/assets/franchise/cafe-image.webp";
+import cafe from "@/assets/franchise/Cafe-image.webp";
 
 import { useState, useMemo, useEffect } from "react";
 import StoreLocator from "@/components/Store-Locator";
