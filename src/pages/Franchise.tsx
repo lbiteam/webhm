@@ -20,6 +20,7 @@ import elanphoto5 from "@/assets/cafe-3.webp";
 import iceCreamCartmodel from "@/assets/franchise/honeyman-cart-model-1.webp";
 import iceCreamCartmodel2 from "@/assets/franchise/honeyman-cart-model-2.webp";
 import iceCreamCartmodel3 from "@/assets/franchise/honeyman-ice-creamcart-model-3.webp";
+import cafe from "@/assets/franchise/cafe-image.webp";
 
 import { useState, useMemo, useEffect } from "react";
 import StoreLocator from "@/components/Store-Locator";
@@ -46,7 +47,7 @@ const Franchise = () => {
       investment: t("franchisePage.models.parlour.investment"),
       image: iceCreamParlour,
       color: "from-honey to-honey-dark",
-      popular: true,
+     
       features: [
         t("franchisePage.models.parlour.features.1"),
         t("franchisePage.models.parlour.features.2"),
@@ -60,7 +61,8 @@ const Franchise = () => {
       name: t("franchisePage.models.standing.name"),
       tagline: t("franchisePage.models.standing.tagline"),
       investment: t("franchisePage.models.standing.investment"),
-      image: iceCreamStanding,
+      image: cafe,
+      popular: true,
       color: "from-amber-500 to-orange-600",
       features: [
         t("franchisePage.models.standing.features.1"),

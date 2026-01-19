@@ -1,0 +1,773 @@
+{
+    "header": {
+      "home": "Inicio",
+      "about": "Nosotros",
+      "products": "Productos",
+      "franchise": "Franquicia",
+      "gifting": "Regalos",
+      "contact": "Contacto",
+      "orderNow": "Ordenar Ahora"
+    },
+    "heroSlider": {
+      "slide1": {
+        "title": "156+ puntos de venta ",
+        "subtitle": "en toda la India",
+        "description": " 1000+ puntos de venta en la India para 2026"
+      },
+      "slide2": {
+        "title": "Primera del Mundo ",
+        "subtitle": "Helado",
+        "description": "Hecho solo con Miel Pura. Sin azúcar refinado."
+      },
+      "slide3": {
+        "title": " La Mayor Gama de la India",
+        "subtitle": "de Miel",
+        "description": "Un Legado Desde 1980, Confiado por Generaciones"
+      },
+      "slide4": {
+        "title": "Ecosistema Más Grande",
+        "subtitle": "del Mundo",
+        "description": "de Productos Libres de Azúcar Refinado"
+      },
+      "slide5": {
+        "title": "Sé Parte de la Franquicia",
+        "subtitle": "de Más Rápido Crecimiento.",
+        "description": "156+ puntos de venta. 4 modelos. Soporte completo."
+      }
+    },
+    "textSlider": {
+      "item1": "🐝 100% Miel Pura y Sin Filtrar",
+      "item2": "✨ Sin Calentar para Recortar Costos",
+      "item3": "🌱 Manejo Suave de las Colonias de Abejas",
+      "item4": "🌍 Prácticas Agrícolas Sostenibles",
+      "item5": "⚡ ¡Sin Procesar por Sabor!",
+      "item6": "🔒 Conservación Enfocada de Abejas",
+      "item7": "💯 100% Pura, Sin Aditivos"
+    },
+    "whyUs": {
+      "title": "Mejor Marca de Miel en la India – Por qué Honeyman Lidera en Pureza",
+      "subtitle": "Honeyman es una de las principales marcas de miel de la India que ofrece miel 100% pura, cruda y orgánica obtenida directamente de apicultores indios.",
+      "description": "Honeyman es una de las marcas de miel confiables de la India, que ofrece miel pura, cruda y orgánica obtenida de manera responsable de apicultores indios. Al proteger a las abejas y seguir prácticas sostenibles, entregamos miel libre de químicos que apoya tanto la salud humana como el equilibrio de la naturaleza."
+    },
+    "aboutSection": {
+      "title": "Nosotros",
+      "subtitle": "Honeyman - 2da Generación con Abejas",
+      "description1": "En 1980, nuestro fundador, el difunto Sardar Jagjit Singh Kapoor, comenzó con una simple creencia: que la pureza nunca debe comprometerse. Lo que comenzó como una pequeña colmenar en Punjab se convirtió en un nombre confiable en más de 50 países, construido sobre integridad, artesanía y un respeto inquebrantable por la naturaleza.",
+      "description2": "Hoy, su hijo, el Sr. Shahzada Singh Kapoor, una autoridad reconocida globalmente con 30 años en apicultura y exportaciones, está canalizando ese legado hacia algo revolucionario: el ecosistema libre de azúcar refinado más confiable de la India.",
+      "description3": "Con más de 156+ tiendas a nivel nacional y un modelo de franquicia que empodera a emprendedores en toda la India, Honeyman es más que una marca. Es un movimiento hacia un futuro más saludable y sin culpa.",
+      "button": "Conoce Nuestra Historia",
+      "founderTag": "Apicultor de 2da Generación",
+      "founderSubtag": "Honeyman de la India"
+    },
+    "productsCarousel": {
+      "title": "Miel Honeyman",
+      "description": "Cosechada de diversos paisajes, elaborada con cuidado para entregar pureza, aroma y dulzura auténtica.",
+      "pureBadge": "100% PURA",
+      "netWeight": "Peso Neto:",
+      "products": {
+        "vanTulsi": {
+          "name": "Miel Van Tulsi",
+          "description": "Rica en antioxidantes con un sabor herbal único de plantas de tulsi silvestre."
+        },
+        "organic": {
+          "name": "Miel Orgánica",
+          "description": "Miel 100% certificada orgánica de granjas apícolas prístinas."
+        },
+        "blackForest": {
+          "name": "Miel de Bosque Negro",
+          "description": "Miel oscura y rica cosechada de las profundidades de las regiones forestales."
+        },
+        "himalayan": {
+          "name": "Miel del Himalaya",
+          "description": "Miel pura de las alturas prístinas de las montañas del Himalaya."
+        },
+        "sidr": {
+          "name": "Miel Sidr",
+          "description": "Miel premium del raro árbol Sidr, conocida por sus propiedades medicinales."
+        }
+      }
+    },
+    "iceCreamSection": {
+      "title": "Helado Honeyman",
+      "description": "El primer helado del mundo hecho solo con miel pura. Sin azúcar refinado. Sin culpa. Solo un placer rico y cremoso que es tan bueno para ti como sabe.",
+      "collectionTitle": "Colección de Sabores Naturales",
+      "collectionSubtitle": "Fresa • Tutti Frutti • Mango • Arándano y más",
+      "premiumTitle": "Calidad Premium",
+      "premiumSubtitle": "La Casa del Helado Premium",
+      "flavors": {
+        "butterScotch": "Butter Scotch",
+        "chocoAlmonds": "Choco Almendras",
+        "strawberry": "Fresa",
+        "tiramisu": "Tiramisú",
+        "tutiFruti": "Tutti Frutti",
+        "vanilla": "Vainilla",
+        "wildBlueberry": "Arándano Silvestre"
+      }
+    },
+    "franchiseSection": {
+      "badge": "Oportunidad de Negocio",
+      "title": "Modelos de Franquicia Diseñados para Escalar",
+      "description": "Sé dueño del primer negocio de helados a base de miel del mundo, diseñado para varias ciudades, presupuestos y ambiciones. Nuestro modelo basado en sistema y liderado por productos viene completamente respaldado para un crecimiento constante.",
+      "models": {
+        "basic": {
+          "name": "Básico",
+          "tagline": "Comienzo Perfecto",
+          "investment": "₹2.5-5 Lakhs",
+          "features": {
+            "1": "Pequeño local comercial",
+            "2": "Gama básica de productos",
+            "3": "Capacitación y soporte",
+            "4": "Materiales de marketing",
+            "5": "Exclusividad territorial"
+          }
+        },
+        "medium": {
+          "name": "Medio",
+          "tagline": "Negocio en Crecimiento",
+          "investment": "₹8-12 Lakhs",
+          "popular": "MÁS POPULAR",
+          "features": {
+            "1": "Tienda de tamaño mediano",
+            "2": "Gama completa de productos",
+            "3": "Capacitación integral",
+            "4": "Soporte de marketing",
+            "5": "Exclusividad territorial",
+            "6": "Gerente de cuenta dedicado",
+            "7": "Opción de mostrador de helados"
+          }
+        },
+        "bigger": {
+          "name": "Grande",
+          "tagline": "Socio Premium",
+          "investment": "₹15-30 Lakhs",
+          "features": {
+            "1": "Tienda insignia",
+            "2": "Portafolio completo de productos",
+            "3": "Programa de capacitación extenso",
+            "4": "Paquete de marketing completo",
+            "5": "Exclusividad regional",
+            "6": "Derechos de múltiples puntos de venta",
+            "7": "Configuración de heladería",
+            "8": "Soporte prioritario 24/7"
+          }
+        }
+      },
+      "getStarted": "Comenzar",
+      "helpText": "¿Tienes preguntas? Estamos aquí para ayudarte a comenzar tu viaje de franquicia",
+      "requestInfo": "Solicitar Información de Franquicia"
+    },
+    "giftingSection": {
+      "badge": "Regalos Perfectos",
+      "title": "Colección de Regalos",
+      "description": "Celebra cada momento con regalos que reflejan cuidado, calidad y bienestar, bellamente empaquetados y endulzados solo con el ingrediente más puro de la naturaleza.",
+      "customize": "Personaliza Tus Regalos",
+      "personalized": "Cajas Personalizadas",
+      "bulkOrders": "Pedidos al por mayor y solicitudes corporativas manejadas",
+      "categories": {
+        "wedding": {
+          "name": "Bodas",
+          "description": "Celebra nuevos comienzos con elegantes cestas de miel premium y delicias gourmet que reflejan tradición y dulzura."
+        },
+        "celebration": {
+          "name": "Celebración",
+          "description": "Marca cada hito con regalos cuidadosamente seleccionados que brindan calidez a festivales, cumpleaños y aniversarios."
+        },
+        "corporate": {
+          "name": "Corporativo",
+          "description": "Cestas corporativas premium diseñadas para expresar aprecio y construir relaciones profesionales duraderas."
+        },
+        "wellness": {
+          "name": "Bienestar",
+          "description": "Apoya la salud y vitalidad con regalos de bienestar potenciados con miel elaborados para la nutrición diaria."
+        }
+      }
+    },
+    "reviewsSection": {
+      "title": "Reseñas"
+    },
+    "honeymanStoreSection": {
+      "title": "Explora Nuestra Colección",
+      "titleHighlight": "Completa en la Tienda Honeyman",
+      "description": "Mientras este sitio muestra nuestra historia, herencia y valores, nuestra gama completa de productos de miel premium, deliciosas cremas para untar y artículos especiales están disponibles en nuestra tienda de comercio electrónico dedicada.",
+      "features": {
+        "1": "Miel 100% Pura y Orgánica",
+        "2": "Amplia Variedad de Productos",
+        "3": "Pago Rápido y Seguro",
+        "4": "Entrega a Nivel Nacional"
+      },
+      "visitStore": "Visita la Tienda Honeyman",
+      "subtext": "Descubre todos nuestros productos, ofertas especiales y promociones exclusivas en nuestra plataforma de comercio electrónico.",
+      "tagline": "Llevando Miel Premium a Tu Puerta"
+    },
+    "honeyjourney": {
+      "title": "🐝 Viaje Honeyman",
+      "subtitle": "De Legado a Misión Global",
+      "timeline": {
+        "1971": {
+          "title": "Comienza el Legado",
+          "desc": "Fundado en memoria de S. Jagjit Singh Kapoor (Honeyking)."
+        },
+        "1985": {
+          "title": "Núcleo de Apicultura",
+          "desc": "Establecida la base apícola más fuerte de la India y conglomerados orgánicos."
+        },
+        "1995": {
+          "title": "I+D y Calidad",
+          "desc": "Configuración de laboratorios avanzados de I+D que aseguran pureza de grado internacional."
+        },
+        "2005": {
+          "title": "Líder Global",
+          "desc": "Exportadas 4000 toneladas de miel en un solo día, un récord mundial."
+        },
+        "2010": {
+          "title": "Reconocimiento Mundial",
+          "desc": "Honrado por Apimondia por la Mejor Miel del Mundo."
+        },
+        "2013": {
+          "title": "Excelencia Orgánica",
+          "desc": "Ganador de la Mejor Miel Orgánica del Mundo en BIOFACH, Alemania."
+        },
+        "2015": {
+          "title": "Mayor Exportador",
+          "desc": "APEDA India: Mayor Exportador de Miel durante 13+ años."
+        },
+        "2018": {
+          "title": "Innovación de Marca",
+          "desc": "Trofeo Coca-Cola por el Mejor Concepto Minorista en Mumbai."
+        },
+        "2023": {
+          "title": "Excelencia D2C",
+          "desc": "Top 100 Marcas D2C del Año – 2023."
+        },
+        "2025": {
+          "title": "150+ Puntos de Venta",
+          "desc": "Expandidos exitosamente a 156+ puntos de venta en toda la India."
+        },
+        "2026": {
+          "title": "Misión 1000+ 🚀",
+          "desc": "Escalando globalmente mientras educamos al mundo sobre las abejas."
+        }
+      }
+    },
+    "floatingOrderButton": {
+      "text": "Ordenar"
+    },
+    "footer": {
+      "store": "Tienda",
+      "aboutUs": "Nosotros",
+      "franchise": "Franquicia",
+      "gifting": "Regalos",
+      "ourMedia": "Nuestros Medios",
+      "storeLocator": "Localizador de Tiendas",
+      "contactUs": "Contáctanos",
+      "followUs": "Síguenos",
+      "tagline": "La Casa de Productos Premium",
+      "copyright": "© 2025 Honeyman Foods Private Limited. Todos los derechos reservados."
+    },
+    "notFound": {
+      "title": "404",
+      "message": "¡Ups! Página no encontrada",
+      "returnHome": "Volver al Inicio"
+    },
+    "aboutPage": {
+      "est": "Est. 1980",
+      "title": "HONEYMAN",
+      "subtitle": "Un Legado de Pureza",
+      "description1": "Con raíces en Punjab desde 1980, el difunto",
+      "founderName": "Sardar Jagjit Singh Kapoor",
+      "description1Cont": "fundó HONEYMAN con un compromiso con la pureza, transformando un colmenar local en un líder global.",
+      "description2": "Hoy, después de 45 años, su hijo,",
+      "sonName": "Sr. Shahzada Singh Kapoor",
+      "description2Cont": "una autoridad global en miel, impulsa una visión revolucionaria: construir la marca de bienestar para el consumidor más confiable de la India.",
+      "description3": "Su misión es crear",
+      "mission": "El Ecosistema Más Grande del Mundo de Productos Libres de Azúcar Refinado",
+      "description3Cont": "endulzados solo con miel pura y natural.",
+      "yearsLegacy": "Años de Legado",
+      "storesNationwide": "Tiendas a Nivel Nacional",
+      "skus": "SKU's",
+      "founderTitle": "Sr. Shahzada Singh Kapoor",
+      "founderSubtitle": "Honeyman de la India",
+      "founderRole": "Fundador y Líder Visionario, HONEYMAN",
+      "visionTitle": "Nuestra Visión",
+      "visionText": "Nuestra visión es",
+      "visionBold1": "audaz y sin disculpas",
+      "visionText2": "construir",
+      "visionBold2": "el ecosistema más grande y confiable del mundo de productos a base de miel,",
+      "visionText3": "redefiniendo cómo se consume la dulzura en todo el mundo. Desde hogares indios hasta mercados internacionales, nuestro objetivo es hacer de la miel el símbolo universal de salud, sostenibilidad y cambio positivo.",
+      "whyChooseTitle": "Por Qué Elegir Honeyman",
+      "features": {
+        "1": "46+ Años de Confianza y Experiencia",
+        "2": "Ecosistema Libre de Azúcar Refinado Más Grande del Mundo",
+        "3": "Miel 100% Cruda y Natural",
+        "4": "Empoderando Emprendedores, Construyendo Comunidades"
+      },
+      "catalogueTitle": "Explora Nuestros Productos",
+      "catalogueDescription": "Descarga nuestro catálogo completo de productos para descubrir toda la gama de productos de miel premium y esenciales de bienestar de HONEYMAN.",
+      "downloadCatalogue": "Descargar Catálogo",
+      "platformsTitle": "Felicidad Entregada a Tu Puerta",
+      "orderNow": "¡Ordena ahora y recíbelo al instante! 🚚",
+      "awardsTitle": "Premios y Reconocimientos",
+      "mediaTitle": "Cobertura en Medios",
+      "featuredIn": "Destacado En",
+      "globalRecognition": "Reconocimiento Global",
+      "globalRecognitionText": "HONEYMAN ha sido reconocido por medios nacionales e internacionales por su compromiso con la calidad, pureza e innovación.",
+      "mediaFeatures": "Apariciones en Medios",
+      "nationalAwards": "Premios Nacionales",
+      "instagramTitle": "Capturas de Instagram",
+      "awards": {
+        "pm": "Reunión con el Honorable Primer Ministro Narendra Modi",
+        "yogi": "CM Yogi Ji en el Puesto de Honeyman - Yuva Enclave 2025",
+        "punjab": "Reconocimiento del Gobierno de Punjab",
+        "entrepreneur": "Premio Entrepreneur D2C 100",
+        "minister": "Reunión con el Honorable Ministro de la Unión",
+        "india": "India Food Processing Expo"
+      },
+      "mediaArticles": {
+        "ani": "Cobertura de ANI News",
+        "loktej": "Cobertura de Loktej English"
+      }
+    },
+    "franchisePage": {
+      "heroBadge": "Asóciate con Nosotros",
+      "heroTitle": "Oportunidad de",
+      "heroTitleHighlight": "Franquicia",
+      "heroDescription": "Únete a la marca de helados premium de más rápido crecimiento de la India y sé parte de nuestra dulce historia de éxito",
+      "outlets": "Puntos de Venta a Nivel Nacional",
+      "happyCustomers": "Clientes Felices Diariamente",
+      "citiesCovered": "Ciudad",
+      "supportTitle": "Construido para Apoyarte.",
+      "supportSubtitle": "Diseñado para Escalar.",
+      "supportFeatures": {
+        "launch": {
+          "title": "Lanzamiento y Configuración",
+          "items": {
+            "1": "Evaluación de ubicación y mercado",
+            "2": "Diseño interior y planificación de distribución",
+            "3": "Capacitación del propietario y personal antes de la apertura",
+            "4": "Asistencia coordinada para el lanzamiento impulsado por la marca"
+          }
+        },
+        "operations": {
+          "title": "Operaciones y Rendimiento",
+          "items": {
+            "1": "Orientación operativa continua y revisiones",
+            "2": "Seguimiento del rendimiento con información experta",
+            "3": "Estandarización de procesos en todos los puntos de venta",
+            "4": "Soporte para mejorar la eficiencia"
+          }
+        },
+        "technology": {
+          "title": "Tecnología y Sistemas",
+          "items": {
+            "1": "Soluciones integradas de TPV y facturación",
+            "2": "Gestión de inventario para reducir desperdicios",
+            "3": "Seguimiento de ventas e información empresarial",
+            "4": "Herramientas que simplifican las operaciones diarias"
+          }
+        },
+        "training": {
+          "title": "Capacitación y Soporte de Auditoría",
+          "items": {
+            "1": "Auditorías periódicas de producto y servicio",
+            "2": "Auditorías dirigidas por expertos",
+            "3": "Retroalimentación y mejora",
+            "4": "Garantía de calidad"
+          }
+        },
+        "marketing": {
+          "title": "Marketing y Visibilidad",
+          "items": {
+            "1": "Campañas y promociones centrales de marca",
+            "2": "Soporte de visibilidad en línea",
+            "3": "Estrategias de activación del mercado local",
+            "4": "Soporte de Lanzamiento y Promocional"
+          }
+        },
+        "social": {
+          "title": "Presencia en Redes Sociales",
+          "items": {
+            "1": "Actualizaciones de nuevos sabores",
+            "2": "Promociones de apertura de tiendas",
+            "3": "Visibilidad de ofertas especiales",
+            "4": "Participación del cliente"
+          }
+        }
+      },
+      "modelsTitle": "Modelos de Franquicia",
+      "modelsDescription": "Selecciona el modelo de franquicia que mejor se adapte a tu capacidad de inversión y objetivos empresariales",
+      "chooseModels": "Elige Tus Modelos",
+      "models": {
+        "parlour": {
+          "name": "Heladería",
+          "tagline": "Experiencia Premium",
+          "investment": "₹10-15 Lakhs",
+          "popular": "MÁS POPULAR",
+          "features": {
+            "1": "Configuración de tienda insignia",
+            "2": "Portafolio completo de productos",
+            "3": "Diseño interior premium",
+            "4": "Paquete de marketing completo",
+            "5": "Exclusividad regional",
+            "6": "Soporte prioritario 24/7"
+          }
+        },
+        "standing": {
+          "name": "Café",
+          "tagline": "Socio para Eventos",
+          "investment": "₹25-30 Lakhs",
+          "features": {
+            "1": "Tienda de tamaño mediano",
+            "2": "Gama completa de productos",
+            "3": "Capacitación integral",
+            "4": "Soporte de marketing",
+            "5": "Exclusividad territorial",
+            "6": "Gerente de cuenta dedicado"
+          }
+        },
+        "cart": {
+          "name": "Carrito de Helados",
+          "tagline": "Negocio Móvil",
+          "investment": "₹3.20 Lakhs",
+          "features": {
+            "1": "Carrito personalizado con marca",
+            "2": "Gama básica de productos",
+            "3": "Capacitación y soporte",
+            "4": "Materiales de marketing",
+            "5": "Ubicaciones flexibles",
+            "6": "Comienzo de baja inversión"
+          }
+        }
+      },
+      "uniqueFormatTitle": "Nuestro Formato Único",
+      "formats": {
+        "outlet": {
+          "name": "Punto de Venta",
+          "size": "300 Pies² – 600 Pies²"
+        },
+        "kiosk": {
+          "name": "Kiosko Interior y Exterior",
+          "size": "10.5 Pies x 10.5 Pies (aprox.)"
+        },
+        "trailer": {
+          "name": "Remolque Honeyman",
+          "size": "15 Pies x 8 Pies (aprox.)"
+        },
+        "cart": {
+          "name": "Carrito de Helados",
+          "size": "Disponible Servicio Pre-Empacado"
+        },
+        "cart2": {
+          "name": "Carrito de Helados",
+          "size": "Servicio Exterior"
+        },
+        "cart3": {
+          "name": "Carrito de Helados",
+          "size": "Servicio Exterior"
+        }
+      },
+      "storeOperatives": {
+        "badge": "Nuestra Red",
+        "title": "Operadores de Tiendas",
+        "description": "Explora nuestra extensa red de operadores de tiendas en toda la India",
+        "searchPlaceholder": "Busca por ciudad o dirección...",
+        "allRegions": "Todas las Regiones",
+        "showing": "Mostrando",
+        "of": "de",
+        "stores": "tiendas",
+        "tableHeaders": {
+          "sno": "S.No",
+          "city": "Ciudad",
+          "region": "Región",
+          "address": "Dirección"
+        },
+        "previous": "Anterior",
+        "next": "Siguiente"
+      },
+      "outletsGallery": {
+        "badge": "Nuestros Puntos de Venta",
+        "title": "Galería de Nuestros Puntos de Venta",
+        "description": "Descubre nuestros puntos de venta bellamente diseñados en todo el país"
+      },
+      "ctaTitle": "¿Listo para Comenzar Tu Dulce Viaje?",
+      "ctaDescription": "Únete a nuestra creciente familia de socios de franquicia exitosos",
+      "applyNow": "Aplicar Ahora",
+      "downloadBrochure": "Descargar Folleto",
+      "investment": "Inversión",
+      "getStarted": "Comenzar"
+    },
+    "giftingPage": {
+      "heroBadge": "Colección Premium",
+      "heroTitle": "El Arte de",
+      "heroTitleHighlight": "Regalar",
+      "heroDescription": "En Honeyman Gifting, creemos que cada regalo debe ser personal, significativo e inolvidable.",
+      "exploreCollection": "Explorar Colección",
+      "promoBanner": "¡Ho ho ho! ¡Envío gratis! Ahorra extra eligiendo",
+      "freeDelivery": "entrega GRATIS",
+      "promoBannerCont": "en el horario seleccionado. 🎉",
+      "celebrationsTitle": "Próximas Celebraciones",
+      "celebrationsSubtitle": "Regala algo dulce para cada ocasión festiva",
+      "celebrations": {
+        "christmas": "Navidad",
+        "newYear": "Año Nuevo",
+        "lohri": "Lohri",
+        "sankranti": "Makar Sankranti",
+        "pongal": "Pongal"
+      },
+      "whatWeOffer": {
+        "title": "Lo Que Ofrecemos",
+        "subtitle": "Elige entre nuestra exquisita gama de opciones de regalo",
+        "honeyBottles": {
+          "title": "Botellas de Miel",
+          "desc": "Miel pura premium en botellas elegantes"
+        },
+        "giftBaskets": {
+          "title": "Cestas de Regalo",
+          "desc": "Cestas seleccionadas para cada ocasión"
+        },
+        "sweetBoxes": {
+          "title": "Cajas de Dulces",
+          "desc": "Dulces tradicionales elaborados con miel"
+        }
+      },
+      "giftBoxesTitle": "Cajas de Regalo Exquisitas",
+      "giftBoxesSubtitle": "Cajas de lujo hechas a mano diseñadas para hacer cada momento inolvidable",
+      "categories": {
+        "badge": "Para Cada Ocasión",
+        "title": "Categorías de Regalos",
+        "subtitle": "Desde bodas íntimas hasta celebraciones corporativas, encuentra el regalo perfecto",
+        "wedding": {
+          "title": "Regalos de Boda",
+          "subtitle": "Dulces Comienzos para los Recién Casados"
+        },
+        "corporate": {
+          "title": "Regalos Corporativos",
+          "subtitle": "Fortalece Lazos con Aprecio"
+        },
+        "celebration": {
+          "title": "Regalos de Celebración",
+          "subtitle": "Marca Cada Hito con Dulzura"
+        },
+        "wellness": {
+          "title": "Regalos de Bienestar",
+          "subtitle": "Regala Salud y Bondad Natural"
+        }
+      },
+      "signaturePackaging": {
+        "title": "Embalaje Distintivo",
+        "description": "Cada regalo envuelto con elegancia, elaborado para crear impresiones duraderas",
+        "button": "Crea Tu Regalo"
+      },
+      "whyChoose": {
+        "title": "Por Qué Elegir Regalos Honeyman",
+        "subtitle": "Cada regalo cuenta una historia de pureza, tradición y calidez sincera",
+        "features": {
+          "1": {
+            "title": "Elaborado con Amor",
+            "desc": "Cada caja de regalo seleccionada con atención a cada detalle"
+          },
+          "2": {
+            "title": "Embalaje Premium",
+            "desc": "Cajas elegantes que hacen que desenvolver sea especial"
+          },
+          "3": {
+            "title": "Miel 100% Pura",
+            "desc": "Solo la miel natural más fina de fuentes confiables"
+          },
+          "4": {
+            "title": "Totalmente Personalizable",
+            "desc": "Personaliza con mensajes y selecciones a medida"
+          }
+        }
+      },
+      "sweetsCollection": {
+        "badge": "Dulces Artesanales",
+        "title": "Colección de Dulces Premium",
+        "subtitle": "Elaborados a mano con miel pura y los mejores ingredientes",
+        "baklawa": {
+          "name": "Colección Baklawa",
+          "description": "Delicias tradicionales de Medio Oriente elaboradas con miel pura"
+        },
+        "fusion": {
+          "name": "Dulces Fusión",
+          "description": "Creaciones dulces innovadoras infusionadas con miel"
+        }
+      },
+      "ctaTitle": "¿Listo para Crear el Regalo Perfecto?",
+      "ctaDescription": "Contáctanos para pedidos al por mayor, embalaje personalizado y soluciones de regalo a medida",
+      "getQuote": "Obtener Cotización",
+      "downloadCatalogue": "Descargar Catálogo"
+    },
+    "productsPage": {
+      "discountBanner": "10% DE DESCUENTO ANTES DEL AÑO NUEVO",
+      "honey": {
+        "himalayan": {
+          "name": "Miel del Himalaya",
+          "description": "Néctar silvestre de flores de gran altitud."
+        },
+        "blackForest": {
+          "name": "Bosque Negro",
+          "description": "Miel densa y oscura con toques amaderados."
+        },
+        "organicRaw": {
+          "name": "Cruda Orgánica",
+          "description": "Pureza sin procesar y sin filtrar."
+        }
+      },
+      "iceCream": {
+        "butterscotch": {
+          "name": "Butterscotch",
+          "description": "Delicia cremosa de caramelo endulzada con miel."
+        },
+        "strawberry": {
+          "name": "Fresa",
+          "description": "Dulzura de frutos rojos frescos, cero azúcar refinado."
+        },
+        "tuttiFrutti": {
+          "name": "Tutti Frutti",
+          "description": "Mezcla de frutas con miel natural."
+        }
+      },
+      "jams": {
+        "strawberry": {
+          "name": "Mermelada de Fresa",
+          "description": "Trozos ricos de frutos rojos y miel."
+        },
+        "orange": {
+          "name": "Mermelada de Naranja",
+          "description": "Cáscara cítrica y dulzura de cítricos."
+        },
+        "pineapple": {
+          "name": "Mermelada de Piña",
+          "description": "Un deleite tropical infusionado con miel."
+        }
+      },
+      "kahwa": {
+        "ginger": {
+          "name": "Kahwa de Jengibre",
+          "description": "Mezcla de especias tradicionales y miel."
+        },
+        "badam": {
+          "name": "Kahwa de Badam",
+          "description": "Calidez rica de almendra y azafrán."
+        },
+        "kesari": {
+          "name": "Kahwa de Kesari",
+          "description": "Calidez rica de kesari y azafrán."
+        }
+      },
+      "beauty": {
+        "shea": {
+          "name": "Crema Corporal de Karité y Vitamina E",
+          "description": "Infusionada con miel para una nutrición profunda."
+        },
+        "vitaminC": {
+          "name": "Jabón Facial de Vitamina C",
+          "description": "Limpiador iluminador con infusión de miel."
+        },
+        "showerGel": {
+          "name": "Gel de Ducha Wild Aqua",
+          "description": "Limpieza refrescante con miel natural."
+        }
+      },
+      "tonics": {
+        "amla": {
+          "name": "Tónico de Amla",
+          "description": "Refuerzo de Vitamina C para la inmunidad."
+        },
+        "lemon": {
+          "name": "Tónico de Limón",
+          "description": "Desintoxicación refrescante y energía."
+        },
+        "tulsi": {
+          "name": "Miel de Tulsi",
+          "description": "Mezcla de hierbas curativas antiguas."
+        }
+      },
+      "sauces": {
+        "bbq": {
+          "name": "Salsa BBQ de Miel",
+          "description": "Salsa BBQ ahumada y dulce infusionada con miel."
+        },
+        "ketchup": {
+          "name": "Ketchup de Tomate con Miel",
+          "description": "Ketchup clásico endulzado con miel natural."
+        },
+        "kalonji": {
+          "name": "Chutney de Tomate Kalonji",
+          "description": "Chutney de tomate especiado con semillas de kalonji."
+        }
+      },
+      "footerTitle": "¿AMAS NUESTRA COLECCIÓN?",
+      "footerDescription": "Descubre nuestra gama completa de productos, verifica disponibilidad en tiempo real y realiza tu pedido directamente en nuestra tienda oficial.",
+      "goToStore": "Ir a Honeymanstore.com"
+    },
+    "contactPage": {
+      "sendMessage": "Envíanos un Mensaje",
+      "name": "Nombre",
+      "namePlaceholder": "Tu nombre",
+      "email": "Correo Electrónico",
+      "emailPlaceholder": "tu@email.com",
+      "phone": "Teléfono",
+      "phonePlaceholder": "+91 1234567890",
+      "location": "Ubicación",
+      "locationPlaceholder": "Tu ciudad o ubicación",
+      "subject": "Asunto",
+      "selectSubject": "Selecciona un asunto",
+      "subjects": {
+        "general": "Consulta General",
+        "franchise": "Oportunidad de Franquicia",
+        "corporate": "Regalos Corporativos",
+        "support": "Soporte al Cliente"
+      },
+      "message": "Mensaje",
+      "messagePlaceholder": "¿Cómo podemos ayudarte?",
+      "sending": "Enviando...",
+      "sendMessageButton": "Enviar Mensaje",
+      "companyName": "Honeyman Foods Pvt. Ltd.",
+      "companyAddress": "Unidad No. 106, Primer Piso, IRIS Tech Park, Sector – 48,<br />Gurugram – Sohna Road, Gurugram – 122018",
+      "contactInfoTitle": "Información de Contacto",
+      "contactInfoDescription": "Ponte en contacto con nosotros a través de cualquiera de los siguientes canales. Nuestro equipo está listo para ayudarte con todas tus consultas.",
+      "contactMethods": {
+        "phone": {
+          "title": "Teléfono",
+          "details": ["+91 96503 05025"]
+        },
+        "email": {
+          "title": "Correo Electrónico",
+          "details": ["hello@honeyman.in", "support@honeyman.in"]
+        },
+        "address": {
+          "title": "Dirección",
+          "details": ["Sede de HONEYMAN", "Gurugram, India"]
+        },
+        "hours": {
+          "title": "Horario Comercial",
+          "details": ["Lun - Dom: 10:00 AM - 7:00 PM"]
+        }
+      },
+      "storeLocator": {
+        "title": "Encuentra una Tienda Honeyman",
+        "subtitle": "Cerca de Ti",
+        "description": "Localiza tu tienda más cercana y disfruta de nuestras delicias a base de miel con facilidad.",
+        "button": "Localizador de Tiendas"
+      },
+      "exploreRange": {
+        "title": "Explora Nuestra Gama",
+        "subtitle": "de Productos a Base de Miel",
+        "description": "Descubre el ecosistema completo de productos libres de azúcar refinado, endulzados solo con miel natural.",
+        "button": "Ver Ahora"
+      },
+      "toast": {
+        "requiredFields": "Por favor, completa los campos requeridos",
+        "requiredFieldsDesc": "Nombre, correo electrónico y mensaje son requeridos.",
+        "invalidEmail": "Correo electrónico inválido",
+        "invalidEmailDesc": "Por favor, ingresa una dirección de correo electrónico válida.",
+        "configError": "Error de Configuración",
+        "configErrorDesc": "El formulario de contacto no está configurado correctamente. Por favor, inténtalo de nuevo más tarde.",
+        "success": "¡Mensaje Enviado Exitosamente!",
+        "successDesc": "¡Gracias, {name}! Hemos recibido tu mensaje y nos pondremos en contacto contigo pronto.",
+        "received": "¡Mensaje Recibido!",
+        "receivedDesc": "Gracias por contactarnos. Nos pondremos en contacto contigo pronto. (Nota: Problema de conexión a la base de datos)"
+      }
+    }
+  }

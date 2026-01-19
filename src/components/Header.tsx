@@ -104,12 +104,12 @@ const Header = () => {
 
           <div className="flex items-center gap-4">
             {/* Language Selector */}
-            <Select value={language} onValueChange={(value) => setLanguage(value as "en" | "hi" | "pun")}>
+            <Select value={language} onValueChange={(value) => setLanguage(value as "en" | "hi" | "pun" | "ar" | "span")}>
               <SelectTrigger className="w-[120px] h-10 border-border bg-background/50 hover:bg-background/80">
                 <div className="flex items-center gap-2">
                   <Languages className="h-4 w-4" />
                   <SelectValue>
-                    {language === "en" ? "English" : language === "hi" ? "हिंदी" : "Punjabi"}
+                    {language === "en" ? "English" : language === "hi" ? "हिंदी" : language === "pun" ? "Punjabi" : language === "ar" ? "Arabic" : language === "span" ? "Spanish" : "English"}
                   </SelectValue>
                 </div>
               </SelectTrigger>
@@ -117,6 +117,8 @@ const Header = () => {
                 <SelectItem value="en">English</SelectItem>
                 <SelectItem value="hi">हिंदी</SelectItem>
                 <SelectItem value="pun">Punjabi</SelectItem>
+                <SelectItem value="ar">Arabic</SelectItem>
+                <SelectItem value="span">Spanish</SelectItem>
               </SelectContent>
             </Select>
 

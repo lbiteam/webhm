@@ -412,22 +412,23 @@
         }
       },
       "standing": {
-        "name": "Ice Cream Standing",
+        "name": "Cafe",
         "tagline": "Event Partner",
-        "investment": "₹75 thousand",
+        "investment": "₹25-30 Lakhs",
         "features": {
-          "1": "Portable display unit",
-          "2": "Event-ready setup",
-          "3": "Full product range",
-          "4": "Marketing materials",
+          "1": "Medium-sized store",
+          "2": "Full product range",
+          "3": "Comprehensive training",
+          "4": "Marketing support",
           "5": "Territory exclusivity",
-          "6": "Dedicated support"
+          "6": "Dedicated account manager"
+         
         }
       },
       "cart": {
         "name": "Ice Cream Cart",
         "tagline": "Mobile Business",
-        "investment": "₹2.5 Lakhs",
+        "investment": "₹3.20 Lakhs",
         "features": {
           "1": "Custom branded cart",
           "2": "Basic product range",
