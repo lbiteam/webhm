@@ -30,7 +30,7 @@ const AboutSection = () => {
                 <img 
                   src={founderImage} 
                   alt="Our Founder" 
-                  className="w-full h-[500px] object-cover"
+                  className="w-full h-[500px] object-cover object-center"
                 />
                 {/* Overlay gradient */}
                 <div className="absolute inset-0 bg-gradient-to-t from-foreground/40 via-transparent to-transparent" />

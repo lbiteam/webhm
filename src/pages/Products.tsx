@@ -67,19 +67,12 @@ export default function Products() {
       <main className="flex-1">
       {/* --- HERO SECTION --- */}
       <section className="relative w-full overflow-hidden pt-24 bg-[#f9dc8d]/40">
-        <div className="relative w-full h-[400px] md:h-[600px] lg:h-[700px] flex items-center justify-center">
-          <video
-            autoPlay
-            loop
-            muted
-            playsInline
-            className="w-full h-full object-contain"
-          >
-            <source src="/videos/hm-video.mp4" type="video/mp4" />
-            Your browser does not support the video tag.
-          </video>
-        </div>
-      </section>
+       <div className="relative w-full h-[400px] md:h-[600px] lg:h-[700px] flex items-center justify-center"> 
+        <video autoPlay loop muted playsInline className="w-full h-full object-contain" > 
+          <source src="/videos/hm-video.webm" type="video/webm" /> 
+          Your browser does not support the video tag. </video> 
+          </div>
+           </section>
 
       {/* --- DISCOUNT SLIDER --- */}
       <section className="relative overflow-hidden bg-[#8c3100] py-4">
