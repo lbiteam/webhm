@@ -49,7 +49,7 @@ export const LanguageProvider = ({ children }: LanguageProviderProps) => {
         } else if (language === "kan") {
           translationsData = (await import("../locales/kanad.json")).default;
         } else if (language === "ben") {
-          translationsData = (await import("../locales/bengali.json")).default;
+          translationsData = (await import("../locales/Bengali.json")).default;
         } else {
           translationsData = (await import("../locales/en.json")).default;
         }
