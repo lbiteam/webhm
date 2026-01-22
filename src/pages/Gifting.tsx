@@ -3,7 +3,7 @@ import { ChevronLeft, ChevronRight, Gift, Heart, Briefcase, Sparkles, Leaf, Star
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import { useLanguage } from "@/contexts/LanguageContext";
-import heroImage from "@/assets/gifting/hero-christmas.webp";
+import heroImage from "@/assets/gifting/Republic Day Website Banner.webp";
 import weddingCategory from "@/assets/gifting/wedding-category.webp";
 import corporateCategory from "@/assets/gifting/corporate-category.webp";
 import celebrationCategory from "@/assets/gifting/celebration-category.webp";
@@ -16,8 +16,10 @@ import giftBox3 from "@/assets/gifting/gifting-2.webp";
 import giftBox4 from "@/assets/gifting/gifting-1.webp";
 import giftBox5 from "@/assets/gifting/Artboard 5 (1).jpg";
 import giftBag from "@/assets/gifting/honeyman-packaging.webp";
-import christmasImg from "@/assets/calendar/christhmas.webp";
-import newYearImg from "@/assets/calendar/new year.jpg";
+import VasantPanchami from "@/assets/calendar/vasant panchami.webp";
+
+import republicday from "@/assets/calendar/republic_day.webp";
+import valentinesday from "@/assets/calendar/Valentine_Day.webp";
 import lohriImg from "@/assets/calendar/lohri.webp";
 import sankrantiImg from "@/assets/calendar/sankranti.webp";
 import pongalImg from "@/assets/calendar/pongal.webp";
@@ -101,16 +103,19 @@ const Gifting = () => {
       <Header />
       
       {/* Hero Section */}
-      <section className="relative h-[85vh] min-h-[600px] overflow-hidden">
-        <div className="absolute inset-0">
+      <section className="relative w-full overflow-hidden h-[60vh] min-h-[500px] sm:h-[75vh] sm:min-h-[650px] md:h-[75vh] md:min-h-[800px] lg:h-[85vh] lg:min-h-[50px]">
+        <div className="absolute inset-0 w-full h-full">
           <img 
             src={heroImage} 
             alt="Gifting Collection" 
             className="w-full h-full object-cover"
+            style={{ 
+              objectPosition: 'center 40%'
+            }}
           />
-          <div className="absolute inset-0 bg-gradient-to-r from-[#2a1810]/95 via-[#2a1810]/70 to-transparent" />
+          <div className="absolute inset-0 " />
         </div>
-        <div className="relative z-10 container mx-auto px-6 h-full flex items-center">
+        {/* <div className="relative z-10 container mx-auto px-6 h-full flex items-center">
           <div className="max-w-2xl pt-20">
             <div className="flex items-center gap-2 mb-6">
               <div className="h-px w-12 bg-primary/60"></div>
@@ -131,14 +136,14 @@ const Gifting = () => {
            
             </div>
           </div>
-        </div>
+        </div> */}
         
         {/* Decorative element */}
         <div className="absolute bottom-0 left-0 right-0 h-24 bg-gradient-to-t from-[#faf8f5] to-transparent"></div>
       </section>
 
       {/* Promotional Banner */}
-      <section className="bg-[#8c3100]/90 py-4 relative overflow-hidden">
+      <section className="bg-gradient-to-r from-[#FF9933] via-[#FFFFFF] to-[#138808] py-4 relative overflow-hidden">
         <div className="absolute inset-0 opacity-20">
           <div className="absolute top-0 left-10 text-4xl animate-pulse">🎄</div>
           <div className="absolute top-0 right-10 text-4xl animate-pulse">🎄</div>
@@ -149,14 +154,14 @@ const Gifting = () => {
         </div>
         <div className="container mx-auto px-6 relative z-10">
           <div className="flex items-center justify-center gap-6 text-white">
-            <div className="hidden md:flex items-center gap-2 bg-[#FFD700]/20 px-4 py-2 rounded-lg border border-[#FFD700]/40">
-              <span className="text-[#FFD700] font-bold text-sm uppercase tracking-wider">Free Delivery</span>
+            <div className="hidden md:flex items-center gap-2 bg-[#AD2E0F]/20 px-4 py-2 rounded-lg border border-[#AD2E0F]/40"> 
+              <span className="text-[#AD2E0F] font-bold text-sm uppercase tracking-wider">Free Delivery</span>
             </div>
-            <p className="text-center font-medium text-sm md:text-base">
-              🎉 <span className="font-bold">{t("giftingPage.promoBanner")}</span> <span className="text-[#FFD700] font-bold">{t("giftingPage.freeDelivery")}</span> {t("giftingPage.promoBannerCont")}
+            <p className="text-center font-medium text-sm md:text-base text-[#AD2E0F]">
+              🎉 <span className="font-bold">{t("giftingPage.promoBanner")}</span> <span className="text-[#AD2E0F] font-bold">{t("giftingPage.freeDelivery")}</span> {t("giftingPage.promoBannerCont")}
             </p>
-            <div className="hidden md:flex items-center gap-2 bg-[#FFD700]/20 px-4 py-2 rounded-lg border border-[#FFD700]/40">
-              <span className="text-[#FFD700] font-bold text-sm uppercase tracking-wider">Free Delivery</span>
+            <div className="hidden md:flex items-center gap-2 bg-[#AD2E0F]/20 px-4 py-2 rounded-lg border border-[#AD2E0F]/40">
+              <span className="text-[#AD2E0F] font-bold text-sm uppercase tracking-wider">Free Delivery</span>
             </div>
           </div>
         </div>
@@ -176,11 +181,13 @@ const Gifting = () => {
 
           <div className="grid grid-cols-2 md:grid-cols-5 gap-4 md:gap-6">
             {[
-              { date: "25", month: "DEC", name: t("giftingPage.celebrations.christmas"), color: "from-red-500 to-green-600" },
-              { date: "1", month: "JAN", name: t("giftingPage.celebrations.newYear"), color: "from-emerald-500 to-teal-600" },
+
               { date: "13", month: "JAN", name: t("giftingPage.celebrations.lohri"), color: "from-orange-400 to-amber-500" },
               { date: "14", month: "JAN", name: t("giftingPage.celebrations.sankranti"), color: "from-amber-400 to-yellow-500" },
-              { date: "14-17", month: "JAN", name: t("giftingPage.celebrations.pongal"), color: "from-green-500 to-lime-500" },
+              { date: "23", month: "JAN", name: t("giftingPage.celebrations.vasantpanchami"), color: "from-green-500 to-lime-500" },
+              { date: "26", month: "JAN", name: t("giftingPage.celebrations.republicday"), color: "from-orange-400 to-amber-500" },
+              { date: "14", month: "FEB", name: t("giftingPage.celebrations.valentinesday"), color: "from-pink-400 to-rose-500" },
+          
             ].map((celebration, index) => (
               <div 
                 key={index}
@@ -195,11 +202,11 @@ const Gifting = () => {
                   <div className="aspect-[4/3] bg-gradient-to-br from-[#f5f0eb] to-[#e8e0d8] rounded-xl mb-4 flex items-center justify-center overflow-hidden group-hover:scale-105 transition-transform duration-300">
                     <img 
                       src={
-                        index === 0 ? christmasImg :
-                        index === 1 ? newYearImg :
-                        index === 2 ? lohriImg :
-                        index === 3 ? sankrantiImg :
-                        index === 4 ? pongalImg : ""
+                        index === 0 ? lohriImg :
+                        index === 1 ? sankrantiImg :
+                        index === 2 ? VasantPanchami :
+                        index === 3 ? republicday :
+                        index === 4 ? valentinesday : ""
                       }
                       alt={celebration.name}
                       className="w-full h-full object-cover"

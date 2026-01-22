@@ -10,12 +10,68 @@ import { createClient } from '@supabase/supabase-js';
 const supabaseUrl = import.meta.env.VITE_SUPABASE_URL;
 const supabaseKey = import.meta.env.VITE_SUPABASE_PUBLISHABLE_KEY;
 
+// Zoho CRM Configuration
+const zohoClientId = import.meta.env.VITE_ZOHO_CLIENT_ID;
+const zohoClientSecret = import.meta.env.VITE_ZOHO_CLIENT_SECRET;
+const zohoRefreshToken = import.meta.env.VITE_ZOHO_REFRESH_TOKEN;
+const zohoApiDomain = import.meta.env.VITE_ZOHO_API_DOMAIN || 'https://www.zohoapis.com'; // or .in for India
+const zohoRegion = import.meta.env.VITE_ZOHO_REGION || 'com'; // 'com' or 'in'
+
 // Check if environment variables are present
 if (!supabaseUrl || !supabaseKey) {
   console.error("Missing Supabase environment variables. Check your .env.local file.");
 }
 
+if (!zohoClientId || !zohoClientSecret || !zohoRefreshToken) {
+  console.warn("Missing Zoho CRM environment variables. Zoho integration will be skipped.");
+}
+
 const supabase = createClient(supabaseUrl || '', supabaseKey || '');
+
+// Zoho CRM API Function - Calls serverless function to avoid CORS
+const createZohoLead = async (formData: ContactFormData): Promise<boolean> => {
+  try {
+    // Determine API endpoint based on environment
+    // For production: use relative path /api/zoho-lead
+    // For local dev with Vercel CLI: use /api/zoho-lead
+    // For local dev without Vercel: you can set VITE_API_BASE_URL to a backend URL
+    const apiBaseUrl = import.meta.env.VITE_API_BASE_URL || '';
+    const apiEndpoint = apiBaseUrl 
+      ? `${apiBaseUrl}/api/zoho-lead`
+      : '/api/zoho-lead';
+
+    const response = await fetch(apiEndpoint, {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify(formData),
+    });
+
+    // Handle 404 - API endpoint not available (local dev without Vercel CLI)
+    if (response.status === 404) {
+      console.warn('Zoho API endpoint not found. Skipping Zoho CRM integration. Use Vercel CLI for local development.');
+      return false;
+    }
+
+    if (!response.ok) {
+      const errorData = await response.json().catch(() => ({}));
+      console.error('Zoho API error response:', errorData);
+      throw new Error(`Zoho API error: ${response.statusText}`);
+    }
+
+    const result = await response.json();
+    return result.success === true;
+  } catch (error: any) {
+    // Handle network errors (endpoint doesn't exist)
+    if (error.message?.includes('Failed to fetch') || error.message?.includes('Not Found')) {
+      console.warn('Zoho API endpoint not available. Skipping Zoho CRM integration.');
+      return false;
+    }
+    console.error('Error creating Zoho lead:', error);
+    return false;
+  }
+};
 
 interface ContactFormData {
   name: string;
@@ -81,61 +137,100 @@ const Contact = () => {
 
     setIsSubmitting(true);
 
-    try {
-      // Insert data into Supabase
-      const { data, error } = await supabase
-        .from('contact_messages')
-        .insert({
-          name: formData.name.trim(),
-          email: formData.email.trim(),
-          phone: formData.phone.trim() || null,
-          location: formData.location.trim() || null,
-          subject: formData.subject || null,
-          message: formData.message.trim(),
-        })
-        .select()
-        .single();
+    let supabaseSuccess = false;
+    let zohoSuccess = false;
+    const errors: string[] = [];
 
-      if (error) {
-        console.error('Supabase error:', error);
-        throw error;
+    try {
+      // Submit to Supabase
+      if (supabaseUrl && supabaseKey) {
+        try {
+          const { data, error } = await supabase
+            .from('contact_messages')
+            .insert({
+              name: formData.name.trim(),
+              email: formData.email.trim(),
+              phone: formData.phone.trim() || null,
+              location: formData.location.trim() || null,
+              subject: formData.subject || null,
+              message: formData.message.trim(),
+            })
+            .select()
+            .single();
+
+          if (error) {
+            console.error('Supabase error:', error);
+            errors.push('Supabase: ' + error.message);
+          } else {
+            supabaseSuccess = true;
+          }
+        } catch (error: any) {
+          console.error('Supabase submission error:', error);
+          errors.push('Supabase: ' + (error.message || 'Unknown error'));
+        }
       }
 
-      // Success notification
-      toast({
-        title: t("contactPage.toast.success"),
-        description: t("contactPage.toast.successDesc").replace("{name}", formData.name),
-        duration: 5000,
-      });
+      // Submit to Zoho CRM via serverless function
+      if (zohoClientId && zohoClientSecret && zohoRefreshToken) {
+        try {
+          const zohoResult = await createZohoLead(formData);
+          if (zohoResult) {
+            zohoSuccess = true;
+          } else {
+            errors.push('Zoho CRM: Failed to create lead');
+          }
+        } catch (error: any) {
+          console.error('Zoho CRM submission error:', error);
+          errors.push('Zoho CRM: ' + (error.message || 'Unknown error'));
+        }
+      }
 
-      // Reset form
-      setFormData({
-        name: "",
-        email: "",
-        phone: "",
-        location: "",
-        subject: "",
-        message: "",
-      });
+      // Show success if at least one submission succeeded
+      if (supabaseSuccess || zohoSuccess) {
+        toast({
+          title: t("contactPage.toast.success"),
+          description: t("contactPage.toast.successDesc").replace("{name}", formData.name),
+          duration: 5000,
+        });
+
+        // Reset form
+        setFormData({
+          name: "",
+          email: "",
+          phone: "",
+          location: "",
+          subject: "",
+          message: "",
+        });
+      } else {
+        // If both failed, show error but still reset form
+        toast({
+          title: t("contactPage.toast.error") || "Submission Error",
+          description: errors.length > 0 
+            ? errors.join('; ') 
+            : t("contactPage.toast.errorDesc") || "Failed to submit. Please try again.",
+          variant: "destructive",
+          duration: 5000,
+        });
+
+        // Still reset form even on error
+        setFormData({
+          name: "",
+          email: "",
+          phone: "",
+          location: "",
+          subject: "",
+          message: "",
+        });
+      }
 
     } catch (error: any) {
       console.error('Form submission error:', error);
       
-      // Fallback: Use simulated submission if Supabase fails
-      await new Promise(resolve => setTimeout(resolve, 1000));
-      
       toast({
-        title: t("contactPage.toast.received"),
-        description: t("contactPage.toast.receivedDesc"),
-      });
-      
-      setFormData({
-        name: "",
-        email: "",
-        phone: "",
-        location: "",
-        subject: "",
-        message: "",
+        title: t("contactPage.toast.error") || "Error",
+        description: error.message || t("contactPage.toast.errorDesc") || "An unexpected error occurred. Please try again.",
+        variant: "destructive",
       });
       
     } finally {

@@ -12,6 +12,9 @@ dist
 dist-ssr
 *.local
 
+# Local development server (optional - only needed for local testing)
+ server-local.js
+
 # Editor directories and files
 .vscode/*
 !.vscode/extensions.json
@@ -23,3 +26,6 @@ dist-ssr
 *.sln
 *.sw?
 .env.local
+DEPLOYMENT_INFO.md
+DEPLOYMENT_GUIDE.md
+ZOHO_SETUP.md

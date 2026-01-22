@@ -46,6 +46,7 @@ const About = () => {
   const [currentAward, setCurrentAward] = useState(0);
   const [currentPlatform, setCurrentPlatform] = useState(0);
   const [currentMedia, setCurrentMedia] = useState(0);
+  const [currentGlobalShot, setCurrentGlobalShot] = useState(0);
 
   const awards = [
     { image: awardPm, title: t("aboutPage.awards.pm") },
@@ -69,10 +70,19 @@ const mediaLogos = [
   { name: "The Print", link: "https://theprint.in/ani-press-releases/honeyman-revolutionizes-indias-food-industry-with-honey-sweetened-products-announces-nationwide-franchise-expansion/2704754/" },
   { name: "Big News Network", link: "https://www.bignewsnetwork.com/news/278472286/honeyman-revolutionizes-india-food-industry-with-honey-sweetened-products-announces-nationwide-franchise-expansion" },
   { name: "Jio News", link: "https://jionews.com/headline/68873c780780ab8622b6ccb4" },
-  { name: "Google News", link: "https://news.google.com/search?q=Honeyman%20Revolutionizes&amp;hl=en-IN&amp;gl=IN&amp;ceid=IN%3Aen" },
+  { name: "Google News", link: "https://news.google.com/search?q=Honeyman%20Revolutionizes&hl=en-IN&gl=IN&ceid=IN:en" },
   { name: "UP 18 News", link: "https://up18news.com/honeyman-revolutionizes-india-food-industry-with-honey-sweetned-products-announces-nationwide-franchise-expansion/" },
   { name: "RepublicNews Today", link: "https://republicnewstoday.com/honeyman-revolutionizes-indias-food-industry-with-honey-sweetened-products-announces-nationwide-franchise-expansion/" },
-  { name: "US World Today", link: "https://www.usworldtoday.com/news/honeyman-revolutionizes-indias-food-industry-with-honey-sweetened-products-announces-nationwide-franchise-expansion20250728140934" },
+  { name: "News21", link: "https://news21.co.in/index.php/2025/07/28/honeyman-revolutionizes-indias-food-industry-with-honey-sweetened-products-announces-nationwide-franchise-expansion/" },
+  // additional channels (row 2)
+  { name: "Sangri Today", link: "https://www.sangritoday.com/spotlight/honeyman-revolutionizes-indias-food-industry-with-honey-sweetened-products-announces-nationwide-franchise-expansion" },
+  { name: "Startup News", link: "https://startupnews.fyi/2025/07/28/honeyman-revolutionizes-indias-food-industry-with-honey-sweetened-products-announces-nationwide-franchise-expansion/" },
+  { name: "Daily Bulletin", link: "https://dailybulletin.co.in/index.php/business/honeyman-revolutionizes-indias-food-industry-with-honey-sweetened-products-announces-nationwide-franchise-expansion/" },
+  { name: "The 24 Nation", link: "https://the24nation.com/2025/07/28/honeyman-revolutionizes-indias-food-industry-with-honey-sweetened-products-announces-nationwide-franchise-expansion/" },
+  { name: "The Big India", link: "https://thebigindia.co.in/index.php/2025/07/28/honeyman-revolutionizes-indias-food-industry-with-honey-sweetened-products-announces-nationwide-franchise-expansion/" },
+  { name: "PrimeNews TV", link: "https://primenewstv.com/index.php/2025/07/28/honeyman-revolutionizes-indias-food-industry-with-honey-sweetened-products-announces-nationwide-franchise-expansion/" },
+  { name: "DelhiNew Live", link: "https://www.delhilivenews.in/news/honeyman-revolutionizes-indias-food-industry-with-honey-sweetened-products-announces-nationwide-franchise-expansion20250728140934" },
+  { name: "Storywritter", link: "https://storywriter.co.in/index.php/2025/07/28/honeyman-revolutionizes-indias-food-industry-with-honey-sweetened-products-announces-nationwide-franchise-expansion/" },
 ];
 
   const mediaArticles = [
@@ -125,6 +135,20 @@ const mediaLogos = [
   useEffect(() => {
     const interval = setInterval(() => {
       setCurrentMedia((prev) => (prev + 1) % mediaArticles.length);
+    }, 4000);
+    return () => clearInterval(interval);
+  }, []);
+
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setCurrentGlobalShot((prev) => (prev + 1) % mediaArticles.length);
+    }, 4500);
+    return () => clearInterval(interval);
+  }, []);
+
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setCurrentAward((prev) => (prev + 1) % awards.length);
     }, 4000);
     return () => clearInterval(interval);
   }, []);
@@ -379,84 +403,51 @@ const mediaLogos = [
       </section>
 
       {/* Awards & Recognition */}
-      <section className="py-24 bg-[#8c3100]/90 relative overflow-hidden">
-        <div className="absolute inset-0 honeycomb-pattern opacity-10" />
-        
-        {/* Decorative Bees */}
-        <Bee className="absolute top-12 left-8 z-10" size={32} />
-        <Bee className="absolute top-32 right-12 z-10" size={28} />
-        <Bee className="absolute bottom-20 left-1/4 z-10" size={30} />
-        <Bee className="absolute bottom-32 right-1/4 z-10" size={26} />
-        
-        <div className="container mx-auto px-6 relative z-20">
-          <div className="flex items-center justify-center gap-4 mb-12">
-            <Award className="w-10 h-10 text-primary" />
-            <h2 className="font-display text-4xl font-bold text-background">{t("aboutPage.awardsTitle")}</h2>
+      <section className="relative overflow-hidden bg-[#8c3100]/90">
+        {/* Section Title - Separate from Image */}
+        <div className="py-8">
+          <div className="flex items-center justify-center gap-4">
+            <Award className="w-10 h-10 text-honey" />
+            <h2 className="font-display text-4xl font-bold text-white">Awards & Recognition</h2>
           </div>
-          
-          <div className="relative max-w-4xl mx-auto">
-            {/* Main Award Display */}
-            <div className="relative rounded-2xl overflow-hidden shadow-2xl bg-gradient-to-b from-honey/10 to-cream">
-              <img 
-                src={awards[currentAward].image} 
-                alt={awards[currentAward].title}
-                className="w-full h-[500px] object-contain bg-gradient-to-b from-honey/10 to-cream"
-              />
-              <div className="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-foreground to-transparent p-6">
-                <h3 className="text-white font-display text-xl font-semibold text-center">
-                  {awards[currentAward].title}
-                </h3>
-              </div>
-            </div>
-            
-            {/* Navigation */}
-            <button 
-              onClick={prevAward}
-              className="absolute left-4 top-1/2 -translate-y-1/2 w-12 h-12 rounded-full bg-white/90 shadow-lg flex items-center justify-center hover:bg-white transition-colors"
-            >
-              <ChevronLeft className="w-6 h-6 text-foreground" />
-            </button>
-            <button 
-              onClick={nextAward}
-              className="absolute right-4 top-1/2 -translate-y-1/2 w-12 h-12 rounded-full bg-white/90 shadow-lg flex items-center justify-center hover:bg-white transition-colors"
-            >
-              <ChevronRight className="w-6 h-6 text-foreground" />
-            </button>
-            
-            {/* Dots */}
-            <div className="flex justify-center gap-3 mt-6">
-              {awards.map((_, index) => (
-                <button
-                  key={index}
-                  onClick={() => setCurrentAward(index)}
-                  className={`w-3 h-3 rounded-full transition-all ${
-                    index === currentAward ? 'bg-primary w-8' : 'bg-muted-foreground/30 hover:bg-muted-foreground/50'
-                  }`}
-                />
-              ))}
-            </div>
-          </div>
-          
-          {/* Award Thumbnails */}
-          <div className="grid grid-cols-3 md:grid-cols-6 gap-4 mt-12 max-w-4xl mx-auto">
+        </div>
+        
+        {/* Full-Screen Image Slider */}
+        <div className="relative w-full h-[70vh] overflow-hidden">
+          <div 
+            className="flex h-full transition-transform duration-700 ease-in-out"
+            style={{ transform: `translateX(-${currentAward * 100}%)` }}
+          >
             {awards.map((award, index) => (
-              <button
-                key={index}
-                onClick={() => setCurrentAward(index)}
-                className={`rounded-lg overflow-hidden transition-all ${
-                  index === currentAward 
-                    ? 'ring-4 ring-primary ring-offset-2 scale-105' 
-                    : 'opacity-60 hover:opacity-100'
-                }`}
-              >
+              <div key={index} className="min-w-full h-full relative flex-shrink-0">
                 <img 
                   src={award.image} 
                   alt={award.title}
-                  className="w-full h-20 object-cover"
+                  className="w-full h-full object-contain bg-gradient-to-b from-[#8c3100]/90 to-[#6b2400]"
                 />
-              </button>
+                {/* Yellow Background Caption with White Text */}
+                <div className="absolute bottom-0 left-0 right-0 bg-honey py-4 px-6">
+                  <h3 className="text-white font-display text-xl md:text-2xl font-semibold text-center">
+                    {award.title}
+                  </h3>
+                </div>
+              </div>
             ))}
           </div>
+          
+          {/* Navigation Arrows */}
+          <button 
+            onClick={prevAward}
+            className="absolute left-4 top-1/2 -translate-y-1/2 w-12 h-12 rounded-full bg-white/90 shadow-lg flex items-center justify-center hover:bg-white transition-colors z-10"
+          >
+            <ChevronLeft className="w-6 h-6 text-foreground" />
+          </button>
+          <button 
+            onClick={nextAward}
+            className="absolute right-4 top-1/2 -translate-y-1/2 w-12 h-12 rounded-full bg-white/90 shadow-lg flex items-center justify-center hover:bg-white transition-colors z-10"
+          >
+            <ChevronRight className="w-6 h-6 text-foreground" />
+          </button>
         </div>
       </section>
 
@@ -468,16 +459,16 @@ const mediaLogos = [
             <h2 className="font-display text-4xl font-bold text-foreground">{t("aboutPage.mediaTitle")}</h2>
           </div>
           
-          <div className="grid lg:grid-cols-2 gap-12 items-start">
-            {/* Media Articles Carousel */}
-            <div className="relative">
-              <div className="relative rounded-2xl overflow-hidden shadow-2xl">
+          <div className="space-y-12">
+            {/* Full-width media screenshots auto-scroll */}
+            <div className="relative max-w-6xl mx-auto">
+              <div className="relative rounded-2xl overflow-hidden shadow-2xl h-[460px] md:h-[560px]">
                 <img 
                   src={mediaArticles[currentMedia].image} 
                   alt={mediaArticles[currentMedia].title}
-                  className="w-full h-[400px] object-cover object-top"
+                  className="w-full h-full object-cover object-center transition-all duration-700"
                 />
-                <div className="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-foreground to-transparent p-6">
+                <div className="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-foreground/70 to-transparent p-6">
                   <span className="bg-primary text-white px-3 py-1 rounded-full text-sm font-medium">
                     {mediaArticles[currentMedia].source}
                   </span>
@@ -486,90 +477,97 @@ const mediaLogos = [
                   </h3>
                 </div>
               </div>
-              
-              {/* Navigation */}
-              <button 
-                onClick={prevMedia}
-                className="absolute left-4 top-1/2 -translate-y-1/2 w-10 h-10 rounded-full bg-white/90 shadow-lg flex items-center justify-center hover:bg-white transition-colors"
-              >
-                <ChevronLeft className="w-5 h-5 text-foreground" />
-              </button>
-              <button 
-                onClick={nextMedia}
-                className="absolute right-4 top-1/2 -translate-y-1/2 w-10 h-10 rounded-full bg-white/90 shadow-lg flex items-center justify-center hover:bg-white transition-colors"
-              >
-                <ChevronRight className="w-5 h-5 text-foreground" />
-              </button>
-              
-              {/* Dots */}
               <div className="flex justify-center gap-2 mt-4">
                 {mediaArticles.map((_, index) => (
                   <button
                     key={index}
                     onClick={() => setCurrentMedia(index)}
-                    className={`w-2 h-2 rounded-full transition-all ${
-                      index === currentMedia ? 'bg-primary w-6' : 'bg-muted-foreground/30 hover:bg-muted-foreground/50'
-                    }`}
+                    className={`h-1 rounded-full transition-all ${index === currentMedia ? 'w-10 bg-primary' : 'w-4 bg-muted-foreground/40 hover:bg-muted-foreground/60'}`}
                   />
                 ))}
               </div>
             </div>
-            
-            {/* Media Logos & Global Presence */}
-            <div className="space-y-8">
-              <div>
-                <h3 className="font-display text-2xl font-semibold text-foreground mb-4">
-                  {t("aboutPage.featuredIn")}
-                </h3>
-                <div className="grid grid-cols-2 md:grid-cols-4 gap-3">
-                  {mediaLogos.map((logo, index) => {
-                    const content = (
-                      <div 
-                        className="bg-white rounded-xl p-3 shadow-md hover:shadow-lg transition-all hover:-translate-y-1 text-center"
-                        style={{ animationDelay: `${index * 0.1}s` }}
-                      >
-                        <span className="font-semibold text-foreground text-xs">{logo.name}</span>
-                      </div>
-                    );
-                    
-                    return logo.link ? (
-                      <a
-                        key={logo.name}
-                        href={logo.link}
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        className="block"
-                      >
-                        {content}
-                      </a>
-                    ) : (
-                      <div key={logo.name}>
-                        {content}
-                      </div>
-                    );
-                  })}
-                </div>
+
+            {/* Media Logos grid 16 (2 rows x 8) */}
+            <div className="space-y-6 max-w-6xl mx-auto">
+              <h3 className="font-display text-2xl font-semibold text-foreground text-center">
+                {t("aboutPage.featuredIn")}
+              </h3>
+              <div className="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-8 gap-3">
+                {mediaLogos.map((logo) => {
+                  const content = (
+                    <div 
+                      className="bg-white rounded-xl p-3 shadow-md hover:shadow-lg transition-all hover:-translate-y-1 text-center border border-honey/20"
+                    >
+                      <span className="font-semibold text-foreground text-xs md:text-sm leading-snug block">{logo.name}</span>
+                    </div>
+                  );
+                  
+                  return logo.link ? (
+                    <a
+                      key={logo.name}
+                      href={logo.link}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="block"
+                    >
+                      {content}
+                    </a>
+                  ) : (
+                    <div key={logo.name}>
+                      {content}
+                    </div>
+                  );
+                })}
               </div>
-              
-              <div className="bg-gradient-to-br from-honey/20 to-honey-dark/10 rounded-2xl p-6">
-                <div className="flex items-center gap-4 mb-4">
-                  <Globe className="w-10 h-10 text-primary" />
-                  <h3 className="font-display text-xl font-semibold text-foreground">
+            </div>
+
+            {/* Global Recognition block with two large auto-scroll shots */}
+            <div className="bg-[#97430c] rounded-2xl p-6 md:p-10 shadow-xl max-w-6xl mx-auto">
+              <div className="flex items-center gap-4 mb-6 ">
+                <Globe className="w-10 h-10 text-primary" />
+                <div>
+                  <h3 className="font-display text-white  text-xl md:text-2xl font-semibold text-foreground">
                     {t("aboutPage.globalRecognition")}
                   </h3>
+                  <p className="text-muted-foreground text-white text-sm">{t("aboutPage.globalRecognitionText")}</p>
                 </div>
-                <p className="text-muted-foreground leading-relaxed mb-4 text-sm">
-                  {t("aboutPage.globalRecognitionText")}
-                </p>
-                <div className="grid grid-cols-2 gap-3">
-                  <div className="bg-white/80 rounded-lg p-3 text-center">
-                    <span className="text-2xl font-display font-bold text-primary">50+</span>
-                    <p className="text-xs text-muted-foreground">{t("aboutPage.mediaFeatures")}</p>
-                  </div>
-                  <div className="bg-white/80 rounded-lg p-3 text-center">
-                    <span className="text-2xl font-display font-bold text-primary">10+</span>
-                    <p className="text-xs text-muted-foreground">{t("aboutPage.nationalAwards")}</p>
-                  </div>
+              </div>
+
+              {/* <div className="grid md:grid-cols-2 gap-4">
+                {[0,1].map((offset) => {
+                  const idx = (currentGlobalShot + offset) % mediaArticles.length;
+                  return (
+                    <div key={offset} className="relative rounded-xl overflow-hidden h-64 md:h-72 shadow-lg">
+                      <img 
+                        src={mediaArticles[idx].image} 
+                        alt={`Global recognition ${idx + 1}`} 
+                        className="w-full h-full object-cover transition-all duration-700"
+                      />
+                      <div className="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-foreground/70 to-transparent p-3">
+                        <p className="text-white text-sm font-semibold">{mediaArticles[idx].title}</p>
+                      </div>
+                    </div>
+                  );
+                })}
+              </div> */}
+
+              <div className="grid grid-cols-2 md:grid-cols-4 gap-3 mt-6">
+                <div className="bg-white/80 rounded-lg p-3 text-center shadow">
+                  <span className="text-2xl font-display font-bold text-primary">50+</span>
+                  <p className="text-xs text-muted-foreground">{t("aboutPage.mediaFeatures")}</p>
+                </div>
+                <div className="bg-white/80 rounded-lg p-3 text-center shadow">
+                  <span className="text-2xl font-display font-bold text-primary">10+</span>
+                  <p className="text-xs text-muted-foreground">{t("aboutPage.nationalAwards")}</p>
+                </div>
+                <div className="bg-white/80 rounded-lg p-3 text-center shadow">
+                  <span className="text-2xl font-display font-bold text-primary">300+</span>
+                  <p className="text-xs text-muted-foreground">Press Mentions</p>
+                </div>
+                <div className="bg-white/80 rounded-lg p-3 text-center shadow">
+                  <span className="text-2xl font-display font-bold text-primary">100+</span>
+                  <p className="text-xs text-muted-foreground">Cities Reached</p>
                 </div>
               </div>
             </div>
@@ -621,34 +619,37 @@ const mediaLogos = [
             </div> */}
           </div>
           
-          {/* Instagram Feed Grid - 6x2 Layout No Gaps */}
-          <div className="grid grid-cols-2 md:grid-cols-6 gap-0 max-w-7xl mx-auto overflow-hidden rounded-lg shadow-lg">
-            {socialFeedPosts.map((post, index) => (
+          {/* Instagram Posts - 10 Square Images in 2 Rows of 5 */}
+          <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-5 gap-4 md:gap-6 max-w-7xl mx-auto">
+            {socialFeedPosts.slice(0, 10).map((post, index) => (
               <a
                 key={index}
                 href={post.link}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="group relative overflow-hidden aspect-square transition-all duration-300 hover:scale-110 hover:z-10 hover:shadow-2xl"
+                className="group relative overflow-hidden rounded-xl md:rounded-2xl shadow-lg transition-all duration-300 hover:scale-105 hover:shadow-2xl hover:z-10"
               >
-                {/* Image */}
-                <img 
-                  src={post.image} 
-                  alt={`Instagram post ${index + 1}`}
-                  className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-300"
-                />
-                
-                {/* Overlay on hover */}
-                <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-black/30 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end justify-center pb-4">
-                  <div className="flex items-center gap-2 text-white font-semibold text-sm">
-                    <Instagram className="w-4 h-4" />
-                    <span>View</span>
+                {/* Square Instagram Post */}
+                <div className="relative w-full aspect-square">
+                  <img 
+                    src={post.image} 
+                    alt={`Instagram post ${index + 1}`}
+                    className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
+                  />
+                  
+                  {/* Overlay on hover */}
+                  <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/40 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end justify-center pb-4 md:pb-6">
+                    <div className="flex items-center gap-2 text-white font-semibold text-sm md:text-base">
+                      <Instagram className="w-4 h-4 md:w-5 md:h-5" />
+                      <span className="hidden sm:inline">View on Instagram</span>
+                      <span className="sm:hidden">View</span>
+                    </div>
                   </div>
-                </div>
-                
-                {/* Corner badge */}
-                <div className="absolute top-2 right-2 bg-gradient-to-r from-purple-500 via-pink-500 to-orange-500 text-white p-1.5 rounded-full opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-                  <Instagram className="w-3 h-3" />
+                  
+                  {/* Corner badge */}
+                  <div className="absolute top-2 right-2 md:top-4 md:right-4 bg-gradient-to-r from-purple-500 via-pink-500 to-orange-500 text-white p-1.5 md:p-2 rounded-full opacity-0 group-hover:opacity-100 transition-opacity duration-300 shadow-lg">
+                    <Instagram className="w-3 h-3 md:w-5 md:h-5" />
+                  </div>
                 </div>
               </a>
             ))}

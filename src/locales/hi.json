@@ -510,11 +510,11 @@
     "celebrationsTitle": "आगामी उत्सव",
     "celebrationsSubtitle": "हर त्योहारी अवसर के लिए कुछ मीठा उपहार दें",
     "celebrations": {
-      "christmas": "क्रिसमस",
-      "newYear": "नया साल",
       "lohri": "लोहड़ी",
       "sankranti": "मकर संक्रांति",
-      "pongal": "पोंगल"
+      "vasantpanchami": "वसंत पंचमी",
+      "republicday": "राष्ट्रीय दिवस",
+      "valentinesday": "वेलेंटाइन दिवस"
     },
     "whatWeOffer": {
       "title": "हम क्या प्रदान करते हैं",

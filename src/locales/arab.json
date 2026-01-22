@@ -495,11 +495,11 @@
       "celebrationsTitle": "الاحتفالات القادمة",
       "celebrationsSubtitle": "قدم شيئاً حلواً لكل مناسبة احتفالية",
       "celebrations": {
-        "christmas": "الكريسماس",
-        "newYear": "رأس السنة",
         "lohri": "لوهري",
         "sankranti": "ماكار سانكرانتي",
-        "pongal": "بونغال"
+        "vasantpanchami": "صوسانت پانچمی",
+        "republicday": "ریپابلیک دی",
+        "valentinesday": "ولنتاین دی"
       },
       "whatWeOffer": {
         "title": "ما نقدمه",

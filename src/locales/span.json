@@ -507,11 +507,11 @@
       "celebrationsTitle": "Próximas Celebraciones",
       "celebrationsSubtitle": "Regala algo dulce para cada ocasión festiva",
       "celebrations": {
-        "christmas": "Navidad",
-        "newYear": "Año Nuevo",
         "lohri": "Lohri",
         "sankranti": "Makar Sankranti",
-        "pongal": "Pongal"
+        "vasantpanchami": "Vasant Panchami",
+        "republicday": "Republic Day",
+        "valentinesday": "Valentine's Day"
       },
       "whatWeOffer": {
         "title": "Lo Que Ofrecemos",
