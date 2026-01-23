@@ -41,6 +41,22 @@ const Franchise = () => {
   const outletImages = [elanphoto1, elanphoto2, elanphoto3, elanphoto4, elanphoto5];
 
   const franchiseModels = [
+
+    {
+      name: t("franchisePage.models.cart.name"),
+      tagline: t("franchisePage.models.cart.tagline"),
+      investment: t("franchisePage.models.cart.investment"),
+      image: iceCreamCart,
+      color: "from-emerald-400 to-teal-500",
+      features: [
+        t("franchisePage.models.cart.features.1"),
+        t("franchisePage.models.cart.features.2"),
+        t("franchisePage.models.cart.features.3"),
+        t("franchisePage.models.cart.features.4"),
+        t("franchisePage.models.cart.features.5"),
+        t("franchisePage.models.cart.features.6"),
+      ],
+    },
     {
       name: t("franchisePage.models.parlour.name"),
       tagline: t("franchisePage.models.parlour.tagline"),
@@ -73,21 +89,7 @@ const Franchise = () => {
         t("franchisePage.models.standing.features.6"),
       ],
     },
-    {
-      name: t("franchisePage.models.cart.name"),
-      tagline: t("franchisePage.models.cart.tagline"),
-      investment: t("franchisePage.models.cart.investment"),
-      image: iceCreamCart,
-      color: "from-emerald-400 to-teal-500",
-      features: [
-        t("franchisePage.models.cart.features.1"),
-        t("franchisePage.models.cart.features.2"),
-        t("franchisePage.models.cart.features.3"),
-        t("franchisePage.models.cart.features.4"),
-        t("franchisePage.models.cart.features.5"),
-        t("franchisePage.models.cart.features.6"),
-      ],
-    },
+   
   ];
 
   const supportFeatures = [

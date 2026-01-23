@@ -10,7 +10,7 @@
   },
   "heroSlider": {
     "slide1": {
-      "title": "156+ outlets ",
+      "title": "157+ outlets ",
       "subtitle": "vision 2026",
       "description": "1000+ outlets worldwide by 2026"
     },
@@ -32,7 +32,7 @@
     "slide5": {
       "title": "Own a Fastest",
       "subtitle": "Growing Franchise.",
-      "description": "156+ outlets. 4 models. Complete support."
+      "description": "157+ outlets. 4 models. Complete support."
     }
   },
   "textSlider": {
@@ -54,7 +54,7 @@
     "subtitle": "Honeyman - 2nd Generation with Bees",
     "description1": "In 1980, our founder, the late Sardar Jagjit Singh Kapoor, began with a simple belief—that purity should never be compromised. What started as a small apiary in Punjab grew into a trusted name across 50+ countries, built on integrity, craftsmanship, and an unwavering respect for nature.",
     "description2": "Today, his son, Mr. Shahzada Singh Kapoor—a globally recognized authority with 30 years in beekeeping and exports—is channeling that legacy into something revolutionary: India's most trusted refined sugar-free ecosystem.",
-    "description3": "With over 156+ stores nationwide and a franchise model empowering entrepreneurs across India, Honeyman is more than a brand. It's a movement towards a healthier, guilt-free future.",
+    "description3": "With over 157+ stores nationwide and a franchise model empowering entrepreneurs across India, Honeyman is more than a brand. It's a movement towards a healthier, guilt-free future.",
     "button": "Learn Our Story",
     "founderTag": "2nd Generation Beekeeper",
     "founderSubtag": "Honeyman Of India"
@@ -95,13 +95,16 @@
     "premiumTitle": "Premium Quality",
     "premiumSubtitle": "The House of Premium Ice Cream",
     "flavors": {
-      "butterScotch": "Butter Scotch",
+      "wildBlueberry":"Wild Blueberry",
       "chocoAlmonds": "Choco Almonds",
-      "strawberry": "Strawberry",
-      "tiramisu": "Tiramisu",
+      "mangoHoneyman": "Mango Honeyman",
+      "americanNuts": "American Nuts",
       "tutiFruti": "Tutti Frutti",
       "vanilla": "Vanilla",
-      "wildBlueberry": "Wild Blueberry"
+      "kashmiriGulkand": "Kashmiri Gulkand",
+      "kesarIcecream": "Kesar Icecream",
+      "rajbhog": "Rajbhog",
+      "tiramisu": "Tiramisu"
     }
   },
   "franchiseSection": {
@@ -241,7 +244,7 @@
       },
       "2025": {
         "title": "150+ Outlets",
-        "desc": "Successfully expanded to 156+ outlets across India."
+        "desc": "Successfully expanded to 157+ outlets across India."
       },
       "2026": {
         "title": "Mission 1000+ 🚀",
@@ -618,16 +621,16 @@
       }
     },
     "iceCream": {
-      "butterscotch": {
-        "name": "Butterscotch",
+      "rajbhog": {
+        "name": "Rajbhog",
         "description": "Creamy caramel delight sweetened with honey."
       },
-      "strawberry": {
+      "kesarIcecream": {
         "name": "Strawberry",
-        "description": "Fresh berry sweetness, zero refined sugar."
+        "description": "Creamy caramel delight sweetened with honey."
       },
-      "tuttiFrutti": {
-        "name": "Tutti Frutti",
+      "mangoHoneyman": {
+        "name": "Mango Honeyman",
         "description": "Fruit medley with natural honey."
       }
     },

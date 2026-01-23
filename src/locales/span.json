@@ -10,7 +10,7 @@
     },
     "heroSlider": {
       "slide1": {
-        "title": "156+ puntos de venta ",
+        "title": "157+ puntos de venta ",
         "subtitle": "en toda la India",
         "description": " 1000+ puntos de venta en la India para 2026"
       },
@@ -32,7 +32,7 @@
       "slide5": {
         "title": "Sé Parte de la Franquicia",
         "subtitle": "de Más Rápido Crecimiento.",
-        "description": "156+ puntos de venta. 4 modelos. Soporte completo."
+        "description": "157+ puntos de venta. 4 modelos. Soporte completo."
       }
     },
     "textSlider": {
@@ -54,7 +54,7 @@
       "subtitle": "Honeyman - 2da Generación con Abejas",
       "description1": "En 1980, nuestro fundador, el difunto Sardar Jagjit Singh Kapoor, comenzó con una simple creencia: que la pureza nunca debe comprometerse. Lo que comenzó como una pequeña colmenar en Punjab se convirtió en un nombre confiable en más de 50 países, construido sobre integridad, artesanía y un respeto inquebrantable por la naturaleza.",
       "description2": "Hoy, su hijo, el Sr. Shahzada Singh Kapoor, una autoridad reconocida globalmente con 30 años en apicultura y exportaciones, está canalizando ese legado hacia algo revolucionario: el ecosistema libre de azúcar refinado más confiable de la India.",
-      "description3": "Con más de 156+ tiendas a nivel nacional y un modelo de franquicia que empodera a emprendedores en toda la India, Honeyman es más que una marca. Es un movimiento hacia un futuro más saludable y sin culpa.",
+      "description3": "Con más de 157+ tiendas a nivel nacional y un modelo de franquicia que empodera a emprendedores en toda la India, Honeyman es más que una marca. Es un movimiento hacia un futuro más saludable y sin culpa.",
       "button": "Conoce Nuestra Historia",
       "founderTag": "Apicultor de 2da Generación",
       "founderSubtag": "Honeyman de la India"
@@ -95,13 +95,17 @@
       "premiumTitle": "Calidad Premium",
       "premiumSubtitle": "La Casa del Helado Premium",
       "flavors": {
-        "butterScotch": "Butter Scotch",
+        "wildBlueberry": "Arándano Silvestre",
         "chocoAlmonds": "Choco Almendras",
-        "strawberry": "Fresa",
-        "tiramisu": "Tiramisú",
+        "mangoHoneyman": "Mango Honeyman",
+        "americanNuts": "American Nuts",
         "tutiFruti": "Tutti Frutti",
         "vanilla": "Vainilla",
-        "wildBlueberry": "Arándano Silvestre"
+        "kashmiriGulkand": "Kashmiri Gulkand",
+        "kesarIcecream": "Kesar Icecream",
+        "rajbhog": "Rajbhog",
+        "tiramisu": "Tiramisú"
+       
       }
     },
     "franchiseSection": {
@@ -241,7 +245,7 @@
         },
         "2025": {
           "title": "150+ Puntos de Venta",
-          "desc": "Expandidos exitosamente a 156+ puntos de venta en toda la India."
+          "desc": "Expandidos exitosamente a 157+ puntos de venta en toda la India."
         },
         "2026": {
           "title": "Misión 1000+ 🚀",
@@ -614,16 +618,16 @@
         }
       },
       "iceCream": {
-        "butterscotch": {
-          "name": "Butterscotch",
+        "rajbhog": {
+          "name": "Rajbhog",
           "description": "Delicia cremosa de caramelo endulzada con miel."
         },
-        "strawberry": {
-          "name": "Fresa",
+        "kesarIcecream": {
+          "name": "Kesar Icecream",  
           "description": "Dulzura de frutos rojos frescos, cero azúcar refinado."
         },
-        "tuttiFrutti": {
-          "name": "Tutti Frutti",
+        "mangoHoneyman": {    
+          "name": "Mango Honeyman",
           "description": "Mezcla de frutas con miel natural."
         }
       },

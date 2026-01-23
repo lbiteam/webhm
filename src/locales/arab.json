@@ -10,7 +10,7 @@
     },
     "heroSlider": {
       "slide1": {
-        "title": "156+ فرعاً",
+        "title": "157+ فرعاً",
         "subtitle": "الرؤية 2026",
         "description": "1000+ فرع في العالم بحلول عام 2026"
       },
@@ -95,13 +95,16 @@
       "premiumTitle": "جودة فاخرة",
       "premiumSubtitle": "دار الآيس كريم الفاخر",
       "flavors": {
-        "butterScotch": "بَتَر سكوتش",
+        "wildBlueberry": "بلوبيري بري",
         "chocoAlmonds": "شوكو ألموندز",
-        "strawberry": "فراولة",
-        "tiramisu": "تيراميسو",
+        "mangoHoneyman": "مانجو هونيمان",
+        "americanNuts": "أمريكي المكسرات",
         "tutiFruti": "توتي فروتي",
         "vanilla": "فانيلا",
-        "wildBlueberry": "بلوبيري بري"
+        "kashmiriGulkand": "كشميري غلكاند",
+        "kesarIcecream": "كيسار آيس كريم",
+        "rajbhog": "رجبوغ",
+        "tiramisu": "تيراميسو"
       }
     },
     "franchiseSection": {
@@ -602,16 +605,16 @@
         }
       },
       "iceCream": {
-        "butterscotch": {
-          "name": "بَتَر سكوتش",
-          "description": "لذة كراميل كريمية محلاة بالعسل."
+        "rajbhog": {
+          "name": "رجبوغ",
+          "description": "لذة محلاة بالعسل."
         },
-        "strawberry": {
-          "name": "فراولة",
-          "description": "حلاوة التوت الطازجة، بدون سكر مكرر."
+        "kesarIcecream": {
+          "name": "كيسار آيس كريم",
+          "description": "لذة محلاة بالعسل."
         },
-        "tuttiFrutti": {
-          "name": "توتي فروتي",
+        "mangoHoneyman": {
+          "name": "مانجو هونيمان",
           "description": "مزيج فواكه مع عسل طبيعي."
         }
       },

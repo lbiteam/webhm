@@ -1,13 +1,16 @@
 import { useState, useEffect } from "react";
 import icecreamCollection from "@/assets/icecream-collection.webp";
 import icecreamHero from "@/assets/icecream-hero.webp";
-import butterScotch from "@/assets/ice-creams/BUTTER SCOTCH (1).webp";
-import chocoAlmonds from "@/assets/ice-creams/CHOCO ALMONDS.webp";
-import strawberry from "@/assets/ice-creams/STRAWBERRY (1).webp";
-import tiramisu from "@/assets/ice-creams/TIRAMISU (1) (1).webp";
-import tutiFruti from "@/assets/ice-creams/TUTI FRUTI.webp";
-import vanilla from "@/assets/ice-creams/VANILLA (1).webp";
-import wildBlueberry from "@/assets/ice-creams/WILD BLUEBERRY (1).webp";
+import blueBerry from "@/assets/icecreams/BlueBerry.webp";
+import chocolate from "@/assets/icecreams/chocolate.webp";
+import mangoHoneyman from "@/assets/icecreams/Mango-honeyman.webp";
+import americanNuts from "@/assets/icecreams/american-nuts.webp";
+import tutiFruti from "@/assets/icecreams/tuti-frutti.webp";
+import vanilla from "@/assets/icecreams/Vanilla-icecream.webp";
+import kashmiriGulkand from "@/assets/icecreams/kashmiri-gulkand.webp";
+import kesarIcecream from "@/assets/icecreams/kesar-icecream.webp";
+import rajbhog from "@/assets/icecreams/rajbhog.webp";
+import tiramisu from "@/assets/icecreams/tiramisu.webp";
 import { useLanguage } from "@/contexts/LanguageContext";
 
 const IceCreamSection = () => {
@@ -15,13 +18,16 @@ const IceCreamSection = () => {
   const [currentIndex, setCurrentIndex] = useState(0);
 
   const iceCreamFlavors = [
-    { image: butterScotch, name: t("iceCreamSection.flavors.butterScotch") },
-    { image: chocoAlmonds, name: t("iceCreamSection.flavors.chocoAlmonds") },
-    { image: strawberry, name: t("iceCreamSection.flavors.strawberry") },
-    { image: tiramisu, name: t("iceCreamSection.flavors.tiramisu") },
-    { image: tutiFruti, name: t("iceCreamSection.flavors.tutiFruti") },
-    { image: vanilla, name: t("iceCreamSection.flavors.vanilla") },
-    { image: wildBlueberry, name: t("iceCreamSection.flavors.wildBlueberry") },
+    { image: blueBerry, name: t("iceCreamSection.flavors.wildBlueberry") || "Blueberry" },
+    { image: chocolate, name: t("iceCreamSection.flavors.chocoAlmonds") || "Chocolate" },
+    { image: mangoHoneyman, name: t("iceCreamSection.flavors.mangoHoneyman") || "Mango Honeyman" },
+    { image: americanNuts, name: t("iceCreamSection.flavors.americanNuts") || "American Nuts" },
+    { image: tutiFruti, name: t("iceCreamSection.flavors.tutiFruti") || "Tuti Fruti" },
+    { image: vanilla, name: t("iceCreamSection.flavors.vanilla") || "Vanilla" },
+    { image: kashmiriGulkand, name: t("iceCreamSection.flavors.kashmiriGulkand") || "Kashmiri Gulkand" },
+    { image: kesarIcecream, name: t("iceCreamSection.flavors.kesarIcecream") || "Kesar Icecream" },
+    { image: rajbhog, name: t("iceCreamSection.flavors.rajbhog") || "Rajbhog" },
+    { image: tiramisu, name: t("iceCreamSection.flavors.tiramisu") || "Tiramisu" },
   ];
 
   useEffect(() => {
@@ -108,43 +114,55 @@ const IceCreamSection = () => {
 
         {/* Full-Width Continuous Carousel */}
         <div className="mt-16 -mx-6 px-6">
-          <div className="relative w-full overflow-hidden bg-gradient-to-r from-cream via-white to-cream rounded-2xl p-8">
+          <div className="relative w-full overflow-hidden bg-cream rounded-2xl p-8 md:p-12">
             {/* Carousel container */}
-            <div className="flex gap-6 animate-carousel" style={{
-              animation: `scroll 20s linear infinite`,
-              "--scroll-width": `${iceCreamFlavors.length * 200}px`,
+            <div className="flex gap-8 md:gap-10 animate-carousel" style={{
+              animation: `scroll 60s linear infinite`,
+              "--scroll-width": `${iceCreamFlavors.length * 320}px`,
             } as React.CSSProperties}>
               {/* First set of images */}
               {iceCreamFlavors.map((flavor, index) => (
-                <div key={`set1-${index}`} className="flex-shrink-0 w-48 h-48">
-                  <div className="w-full h-full rounded-xl overflow-hidden shadow-md hover:shadow-lg transition-shadow bg-white flex items-center justify-center">
-                    <img 
-                      src={flavor.image} 
-                      alt={flavor.name}
-                      className="w-full h-full object-contain p-4"
-                    />
+                <div key={`set1-${index}`} className="flex-shrink-0 w-64 h-64 md:w-80 md:h-80 group">
+                  <div className="relative w-full h-full">
+                    {/* Main container */}
+                    <div className="relative w-full h-full rounded-2xl overflow-hidden shadow-xl hover:shadow-2xl transition-all duration-500 bg-cream flex items-center justify-center border-2 border-cream/50 group-hover:border-amber-300/50 group-hover:scale-105 transform transition-transform duration-500">
+                      <img 
+                        src={flavor.image} 
+                        alt={flavor.name}
+                        className="w-full h-full object-contain p-6 md:p-8 group-hover:scale-110 transition-transform duration-500"
+                      />
+                    </div>
+                    {/* Label */}
+                    <p className="text-center mt-4 font-semibold text-foreground text-base md:text-lg transition-colors duration-300">
+                      {flavor.name}
+                    </p>
                   </div>
-                  <p className="text-center mt-3 font-medium text-foreground text-sm">{flavor.name}</p>
                 </div>
               ))}
               {/* Duplicate set for seamless loop */}
               {iceCreamFlavors.map((flavor, index) => (
-                <div key={`set2-${index}`} className="flex-shrink-0 w-48 h-48">
-                  <div className="w-full h-full rounded-xl overflow-hidden shadow-md hover:shadow-lg transition-shadow bg-white flex items-center justify-center">
-                    <img 
-                      src={flavor.image} 
-                      alt={flavor.name}
-                      className="w-full h-full object-contain p-4"
-                    />
+                <div key={`set2-${index}`} className="flex-shrink-0 w-64 h-64 md:w-80 md:h-80 group">
+                  <div className="relative w-full h-full">
+                    {/* Main container */}
+                    <div className="relative w-full h-full rounded-2xl overflow-hidden shadow-xl hover:shadow-2xl transition-all duration-500 bg-cream flex items-center justify-center border-2 border-cream/50 group-hover:border-amber-300/50 group-hover:scale-105 transform transition-transform duration-500">
+                      <img 
+                        src={flavor.image} 
+                        alt={flavor.name}
+                        className="w-full h-full object-contain p-6 md:p-8 group-hover:scale-110 transition-transform duration-500"
+                      />
+                    </div>
+                    {/* Label */}
+                    <p className="text-center mt-4 font-semibold text-foreground text-base md:text-lg transition-colors duration-300">
+                      {flavor.name}
+                    </p>
                   </div>
-                  <p className="text-center mt-3 font-medium text-foreground text-sm">{flavor.name}</p>
                 </div>
               ))}
             </div>
 
             {/* Gradient overlays for fade effect */}
-            <div className="absolute left-0 top-0 bottom-0 w-16 bg-gradient-to-r from-gradient-to-r from-cream via-white/50 to-transparent pointer-events-none z-10" />
-            <div className="absolute right-0 top-0 bottom-0 w-16 bg-gradient-to-l from-cream via-white/50 to-transparent pointer-events-none z-10" />
+            <div className="absolute left-0 top-0 bottom-0 w-20 md:w-32 bg-gradient-to-r from-cream via-cream/80 to-transparent pointer-events-none z-10" />
+            <div className="absolute right-0 top-0 bottom-0 w-20 md:w-32 bg-gradient-to-l from-cream via-cream/80 to-transparent pointer-events-none z-10" />
           </div>
 
           {/* CSS Animation */}
@@ -154,7 +172,17 @@ const IceCreamSection = () => {
                 transform: translateX(0);
               }
               100% {
-                transform: translateX(calc(-200px * ${iceCreamFlavors.length} - 24px * ${iceCreamFlavors.length}));
+                transform: translateX(calc(-320px * ${iceCreamFlavors.length} - 32px * ${iceCreamFlavors.length}));
+              }
+            }
+            @media (min-width: 768px) {
+              @keyframes scroll {
+                0% {
+                  transform: translateX(0);
+                }
+                100% {
+                  transform: translateX(calc(-400px * ${iceCreamFlavors.length} - 40px * ${iceCreamFlavors.length}));
+                }
               }
             }
           `}</style>

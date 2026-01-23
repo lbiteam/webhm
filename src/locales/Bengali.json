@@ -95,13 +95,16 @@
       "premiumTitle": "প্রিমিয়াম কোয়ালিটি",
       "premiumSubtitle": "প্রিমিয়াম আইসক্রিমের ঘর",
       "flavors": {
-        "butterScotch": "বাটার স্কচ",
+        "wildBlueberry": "ওয়াইল্ড ব্লুবেরি",
         "chocoAlmonds": "চকো আলমন্ডস",
-        "strawberry": "স্ট্রবেরি",
-        "tiramisu": "তিরামিসু",
+        "mangoHoneyman": "ম্যাঙ্গো হোনিম্যান",
+        "americanNuts": "অ্যামেরিকান নুটস",
         "tutiFruti": "টুটি ফ্রুটি",
         "vanilla": "ভ্যানিলা",
-        "wildBlueberry": "ওয়াইল্ড ব্লুবেরি"
+        "rajbhog": "রজবহোগ",
+        "tiramisu": "তিরামিসু",
+        "kesarIcecream": "কেসর আইস ক্রিম",
+        "kashmiriGulkand": "কশ্মিরি গুলকংদ"
       }
     },
     "franchiseSection": {
@@ -602,17 +605,17 @@
         }
       },
       "iceCream": {
-        "butterscotch": {
-          "name": "বাটারস্কচ",
+        "rajbhog": {
+          "name": "রজবহোগ",
           "description": "মধু দিয়ে মিষ্টি করা ক্রিমি ক্যারামেল ডিলাইট।"
         },
-        "strawberry": {
-          "name": "স্ট্রবেরি",
-          "description": "তাজা বেরির মিষ্টি, শূন্য পরিশোধিত চিনি।"
+        "kesarIcecream": {
+          "name": "কেসর আইস ক্রিম",
+          "description": "মধু দিয়ে মিষ্টি করা ক্রিমি ক্যারামেল ডিলাইট।"
         },
-        "tuttiFrutti": {
-          "name": "টুটি ফ্রুটি",
-          "description": "প্রাকৃতিক মধু সহ ফলের মিশ্রণ।"
+        "mangoHoneyman": {
+          "name": "ম্যাঙ্গো হোনিম্যান",
+          "description": "মধু দিয়ে মিষ্টি করা ক্রিমি ক্যারামেল ডিলাইট। ম্যাঙ্গো হোনিম্যান আইস ক্রিম।"
         }
       },
       "jams": {

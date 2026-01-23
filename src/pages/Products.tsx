@@ -36,6 +36,12 @@ import vanilla from "@/assets/ice-creams/VANILLA (1).webp";
 import chocoAlmonds from "@/assets/ice-creams/CHOCO ALMONDS.webp";
 import tiramisu from "@/assets/ice-creams/TIRAMISU (1) (1).webp";
 import wildBlueberry from "@/assets/ice-creams/WILD BLUEBERRY (1).webp";
+import mangoHoneyman from "@/assets/icecreams/Mango-honeyman.webp";
+import americanNuts from "@/assets/ice-creams/AMERICAN NUTS (1).webp";
+import kashmiriGulkand from "@/assets/ice-creams/KASHMIRI GULKAND (1).webp";
+import kesarIcecream from "@/assets/icecreams/kesar-icecream.webp";
+import rajbhog from "@/assets/icecreams/rajbhog.webp";
+
 
 interface Product {
   id: string;
@@ -114,9 +120,9 @@ export default function Products() {
           <div className="flex flex-col lg:flex-row gap-12 items-center">
             {/* Products on Left */}
             <div className="w-full lg:w-2/3 grid grid-cols-1 sm:grid-cols-3 gap-8">
-              <ProductCard product={{id: 'ic1', name: t("productsPage.iceCream.butterscotch.name"), image: butterscotch, description: t("productsPage.iceCream.butterscotch.description")}} />
-              <ProductCard product={{id: 'ic2', name: t("productsPage.iceCream.strawberry.name"), image: strawberryIceCream, description: t("productsPage.iceCream.strawberry.description")}} />
-              <ProductCard product={{id: 'ic3', name: t("productsPage.iceCream.tuttiFrutti.name"), image: tuttiFrutti, description: t("productsPage.iceCream.tuttiFrutti.description")}} />
+              <ProductCard product={{id: 'ic1', name: t("productsPage.iceCream.rajbhog.name"), image: rajbhog, description: t("productsPage.iceCream.rajbhog.description")}} />
+              <ProductCard product={{id: 'ic2', name: t("productsPage.iceCream.kesarIcecream.name"), image: kesarIcecream, description: t("productsPage.iceCream.kesarIcecream.description")}} />
+              <ProductCard product={{id: 'ic3', name: t("productsPage.iceCream.mangoHoneyman.name"), image: mangoHoneyman, description: t("productsPage.iceCream.mangoHoneyman.description")}} />
             </div>
             {/* Banner on Right */}
             <div className="w-full lg:w-1/3">
