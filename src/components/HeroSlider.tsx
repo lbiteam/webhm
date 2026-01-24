@@ -1,49 +1,60 @@
 import { useState, useEffect } from "react";
-import honeyTea from "@/assets/honey-tea.webp";
-import honeyPour from "@/assets/honey-pour.webp";
-import honeyGranola from "@/assets/honey-granola.webp";
-import newYearImage from "@/assets/150 franchise outlets for website..webp";
-import HoneyDrip from "./HoneyDrip";
-import Bee from "./Bee";
-import { useLanguage } from "@/contexts/LanguageContext";
+
+// 1. Mission 2026 banner
+import mission2026Mobile from "@/assets/website-banners/mission-2026-banner/800 X 1200 (7).webp";
+import mission2026Tablet from "@/assets/website-banners/mission-2026-banner/1200 X 675 (5).webp";
+import mission2026Desktop from "@/assets/website-banners/mission-2026-banner/1920 X 1080 (7).webp";
+
+// 2. All products banner
+import allProductsMobile from "@/assets/website-banners/all-products-banner/800 X 1200 (1).webp";
+import allProductsTablet from "@/assets/website-banners/all-products-banner/1200 X 675 (1).webp";
+import allProductsDesktop from "@/assets/website-banners/all-products-banner/1920 X 1080 (1).webp";
+
+// 3. Ice cream banner
+import iceCreamMobile from "@/assets/website-banners/ice-cream-banner/800 X 1200 (2).webp";
+import iceCreamTablet from "@/assets/website-banners/ice-cream-banner/1200 X 675 (2).webp";
+import iceCreamDesktop from "@/assets/website-banners/ice-cream-banner/1920 X 1080 (2).webp";
+
+// 4. Honeys website banner
+import honeysMobile from "@/assets/website-banners/honeys-website-banner/800 X 1200.webp";
+import honeysTablet from "@/assets/website-banners/honeys-website-banner/1200 X 675.webp";
+import honeysDesktop from "@/assets/website-banners/honeys-website-banner/1920 X 1080.webp";
+
+// 5. Growing franchise banner
+import growingFranchiseMobile from "@/assets/website-banners/Growing-franchise-banner/800 X 1200 (6).webp";
+import growingFranchiseTablet from "@/assets/website-banners/Growing-franchise-banner/1200 X 675 (4).webp";
+import growingFranchiseDesktop from "@/assets/website-banners/Growing-franchise-banner/1920 X 1080 (4).webp";
+
+const slides = [
+  {
+    mobile: mission2026Mobile,
+    tablet: mission2026Tablet,
+    desktop: mission2026Desktop,
+  },
+  {
+    mobile: allProductsMobile,
+    tablet: allProductsTablet,
+    desktop: allProductsDesktop,
+  },
+  {
+    mobile: iceCreamMobile,
+    tablet: iceCreamTablet,
+    desktop: iceCreamDesktop,
+  },
+  {
+    mobile: honeysMobile,
+    tablet: honeysTablet,
+    desktop: honeysDesktop,
+  },
+  {
+    mobile: growingFranchiseMobile,
+    tablet: growingFranchiseTablet,
+    desktop: growingFranchiseDesktop,
+  },
+];
 
 const HeroSlider = () => {
-  const { t } = useLanguage();
   const [currentSlide, setCurrentSlide] = useState(0);
-
-  const slides = [
-    {
-      image: newYearImage,
-      title: t("heroSlider.slide1.title"),
-      subtitle: t("heroSlider.slide1.subtitle"),
-      description: t("heroSlider.slide1.description")
-    },
-    {
-      video: "/videos/hero-honey.webm",
-      title: t("heroSlider.slide2.title"),
-      subtitle: t("heroSlider.slide2.subtitle"),
-      description: t("heroSlider.slide2.description")
-    },
-    {
-       image: honeyTea,
-      title: t("heroSlider.slide3.title"),
-      subtitle: t("heroSlider.slide3.subtitle"),
-      description: t("heroSlider.slide3.description")
-    },
-    
-    {
-      image: honeyPour,
-      title: t("heroSlider.slide4.title"),
-      subtitle: t("heroSlider.slide4.subtitle"),
-      description: t("heroSlider.slide4.description")
-    },
-    {
-      image: honeyGranola,
-      title: t("heroSlider.slide5.title"),
-      subtitle: t("heroSlider.slide5.subtitle"),
-      description: t("heroSlider.slide5.description")
-    }
-  ];
 
   useEffect(() => {
     const timer = setInterval(() => {
@@ -53,76 +64,42 @@ const HeroSlider = () => {
   }, []);
 
   return (
-    <section id="home" className="relative min-h-screen overflow-hidden pt-20">
-      <HoneyDrip position="top" />
-      
-      {/* Background slides */}
+    <section id="home" className="relative min-h-screen overflow-hidden pt-24">
+      {/* Background slides - below navbar; inset on tablet (md/lg) to avoid cut */}
       {slides.map((slide, index) => (
         <div
           key={index}
-          className={`absolute inset-0 transition-opacity duration-1000 ${
-            index === currentSlide ? "opacity-100" : "opacity-0"
+          className={`absolute top-24 left-0 right-0 bottom-0 md:left-6 md:right-6 lg:left-12 lg:right-12 xl:left-0 xl:right-0 transition-opacity duration-1000 ${
+            index === currentSlide ? "opacity-100 z-10" : "opacity-0 z-0 pointer-events-none"
           }`}
         >
-          {'video' in slide && slide.video ? (
-            <video
-              autoPlay
-              muted
-              loop
-              playsInline
-              className="absolute inset-0 w-full h-full object-cover"
-            >
-              <source src={slide.video} type="video/webm" />
-            </video>
-          ) : (
-            <div
-              className="absolute inset-0 bg-cover bg-center"
-              style={{ backgroundImage: `url(${slide.image})` }}
+          <picture className="block absolute inset-0 w-full h-full">
+            <source
+              media="(min-width: 1280px)"
+              srcSet={slide.desktop}
             />
-          )}
-          <div className="absolute inset-0 bg-gradient-to-r from-cream/70 via-cream/50 to-transparent" />
+            <source
+              media="(min-width: 1024px)"
+              srcSet={slide.tablet}
+            />
+            <img
+              src={slide.mobile}
+              alt=""
+              className="absolute inset-0 w-full h-full object-cover"
+              loading={index === 0 ? "eager" : "lazy"}
+              fetchPriority={index === 0 ? "high" : "low"}
+            />
+          </picture>
+          {/* {index === 0 && (
+            <span
+              className="absolute bottom-12 left-6 sm:left-8 md:left-12 lg:left-16 text-3xl sm:text-4xl md:text-6xl font-bold tracking-tight"
+              style={{ color: "#893c09" }}
+            >
+              157+ outlets
+            </span>
+          )} */}
         </div>
       ))}
-      
-      {/* Honeycomb overlay pattern */}
-      <div className="absolute inset-0 honeycomb-pattern opacity-20" />
-      
-      {/* Floating bees */}
-      <Bee className="absolute top-32 left-[10%] z-20" size={35} />
-      <Bee className="absolute top-48 right-[15%] z-20" size={28} />
-      <Bee className="absolute bottom-40 left-[25%] z-20" size={32} />
-
-      {/* Content */}
-      <div className="container mx-auto px-6 relative z-10 flex items-center min-h-screen">
-        <div className="max-w-2xl">
-          {slides.map((slide, index) => (
-            <div
-              key={index}
-              className={`transition-all duration-700 ${
-                index === currentSlide
-                  ? "opacity-100 translate-y-0"
-                  : "opacity-0 translate-y-8 absolute"
-              }`}
-            >
-              {index === currentSlide && (
-                <>
-                  <h1 className="font-display text-5xl md:text-7xl font-medium text-foreground mb-6 leading-tight">
-                    <span className="italic">{slide.title}</span>
-                    <br />
-                    <span className="text-primary text-shadow-honey">{slide.subtitle}</span>
-                  </h1>
-                  
-                  <p className="text-lg md:text-xl text-muted-foreground mb-8 max-w-md leading-relaxed">
-                    {slide.description}
-                  </p>
-                  
-                 
-                </>
-              )}
-            </div>
-          ))}
-        </div>
-      </div>
 
       {/* Slide indicators */}
       <div className="absolute bottom-32 left-1/2 -translate-x-1/2 z-20 flex gap-3">
@@ -135,19 +112,10 @@ const HeroSlider = () => {
                 ? "bg-primary w-8"
                 : "bg-primary/40 hover:bg-primary/60"
             }`}
+            aria-label={`Go to slide ${index + 1}`}
           />
         ))}
       </div>
-      
-      {/* Wave decoration at bottom */}
-      {/* <div className="absolute bottom-0 left-0 right-0 z-10">
-        <svg viewBox="0 0 1440 100" className="w-full h-auto" preserveAspectRatio="none">
-          <path
-            fill="hsl(var(--cream-dark))"
-            d="M0,100 L0,60 Q360,0 720,60 Q1080,120 1440,60 L1440,100 Z"
-          />
-        </svg>
-      </div> */}
     </section>
   );
 };

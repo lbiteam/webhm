@@ -45,9 +45,9 @@
     "item7": "💯 100% Pure, No Additives"
   },
   "whyUs": {
-    "title": "Best Honey Brand in India – Why Honeyman Leads in Purity",
+    "title": "A Franchise Built On Proven Systems",
     "subtitle": "Honeyman is one of India's leading honey brands offering 100% pure, raw & organic honey sourced directly from Indian beekeepers.",
-    "description": "Honeyman is one of India's trusted honey brands, offering pure, raw and organic honey sourced responsibly from Indian beekeepers. By protecting honey bees and following sustainable practices, we deliver chemical-free honey that supports both human health and nature's balance."
+    "description": "Honeyman offers a structured ice-cream franchise backed by in-house products, strong supply chains, and operational expertise. Designed for cities of every size, our models combine differentiation, support, and consistency to help partners build reliable, long-term businesses."
   },
   "aboutSection": {
     "title": "About Us",
@@ -113,7 +113,7 @@
     "description": "Own the world's first honey-based ice cream business, designed for various cities, budgets, and ambitions. Our system-driven, product-led model comes fully supported for consistent growth.",
     "models": {
       "basic": {
-        "name": "Basic",
+        "name": "Starter",
         "tagline": "Perfect Start",
         "investment": "₹2.5-5 Lakhs",
         "features": {
@@ -125,7 +125,7 @@
         }
       },
       "medium": {
-        "name": "Medium",
+        "name": "Professional",
         "tagline": "Growing Business",
         "investment": "₹8-12 Lakhs",
         "popular": "MOST POPULAR",
@@ -140,7 +140,7 @@
         }
       },
       "bigger": {
-        "name": "Bigger",
+        "name": "Elite",
         "tagline": "Premium Partner",
         "investment": "₹15-30 Lakhs",
         "features": {
@@ -203,7 +203,7 @@
     "tagline": "Bringing Premium Honey to Your Doorstep"
   },
   "honeyjourney": {
-    "title": "🐝 Honeyman Journey",
+    "title": " Honeyman Journey",
     "subtitle": "From Legacy to Global Mission",
     "timeline": {
       "1971": {

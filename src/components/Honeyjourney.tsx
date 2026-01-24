@@ -3,39 +3,49 @@ import { motion, useInView } from "framer-motion";
 import { ChevronLeft, ChevronRight } from "lucide-react";
 import Bee from "./Bee";
 import { useLanguage } from "@/contexts/LanguageContext";
-import productBanner from "@/assets/Products/Product_banner.webp";
-import honeyBanner from "@/assets/Products/honey-banner.webp";
-import himalayanHoney from "@/assets/honeyman_journey/Screenshot 2026-01-06 131207 copy.webp";
+
+import himalayanHoney from "@/assets/Products/himalayan-honey.webp";
 import blackForestHoney from "@/assets/Products/black-forest-honey.webp";
-import kesarKahwa from "@/assets/honeyman_journey/Screenshot 2026-01-06 131149 copy.webp";
+import kesarKahwa from "@/assets/Products/kesar-kahwa.webp";
 import gingerKahwa from "@/assets/Products/ginger-kahwa.webp";
-import badamKahwa from "@/assets/honeyman_journey/award-entrepreneur.webp";
+import badamKahwa from "@/assets/Products/Badam-kahwa.webp";
 import strawberry from "@/assets/Products/strawberry.webp";
-import orangeJam from "@/assets/honeyman_journey/Screenshot 2026-01-06 131409 copy.webp";
+import orangeJam from "@/assets/Products/orange-jam.webp";
 import pineapple from "@/assets/Products/pineapple.webp";
-import amlaTonic from "@/assets/honeyman_journey/Screenshot 2026-01-06 131239 copy.webp";
-import hivebg from "@/assets/honey-bg.webp";
+import amlaTonic from "@/assets/Products/amla-tonic.webp";
+import honeyBanner from "@/assets/Products/honey-banner.webp";
+import productBanner from "@/assets/Products/Product-explore.webp";
+import icecreamjourney from "@/assets/icecreams/chocolate.webp"
+import cafejourney from "@/assets/franchise/Cafe-image.webp"
 
 export default function HoneymanTimeline() {
   const { t } = useLanguage();
   const [currentIndex, setCurrentIndex] = useState(0);
-  const beeRef = useRef<SVGTextElement>(null);
-  const beeContainerRef = useRef<SVGGElement>(null);
-  const isInView = useInView(beeContainerRef, { once: true, amount: 0.3 });
+  const containerRef = useRef<HTMLDivElement>(null);
+  const isInView = useInView(containerRef, { once: true, amount: 0.2 });
 
-  const timeline = [
-    { year: "1971", color: "#B45309", title: t("honeyjourney.timeline.1971.title"), desc: t("honeyjourney.timeline.1971.desc"), icon: himalayanHoney },
-    { year: "1985", color: "#B45309", title: t("honeyjourney.timeline.1985.title"), desc: t("honeyjourney.timeline.1985.desc"), icon: blackForestHoney },
-    { year: "1995", color: "#B45309", title: t("honeyjourney.timeline.1995.title"), desc: t("honeyjourney.timeline.1995.desc"), icon: kesarKahwa },
-    { year: "2005", color: "#B45309", title: t("honeyjourney.timeline.2005.title"), desc: t("honeyjourney.timeline.2005.desc"), icon: gingerKahwa },
-    { year: "2010", color: "#B45309", title: t("honeyjourney.timeline.2010.title"), desc: t("honeyjourney.timeline.2010.desc"), icon: badamKahwa },
-    { year: "2013", color: "#B45309", title: t("honeyjourney.timeline.2013.title"), desc: t("honeyjourney.timeline.2013.desc"), icon: strawberry },
-    { year: "2015", color: "#B45309", title: t("honeyjourney.timeline.2015.title"), desc: t("honeyjourney.timeline.2015.desc"), icon: orangeJam },
-    { year: "2018", color: "#B45309", title: t("honeyjourney.timeline.2018.title"), desc: t("honeyjourney.timeline.2018.desc"), icon: pineapple },
-    { year: "2023", color: "#B45309", title: t("honeyjourney.timeline.2023.title"), desc: t("honeyjourney.timeline.2023.desc"), icon: amlaTonic },
-    { year: "2025", color: "#B45309", title: t("honeyjourney.timeline.2025.title"), desc: t("honeyjourney.timeline.2025.desc"), icon: honeyBanner },
-    { year: "2026", color: "#B45309", title: t("honeyjourney.timeline.2026.title"), desc: t("honeyjourney.timeline.2026.desc"), icon: productBanner },
+  const timelineYears = ["1971", "1985", "1995", "2005", "2010", "2013", "2015", "2018", "2023", "2025", "2026"];
+  const timelineIcons = [
+    himalayanHoney,
+    blackForestHoney,
+    kesarKahwa,
+    gingerKahwa,
+    badamKahwa,
+    strawberry,
+    orangeJam,
+    pineapple,
+    amlaTonic,
+    cafejourney,
+    icecreamjourney,
   ];
+
+  const timeline = timelineYears.map((year, index) => ({
+    year,
+    title: t(`honeyjourney.timeline.${year}.title`),
+    desc: t(`honeyjourney.timeline.${year}.desc`),
+    icon: timelineIcons[index],
+  }));
+
   const [isMobile, setIsMobile] = useState(false);
 
   useEffect(() => {
@@ -47,60 +57,7 @@ export default function HoneymanTimeline() {
     return () => window.removeEventListener('resize', checkMobile);
   }, []);
 
-  const totalWidth = 1800;
   const numItems = timeline.length;
-  
-  // Calculate x positions for each node - evenly spaced
-  const nodePositions = timeline.map((_, index) => {
-    if (numItems === 1) return totalWidth / 2;
-    return (totalWidth / (numItems - 1)) * index;
-  });
-  
-  // Create wave path that passes through each node position at y=80
-  const createWavePath = () => {
-    const centerY = 80;
-    const points = nodePositions.map((x) => ({ x, y: centerY }));
-    
-    let path = `M ${points[0].x} ${points[0].y}`;
-    for (let i = 1; i < points.length; i++) {
-      const prev = points[i - 1];
-      const curr = points[i];
-      const midX = (prev.x + curr.x) / 2;
-      const controlY = i % 2 === 0 ? 10 : 150;
-      path += ` Q ${midX} ${controlY}, ${curr.x} ${curr.y}`;
-    }
-    return path;
-  };
-  
-  const pathData = createWavePath();
-
-  // Animate bee along path using CSS offsetDistance
-  useEffect(() => {
-    if (isInView && beeRef.current) {
-      const beeElement = beeRef.current;
-      let startTime: number | null = null;
-      const duration = 6000; // 6 seconds
-      
-      const animate = (timestamp: number) => {
-        if (!startTime) startTime = timestamp;
-        const progress = Math.min((timestamp - startTime) / duration, 1);
-        
-        // Ease in out function
-        const easeInOut = progress < 0.5
-          ? 2 * progress * progress
-          : 1 - Math.pow(-2 * progress + 2, 2) / 2;
-        
-        const offsetDistance = `${easeInOut * 100}%`;
-        beeElement.style.offsetDistance = offsetDistance;
-        
-        if (progress < 1) {
-          requestAnimationFrame(animate);
-        }
-      };
-      
-      requestAnimationFrame(animate);
-    }
-  }, [isInView]);
 
   const nextItem = () => {
     setCurrentIndex((prev) => (prev + 1) % numItems);
@@ -110,267 +67,221 @@ export default function HoneymanTimeline() {
     setCurrentIndex((prev) => (prev - 1 + numItems) % numItems);
   };
 
+  // Split timeline into two rows for desktop
+  const firstRow = timeline.slice(0, 6);
+  const secondRow = timeline.slice(6);
+
   return (
-    <section className="relative py-10 md:py-20 overflow-hidden">
-      {/* Background Image */}
-      <div 
-        className="absolute inset-0 bg-cover bg-center bg-no-repeat opacity-50"
-        style={{ backgroundImage: `url(${hivebg})` }}
-      />
-      <div className="absolute inset-0 bg-[#FFFCF5]/80" />
-      
-      <div className="relative z-10">
-      {/* Floating bees - hidden on mobile */}
-      <div className="hidden lg:block absolute top-16 left-[8%] z-20 animate-float">
-        <Bee size={28} />
-      </div>
-      <div className="hidden lg:block absolute top-32 right-[10%] z-20 animate-float" style={{ animationDelay: '1s' }}>
-        <Bee size={24} />
-      </div>
-      <div className="hidden lg:block absolute bottom-24 left-[12%] z-20 animate-float" style={{ animationDelay: '2s' }}>
-        <Bee size={26} />
-      </div>
-      <div className="hidden lg:block absolute bottom-16 right-[8%] z-20 animate-float" style={{ animationDelay: '0.5s' }}>
-        <Bee size={22} />
-      </div>
-      
-      {/* HEADER - Centered */}
-      <div className="text-center mb-16">
-        <h2 className="section-title">
+    <section 
+      ref={containerRef}
+      className="relative py-16 md:py-20 overflow-hidden bg-cream"
+    >
+      {/* Floating Bees */}
+      <motion.div
+        className="absolute top-20 right-[15%] hidden lg:block"
+        animate={{ y: [0, -15, 0], x: [0, 10, 0] }}
+        transition={{ duration: 4, repeat: Infinity, ease: "easeInOut" }}
+      >
+        <Bee size={40} />
+      </motion.div>
+      <motion.div
+        className="absolute bottom-32 left-[10%] hidden lg:block"
+        animate={{ y: [0, 10, 0], x: [0, -8, 0] }}
+        transition={{ duration: 3, repeat: Infinity, ease: "easeInOut", delay: 1 }}
+      >
+        <Bee size={30} />
+      </motion.div>
+      <motion.div
+        className="absolute top-1/2 right-[5%] hidden lg:block"
+        animate={{ y: [0, 8, 0], x: [0, 5, 0] }}
+        transition={{ duration: 5, repeat: Infinity, ease: "easeInOut", delay: 2 }}
+      >
+        <Bee size={25} />
+      </motion.div>
+
+      {/* Section Header */}
+      <div className="text-center mb-12 md:mb-16 px-4">
+        <motion.h2
+          initial={{ opacity: 0, y: 30 }}
+          animate={isInView ? { opacity: 1, y: 0 } : {}}
+          transition={{ duration: 0.6 }}
+          className="section-title"
+        >
           {t("honeyjourney.title")}
-        </h2>
-        <p className="text-muted-foreground">{t("honeyjourney.subtitle")}</p>
+        </motion.h2>
+        <motion.p
+          initial={{ opacity: 0, y: 20 }}
+          animate={isInView ? { opacity: 1, y: 0 } : {}}
+          transition={{ duration: 0.6, delay: 0.2 }}
+          className="text-muted-foreground max-w-2xl mx-auto"  
+        >
+          {t("honeyjourney.subtitle")}
+        </motion.p>
       </div>
 
-      {/* Desktop View - Full Timeline */}
-      <div className="hidden lg:block overflow-x-auto hide-scrollbar">
-        <div className="min-w-[1900px] px-20 relative h-[600px] flex flex-col justify-center mx-auto">
-
-          <div className="relative mt-20 h-full">
-            {/* SVG LAYER - Centered vertically where all nodes will be */}
-            <svg className="absolute top-1/2 left-0 w-full h-[160px] -translate-y-1/2" viewBox="0 0 1800 160" fill="none" preserveAspectRatio="xMidYMid meet">
-              {/* Gray Track Background */}
-              <path d={pathData} stroke="#E5E7EB" strokeWidth="4" strokeLinecap="round" />
-              
-              {/* Animated Honey Line - Goes through center where all nodes are */}
-              <motion.path
-                d={pathData}
-                stroke="#F59E0B"
-                strokeWidth="5"
-                strokeLinecap="round"
-                initial={{ pathLength: 0 }}
-                whileInView={{ pathLength: 1 }}
-                viewport={{ once: true }}
-                transition={{ duration: 6, ease: "easeInOut" }}
-              />
-
-              {/* THE FLYING BEE along the path */}
-              <g
-                ref={beeContainerRef}
-                style={{ 
-                  offsetPath: `path('${pathData}')`,
-                }}
+      {/* Desktop View - Two Row Timeline */}
+      <div className="hidden lg:block max-w-7xl mx-auto px-8">
+        {/* First Row */}
+        <div className="relative mb-8">
+          <div className="flex justify-between items-start relative">
+            {/* Connecting Line */}
+            <div className="absolute top-[60px] left-[8%] right-[8%] h-1 bg-gradient-to-r from-primary via-accent to-primary rounded-full z-0" />
+            
+            {firstRow.map((item, index) => (
+              <motion.div
+                key={item.year}
+                initial={{ opacity: 0, y: 30 }}
+                animate={isInView ? { opacity: 1, y: 0 } : {}}
+                transition={{ duration: 0.5, delay: index * 0.1 }}
+                className="flex flex-col items-center relative z-10 w-[15%]"
               >
-                <text
-                  ref={beeRef}
-                  fontSize="24"
-                  y="10"
-                  x="0"
-                  style={{ 
-                    offsetDistance: "0%",
-                  } as React.CSSProperties}
-                >
-                  🐝
-                </text>
-              </g>
-            </svg>
-
-            {/* CONTENT GRID - Nodes positioned exactly on wave path */}
-            <div className="relative z-10 w-full h-full">
-              {timeline.map((item, index) => {
-                const isEven = index % 2 === 0;
-                const xPosition = nodePositions[index];
-                const xPercent = (xPosition / totalWidth) * 100;
+                {/* Year Badge - Using footer yellow color */}
+                <div className="bg-[#ffe248] px-4 py-2 rounded-lg font-bold text-lg shadow-lg mb-3 text-honey-dark">
+                  {item.year}
+                </div>
                 
-                return (
-                  <div 
-                    key={index} 
-                    className="absolute h-full flex flex-col items-center justify-center"
-                    style={{ left: `${xPercent}%`, transform: 'translateX(-50%)' }}
-                  >
-                    
-                    {/* Content above center line (for even indices) */}
-                    {isEven && (
-                      <div className="absolute top-0 flex flex-col items-center">
-                        {/* Year Label */}
-                        <motion.div
-                          initial={{ opacity: 0, scale: 0 }}
-                          whileInView={{ opacity: 1, scale: 1 }}
-                          transition={{ delay: index * 0.5 }}
-                          style={{ backgroundColor: item.color }}
-                          className="px-4 py-1 rounded shadow-lg text-white font-bold mb-4"
-                        >
-                          {item.year}
-                        </motion.div>
-                        
-                        {/* Title and Description */}
-                        <motion.div
-                          initial={{ opacity: 0, y: -20 }}
-                          whileInView={{ opacity: 1, y: 0 }}
-                          transition={{ delay: index * 0.5 + 0.3 }}
-                          className="text-center mb-4 w-[160px]"
-                        >
-                          <h4 className="text-[13px] font-black text-amber-900 uppercase leading-tight">
-                            {item.title}
-                          </h4>
-                          <p className="text-[11px] text-gray-600 mt-1 font-medium italic">
-                            {item.desc}
-                          </p>
-                        </motion.div>
-                      </div>
-                    )}
+                {/* Product Image Node */}
+                <div className="w-20 h-20 rounded-full bg-white shadow-xl border-4 border-primary overflow-hidden mb-4 flex items-center justify-center">
+                  <img 
+                    src={item.icon} 
+                    alt={item.title}
+                    className="w-full h-full object-cover"
+                  />
+                </div>
+                
+                {/* Arrow indicator */}
+                <div className="w-0 h-0 border-l-[8px] border-l-transparent border-r-[8px] border-r-transparent border-t-[10px] border-t-primary mb-3" />
+                
+                {/* Text Content */}
+                <div className="text-center px-2">
+                  <h4 className="font-bold text-honey-dark text-sm mb-1 leading-tight">
+                    {item.title}
+                  </h4>
+                  <p className="text-xs text-muted-foreground leading-tight">
+                    {item.desc}
+                  </p>
+                </div>
+              </motion.div>
+            ))}
+          </div>
+        </div>
 
-                    {/* The Point/Node - Positioned exactly on wave path with product icon */}
-                    <div className="relative z-20">
-                      <motion.div
-                        initial={{ scale: 0 }}
-                        whileInView={{ scale: 1 }}
-                        transition={{ delay: index * 0.5 + 0.2 }}
-                        className="w-12 h-12 md:w-16 md:h-16 rounded-full bg-white border-4 border-amber-500 shadow-lg overflow-hidden flex items-center justify-center p-1"
-                      >
-                        <img 
-                          src={item.icon} 
-                          alt={item.title}
-                          className="w-full h-full object-cover rounded-lg"
-                        />
-                      </motion.div>
-                    </div>
-
-                    {/* Content below center line (for odd indices) */}
-                    {!isEven && (
-                      <div className="absolute bottom-0 flex flex-col items-center">
-                        {/* Year Label */}
-                        <motion.div
-                          initial={{ opacity: 0, scale: 0 }}
-                          whileInView={{ opacity: 1, scale: 1 }}
-                          transition={{ delay: index * 0.5 }}
-                          style={{ backgroundColor: item.color }}
-                          className="px-4 py-1 rounded shadow-lg text-white font-bold mt-4"
-                        >
-                          {item.year}
-                        </motion.div>
-                        
-                        {/* Title and Description */}
-                        <motion.div
-                          initial={{ opacity: 0, y: 20 }}
-                          whileInView={{ opacity: 1, y: 0 }}
-                          transition={{ delay: index * 0.5 + 0.3 }}
-                          className="text-center mt-4 w-[160px]"
-                        >
-                          <h4 className="text-[13px] font-black text-amber-900 uppercase leading-tight">
-                            {item.title}
-                          </h4>
-                          <p className="text-[11px] text-gray-600 mt-1 font-medium italic">
-                            {item.desc}
-                          </p>
-                        </motion.div>
-                      </div>
-                    )}
-
-                  </div>
-                );
-              })}
-            </div>
+        {/* Second Row */}
+        <div className="relative mt-12">
+          <div className="flex justify-center gap-8 items-start relative">
+            {/* Connecting Line */}
+            <div className="absolute top-[60px] left-[20%] right-[20%] h-1 bg-gradient-to-r from-primary via-accent to-primary rounded-full z-0" />
+            
+            {secondRow.map((item, index) => (
+              <motion.div
+                key={item.year}
+                initial={{ opacity: 0, y: 30 }}
+                animate={isInView ? { opacity: 1, y: 0 } : {}}
+                transition={{ duration: 0.5, delay: (index + 6) * 0.1 }}
+                className="flex flex-col items-center relative z-10 w-[16%]"
+              >
+                {/* Year Badge */}
+                <div className="bg-[#ffe248] px-4 py-2 rounded-lg font-bold text-lg shadow-lg mb-3 text-honey-dark">
+                  {item.year}
+                </div>
+                
+                {/* Product Image Node */}
+                <div className="w-20 h-20 rounded-full bg-white shadow-xl border-4 border-primary overflow-hidden mb-4 flex items-center justify-center">
+                  <img 
+                    src={item.icon} 
+                    alt={item.title}
+                    className="w-full h-full object-cover"
+                  />
+                </div>
+                
+                {/* Arrow indicator */}
+                <div className="w-0 h-0 border-l-[8px] border-l-transparent border-r-[8px] border-r-transparent border-t-[10px] border-t-primary mb-3" />
+                
+                {/* Text Content */}
+                <div className="text-center px-2">
+                  <h4 className="font-bold text-honey-dark text-sm mb-1 leading-tight">
+                    {item.title}
+                  </h4>
+                  <p className="text-xs text-muted-foreground leading-tight">
+                    {item.desc}
+                  </p>
+                </div>
+              </motion.div>
+            ))}
           </div>
         </div>
       </div>
 
-      {/* Mobile View - Single Item with Arrows */}
+      {/* Mobile View - Carousel Style */}
       <div className="lg:hidden px-4">
-        <div className="relative max-w-md mx-auto">
+        <div className="relative max-w-sm mx-auto">
+          
           {/* Navigation Arrows */}
           <button
             onClick={prevItem}
-            className="absolute left-2 md:left-4 top-1/2 -translate-y-1/2 z-30 bg-white/90 hover:bg-white rounded-full p-2 shadow-lg border-2 border-amber-300 transition-all active:scale-95"
-            aria-label="Previous"
+            className="absolute left-0 top-1/2 -translate-y-1/2 -translate-x-2 z-10 bg-white shadow-lg rounded-full p-2 hover:bg-secondary transition-colors"
           >
-            <ChevronLeft className="w-5 h-5 md:w-6 md:h-6 text-amber-700" />
+            <ChevronLeft className="w-5 h-5 text-honey-dark" />
           </button>
           
           <button
             onClick={nextItem}
-            className="absolute right-2 md:right-4 top-1/2 -translate-y-1/2 z-30 bg-white/90 hover:bg-white rounded-full p-2 shadow-lg border-2 border-amber-300 transition-all active:scale-95"
-            aria-label="Next"
+            className="absolute right-0 top-1/2 -translate-y-1/2 translate-x-2 z-10 bg-white shadow-lg rounded-full p-2 hover:bg-secondary transition-colors"
           >
-            <ChevronRight className="w-5 h-5 md:w-6 md:h-6 text-amber-700" />
+            <ChevronRight className="w-5 h-5 text-honey-dark" />
           </button>
 
-          {/* Timeline Item */}
+          {/* Timeline Card */}
           <motion.div
             key={currentIndex}
-            initial={{ opacity: 0, x: 50 }}
-            animate={{ opacity: 1, x: 0 }}
-            exit={{ opacity: 0, x: -50 }}
+            initial={{ opacity: 0, scale: 0.9 }}
+            animate={{ opacity: 1, scale: 1 }}
             transition={{ duration: 0.3 }}
-            className="relative bg-white rounded-2xl p-4 md:p-6 shadow-xl border-2 border-amber-200 mt-8 mx-12 md:mx-16"
+            className="bg-white rounded-2xl shadow-xl p-6 mx-8"
           >
-            {/* Product Icon */}
+            {/* Year Badge */}
             <div className="flex justify-center mb-4">
-              <div className="w-16 h-16 md:w-20 md:h-20 rounded-full bg-white border-4 border-amber-500 shadow-lg overflow-hidden flex items-center justify-center p-1">
-                <img 
-                  src={timeline[currentIndex].icon} 
-                  alt={timeline[currentIndex].title}
-                  className="w-full h-full object-cover rounded-full"
-                />
+              <div className="bg-[#ffe248] px-6 py-2 rounded-lg font-bold text-xl text-honey-dark shadow-lg">
+                {timeline[currentIndex].year}
               </div>
             </div>
             
-            {/* Year Label */}
-            <div
-              style={{ backgroundColor: timeline[currentIndex].color }}
-              className="inline-block px-4 py-2 rounded-lg shadow-md text-white font-bold mb-4"
-            >
-              {timeline[currentIndex].year}
+            {/* Product Image */}
+            <div className="w-24 h-24 mx-auto rounded-full bg-white shadow-lg border-4 border-primary overflow-hidden mb-4">
+              <img 
+                src={timeline[currentIndex].icon} 
+                alt={timeline[currentIndex].title}
+                className="w-full h-full object-cover"
+              />
             </div>
             
             {/* Title */}
-            <h3 className="text-xl font-black text-amber-900 uppercase mb-3">
+            <h4 className="font-bold text-honey-dark text-lg mb-2 text-center">
               {timeline[currentIndex].title}
-            </h3>
+            </h4>
             
             {/* Description */}
-            <p className="text-sm text-gray-700 leading-relaxed mb-6">
+            <p className="text-muted-foreground text-sm text-center leading-relaxed">
               {timeline[currentIndex].desc}
             </p>
-
-            {/* Progress Dots */}
-            <div className="flex justify-center gap-2 mt-6">
-              {timeline.map((_, index) => (
-                <button
-                  key={index}
-                  onClick={() => setCurrentIndex(index)}
-                  className={`w-2 h-2 rounded-full transition-all ${
-                    index === currentIndex
-                      ? 'bg-amber-500 w-8'
-                      : 'bg-amber-200 hover:bg-amber-300'
-                  }`}
-                  aria-label={`Go to ${timeline[index].year}`}
-                />
-              ))}
-            </div>
           </motion.div>
 
-          {/* Simple Wave Line for Mobile */}
-          <div className="relative h-1 bg-amber-100 rounded-full mt-6 mx-4">
-            <motion.div
-              className="h-full bg-amber-500 rounded-full"
-              initial={{ width: '0%' }}
-              animate={{ width: `${((currentIndex + 1) / numItems) * 100}%` }}
-              transition={{ duration: 0.3 }}
-            />
+          {/* Progress Dots */}
+          <div className="flex justify-center gap-2 mt-6 flex-wrap">
+            {timeline.map((_, index) => (
+              <button
+                key={index}
+                onClick={() => setCurrentIndex(index)}
+                className={`h-2 rounded-full transition-all duration-300 ${
+                  index === currentIndex
+                    ? 'w-8 bg-primary'
+                    : 'w-2 bg-secondary hover:bg-primary/50'
+                }`}
+                aria-label={`${timeline[index].year}`}
+              />
+            ))}
           </div>
         </div>
-      </div>
       </div>
     </section>
   );

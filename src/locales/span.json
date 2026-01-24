@@ -45,9 +45,9 @@
       "item7": "💯 100% Pura, Sin Aditivos"
     },
     "whyUs": {
-      "title": "Mejor Marca de Miel en la India – Por qué Honeyman Lidera en Pureza",
+      "title": "Modelo de Franquicia Construido en un Sistema",
       "subtitle": "Honeyman es una de las principales marcas de miel de la India que ofrece miel 100% pura, cruda y orgánica obtenida directamente de apicultores indios.",
-      "description": "Honeyman es una de las marcas de miel confiables de la India, que ofrece miel pura, cruda y orgánica obtenida de manera responsable de apicultores indios. Al proteger a las abejas y seguir prácticas sostenibles, entregamos miel libre de químicos que apoya tanto la salud humana como el equilibrio de la naturaleza."
+      "description": "Honeyman ofrece un modelo de franquicia de helados a base de miel respaldado por productos internos, cadenas de suministro fuertes y experiencia operativa. Diseñado para ciudades de todos los tamaños, nuestros modelos combinan diferenciación, soporte y consistencia para ayudar a socios a construir negocios confiables y de largo plazo."
     },
     "aboutSection": {
       "title": "Nosotros",
@@ -114,7 +114,7 @@
       "description": "Sé dueño del primer negocio de helados a base de miel del mundo, diseñado para varias ciudades, presupuestos y ambiciones. Nuestro modelo basado en sistema y liderado por productos viene completamente respaldado para un crecimiento constante.",
       "models": {
         "basic": {
-          "name": "Básico",
+          "name": "Starter",
           "tagline": "Comienzo Perfecto",
           "investment": "₹2.5-5 Lakhs",
           "features": {
@@ -126,7 +126,7 @@
           }
         },
         "medium": {
-          "name": "Medio",
+          "name": "Professional",
           "tagline": "Negocio en Crecimiento",
           "investment": "₹8-12 Lakhs",
           "popular": "MÁS POPULAR",
@@ -141,7 +141,7 @@
           }
         },
         "bigger": {
-          "name": "Grande",
+          "name": "Elite",
           "tagline": "Socio Premium",
           "investment": "₹15-30 Lakhs",
           "features": {
@@ -204,7 +204,7 @@
       "tagline": "Llevando Miel Premium a Tu Puerta"
     },
     "honeyjourney": {
-      "title": "🐝 Viaje Honeyman",
+      "title": " Viaje Honeyman",
       "subtitle": "De Legado a Misión Global",
       "timeline": {
         "1971": {

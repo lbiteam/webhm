@@ -409,9 +409,9 @@ const mediaLogos = [
           <div className="flex items-center justify-center gap-4">
             <Award className="w-10 h-10 text-honey" />
             <h2 className="font-display text-4xl font-bold text-white">Awards & Recognition</h2>
-          </div>
-        </div>
-        
+              </div>
+            </div>
+            
         {/* Full-Screen Image Slider */}
         <div className="relative w-full h-[70vh] overflow-hidden">
           <div 
@@ -487,45 +487,45 @@ const mediaLogos = [
                 ))}
               </div>
             </div>
-
+            
             {/* Media Logos grid 16 (2 rows x 8) */}
             <div className="space-y-6 max-w-6xl mx-auto">
               <h3 className="font-display text-2xl font-semibold text-foreground text-center">
-                {t("aboutPage.featuredIn")}
-              </h3>
+                  {t("aboutPage.featuredIn")}
+                </h3>
               <div className="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-8 gap-3">
                 {mediaLogos.map((logo) => {
-                  const content = (
-                    <div 
+                    const content = (
+                      <div 
                       className="bg-white rounded-xl p-3 shadow-md hover:shadow-lg transition-all hover:-translate-y-1 text-center border border-honey/20"
-                    >
+                      >
                       <span className="font-semibold text-foreground text-xs md:text-sm leading-snug block">{logo.name}</span>
-                    </div>
-                  );
-                  
-                  return logo.link ? (
-                    <a
-                      key={logo.name}
-                      href={logo.link}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="block"
-                    >
-                      {content}
-                    </a>
-                  ) : (
-                    <div key={logo.name}>
-                      {content}
-                    </div>
-                  );
-                })}
+                      </div>
+                    );
+                    
+                    return logo.link ? (
+                      <a
+                        key={logo.name}
+                        href={logo.link}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="block"
+                      >
+                        {content}
+                      </a>
+                    ) : (
+                      <div key={logo.name}>
+                        {content}
+                      </div>
+                    );
+                  })}
+                </div>
               </div>
-            </div>
-
+              
             {/* Global Recognition block with two large auto-scroll shots */}
             <div className="bg-[#97430c] rounded-2xl p-6 md:p-10 shadow-xl max-w-6xl mx-auto">
               <div className="flex items-center gap-4 mb-6 ">
-                <Globe className="w-10 h-10 text-primary" />
+                  <Globe className="w-10 h-10 text-primary" />
                 <div>
                   <h3 className="font-display text-white  text-xl md:text-2xl font-semibold text-foreground">
                     {t("aboutPage.globalRecognition")}
@@ -554,13 +554,13 @@ const mediaLogos = [
 
               <div className="grid grid-cols-2 md:grid-cols-4 gap-3 mt-6">
                 <div className="bg-white/80 rounded-lg p-3 text-center shadow">
-                  <span className="text-2xl font-display font-bold text-primary">50+</span>
-                  <p className="text-xs text-muted-foreground">{t("aboutPage.mediaFeatures")}</p>
-                </div>
+                    <span className="text-2xl font-display font-bold text-primary">50+</span>
+                    <p className="text-xs text-muted-foreground">{t("aboutPage.mediaFeatures")}</p>
+                  </div>
                 <div className="bg-white/80 rounded-lg p-3 text-center shadow">
-                  <span className="text-2xl font-display font-bold text-primary">10+</span>
-                  <p className="text-xs text-muted-foreground">{t("aboutPage.nationalAwards")}</p>
-                </div>
+                    <span className="text-2xl font-display font-bold text-primary">10+</span>
+                    <p className="text-xs text-muted-foreground">{t("aboutPage.nationalAwards")}</p>
+                  </div>
                 <div className="bg-white/80 rounded-lg p-3 text-center shadow">
                   <span className="text-2xl font-display font-bold text-primary">300+</span>
                   <p className="text-xs text-muted-foreground">Press Mentions</p>
@@ -631,22 +631,22 @@ const mediaLogos = [
               >
                 {/* Square Instagram Post */}
                 <div className="relative w-full aspect-square">
-                  <img 
-                    src={post.image} 
-                    alt={`Instagram post ${index + 1}`}
+                <img 
+                  src={post.image} 
+                  alt={`Instagram post ${index + 1}`}
                     className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
-                  />
-                  
-                  {/* Overlay on hover */}
+                />
+                
+                {/* Overlay on hover */}
                   <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/40 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end justify-center pb-4 md:pb-6">
                     <div className="flex items-center gap-2 text-white font-semibold text-sm md:text-base">
                       <Instagram className="w-4 h-4 md:w-5 md:h-5" />
                       <span className="hidden sm:inline">View on Instagram</span>
                       <span className="sm:hidden">View</span>
-                    </div>
                   </div>
-                  
-                  {/* Corner badge */}
+                </div>
+                
+                {/* Corner badge */}
                   <div className="absolute top-2 right-2 md:top-4 md:right-4 bg-gradient-to-r from-purple-500 via-pink-500 to-orange-500 text-white p-1.5 md:p-2 rounded-full opacity-0 group-hover:opacity-100 transition-opacity duration-300 shadow-lg">
                     <Instagram className="w-3 h-3 md:w-5 md:h-5" />
                   </div>
