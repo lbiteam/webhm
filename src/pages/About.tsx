@@ -12,11 +12,11 @@ import farmImage from "@/assets/Honey farm.webp";
 
 // Award images
 import awardPm from "@/assets/awards/award-pm.webp";
-import awardIndia from "@/assets/awards/award-india.webp";
 import awardPunjab from "@/assets/awards/award-punjab.webp";
 import awardYogi from "@/assets/awards/award-yogi.jpg";
 import awardEntrepreneur from "@/assets/awards/award-entrepreneur.webp";
 import awardMinister from "@/assets/awards/award-minister.webp";
+import awardindia from "@/assets/awards/award-india.webp";
 import flipkart from "@/assets/Shopping logo/flipkart-logo.webp";
 import Amazon from "@/assets/Shopping logo/amazon-logo.webp";
 import Snapdeal from "@/assets/Shopping logo/snapdeal-logo.webp";
@@ -54,7 +54,7 @@ const About = () => {
     { image: awardPunjab, title: t("aboutPage.awards.punjab") },
     { image: awardEntrepreneur, title: t("aboutPage.awards.entrepreneur") },
     { image: awardMinister, title: t("aboutPage.awards.minister") },
-    { image: awardIndia, title: t("aboutPage.awards.india") },
+    { image: awardindia, title: t("aboutPage.awards.india") },
   ];
 
   const platforms = [
@@ -143,13 +143,6 @@ const mediaLogos = [
     const interval = setInterval(() => {
       setCurrentGlobalShot((prev) => (prev + 1) % mediaArticles.length);
     }, 4500);
-    return () => clearInterval(interval);
-  }, []);
-
-  useEffect(() => {
-    const interval = setInterval(() => {
-      setCurrentAward((prev) => (prev + 1) % awards.length);
-    }, 4000);
     return () => clearInterval(interval);
   }, []);
 
@@ -405,48 +398,54 @@ const mediaLogos = [
       {/* Awards & Recognition */}
       <section className="relative overflow-hidden bg-[#8c3100]/90">
         {/* Section Title - Separate from Image */}
-        <div className="py-8">
-          <div className="flex items-center justify-center gap-4">
-            <Award className="w-10 h-10 text-honey" />
-            <h2 className="font-display text-4xl font-bold text-white">Awards & Recognition</h2>
-              </div>
-            </div>
-            
-        {/* Full-Screen Image Slider */}
-        <div className="relative w-full h-[70vh] overflow-hidden">
-          <div 
+        <div className="py-5 px-4 sm:py-6 sm:px-6 md:py-8">
+          <div className="flex items-center justify-center gap-2 sm:gap-4">
+            <Award className="w-7 h-7 sm:w-8 sm:h-8 md:w-10 md:h-10 text-honey flex-shrink-0" />
+            <h2 className="font-display text-2xl sm:text-3xl md:text-4xl font-bold text-white text-center">
+              Awards & Recognition
+            </h2>
+          </div>
+        </div>
+
+        {/* Image Slider - responsive height & padding */}
+        <div className="relative w-full min-h-[45vh] h-[50vh] sm:h-[55vh] md:h-[60vh] lg:h-[70vh] overflow-hidden px-2 sm:px-4 md:px-6">
+          <div
             className="flex h-full transition-transform duration-700 ease-in-out"
             style={{ transform: `translateX(-${currentAward * 100}%)` }}
           >
             {awards.map((award, index) => (
-              <div key={index} className="min-w-full h-full relative flex-shrink-0">
-                <img 
-                  src={award.image} 
-                  alt={award.title}
-                  className="w-full h-full object-contain bg-gradient-to-b from-[#8c3100]/90 to-[#6b2400]"
-                />
-                {/* Yellow Background Caption with White Text */}
-                <div className="absolute bottom-0 left-0 right-0 bg-honey py-4 px-6">
-                  <h3 className="text-white font-display text-xl md:text-2xl font-semibold text-center">
+              <div key={index} className="w-full h-full relative flex-shrink-0 flex flex-col">
+                <div className="flex-1 min-h-0 relative">
+                  <img
+                    src={award.image}
+                    alt={award.title}
+                    className="w-full h-full object-contain bg-gradient-to-b from-[#8c3100]/90 to-[#6b2400]"
+                  />
+                </div>
+                {/* Caption - responsive padding & text */}
+                <div className="flex-shrink-0 bg-honey py-3 px-4 sm:py-4 sm:px-5 md:px-6">
+                  <h3 className="text-white font-display text-base sm:text-lg md:text-xl lg:text-2xl font-semibold text-center leading-tight">
                     {award.title}
                   </h3>
                 </div>
               </div>
             ))}
           </div>
-          
-          {/* Navigation Arrows */}
-          <button 
+
+          {/* Navigation Arrows - responsive size & position */}
+          <button
             onClick={prevAward}
-            className="absolute left-4 top-1/2 -translate-y-1/2 w-12 h-12 rounded-full bg-white/90 shadow-lg flex items-center justify-center hover:bg-white transition-colors z-10"
+            className="absolute left-0 sm:left-2 md:left-4 top-1/2 -translate-y-1/2 w-9 h-9 sm:w-10 sm:h-10 md:w-12 md:h-12 rounded-full bg-white/90 shadow-lg flex items-center justify-center hover:bg-white transition-colors z-10"
+            aria-label="Previous award"
           >
-            <ChevronLeft className="w-6 h-6 text-foreground" />
+            <ChevronLeft className="w-5 h-5 md:w-6 md:h-6 text-foreground" />
           </button>
-          <button 
+          <button
             onClick={nextAward}
-            className="absolute right-4 top-1/2 -translate-y-1/2 w-12 h-12 rounded-full bg-white/90 shadow-lg flex items-center justify-center hover:bg-white transition-colors z-10"
+            className="absolute right-0 sm:right-2 md:right-4 top-1/2 -translate-y-1/2 w-9 h-9 sm:w-10 sm:h-10 md:w-12 md:h-12 rounded-full bg-white/90 shadow-lg flex items-center justify-center hover:bg-white transition-colors z-10"
+            aria-label="Next award"
           >
-            <ChevronRight className="w-6 h-6 text-foreground" />
+            <ChevronRight className="w-5 h-5 md:w-6 md:h-6 text-foreground" />
           </button>
         </div>
       </section>

@@ -11,7 +11,7 @@ import allProductsTablet from "@/assets/website-banners/all-products-banner/1200
 import allProductsDesktop from "@/assets/website-banners/all-products-banner/1920 X 1080 (1).webp";
 
 // 3. Ice cream banner
-import iceCreamMobile from "@/assets/website-banners/ice-cream-banner/800 X 1200 (2).webp";
+import iceCreamMobile from "@/assets/website-banners/ice-cream-banner/800 X 1200 (8).webp";
 import iceCreamTablet from "@/assets/website-banners/ice-cream-banner/1200 X 675 (2).webp";
 import iceCreamDesktop from "@/assets/website-banners/ice-cream-banner/1920 X 1080 (2).webp";
 

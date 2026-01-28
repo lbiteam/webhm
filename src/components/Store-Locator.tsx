@@ -184,14 +184,18 @@ const StoreLocator = ({ id }: StoreLocatorProps) => {
   }, [activeTab, storeOperatives, comingSoonStores]);
 
   const availableStates = useMemo(() => {
-    const states = new Set<string>();
-    if (Array.isArray(currentStores)) {
-      currentStores.forEach((store: any) => {
-        const state = store?.Region || store?.State || "";
-        if (state) states.add(state);
-      });
-    }
-    return Array.from(states).sort();
+    if (!Array.isArray(currentStores)) return [];
+
+    // Collect, trim and sort states case-insensitively
+    const sortedStates = currentStores
+      .map((store: any) => (store?.Region || store?.State || "").trim())
+      .filter((state: string) => state.length > 0)
+      .sort((a: string, b: string) =>
+        a.localeCompare(b, "en", { sensitivity: "base" })
+      );
+
+    // Remove duplicates while preserving sorted order
+    return Array.from(new Set(sortedStates));
   }, [currentStores]);
 
   const filteredStores = useMemo(() => {
