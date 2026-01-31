@@ -32,6 +32,8 @@ const Index = () => {
         <IceCreamSection />
         <FranchiseSection />
         <GiftingSection />
+       
+        <HoneymanStoreSection />
         <ReviewsSection />
        
       </main>

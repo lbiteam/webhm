@@ -117,7 +117,7 @@ const IceCreamSection = () => {
           <div className="relative w-full overflow-hidden bg-cream rounded-2xl p-8 md:p-12">
             {/* Carousel container */}
             <div className="flex gap-8 md:gap-10 animate-carousel" style={{
-              animation: `scroll 60s linear infinite`,
+              animation: `scroll 180s linear infinite`,
               "--scroll-width": `${iceCreamFlavors.length * 320}px`,
             } as React.CSSProperties}>
               {/* First set of images */}

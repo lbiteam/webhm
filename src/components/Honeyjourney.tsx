@@ -170,7 +170,7 @@ export default function HoneymanTimeline() {
         <div className="relative mt-12">
           <div className="flex justify-center gap-8 items-start relative">
             {/* Connecting Line */}
-            <div className="absolute top-[60px] left-[20%] right-[20%] h-1 bg-gradient-to-r from-primary via-accent to-primary rounded-full z-0" />
+            <div className="absolute top-[60px] left-[11.5%] right-[13%] h-1 bg-gradient-to-r from-primary via-accent to-primary rounded-full z-0" />
             
             {secondRow.map((item, index) => (
               <motion.div
