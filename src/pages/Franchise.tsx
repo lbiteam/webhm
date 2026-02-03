@@ -21,6 +21,10 @@ import iceCreamCartmodel from "@/assets/franchise/honeyman-cart-model-1.webp";
 import iceCreamCartmodel2 from "@/assets/franchise/honeyman-cart-model-2.webp";
 import iceCreamCartmodel3 from "@/assets/franchise/honeyman-ice-creamcart-model-3.webp";
 import cafe from "@/assets/franchise/Cafe-image.webp";
+import elanphoto6 from "@/assets/cafe-outlet2.webp";
+import elanphoto7 from "@/assets/cafe-outlet3.webp";
+import elanphoto8 from "@/assets/outlet-4.webp";
+import elanphoto9 from "@/assets/cafe-outlets.webp";
 
 import { useState, useMemo, useEffect } from "react";
 import StoreLocator from "@/components/Store-Locator";
@@ -38,7 +42,7 @@ const Franchise = () => {
   const [storeLoadError, setStoreLoadError] = useState<string | null>(null);
   const itemsPerPage = 4;
 
-  const outletImages = [elanphoto1, elanphoto2, elanphoto3, elanphoto4, elanphoto5];
+  const outletImages = [elanphoto1, elanphoto7, elanphoto3, elanphoto6, elanphoto5, elanphoto4,elanphoto2, elanphoto8, elanphoto9];
 
   const franchiseModels = [
 

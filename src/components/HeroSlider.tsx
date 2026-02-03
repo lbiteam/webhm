@@ -1,29 +1,20 @@
 import { useState, useEffect } from "react";
 
 // 1. Mission 2026 banner
-import mission2026Mobile from "@/assets/website-banners/mission-2026-banner/800 X 1200.webp";
-import mission2026Tablet from "@/assets/website-banners/mission-2026-banner/1200 X 900.webp";
-import mission2026Desktop from "@/assets/website-banners/mission-2026-banner/1920X1080.webp";
+import mission2026Mobile from "@/assets/website-banners/mission-2026-banner/banner-3.webp";
+import mission2026Tablet from "@/assets/website-banners/mission-2026-banner/banner-mid.webp";
+import mission2026Desktop from "@/assets/website-banners/mission-2026-banner/banner.webp";
 
 // 2. All products banner
-import allProductsMobile from "@/assets/website-banners/all-products-banner/800 X 1200 (1).webp";
-import allProductsTablet from "@/assets/website-banners/all-products-banner/1200 X 900.webp";
-import allProductsDesktop from "@/assets/website-banners/all-products-banner/1920 X 1080 (1).webp";
+
 
 // 3. Ice cream banner
-import iceCreamMobile from "@/assets/website-banners/ice-cream-banner/800 X 1200.webp";
-import iceCreamTablet from "@/assets/website-banners/ice-cream-banner/1200 X 900.webp";
-import iceCreamDesktop from "@/assets/website-banners/ice-cream-banner/1920 x 1080.webp";
+
 
 // 4. Honeys website banner
-import honeysMobile from "@/assets/website-banners/honeys-website-banner/800 X 1200.webp";
-import honeysTablet from "@/assets/website-banners/honeys-website-banner/1200 X 900.webp";
-import honeysDesktop from "@/assets/website-banners/honeys-website-banner/1920 X 1080.webp";
+
 
 // 5. Growing franchise banner
-import growingFranchiseMobile from "@/assets/website-banners/Growing-franchise-banner/800 X 1200 (6).webp";
-import growingFranchiseTablet from "@/assets/website-banners/Growing-franchise-banner/1200-900.webp";
-import growingFranchiseDesktop from "@/assets/website-banners/Growing-franchise-banner/1920 X 1080 (4).webp";
 
 const slides = [
   {
@@ -31,26 +22,9 @@ const slides = [
     tablet: mission2026Tablet,
     desktop: mission2026Desktop,
   },
-  {
-    mobile: allProductsMobile,
-    tablet: allProductsTablet,
-    desktop: allProductsDesktop,
-  },
-  {
-    mobile: iceCreamMobile,
-    tablet: iceCreamTablet,
-    desktop: iceCreamDesktop,
-  },
-  {
-    mobile: honeysMobile,
-    tablet: honeysTablet,
-    desktop: honeysDesktop,
-  },
-  {
-    mobile: growingFranchiseMobile,
-    tablet: growingFranchiseTablet,
-    desktop: growingFranchiseDesktop,
-  },
+  
+  
+ 
 ];
 
 const HeroSlider = () => {
@@ -110,14 +84,47 @@ const HeroSlider = () => {
               fetchPriority={index === 0 ? "high" : "low"}
             />
           </picture>
-          {/* {index === 0 && (
-            <span
-              className="absolute bottom-12 left-6 sm:left-8 md:left-12 lg:left-16 text-3xl sm:text-4xl md:text-6xl font-bold tracking-tight"
-              style={{ color: "#893c09" }}
-            >
-              157+ outlets
-            </span>
-          )} */}
+          {/* Left-side dark overlay - first slide only */}
+          {index === 0 && (
+            <>
+              {/* Mobile: stronger, wider dark overlay for text contrast */}
+              <div
+                className="absolute inset-0 z-[1] pointer-events-none sm:hidden"
+                style={{
+                  background:
+                    "linear-gradient(to right, rgba(0,0,0,0.75) 0%, rgba(0,0,0,0.5) 35%, rgba(0,0,0,0.2) 60%, transparent 85%)",
+                }}
+              />
+              {/* Tablet/desktop: original overlay */}
+              <div
+                className="absolute inset-0 z-[1] pointer-events-none hidden sm:block"
+                style={{
+                  background:
+                    "linear-gradient(to right, rgba(0,0,0,0.5) 0%, rgba(0,0,0,0.2) 40%, transparent 70%)",
+                }}
+              />
+            </>
+          )}
+          {/* 2026 mission text - first slide only, responsive */}
+          {index === 0 && (
+            <div className="absolute inset-0 z-[2] flex items-center pointer-events-none pl-6 sm:pl-8 md:pl-8 lg:pl-16 xl:pl-24">
+              <div className="max-w-[85%] sm:max-w-[75%] md:max-w-[55%] lg:max-w-[45%]">
+                <p className="text-xl sm:text-2xl md:text-3xl lg:text-4xl xl:text-5xl  leading-tight tracking-tight">   
+                  <span className="text-yellow-400 drop-shadow-[0_1px_3px_rgba(0,0,0,0.8)] sm:drop-shadow-md font-extrabold  font-poppins">2026 MISSON</span>
+                  <br />
+                  <span className="text-white  drop-shadow-[0_1px_3px_rgba(0,0,0,0.8)] sm:drop-shadow-sm font-poppins">1000+ OUTLETS </span>   
+                      <br />
+                  <span className="text-white font-extrabold drop-shadow-[0_1px_3px_rgba(0,0,0,0.8)] sm:drop-shadow-sm  font-poppins"> WORLDWIDE</span>
+                </p>
+                <p className="mt-2 sm:mt-3 md:mt-4 lg:mt-5 text-base sm:text-lg md:text-xl lg:text-2xl xl:text-3xl  text-white drop-shadow-[0_1px_4px_rgba(0,0,0,0.9)] sm:drop-shadow-md leading-tight">
+                  India&apos;s Fastest Growing 
+                </p>
+                <p className="mt-0 sm:mt-0 md:mt-0 lg:mt-0 text-base sm:text-lg md:text-xl lg:text-2xl xl:text-3xl  text-white drop-shadow-[0_1px_4px_rgba(0,0,0,0.9)] sm:drop-shadow-md leading-tight">
+                  Franchise Business
+                </p>
+              </div>
+            </div>
+          )}
         </div>
       ))}
 
