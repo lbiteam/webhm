@@ -180,7 +180,7 @@ export default function Products() {
     
 
       {/* --- MELLIFERA BEAUTY: Banner Left, Products Right --- */}
-      <section className="py-20 bg-[#f9dc8d]/35 relative">
+      {/* <section className="py-20 bg-[#f9dc8d]/35 relative">
         <Bee className="absolute top-20 left-[6%] opacity-30" size={22} />
         <div className="container mx-auto px-6">
           <div className="flex flex-col lg:flex-row gap-12 items-center">
@@ -194,25 +194,27 @@ export default function Products() {
             </div>
           </div>
         </div>
-      </section>
+      </section> */}
         {/* --- TONICS: Products Left, Banner Right --- */}
         <section className="py-20 bg-[#ffe248]/20 relative">
           <Bee className="absolute bottom-12 left-[10%] opacity-30" size={20} />
         <div className="container mx-auto px-6">
           <div className="flex flex-col lg:flex-row gap-12 items-center">
             {/* 3 Products on Left */}
-            <div className="w-full lg:w-2/3 grid grid-cols-1 sm:grid-cols-3 gap-8">
-              <ProductCard product={{id: 't1', name: t("productsPage.tonics.amla.name"), image: amla, description: t("productsPage.tonics.amla.description")}} />
-              <ProductCard product={{id: 't2', name: t("productsPage.tonics.lemon.name"), image: lemon, description: t("productsPage.tonics.lemon.description")}} />
-              <ProductCard product={{id: 't3', name: t("productsPage.tonics.tulsi.name"), image: tulsi, description: t("productsPage.tonics.tulsi.description")}} />
-            </div>
-            {/* Banner on Right */}
+
             <div className="w-full lg:w-1/3">
               <div className="relative group overflow-hidden rounded-3xl shadow-2xl">
                 <img src={tonicsBanner} alt="Wellness Tonics" className="w-full h-[450px] object-cover transition-transform duration-700 group-hover:scale-105" />
                
               </div>
             </div>
+            <div className="w-full lg:w-2/3 grid grid-cols-1 sm:grid-cols-3 gap-8">
+              <ProductCard product={{id: 't1', name: t("productsPage.tonics.amla.name"), image: amla, description: t("productsPage.tonics.amla.description")}} />
+              <ProductCard product={{id: 't2', name: t("productsPage.tonics.lemon.name"), image: lemon, description: t("productsPage.tonics.lemon.description")}} />
+              <ProductCard product={{id: 't3', name: t("productsPage.tonics.tulsi.name"), image: tulsi, description: t("productsPage.tonics.tulsi.description")}} />
+            </div>
+            {/* Banner on Right */}
+            
           </div>
         </div>
       </section>
@@ -221,13 +223,14 @@ export default function Products() {
         <Bee className="absolute top-12 right-[10%] opacity-30" size={26} />
         <div className="container mx-auto px-6">
           <div className="flex flex-col lg:flex-row gap-12 items-center">
-            <div className="w-full lg:w-1/3">
-              <img src={sauceBanner} alt="Sauces" className="rounded-3xl shadow-lg h-[450px] w-full object-cover" />
-            </div>
+            
             <div className="w-full lg:w-2/3 grid grid-cols-1 sm:grid-cols-3 gap-8">
               <ProductCard product={{id: 's1', name: t("productsPage.sauces.bbq.name"), image: bbqSauce, description: t("productsPage.sauces.bbq.description")}} />
               <ProductCard product={{id: 's2', name: t("productsPage.sauces.ketchup.name"), image: tomatoKetchup, description: t("productsPage.sauces.ketchup.description")}} />
               <ProductCard product={{id: 's3', name: t("productsPage.sauces.kalonji.name"), image: kalonjiSauce, description: t("productsPage.sauces.kalonji.description")}} />
+            </div>
+            <div className="w-full lg:w-1/3">
+              <img src={sauceBanner} alt="Sauces" className="rounded-3xl shadow-lg h-[450px] w-full object-cover" />
             </div>
           </div>
         </div>

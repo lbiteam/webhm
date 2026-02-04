@@ -3,7 +3,7 @@ import { ChevronLeft, ChevronRight, Gift, Heart, Briefcase, Sparkles, Leaf, Star
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import { useLanguage } from "@/contexts/LanguageContext";
-import heroImage from "@/assets/gifting/Republic Day Website Banner.webp";
+import heroImage from "@/assets/gifting/Valentine's day Banner.webp";
 import weddingCategory from "@/assets/gifting/wedding-category.webp";
 import corporateCategory from "@/assets/gifting/corporate-category.webp";
 import celebrationCategory from "@/assets/gifting/celebration-category.webp";
@@ -139,28 +139,28 @@ const Gifting = () => {
         </div> */}
         
         {/* Decorative element */}
-        <div className="absolute bottom-0 left-0 right-0 h-24 bg-gradient-to-t from-[#faf8f5] to-transparent"></div>
+        {/* <div className="absolute bottom-0 left-0 right-0 h-24 bg-gradient-to-t from-[#faf8f5] to-transparent"></div> */}
       </section>
 
       {/* Promotional Banner */}
-      <section className="bg-gradient-to-r from-[#FF9933] via-[#FFFFFF] to-[#138808] py-4 relative overflow-hidden">
+      <section className="bg-gradient-to-r from-[#700f29] to-[#c0204d] py-4 relative overflow-hidden">
         <div className="absolute inset-0 opacity-20">
-          <div className="absolute top-0 left-10 text-4xl animate-pulse">🎄</div>
-          <div className="absolute top-0 right-10 text-4xl animate-pulse">🎄</div>
-          <div className="absolute top-1 left-1/4 text-2xl">❄️</div>
-          <div className="absolute top-1 right-1/4 text-2xl">❄️</div>
+          <div className="absolute top-0 left-10 text-4xl animate-pulse">❤️</div>
+          <div className="absolute top-0 right-10 text-4xl animate-pulse">❤️</div>
+          <div className="absolute top-1 left-1/4 text-2xl">🎈</div>
+          <div className="absolute top-1 right-1/4 text-2xl">🎈</div>
           <div className="absolute bottom-1 left-1/3 text-2xl">🎁</div>
           <div className="absolute bottom-1 right-1/3 text-2xl">🎁</div>
         </div>
         <div className="container mx-auto px-6 relative z-10">
           <div className="flex items-center justify-center gap-6 text-white">
-            <div className="hidden md:flex items-center gap-2 bg-[#AD2E0F]/20 px-4 py-2 rounded-lg border border-[#AD2E0F]/40"> 
+            <div className="hidden md:flex items-center gap-2 bg-[#ffffff] px-4 py-2 rounded-lg border border-[#AD2E0F]/40"> 
               <span className="text-[#AD2E0F] font-bold text-sm uppercase tracking-wider">Free Delivery</span>
             </div>
-            <p className="text-center font-medium text-sm md:text-base text-[#AD2E0F]">
-              🎉 <span className="font-bold">{t("giftingPage.promoBanner")}</span> <span className="text-[#AD2E0F] font-bold">{t("giftingPage.freeDelivery")}</span> {t("giftingPage.promoBannerCont")}
+            <p className="text-center font-medium text-sm md:text-base text-[#ffffff]">
+              🎉 <span className="font-bold">{t("giftingPage.promoBanner")}</span> <span className="text-[#ffffff] font-bold">{t("giftingPage.freeDelivery")}</span> {t("giftingPage.promoBannerCont")}
             </p>
-            <div className="hidden md:flex items-center gap-2 bg-[#AD2E0F]/20 px-4 py-2 rounded-lg border border-[#AD2E0F]/40">
+            <div className="hidden md:flex items-center gap-2 bg-[#ffffff] px-4 py-2 rounded-lg border border-[#AD2E0F]/40">
               <span className="text-[#AD2E0F] font-bold text-sm uppercase tracking-wider">Free Delivery</span>
             </div>
           </div>
