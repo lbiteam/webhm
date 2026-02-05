@@ -243,8 +243,8 @@
         "desc": "Top 100 D2C Brands of the Year – 2023."
       },
       "2025": {
-        "title": "150+ Outlets",
-        "desc": "Successfully expanded to 157+ outlets across India."
+        "title": "160+ Outlets",
+        "desc": "Successfully expanded to 150+ outlets across India."
       },
       "2026": {
         "title": "Mission 1000+ 🚀",
@@ -721,10 +721,12 @@
     "subject": "Subject",
     "selectSubject": "Select a subject",
     "subjects": {
-      "general": "General Inquiry",
-      "franchise": "Franchise Opportunity",
-      "corporate": "Corporate Gifting",
-      "support": "Customer Support"
+      "General": "General Inquiry",
+      "Franchise": "Franchise Opportunity",
+      "Gifting": " Gifting",
+      "Distribution": "Distribution Opportunity",
+      "Export": "Export Opportunity"
+      
     },
     "message": "Message",
     "messagePlaceholder": "How can we help you?",

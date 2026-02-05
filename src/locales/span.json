@@ -244,8 +244,8 @@
           "desc": "Top 100 Marcas D2C del Año – 2023."
         },
         "2025": {
-          "title": "150+ Puntos de Venta",
-          "desc": "Expandidos exitosamente a 157+ puntos de venta en toda la India."
+          "title": "160+ Puntos de Venta",
+          "desc": "Expandidos exitosamente a 150+ puntos de venta en toda la India."
         },
         "2026": {
           "title": "Misión 1000+ 🚀",
@@ -718,10 +718,11 @@
       "subject": "Asunto",
       "selectSubject": "Selecciona un asunto",
       "subjects": {
-        "general": "Consulta General",
-        "franchise": "Oportunidad de Franquicia",
-        "corporate": "Regalos Corporativos",
-        "support": "Soporte al Cliente"
+        "General": "Consulta General",
+        "Franchise": "Oportunidad de Franquicia",
+        "Gifting": "Regalos Corporativos",
+        "Distribution": "Soporte al Cliente",
+        "Export": "Oportunidad de Exportación"
       },
       "message": "Mensaje",
       "messagePlaceholder": "¿Cómo podemos ayudarte?",

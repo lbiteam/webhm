@@ -80,6 +80,7 @@ interface ContactFormData {
   location: string;
   subject: string;
   message: string;
+
 }
 
 const Contact = () => {
@@ -345,10 +346,12 @@ const Contact = () => {
                     className="w-full px-4 py-3 rounded-lg border border-border bg-background text-foreground focus:ring-2 focus:ring-primary focus:border-transparent transition-all"
                   >
                     <option value="">{t("contactPage.selectSubject")}</option>
-                    <option value="general">{t("contactPage.subjects.general")}</option>
-                    <option value="franchise">{t("contactPage.subjects.franchise")}</option>
-                    <option value="corporate">{t("contactPage.subjects.corporate")}</option>
-                    <option value="support">{t("contactPage.subjects.support")}</option>
+                    <option value="General">{t("contactPage.subjects.General")}</option>
+                    <option value="Franchise">{t("contactPage.subjects.Franchise")}</option>
+                    <option value="Gifting">{t("contactPage.subjects.Gifting")}</option>
+                    <option value="Distribution">{t("contactPage.subjects.Distribution")}</option>
+                    <option value="Export">{t("contactPage.subjects.Export")}</option>  
+                  
                   </select>
                 </div>
                 

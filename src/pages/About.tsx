@@ -17,7 +17,7 @@ import awardYogi from "@/assets/awards/award-yogi.jpg";
 import awardEntrepreneur from "@/assets/awards/award-entrepreneur.webp";
 import awardMinister from "@/assets/awards/award-minister.webp";
 import awardindia from "@/assets/awards/award-india.webp";
-import flipkart from "@/assets/Shopping logo/flipkart-logo.webp";
+import StoreLogo from "@/assets/Shopping logo/hm.png";
 import Amazon from "@/assets/Shopping logo/amazon-logo.webp";
 import Snapdeal from "@/assets/Shopping logo/snapdeal-logo.webp";
 import blinkit from "@/assets/Shopping logo/blinkit-logo.webp";
@@ -58,8 +58,8 @@ const About = () => {
   ];
 
   const platforms = [
-  { name: "Flipkart", logo: flipkart, link: "https://www.flipkart.com/" },
-  { name: "Amazon", logo: Amazon, link: "https://www.amazon.com/honeyman-indiahttps://www.amazon.in/s?k=HONEYMAN&crid=10WJOG836CU6E&sprefix=honeyman%2Caps%2C360&ref=nb_sb_noss_1" },
+  { name: "Honeyman Store", logo: StoreLogo, link: "https://honeymanstore.com/" },
+  { name: "Amazon", logo: Amazon, link: "https://www.amazon.in/Honeyman-Multi-Flower-Original-Adulteration-Sweetener/dp/B0CKC5CZX1/ref=sr_1_5?crid=1WRPR48GBWKM5&dib=eyJ2IjoiMSJ9.4fbY_qQFD8nzKWOKbQtiBJMTU7St8Xm4yQklN0mFv8BbonqBiL6Mz_1av6CGj6iLXTkk7toThCy5oeqOwcj17-Zg9gmWRCZtErF9lNrtPEmHDuSeyKLKixQ8dLKdhB1U_YYCk1fGhQIzCbZFfWXtm8OhT7xpnULEsCZ8Xx3KCvNtigu6jI7Aqs7jLeoff9F_zhOIuj9uEdHWHDZd1uOjYKRb5Me3ZSdtqjEGx0fxIe01gYmxtn8k5o_GmRve3xFPtdgRl9ZTt3lhxYVTm75Qjfyu10_QegebDoErLHVm-_8.4Geuf-VFz8MygdWRN3aVtdDqBiefg3n8B2ZvhHpEhms&dib_tag=se&keywords=honeyman%2Bhoney&qid=1770282733&sprefix=%2Caps%2C364&sr=8-5&th=1" },
   { name: "Snapdeal", logo: Snapdeal, link: "https://www.snapdeal.com/search?clickSrc=top_searches&keyword=honeyman%20honey&categoryId=0&vertical=p&noOfResults=20&SRPID=topsearch&sort=rlvncy" },
   { name: "Blinkit", logo: blinkit, link: "https://blinkit.com/prn/honeyman-multi-flower-honey/prid/716424" },
 
@@ -229,7 +229,7 @@ const mediaLogos = [
                   <p className="text-sm text-muted-foreground">{t("aboutPage.yearsLegacy")}</p>
                 </div>
                 <div className="text-center">
-                  <span className="text-4xl font-display font-bold text-primary">150+</span>
+                  <span className="text-4xl font-display font-bold text-primary">160+</span>
                   <p className="text-sm text-muted-foreground">{t("aboutPage.storesNationwide")}</p>
                 </div>
                 <div className="text-center">

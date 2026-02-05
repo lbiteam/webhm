@@ -66,12 +66,7 @@
   "State": "Uttar Pradesh"
  },
  
- {
-  "Sr No": 13,
-  "Address": "Praful Tiwari, Aditya Lake View Hotel Sanjay Road Pincode - 470003",
-  "City": "Sagar ",
-  "State": "Madhya Pradesh"
- },
+ 
  {
   "Sr No": 14,
   "Address": "English Bazaar, Malda, West Bengal,732101",
@@ -580,5 +575,17 @@
     "City": "Nanded",
     "State": "Maharashtra"
    }
-
+,
+{
+   "Sr No": 101,
+   "Address": "Floor No;C1/604,Flat no:C1/604Fortune Kasturi,Hosangabad road",
+   "City": "indore",
+   "State": "Madhya Pradesh"
+  },
+  {
+   "Sr No": 102,
+   "Address": "Rewa, Madhya Pradesh",
+   "City": "Rewa",
+   "State": "Madhya Pradesh"
+  }
 ]
