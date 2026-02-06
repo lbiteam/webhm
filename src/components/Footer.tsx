@@ -1,4 +1,4 @@
-import { Link } from "react-router-dom";
+import { Link, useLocation } from "react-router-dom";
 import Bee from "./Bee";
 import honeyDipper from "@/assets/honey-dipper.webp";
 import logo from "@/assets/Honeyman-logo.webp";
@@ -7,6 +7,7 @@ import { useLanguage } from "@/contexts/LanguageContext";
 
 const Footer = () => {
   const { t } = useLanguage();
+  const isGiftingPage = useLocation().pathname === "/gifting";
 
   const footerLinks = [
     { name: t("footer.store"), href: "/#products" },
@@ -30,8 +31,8 @@ const Footer = () => {
       <div 
         className="relative pt-12 pb-8"
         style={{
-          backgroundColor: '#ffe248',
-          backgroundImage: `url(${honeyDipper})`,
+          backgroundColor: isGiftingPage ? '#710002' : '#ffe248',
+          backgroundImage: isGiftingPage ? 'none' : `url(${honeyDipper})`,
           backgroundSize: 'cover',
           backgroundPosition: 'center',
           backgroundBlendMode: 'soft-light',
@@ -52,7 +53,7 @@ const Footer = () => {
         </div>
         
         {/* Overlay for better readability */}
-        <div className="absolute inset-0 bg-[#8c3100]/90" />
+        {!isGiftingPage && <div className="absolute inset-0 bg-[#8c3100]/90" />}
         
         {/* Bees */}
         <Bee className="absolute top-6 left-[12%] z-20" size={26} />
@@ -137,8 +138,8 @@ const Footer = () => {
 
       </div>
 
-      {/* Copyright Bar - Yellow Background */}
-      <div className="bg-[#f9dc8d] py-4">
+      {/* Copyright Bar */}
+      <div className={`py-4 ${isGiftingPage ? 'bg-[#ffc1ce]' : 'bg-[#f9dc8d]'}`}>
         <div className="container mx-auto px-6">
           <p className="text-center text-[#2a1810] text-xs md:text-sm font-medium">
             {t("footer.copyright")}

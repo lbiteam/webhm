@@ -14,18 +14,26 @@ import giftBox1 from "@/assets/gifting/gift-box.webp";
 import giftBox2 from "@/assets/gifting/gifting-3.webp";
 import giftBox3 from "@/assets/gifting/gifting-2.webp";
 import giftBox4 from "@/assets/gifting/gifting-1.webp";
-import giftBox5 from "@/assets/gifting/Artboard 5 (1).jpg";
+import giftBox5 from "@/assets/gifting/gift-4box.webp";
 import giftBag from "@/assets/gifting/honeyman-packaging.webp";
-import VasantPanchami from "@/assets/calendar/vasant panchami.webp";
 
-import republicday from "@/assets/calendar/republic_day.webp";
-import valentinesday from "@/assets/calendar/Valentine_Day.webp";
-import lohriImg from "@/assets/calendar/lohri.webp";
-import sankrantiImg from "@/assets/calendar/sankranti.webp";
-import pongalImg from "@/assets/calendar/pongal.webp";
+
+import roseday from "@/assets/calendar/Rose-Day.webp"
+import proposeday from "@/assets/calendar/Propose-Day.webp"
+import chocolateday from "@/assets/calendar/Chocolate-Day.webp"
+import teddyday from "@/assets/calendar/Teddy-Day.webp"
+import promiseday from "@/assets/calendar/Promise-Day.webp"
+import hugday from "@/assets/calendar/Hug-Day.webp"
+import Kissday from "@/assets/calendar/Kiss-Day.webp"
+import valentinesday from "@/assets/calendar/Valentine's-Day.webp"
+
 import basketImg from "@/assets/gifting/basket.webp";
 import bottlesImg from "@/assets/gifting/bottles.webp";
 import boxesImg from "@/assets/gifting/boxes.webp";
+import roseBackground from "@/assets/gifting/rose-background.webp";
+import rosePetals from "@/assets/gifting/rose-petals.webp";
+import roseflow from "@/assets/gifting/single-rose.webp"
+
 
 const Gifting = () => {
   const { t } = useLanguage();
@@ -98,8 +106,44 @@ const Gifting = () => {
     setCurrentSlide((prev) => (prev - 1 + giftingCategories.length) % giftingCategories.length);
   };
 
+  /* Falling roses configuration - different delays and durations for natural flow */
+  const fallingPetals = [
+    { left: '5%', size: 24, duration: 12, delay: 0 },
+    { left: '15%', size: 18, duration: 15, delay: 2 },
+    { left: '25%', size: 22, duration: 14, delay: 4 },
+    { left: '35%', size: 16, duration: 18, delay: 1 },
+    { left: '50%', size: 20, duration: 13, delay: 5 },
+    { left: '60%', size: 26, duration: 11, delay: 3 },
+    { left: '75%', size: 19, duration: 16, delay: 6 },
+    { left: '85%', size: 14, duration: 20, delay: 2 },
+    { left: '92%', size: 21, duration: 14, delay: 4 },
+  ];
+
   return (
-    <div className="min-h-screen bg-[#faf8f5]">
+    <div className="min-h-screen bg-[#faf8f5] relative">
+      {/* Falling roses overlay - fixed, non-interactive */}
+      <div className="fixed inset-0 pointer-events-none z-50 overflow-hidden">
+        {fallingPetals.map((petal, i) => (
+          <div
+            key={i}
+            className="absolute animate-fall-rose"
+            style={{
+              left: petal.left,
+              top: '-5%',
+              width: petal.size,
+              height: petal.size,
+              animationDuration: `${petal.duration}s`,
+              animationDelay: `${petal.delay}s`,
+            }}
+          >
+            <img
+              src={roseflow}
+              alt=""
+              className="w-full h-full object-contain opacity-70"
+            />
+          </div>
+        ))}
+      </div>
       <Header />
       
       {/* Hero Section */}
@@ -167,6 +211,8 @@ const Gifting = () => {
         </div>
       </section>
 
+      
+
       {/* Celebration Calendar */}
       <section className="py-16 bg-[#faf8f5]">
         <div className="container mx-auto px-6">
@@ -179,13 +225,16 @@ const Gifting = () => {
             </p>
           </div>
 
-          <div className="grid grid-cols-2 md:grid-cols-5 gap-4 md:gap-6">
+          <div className="grid grid-cols-2 md:grid-cols-4 gap-4 md:gap-6">
             {[
 
-              { date: "13", month: "JAN", name: t("giftingPage.celebrations.lohri"), color: "from-orange-400 to-amber-500" },
-              { date: "14", month: "JAN", name: t("giftingPage.celebrations.sankranti"), color: "from-amber-400 to-yellow-500" },
-              { date: "23", month: "JAN", name: t("giftingPage.celebrations.vasantpanchami"), color: "from-green-500 to-lime-500" },
-              { date: "26", month: "JAN", name: t("giftingPage.celebrations.republicday"), color: "from-orange-400 to-amber-500" },
+              { date: "07", month: "FEB", name: t("giftingPage.celebrations.roseday"), color: "from-pink-400 to-rose-500" },
+              { date: "08", month: "FEB", name: t("giftingPage.celebrations.proposeday"), color: "from-pink-400 to-rose-500" },
+              { date: "09", month: "FEB", name: t("giftingPage.celebrations.chocolateday"), color: "from-pink-400 to-rose-500" },
+              { date: "10", month: "FEB", name: t("giftingPage.celebrations.teddyday"), color: "from-pink-400 to-rose-500" },
+              { date: "11", month: "FEB", name: t("giftingPage.celebrations.promiseday"), color: "from-pink-400 to-rose-500" },
+              { date: "12", month: "FEB", name: t("giftingPage.celebrations.hugday"), color: "from-pink-400 to-rose-500" },
+              { date: "13", month: "FEB", name: t("giftingPage.celebrations.kissday"), color: "from-pink-400 to-rose-500" },  
               { date: "14", month: "FEB", name: t("giftingPage.celebrations.valentinesday"), color: "from-pink-400 to-rose-500" },
           
             ].map((celebration, index) => (
@@ -202,11 +251,14 @@ const Gifting = () => {
                   <div className="aspect-[4/3] bg-gradient-to-br from-[#f5f0eb] to-[#e8e0d8] rounded-xl mb-4 flex items-center justify-center overflow-hidden group-hover:scale-105 transition-transform duration-300">
                     <img 
                       src={
-                        index === 0 ? lohriImg :
-                        index === 1 ? sankrantiImg :
-                        index === 2 ? VasantPanchami :
-                        index === 3 ? republicday :
-                        index === 4 ? valentinesday : ""
+                        index === 0 ? roseday :
+                        index === 1 ? proposeday :
+                        index === 2 ? chocolateday :
+                        index === 3 ? teddyday :
+                        index === 4 ? promiseday :
+                        index === 5 ? hugday :
+                        index === 6 ? Kissday :
+                        index === 7 ? valentinesday : ""
                       }
                       alt={celebration.name}
                       className="w-full h-full object-cover"
@@ -222,14 +274,20 @@ const Gifting = () => {
         </div>
       </section>
 
+     
+
       {/* What We Offer */}
-      <section className="py-20 bg-gradient-to-b from-[#f5f0eb] to-[#faf8f5]">
-        <div className="container mx-auto px-6">
+      <section 
+          className="py-20 relative bg-cover bg-center bg-no-repeat"
+          style={{ backgroundImage: `url(${roseBackground})` }}
+        >
+        <div className="absolute inset-0 bg-[#faf8f5]/90"></div>
+        <div className="container mx-auto px-6 relative z-10">
           <div className="text-center mb-14">
             <div className="flex items-center justify-center gap-4 mb-6">
-              <div className="h-px w-16 bg-primary/40"></div>
-              <Star className="w-5 h-5 text-primary" />
-              <div className="h-px w-16 bg-primary/40"></div>
+              <div className="h-px w-16 bg-[#dd385d]"></div>
+              <Star className="w-5 h-5 text-[#dd385d]" />
+              <div className="h-px w-16 bg-[#dd385d]"></div>
             </div>
             <h2 className="font-display text-4xl md:text-5xl text-[#2a1810] mb-4">
               {t("giftingPage.whatWeOffer.title")}
@@ -271,9 +329,9 @@ const Gifting = () => {
         <div className="container mx-auto px-6">
           <div className="text-center mb-12">
             <div className="flex items-center justify-center gap-4 mb-6">
-              <div className="h-px w-16 bg-primary/40"></div>
-              <Star className="w-5 h-5 text-primary" />
-              <div className="h-px w-16 bg-primary/40"></div>
+            <div className="h-px w-16 bg-[#dd385d]"></div>
+              <Star className="w-5 h-5 text-[#dd385d]" />
+              <div className="h-px w-16 bg-[#dd385d]"></div>
             </div>
             <h2 className="font-display text-3xl md:text-4xl text-[#2a1810] mb-4">
               {t("giftingPage.giftBoxesTitle")}
@@ -347,10 +405,14 @@ const Gifting = () => {
       </section> 
 
       {/* Gift Categories */}
-      <section className="py-24 bg-gradient-to-b from-[#f5f0eb] to-[#faf8f5]">
-        <div className="container mx-auto px-6">
+      <section 
+        className="py-24 relative bg-cover bg-center bg-no-repeat"
+        style={{ backgroundImage: `url(${rosePetals})` }}
+      >
+        <div className="absolute inset-0 bg-[#faf8f5]/80"></div>
+        <div className="container mx-auto px-6 relative z-10">
           <div className="text-center mb-16">
-            <span className="text-primary font-medium tracking-widest uppercase text-sm">{t("giftingPage.categories.badge")}</span>
+            <span className="text-[#dd385d] font-medium tracking-widest uppercase text-sm">{t("giftingPage.categories.badge")}</span>
             <h2 className="font-display text-4xl md:text-5xl text-[#2a1810] mt-4 mb-4">
               {t("giftingPage.categories.title")}
             </h2>
@@ -400,7 +462,7 @@ const Gifting = () => {
             <div className="flex items-center justify-center gap-4 mt-8">
               <button 
                 onClick={prevSlide}
-                className="w-12 h-12 border border-[#2a1810]/20 flex items-center justify-center text-[#2a1810] hover:bg-[#2a1810] hover:text-white transition-colors"
+                className="w-12 h-12 border border-[#2a1810]/20 flex items-center justify-center text-[#2a1810] hover:bg-[#dd385d] hover:text-white transition-colors"
               >
                 <ChevronLeft className="w-5 h-5" />
               </button>
@@ -411,7 +473,7 @@ const Gifting = () => {
                     onClick={() => setCurrentSlide(index)}
                     className={`h-1 transition-all duration-300 ${
                       index === currentSlide 
-                        ? "bg-primary w-12" 
+                        ? "bg-[#dd385d] w-12" 
                         : "bg-[#2a1810]/20 w-6 hover:bg-[#2a1810]/40"
                     }`}
                   />
@@ -419,7 +481,7 @@ const Gifting = () => {
               </div>
               <button 
                 onClick={nextSlide}
-                className="w-12 h-12 border border-[#2a1810]/20 flex items-center justify-center text-[#2a1810] hover:bg-[#2a1810] hover:text-white transition-colors"
+                className="w-12 h-12 border border-[#2a1810]/20 flex items-center justify-center text-[#2a1810] hover:bg-[#dd385d] hover:text-white transition-colors"
               >
                 <ChevronRight className="w-5 h-5" />
               </button>
@@ -446,7 +508,7 @@ const Gifting = () => {
             <p className="text-white/90 text-lg md:text-xl max-w-xl mx-auto mb-8">
               {t("giftingPage.signaturePackaging.description")}
             </p>
-            <button className="px-10 py-4 bg-primary text-white  rounded-xl font-medium uppercase tracking-wider text-sm hover:bg-primary/90 transition-colors" onClick={() => window.open('https://honeymanstore.com/shop', '_blank')}>
+            <button className="px-10 py-4 bg-[#710002] text-white  rounded-xl font-medium uppercase tracking-wider text-sm hover:bg-primary/90 transition-colors" onClick={() => window.open('https://honeymanstore.com/shop', '_blank')}>
               {t("giftingPage.signaturePackaging.button")}
             </button>
           </div>
@@ -454,7 +516,7 @@ const Gifting = () => {
       </section>
 
       {/* Why Choose Section */}
-      <section className="py-24 bg-[#2a1810]">
+      <section className="py-24 bg-[#710002]">
         <div className="container mx-auto px-6">
           <div className="text-center mb-16">
             <h2 className="font-display text-4xl md:text-5xl text-white mb-4">
@@ -473,11 +535,11 @@ const Gifting = () => {
               { icon: Sparkles, title: t("giftingPage.whyChoose.features.4.title"), desc: t("giftingPage.whyChoose.features.4.desc") },
             ].map((item, index) => (
               <div key={index} className="text-center group">
-                <div className="w-20 h-20 border border-primary/30 flex items-center justify-center mx-auto mb-6 group-hover:bg-primary/10 transition-colors">
-                  <item.icon className="w-10 h-10 text-primary" />
+                <div className="w-20 h-20 border border-[#dd385d]/30 flex items-center justify-center mx-auto mb-6 group-hover:bg-[#dd385d]/10 transition-colors">
+                  <item.icon className="w-10 h-10 text-white" />
                 </div>
                 <h3 className="font-display text-xl text-white mb-3">{item.title}</h3>
-                <p className="text-white/60 text-sm leading-relaxed">{item.desc}</p>
+                <p className="text-white/80 text-sm leading-relaxed">{item.desc}</p>
               </div>
             ))}
           </div>
@@ -489,9 +551,9 @@ const Gifting = () => {
         <div className="container mx-auto px-6">
           <div className="text-center mb-16">
             <div className="flex items-center justify-center gap-4 mb-6">
-              <div className="h-px w-16 bg-primary/40"></div>
-              <span className="text-primary font-medium tracking-widest uppercase text-sm">{t("giftingPage.sweetsCollection.badge")}</span>
-              <div className="h-px w-16 bg-primary/40"></div>
+              <div className="h-px w-16 bg-[#dd385d]"></div>
+              <span className="text-[#dd385d] font-medium tracking-widest uppercase text-sm">{t("giftingPage.sweetsCollection.badge")}</span>
+              <div className="h-px w-16 bg-[#dd385d]"></div>
             </div>
             <h2 className="font-display text-4xl md:text-5xl text-[#2a1810] mb-4">
               {t("giftingPage.sweetsCollection.title")}
@@ -527,7 +589,7 @@ const Gifting = () => {
       </section>
 
       {/* CTA Section */}
-      <section className="py-20 bg-primary">
+      <section className="py-20 bg-[#ffc1ce]">
         <div className="container mx-auto px-6 text-center">
           <h2 className="font-display text-3xl md:text-5xl text-white mb-6">
             {t("giftingPage.ctaTitle")}
@@ -536,7 +598,7 @@ const Gifting = () => {
             {t("giftingPage.ctaDescription")}
           </p>
           <div className="flex flex-wrap justify-center gap-4">
-            <button className="px-10 py-4 bg-white text-[#2a1810] font-medium uppercase tracking-wider text-sm hover:bg-white/90 transition-colors" onClick={() => window.open('/contact-us', '_blank')}>
+            <button className="px-10 py-4 bg-white text-[#8e1534] font-medium uppercase tracking-wider text-sm hover:bg-white/90 transition-colors" onClick={() => window.open('/contact-us', '_blank')}>
               {t("giftingPage.getQuote")}
             </button>
             <button className="px-10 py-4 border-2 border-white text-white font-medium uppercase tracking-wider text-sm hover:bg-white/10 transition-colors" onClick={() => window.open('https://honeymanstore.com/wp-content/uploads/2025/12/HoneymanGifting-Catalog-1_compressed.pdf', '_blank')}>

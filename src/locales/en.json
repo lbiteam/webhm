@@ -514,10 +514,13 @@
     "celebrationsTitle": "Upcoming Celebrations",
     "celebrationsSubtitle": "Gift something sweet for every festive occasion",
     "celebrations": {
-      "lohri": "Lohri",
-      "sankranti": "Makar Sankranti",
-      "vasantpanchami": "Vasant Panchami",
-      "republicday": "Republic Day",
+      "roseday": "Rose Day",
+      "proposeday": "Propose Day",
+      "chocolateday": "Chocolate Day",
+      "teddyday": "Teddy Day",
+      "promiseday": "Promise Day",
+      "hugday": "Hug Day",
+      "kissday": "Kiss Day",
       "valentinesday": "Valentine's Day"
     },
     "whatWeOffer": {
@@ -721,11 +724,10 @@
     "subject": "Subject",
     "selectSubject": "Select a subject",
     "subjects": {
-      "General": "General Inquiry",
-      "Franchise": "Franchise Opportunity",
-      "Gifting": " Gifting",
-      "Distribution": "Distribution Opportunity",
-      "Export": "Export Opportunity"
+      "general": "General Inquiry",
+      "franchise": "Franchise Opportunity",
+      "corporate": "Corporate gifting",
+      "support": "Support Request"
       
     },
     "message": "Message",

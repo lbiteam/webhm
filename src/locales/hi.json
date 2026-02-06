@@ -513,10 +513,13 @@
     "celebrationsTitle": "आगामी उत्सव",
     "celebrationsSubtitle": "हर त्योहारी अवसर के लिए कुछ मीठा उपहार दें",
     "celebrations": {
-      "lohri": "लोहड़ी",
-      "sankranti": "मकर संक्रांति",
-      "vasantpanchami": "वसंत पंचमी",
-      "republicday": "राष्ट्रीय दिवस",
+      "roseday": "रोज़ दिवस",
+      "proposeday": "प्रोपोज़ दिवस",
+      "chocolateday": "शॉकोलेट दिवस",
+      "teddyday": "टेडी दिवस",
+      "promiseday": "प्रोमिस दिवस",
+      "hugday": "हग दिवस",
+      "kissday": "किस दिवस",
       "valentinesday": "वेलेंटाइन दिवस"
     },
     "whatWeOffer": {

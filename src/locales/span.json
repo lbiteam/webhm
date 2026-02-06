@@ -511,10 +511,13 @@
       "celebrationsTitle": "Próximas Celebraciones",
       "celebrationsSubtitle": "Regala algo dulce para cada ocasión festiva",
       "celebrations": {
-        "lohri": "Lohri",
-        "sankranti": "Makar Sankranti",
-        "vasantpanchami": "Vasant Panchami",
-        "republicday": "Republic Day",
+        "roseday": "Rose Day",
+        "proposeday": "Propose Day",
+        "chocolateday": "Chocolate Day",
+        "teddyday": "Teddy Day",
+        "promiseday": "Promise Day",
+        "hugday": "Hug Day",
+        "kissday": "Kiss Day",
         "valentinesday": "Valentine's Day"
       },
       "whatWeOffer": {

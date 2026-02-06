@@ -498,10 +498,13 @@
       "celebrationsTitle": "ಮುಂಬರುವ ಆಚರಣೆಗಳು",
       "celebrationsSubtitle": "ಪ್ರತಿ ಹಬ್ಬದ ಸಂದರ್ಭಕ್ಕೂ ಏನಾದರೂ ಸಿಹಿಯನ್ನು ಉಡುಗೊರೆಯಾಗಿ ನೀಡಿ",
       "celebrations": {
-        "lohri": "ಲೋಹ್ರಿ",
-        "sankranti": "ಮಕರ ಸಂಕ್ರಾಂತಿ",
-        "vasantpanchami": "ವಸಂತ ಪಂಚಮೀ",
-        "republicday": "ರಾಷ್ಟ್ರಿಯ ದಿವಸ",
+        "roseday": "ರೋಜ್ ದಿವಸ",
+        "proposeday": "ಪ್ರೋಪೋಜ್ ದಿವಸ",
+        "chocolateday": "ಶಾಕೋಲೇಟ್ ದಿವಸ",
+        "teddyday": "ಟೆಡಿ ದಿವಸ",
+        "promiseday": "ಪ್ರೋಮಿಸ್ ದಿವಸ",
+        "hugday": "ಹಗ ದಿವಸ",
+        "kissday": "ಕಿಸ್ ದಿವಸ",
         "valentinesday": "ವೆಲೆನ್ಟೀನ್ ದಿವಸ"
       },
       "whatWeOffer": {

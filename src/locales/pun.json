@@ -513,10 +513,13 @@
       "celebrationsTitle": "ਆਉਣ ਵਾਲੇ ਜਸ਼ਨ",
       "celebrationsSubtitle": "ਹਰ ਤਿਉਹਾਰੀ ਮੌਕੇ ਲਈ ਕੁਝ ਮਿੱਠਾ ਤੋਹਫ਼ਾ ਦਿਓ",
       "celebrations": {
-        "lohri": "ਲੋਹੜੀ",
-        "sankranti": "ਮਕਰ ਸੰਕਰਾਂਤੀ",
-        "vasantpanchami": "ਵਸਂਤ ਪਂਚਮੀ",
-        "republicday": "ਰਾ਷ਟਰੀਯ ਦਿਵਸ",
+        "roseday": "ਰੋਜ਼ ਦਿਵਸ",
+        "proposeday": "ਪ੍ਰੋਪੋਜ਼ ਦਿਵਸ",
+        "chocolateday": "ਸ਼ਾਕੋਲੇਟ ਦਿਵਸ",
+        "teddyday": "ਟੈਡੀ ਦਿਵਸ",
+        "promiseday": "ਪ੍ਰੋਮਿਸ਼ ਦਿਵਸ",
+        "hugday": "ਹੱਗ ਦਿਵਸ",
+        "kissday": "ਕਿਸ ਦਿਵਸ",
         "valentinesday": "ਵੈਲੇਂਟੀਨਾਈਨ ਦਿਵਸ"
       },
       "whatWeOffer": {

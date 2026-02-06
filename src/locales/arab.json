@@ -498,10 +498,13 @@
       "celebrationsTitle": "الاحتفالات القادمة",
       "celebrationsSubtitle": "قدم شيئاً حلواً لكل مناسبة احتفالية",
       "celebrations": {
-        "lohri": "لوهري",
-        "sankranti": "ماكار سانكرانتي",
-        "vasantpanchami": "صوسانت پانچمی",
-        "republicday": "ریپابلیک دی",
+        "roseday": "يوم الورد",
+        "proposeday": "يوم الاقتراح",
+        "chocolateday": "يوم الشوكولاتة",
+        "teddyday": "يوم التوتي",
+        "promiseday": "يوم الوعد",
+        "hugday": "يوم القبلة",
+        "kissday": "يوم القبلة",
         "valentinesday": "ولنتاین دی"
       },
       "whatWeOffer": {

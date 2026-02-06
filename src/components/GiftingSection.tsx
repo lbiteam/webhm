@@ -1,5 +1,5 @@
 import { Gift, Heart, Briefcase, Sparkles } from "lucide-react";
-import gift1 from "@/assets/gifting/Artboard 5 (1).jpg";
+import gift1 from "@/assets/gifting/gift-4box.webp";
 import gift2 from "@/assets/gifting/gifting-3.webp";
 import gift3 from "@/assets/gifting/gifting-2.webp";
 import gift4 from "@/assets/gifting/gifting-1.webp";
