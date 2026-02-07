@@ -1,9 +1,9 @@
 import { useState, useEffect } from "react";
 
 // 1. Mission 2026 banner
-import mission2026Mobile from "@/assets/website-banners/mission-2026-banner/banner-3.webp";
-import mission2026Tablet from "@/assets/website-banners/mission-2026-banner/banner-mid.webp";
-import mission2026Desktop from "@/assets/website-banners/mission-2026-banner/banner.webp";
+import mission2026Mobile from "@/assets/website-banners/mission-2026-banner/sm.webp";
+import mission2026Tablet from "@/assets/website-banners/mission-2026-banner/mid.webp";
+import mission2026Desktop from "@/assets/website-banners/mission-2026-banner/lg.webp";
 
 // 2. All products banner
 
@@ -129,7 +129,7 @@ const HeroSlider = () => {
       ))}
 
       {/* Slide indicators */}
-      <div className="absolute bottom-32 left-1/2 -translate-x-1/2 z-20 flex gap-3">
+      {/* <div className="absolute bottom-32 left-1/2 -translate-x-1/2 z-20 flex gap-3">
         {slides.map((_, index) => (
           <button
             key={index}
@@ -142,7 +142,7 @@ const HeroSlider = () => {
             aria-label={`Go to slide ${index + 1}`}
           />
         ))}
-      </div>
+      </div> */}
     </section>
   );
 };

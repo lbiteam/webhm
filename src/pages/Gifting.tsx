@@ -3,7 +3,7 @@ import { ChevronLeft, ChevronRight, Gift, Heart, Briefcase, Sparkles, Leaf, Star
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import { useLanguage } from "@/contexts/LanguageContext";
-import heroImage from "@/assets/gifting/Valentine's day Banner.webp";
+import heroImage from "@/assets/gifting/Artboard 1 copy.webp";
 import weddingCategory from "@/assets/gifting/wedding-category.webp";
 import corporateCategory from "@/assets/gifting/corporate-category.webp";
 import celebrationCategory from "@/assets/gifting/celebration-category.webp";
@@ -108,15 +108,15 @@ const Gifting = () => {
 
   /* Falling roses configuration - different delays and durations for natural flow */
   const fallingPetals = [
-    { left: '5%', size: 24, duration: 12, delay: 0 },
-    { left: '15%', size: 18, duration: 15, delay: 2 },
-    { left: '25%', size: 22, duration: 14, delay: 4 },
-    { left: '35%', size: 16, duration: 18, delay: 1 },
-    { left: '50%', size: 20, duration: 13, delay: 5 },
-    { left: '60%', size: 26, duration: 11, delay: 3 },
-    { left: '75%', size: 19, duration: 16, delay: 6 },
-    { left: '85%', size: 14, duration: 20, delay: 2 },
-    { left: '92%', size: 21, duration: 14, delay: 4 },
+    { left: '5%', size: 40, duration: 12, delay: 0 },
+    { left: '15%', size: 48, duration: 15, delay: 2 },
+    { left: '25%', size: 48, duration: 14, delay: 4 },
+    { left: '35%', size: 46, duration: 18, delay: 1 },
+    { left: '50%', size: 40, duration: 13, delay: 5 },
+    { left: '60%', size: 44, duration: 11, delay: 3 },
+    { left: '75%', size: 47, duration: 16, delay: 6 },
+    { left: '85%', size: 42, duration: 20, delay: 2 },
+    { left: '92%', size: 45, duration: 14, delay: 4 },
   ];
 
   return (
@@ -159,6 +159,21 @@ const Gifting = () => {
           />
           <div className="absolute inset-0 " />
         </div>
+        {/* Happy Valentine Day - slightly center right */}
+        <div className="absolute right-[10%] sm:right-[12%] md:right-[15%] lg:right-[18%] xl:right-[20%] top-[60%] -translate-y-1/2 z-10 text-right">
+          <div
+            className="text-white font-medium tracking-wide leading-tight"
+            style={{ fontFamily: "Cinzel, serif" }}
+          >
+            <span className="block text-2xl sm:text-3xl md:text-4xl lg:text-5xl xl:text-6xl">The Season</span>
+            <span className="block text-xl sm:text-2xl md:text-3xl lg:text-4xl xl:text-5xl">  of Love is Here</span>
+            <span className="block text-xl sm:text-2xl md:text-3xl lg:text-4xl xl:text-5xl"></span>
+       
+          </div>
+          <p className="text-white/90 text-xl sm:text-sm mt-3 sm:mt-4 max-w-[180px] sm:max-w-[220px] ml-auto italic font-sans">
+             happy valentine's week!
+          </p>
+        </div>
         {/* <div className="relative z-10 container mx-auto px-6 h-full flex items-center">
           <div className="max-w-2xl pt-20">
             <div className="flex items-center gap-2 mb-6">
@@ -187,7 +202,7 @@ const Gifting = () => {
       </section>
 
       {/* Promotional Banner */}
-      <section className="bg-gradient-to-r from-[#700f29] to-[#c0204d] py-4 relative overflow-hidden">
+      <section className="bg-[#a90a1f] py-4 relative overflow-hidden">
         <div className="absolute inset-0 opacity-20">
           <div className="absolute top-0 left-10 text-4xl animate-pulse">❤️</div>
           <div className="absolute top-0 right-10 text-4xl animate-pulse">❤️</div>
@@ -202,7 +217,7 @@ const Gifting = () => {
               <span className="text-[#AD2E0F] font-bold text-sm uppercase tracking-wider">Free Delivery</span>
             </div>
             <p className="text-center font-medium text-sm md:text-base text-[#ffffff]">
-              🎉 <span className="font-bold">{t("giftingPage.promoBanner")}</span> <span className="text-[#ffffff] font-bold">{t("giftingPage.freeDelivery")}</span> {t("giftingPage.promoBannerCont")}
+              🎉 <span className="font-bold">{t("giftingPage.promoBanner")}</span> <span className="text-[#ffffff] font-cinzel">{t("giftingPage.freeDelivery")}</span> {t("giftingPage.promoBannerCont")}
             </p>
             <div className="hidden md:flex items-center gap-2 bg-[#ffffff] px-4 py-2 rounded-lg border border-[#AD2E0F]/40">
               <span className="text-[#AD2E0F] font-bold text-sm uppercase tracking-wider">Free Delivery</span>
@@ -228,14 +243,14 @@ const Gifting = () => {
           <div className="grid grid-cols-2 md:grid-cols-4 gap-4 md:gap-6">
             {[
 
-              { date: "07", month: "FEB", name: t("giftingPage.celebrations.roseday"), color: "from-pink-400 to-rose-500" },
-              { date: "08", month: "FEB", name: t("giftingPage.celebrations.proposeday"), color: "from-pink-400 to-rose-500" },
-              { date: "09", month: "FEB", name: t("giftingPage.celebrations.chocolateday"), color: "from-pink-400 to-rose-500" },
-              { date: "10", month: "FEB", name: t("giftingPage.celebrations.teddyday"), color: "from-pink-400 to-rose-500" },
-              { date: "11", month: "FEB", name: t("giftingPage.celebrations.promiseday"), color: "from-pink-400 to-rose-500" },
-              { date: "12", month: "FEB", name: t("giftingPage.celebrations.hugday"), color: "from-pink-400 to-rose-500" },
-              { date: "13", month: "FEB", name: t("giftingPage.celebrations.kissday"), color: "from-pink-400 to-rose-500" },  
-              { date: "14", month: "FEB", name: t("giftingPage.celebrations.valentinesday"), color: "from-pink-400 to-rose-500" },
+              { date: "07", month: "FEB", name: t("giftingPage.celebrations.roseday"), color: "from-[#a90a1f] to-[#c0204d]" },
+              { date: "08", month: "FEB", name: t("giftingPage.celebrations.proposeday"), color: "from-[#a90a1f] to-[#c0204d]" },
+              { date: "09", month: "FEB", name: t("giftingPage.celebrations.chocolateday"), color: "from-[#a90a1f] to-[#c0204d]" },
+              { date: "10", month: "FEB", name: t("giftingPage.celebrations.teddyday"), color: "from-[#a90a1f] to-[#c0204d]" },
+              { date: "11", month: "FEB", name: t("giftingPage.celebrations.promiseday"), color: "from-[#a90a1f] to-[#c0204d]" },
+              { date: "12", month: "FEB", name: t("giftingPage.celebrations.hugday"), color: "from-[#a90a1f] to-[#c0204d]" },
+              { date: "13", month: "FEB", name: t("giftingPage.celebrations.kissday"), color: "from-[#a90a1f] to-[#c0204d]" },  
+              { date: "14", month: "FEB", name: t("giftingPage.celebrations.valentinesday"), color: "from-[#a90a1f] to-[#c0204d]" },
           
             ].map((celebration, index) => (
               <div 
@@ -243,9 +258,9 @@ const Gifting = () => {
                 className="group relative bg-white rounded-2xl overflow-hidden shadow-md hover:shadow-xl transition-all duration-300 hover:-translate-y-1"
               >
                 <div className={`absolute top-0 left-0 right-0 bg-gradient-to-r ${celebration.color} text-white text-center py-2 text-xs font-bold uppercase tracking-wider`}>
-                  <span className="text-lg font-display">{celebration.date}</span>
-                  <sup className="text-[10px] ml-0.5">{celebration.month === "DEC" ? "TH" : celebration.month === "JAN" && celebration.date === "1" ? "ST" : "TH"}</sup>
-                  <span className="ml-1">{celebration.month}</span>
+                  <span className="text-lg font-cinzel">{celebration.date}</span>
+                  <sup className="text-[10px] ml-0.5 font-cinzel">{celebration.month === "DEC" ? "TH" : celebration.month === "JAN" && celebration.date === "1" ? "ST" : "TH"}</sup>
+                  <span className="ml-1 font-cinzel">{celebration.month}</span>
                 </div>
                 <div className="pt-14 pb-4 px-4">
                   <div className="aspect-[4/3] bg-gradient-to-br from-[#f5f0eb] to-[#e8e0d8] rounded-xl mb-4 flex items-center justify-center overflow-hidden group-hover:scale-105 transition-transform duration-300">
@@ -264,7 +279,7 @@ const Gifting = () => {
                       className="w-full h-full object-cover"
                     />
                   </div>
-                  <h3 className="font-display text-[#2a1810] text-center text-sm md:text-base">
+                  <h3 className="font-cinzel text-[#2a1810] text-center text-sm md:text-base">
                     {celebration.name}
                   </h3>
                 </div>
@@ -589,7 +604,7 @@ const Gifting = () => {
       </section>
 
       {/* CTA Section */}
-      <section className="py-20 bg-[#ffc1ce]">
+      <section className="py-20 bg-[#f1747c]">
         <div className="container mx-auto px-6 text-center">
           <h2 className="font-display text-3xl md:text-5xl text-white mb-6">
             {t("giftingPage.ctaTitle")}
@@ -598,10 +613,10 @@ const Gifting = () => {
             {t("giftingPage.ctaDescription")}
           </p>
           <div className="flex flex-wrap justify-center gap-4">
-            <button className="px-10 py-4 bg-white text-[#8e1534] font-medium uppercase tracking-wider text-sm hover:bg-white/90 transition-colors" onClick={() => window.open('/contact-us', '_blank')}>
+            <button className="px-10 py-4 bg-white text-[#8e1534] rounded-xl font-medium uppercase tracking-wider text-sm hover:bg-white/90 transition-colors" onClick={() => window.open('/contact-us', '_blank')}>
               {t("giftingPage.getQuote")}
             </button>
-            <button className="px-10 py-4 border-2 border-white text-white font-medium uppercase tracking-wider text-sm hover:bg-white/10 transition-colors" onClick={() => window.open('https://honeymanstore.com/wp-content/uploads/2025/12/HoneymanGifting-Catalog-1_compressed.pdf', '_blank')}>
+            <button className="px-10 py-4 border-2 border-white text-white rounded-xl font-medium uppercase tracking-wider text-sm hover:bg-white/10 transition-colors" onClick={() => window.open('https://honeymanstore.com/wp-content/uploads/2025/12/HoneymanGifting-Catalog-1_compressed.pdf', '_blank')}>
               {t("giftingPage.downloadCatalogue")}
             </button>
           </div>
