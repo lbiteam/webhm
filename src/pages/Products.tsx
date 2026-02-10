@@ -5,7 +5,7 @@ import { useLanguage } from "@/contexts/LanguageContext";
 
 // Product images
 import himalayan from "@/assets/Products/himalayan-honey.webp";
-import vantulsi from "@/assets/van-tulsi-honey.webp";
+import vantulsi from "@/assets/Products/organic-honey.webp";
 import blackForest from "@/assets/Products/black-forest-honey.webp";
 import honeyBanner from "@/assets/Products/honey-banner.webp";
 import jamsBanner from "@/assets/Products/jams-banner.webp";
