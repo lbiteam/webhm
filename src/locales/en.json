@@ -113,9 +113,9 @@
     "description": "Own the world's first honey-based ice cream business, designed for various cities, budgets, and ambitions. Our system-driven, product-led model comes fully supported for consistent growth.",
     "models": {
       "basic": {
-        "name": "Starter",
+        "name": "Ice Cream Cart",
         "tagline": "Perfect Start",
-        "investment": "₹2.5-5 Lakhs",
+        "investment": "₹3.20 Lakhs",
         "features": {
           "1": "Small retail outlet",
           "2": "Basic product range",
@@ -125,9 +125,9 @@
         }
       },
       "medium": {
-        "name": "Professional",
+        "name": "Ice Cream Parlour",
         "tagline": "Growing Business",
-        "investment": "₹8-12 Lakhs",
+        "investment": "₹10-15 Lakhs",
         "popular": "MOST POPULAR",
         "features": {
           "1": "Medium-sized store",
@@ -140,9 +140,9 @@
         }
       },
       "bigger": {
-        "name": "Elite",
+        "name": "Cafe",
         "tagline": "Premium Partner",
-        "investment": "₹15-30 Lakhs",
+        "investment": "₹25-30 Lakhs",
         "features": {
           "1": "Flagship store",
           "2": "Complete product portfolio",

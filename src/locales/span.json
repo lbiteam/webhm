@@ -114,9 +114,9 @@
       "description": "Sé dueño del primer negocio de helados a base de miel del mundo, diseñado para varias ciudades, presupuestos y ambiciones. Nuestro modelo basado en sistema y liderado por productos viene completamente respaldado para un crecimiento constante.",
       "models": {
         "basic": {
-          "name": "Starter",
+          "name": "Helado a Base de Miel",
           "tagline": "Comienzo Perfecto",
-          "investment": "₹2.5-5 Lakhs",
+          "investment": "₹3.20 Lakhs",
           "features": {
             "1": "Pequeño local comercial",
             "2": "Gama básica de productos",
@@ -126,9 +126,9 @@
           }
         },
         "medium": {
-          "name": "Professional",
+          "name": "Helado a Base de Miel",
           "tagline": "Negocio en Crecimiento",
-          "investment": "₹8-12 Lakhs",
+          "investment": "₹10-15 Lakhs",
           "popular": "MÁS POPULAR",
           "features": {
             "1": "Tienda de tamaño mediano",
@@ -141,9 +141,9 @@
           }
         },
         "bigger": {
-          "name": "Elite",
+          "name": "Café",    
           "tagline": "Socio Premium",
-          "investment": "₹15-30 Lakhs",
+          "investment": "₹25-30 Lakhs",
           "features": {
             "1": "Tienda insignia",
             "2": "Portafolio completo de productos",
