@@ -91,12 +91,7 @@
   "City": "Kanpur",
   "State": "Uttar Pradesh"
  },
- {
-  "Sr No": 18,
-  "Address": "Near KDA Bazaar, Dr Chaudhary Building, Jajmau, Kanpur-208007",
-  "City": "Kanpur",
-  "State": "Uttar Pradesh"
- },
+ 
  {
   "Sr No": 19,
   "Address": "Mumbai",
@@ -105,8 +100,8 @@
  },
  {
   "Sr No": 20,
-  "Address": "Kukattpally y junction (Heydrabad)Telangana",
-  "City": "Heydrabad",
+  "Address": "Kukattpally y junction (Hyderabad),Telangana",
+  "City": "Hyderabad",
   "State": "Telangana"
  },
  {
@@ -151,12 +146,7 @@
   "City": "Purnea",
   "State": "Bihar"
  },
- {
-  "Sr No": 28,
-  "Address": "Store no. 17A ,Ground floor, fairmount fortune one mall, 317 B, Czech Colony, Sanath Nagar, Hyderabad, Telangana 500018.\nLandmark:Near Erragadda Metro Station",
-  "City": "Hyderabad",
-  "State": "Telangana"
- },
+ 
  {
   "Sr No": 29,
   "Address": "Sona Bakkery and sweets, Suryapet , Telangana, Hyderabad-508213",
@@ -172,7 +162,7 @@
  {
   "Sr No": 31,
   "Address": "Village Katil,Roop nagar,Near fish farm,",
-  "City": "RUttar Pradeshnagar",
+  "City": "Roopnagar",
   "State": "Punjab"
  },
  {
@@ -587,5 +577,24 @@
    "Address": "Rewa, Madhya Pradesh",
    "City": "Rewa",
    "State": "Madhya Pradesh"
+  },
+  {
+   "Sr No": 102,
+   "Address": "Gumma,kotkhai ,district- shimla",
+   "City": "Gumma",
+   "State": "Himachal Pradesh"
+  },
+  {
+   "Sr No": 103,
+   "Address": "Haibowal kalan,near lal kothi,baloki road,ludhiana 141001",
+   "City": "Ludhiana",
+   "State": "Punjab"
+  },
+  {
+   "Sr No": 104,
+   "Address": "Dasuya-hoshiarpur",
+   "City": "Dasuya",
+   "State": "Punjab"
   }
+  
 ]

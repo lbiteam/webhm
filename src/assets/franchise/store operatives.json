@@ -1,377 +1,375 @@
-
 [
- {
-  "S.No": 1,
-  "City": "Sikar",
-  "Region": "Rajasthan",
-  "Address": "Poonam Associates , Rampura ka Rasta, POLO Ground , Hari ram Bahad Marg, Sikar (Rajasthan) 332001"
- },
-
- {
-  "S.No": 3,
-  "City": "Fategarh",
-  "Region": "Punjab",
-  "Address": "Motia Khan Back Side Prema Welding Works Opp Avtar Foundery  GT Road. 147301"
- },
- {
-  "S.No": 4,
-  "City": "Jalandhar",
-  "Region": "Punjab",
-  "Address": "Shop no 10, Cannt County, Jamsher Road, Near Sufi Pind, Jalandhar (Punjab)"
- },
- {
-  "S.No": 5,
-  "City": "Gurugram",
-  "Region": "Haryana",
-  "Address": "Epin Elan Mall, Ground Floor, Sec 70, Gurugram, (Haryana)"
- },
- {
-  "S.No": 6,
-  "City": "Gurugram",
-  "Region": "Haryana",
-  "Address": "Sec 33. Gazebo , infront of Gym, Central Flower Valley, Sohna,Gurugram, (Haryana)"
- },
- {
-  "S.No": 7,
-  "City": "South Delhi",
-  "Region": "Delhi",
-  "Address": "F 7 , East of Kailash, Opp Metro Station, Next to first Cry, South Delhi"
- },
- {
-  "S.No": 8,
-  "City": "Rohini",
-  "Region": "Delhi",
-  "Address": "Cafe Rico, Sec 18, Rohini, Delhi"
- },
- {
-  "S.No": 9,
-  "City": "Noida ",
-  "Region": "Uttar Pradesh",
-  "Address": "Sec 122, Opp DPS 201316, Noida (UP)"
- },
- {
-  "S.No": 10,
-  "City": "Lucknow",
-  "Region": "Uttar Pradesh",
-  "Address": "The Cuisine Cafe, Gomti Nagar, Lucknow (UP)"
- },
- {
-  "S.No": 11,
-  "City": "Saharanpur",
-  "Region": "Uttar Pradesh", 
-  "Address": "Momos Streat, Delhi Road, opp South City, Saharanpur (UP)"
- },
- {
-  "S.No": 12,
-  "City": "Agra",
-  "Region": "Uttar Pradesh",
-  "Address": "Shop No.- S-4, Sadar Bazar, Taj Road, The Master Chef Restaurant, Agra Cantt, Agra (UP)"
- },
- {
-  "S.No": 13,
-  "City": "Vadodara",
-  "Region": "Gujarat",
-  "Address": "Kashi Vishveshwar Township, Jetalpur Road, Alkapuri, Vadodara (Gujarat)"
- },
- {
-  "S.No": 14,
-  "City": "Alwar ",
-  "Region": "Gujarat",
-  "Address": "DC 5 , Plot no. 522, Adipur , Gandhidham , Kutch - 370205 (Gujarat)"
- },
- {
-  "S.No": 15,
-  "City": "Kashipur",
-  "Region": "Uttrakhand",
-  "Address": "Shop no 1, Katoratal Road, Kashipur (Uttrakhand)"
- },
- {
-  "S.No": 16,
-  "City": "Rajouri",
-  "Region": "Jammu and Kashmir",
-  "Address": "Mata Vaishno Dhaba,Village Dehri Ralyote,Tehsil Manjakote Distt Rajouri (Jammu and Kashmir)"
- },
- {
-  "S.No": 17,
-  "City": "Vikas Nagar",
-  "Region": "Uttrakhand",
-  "Address": "Scooffle, Near Sanguine Public School, Dehradoon (Uttrakhand)"
- },
- {
-  "S.No": 18,
-  "City": "Vijay Nagar",
-  "Region": "Delhi",
-  "Address": "House no. 2\/52 , Shop No . C, Vijay nagar double story 110009 Delhi"
- },
- {
-  "S.No": 19,
-  "City": "Kalaburgi",
-  "Region": "Karnataka",
-  "Address": "Universe fun limited, Near KMF Dooth Dairie, Beside Dominos, Humanabad Road - 585101 (Karnataka)"
- },
- {
-  "S.No": 20,
-  "City": "Bhopal",
-  "Region": "Madhya Pradesh",
-  "Address": "Tukkiezzz Casa, E-6, In front of Wellness Forever. Bhopal - Pin code - 462016"
- },
- {
-  "S.No": 21,
-  "City": "Faridabad",
-  "Region": "Haryana",
-  "Address": "Sco 124 sector 79 OMAXE world street faridabad haryana"
- },
- {
-  "S.No": 22,
-  "City": "Mohali",
-  "Region": "Punjab",
-  "Address": "Shop no -20,new green wood society,sec-125, sunny enclave mohali Punjab 140301"
- },
- {
-  "S.No": 23,
-  "City": "Dhuri",
-  "Region": "Punjab",
-  "Address": "Karam Enterprises, Anaj Mandi Road, Near Harman Sweets"
- },
- {
-  "S.No": 24,
-  "City": "Alwar ",
-  "Region": "Rajasthan",
-  "Address": "Khadak Singh दा ढाबा  Rest Area – 125 Milestone (RHS) Delhi–Jaipur–Vadodara–Mumbai Expressway (NE4) Village Pinan, Alwar, Rajasthan – 301413"
- },
- {
-  "S.No": 25,
-  "City": "Ghaziabad",
-  "Region": "Uttar Pradesh",
-  "Address": "H-226 Govindpuram Ghaziabaad Near Kusum Venkat Hall."
- },
- {
-  "S.No": 26,
-  "City": "Ambala",
-  "Region": "Haryana",
-  "Address": "Snakkers, Baldev Nagar , Ambala"
- },
- {
-  "S.No": 27,
-  "City": "Sonipat",
-  "Region": "Haryana",
-  "Address": "Rodeo Drive mall shop no.58 jugnu grill flame tdi city kundli sonipat pin code 131030"
- },
- {
-  "S.No": 28,
-  "City": "Hoshiarpur - Punjab",
-  "Region": "Punjab",
-  "Address": "Tibrewala's farm chownk near banjarbagh, banjar bagh,Hoshiarpur,Punjab 146001"
- },
- {
-  "S.No": 29,
-  "City": "Damoh",
-  "Region": "Madhya Pradesh",
-  "Address": "Salt n pepper restaurant,near Central school, beside of dr. Manish patel's clinic, Imalia, Damoh, Madhya Pradesh 470661"
- },
- {
-  "S.No": 30,
-  "City": "Siliguri",
-  "Region": "West Bengal",
-  "Address": "BBD colony,Post office - Pradhan nagar City- Siliguri Dist :- Darjeeling Pin:- 734003 West Bengal"
- },
- {
-  "S.No": 31,
-  "City": "Rohini",
-  "Region": "Delhi",
-  "Address": "Shop no.3 prashant vihar block a-54 opp lancer convent school sector -14 rohini new delhi -110085"
- },
- {
-  "S.No": 32,
-  "City": "kharar",
-  "Region": "Punjab",
-  "Address": "https:\/\/share.google\/vBG6VsTQg1N6iiJrM\nRaj Royal Dhaba ,Chd, Ludhiana Rd, near Raja Dhaba, Pohlo Majra, Punjab 140802"
- },
- {
-  "S.No": 33,
-  "City": "Mumbai",
-  "Region": "Maharashtra",
-  "Address": "Shop No. 6, Opposite Axis Bank, Shital Smit, CHS, Ashok Nagar Kandivali East, Mumbai-400101"
- },
- {
-  "S.No": 34,
-  "City": "South 24 Parganas",
-  "Region": "West Bengal",
-  "Address": "10\/48, Paraui das Para Road, Nabapally 10th lane, Sarsoona, PO:-Sarsoona, Dist:- South 24 Parganas, WB:-0700061"
- },
- {
-  "S.No": 35,
-  "City": "Bengaluru",
-  "Region": "Karnataka",
-  "Address": "Cafe Zaara, 2nd Floor, UB City, Vittal Mallya Road, Bengaluru. 560001"
- },
- {
-  "S.No": 36,
-  "City": "Gurgaon",
-  "Region": "Haryana",
-  "Address": "Cafeteria green, Sec 74, Gurgaon"
- },
- {
-  "S.No": 37,
-  "City": "Madurai",
-  "Region": "Tamil Nadu",
-  "Address": "519\/2,Aarthi complex,11th East cross street,Annanagr"
- },
- {
-  "S.No": 38,
-  "City": "Haldwani",
-  "Region": "Uttrakhand",
-  "Address": "Chandramauli Group, 38, Ward 12, Shankar Hospital , Rampur Road, Haldwani"
- },
- {
-  "S.No": 39,
-  "City": "Nashik",
-  "Region": "Maharashtra",
-  "Address": "\"Shop No.9,Ground floor,\nRoongta Futurex Appartment,\nRD Circle, Govind Nagar-CCM Link Road, Karmayogi Nagar Nashik422009\""
- },
- {
-  "S.No": 40,
-  "City": "Nanded",
-  "Region": "Maharashtra",
-  "Address": "\"Anand Nagar Rd, Vasant Nagar, Hyder Bagh, Dashmesh Nagar, Anand Nagar, Nanded, Nanded-Waghala, Maharashtra 431602\nPhone: 091755 59713\n\nhttps:\/\/share.google\/gSC3jbJb5ryA1gMqT\""
- },
- {
-  "S.No": 41,
-  "City": "Modasa",
-  "Region": "Gujarat",
-  "Address": "C-5\/6 Vandemataram Commerce Hub, Bajkot, Shamlaji-Godhara Rode, Modasa Baypas, Modasa, PinCode 383315"
- },
- {
-  "S.No": 42,
-  "City": "Ganganagar",
-  "Region": "Rajasthan",
-  "Address": "1-C Ravindra Path Near Chanderlpok Dhabha Sri Ganganagar - 335001"
- },
- {
-  "S.No": 43,
-  "City": "Rupnagar",
-  "Region": "Punjab",
-  "Address": "Bela Chowk, Bela Road , Rupnagar Punjab Pincode - 140001"
- },
- {
-  "S.No": 44,
-  "City": "Raipur",
-  "Region": "Chattisgarh",
-  "Address": "A-12, youth and hub, NIT chowpaty, Amanaka, Raipur, Chhattisgarh. (492001)"
- },
- {
-  "S.No": 45,
-  "City": "Bhillai",
-  "Region": "Chattisgarh",
-  "Address": "Honeyman Near Singh Bike Point KPS Chowk Nehru Nagar Bhilai , 490020"
- },
- {
-  "S.No": 46,
-  "City": "Paonta Sahib",
-  "Region": "Himanchal Pradesh",
-  "Address": "Dinesh S Plaza, Devinagar Road, Near Vishwakarma chowk, Infront of Pundir Juice Centre, Paonta Sahib\n"
- },
- {
-  "S.No": 47,
-  "City": "Lucknow",
-  "Region": "Uttar Pradesh",
-  "Address": "River Front Cafe, Shop 5A, Marine Drive, Gomti River Front , Lucknow Uttar Pradesh ,226010"
- },
- {
-  "S.No": 48,
-  "City": "Gurgaon",
-  "Region": "Haryana",
-  "Address": "JMD Suburbio 2, Sec 67 , Gurugram, (Haryana)"
- },
- {
-  "S.No": 49,
-  "City": "Gurgaon",
-  "Region": "Haryana",
-  "Address": "Ellan Miracle Sector 84 Gurugram Pincode - 122004"
- },
- {
-  "S.No": 50,
-  "City": "Nalaganda",
-  "Region": "Hyderabad",
-  "Address": "7-1\/GH\/NRC\/43\/6 Beside Sadhana Infinity International School, Nallagandla, Hyderabad - 502034"
- },
- {
-  "S.No": 51,
-  "City": "Sirhind Fatehgarh Sahib",
-  "Region": "Punjab",
-  "Address": "Adjoing Punjabi Rasoi, Master Ji Sweets, Chandigarh Road, Village Badali Ala Singh, Sirhind Fatehgarh Sahib, Punjab - 140406"
- },
- {
-  "S.No": 52,
-  "City": "Noida",
-  "Region": "Uttar Pradesh",
-  "Address": "D 2006, 20th Floor D Tower, Logix Blossom Country, Sector 137, Noida 201304"
- },
- {
-    "S.No": 53,
-    "City": "Dwarka",
-    "Region": "Delhi",
-    "Address": "Wyn Venture Pvt Ltd Plot no 3 Dwarka Sector 10 Delhi Pincode - 110075"
+   {
+     "S.No": 1,
+     "City": "Kadapa",
+     "Region": "Andra Pradesh",
+     "Address": "36/256-88,Bharat Nagar,Chinnachowk,VTC;Cuddapah,PO;Chinnachowk,District;Cuddapah,State;Andhra Pradesh,PIN CODE;516002"
    },
    {
-    "S.No": 54,
-    "City": "Nagavara",
-    "Region": " Karnataka",
-    "Address": "Fitness Empire - Bhimaneni towers,2nd floor,14th cross road,Above Zudio Chanakya layout,opposites, Manyata Tech Park Rd, Nagavara, Bengaluru, Karnataka 560045, LandMark - Above Zudio Showroom"
-   },{
-    "S.No": 55,
-    "City": "Vishakhapatnam",
-    "Region": "Andra Pradesh",
-    "Address": "Bharath Kumar,Hangout Cafe, First floor Clubhouse, MVV and MK Park, Kurmanapalem, Visakhapatnam 530046"
-   },{
-    "S.No": 56,
-    "City": "Kadapa",
-    "Region": "Andra Pradesh",
-    "Address": "36/256-88,Bharat Nagar,Chinnachowk,VTC;Cuddapah,PO;Chinnachowk,District;Cuddapah,State;Andhra Pradesh,PIN CODE;516002"
+     "S.No": 2,
+     "City": "Vishakhapatnam",
+     "Region": "Andra Pradesh",
+     "Address": "Bharath Kumar,Hangout Cafe, First floor Clubhouse, MVV and MK Park, Kurmanapalem, Visakhapatnam 530046"
    },
    {
-      "S.No": 57,
-      "City": "Haldwani",
-      "Region": "Uttrakhand",
-      "Address": "D58 Chandramauli Group, 38, Ward 12, Shankar Hospital , Rampur Road, Haldwani "
-     },
-     {
-      "S.No": 58,
-      "City": "Nagpur",
-      "Region": "Maharashtra",
-      "Address": "pincode 440024 plot no 69,miry layout opposite paris city, Nagpur Maharashtra"
-     },
-     {
-      "S.No": 59,
-      "City": "Ganaur",
-      "Region": "Haryana",
-      "Address": "House no.274 kot mohhala Ganaur sonipat-Haryana 131101"
-     },
-     {
-      "S.No": 60,
-      "City": "Banga",
-      "Region": "Punjab",
-      "Address": " NEAR CANARA BANK,MAIN ROAD, Shaheed Bhagat Singh Nagar, Banga, Punjab, pincode -144505"
-     },
-     {
-      "S.No": 61,
-      "City": "Nagavara",
-      "Region": "Karnataka",
-      "Address": "2nd floor, Flat No:- 78\/1, Sunshine Properties, Nagavara Main Road, Manyatha Tech Park, Chanukya Layout, Bengaluru, Karnataka- 560045"
-     },
-     {
-      "S.No": 62,
-      "City": "Ratlam",
-      "Region": "Madhya Pradesh",
-      "Address": "64, Rajasva Colony Near NeelKanth Mahadev Mandir Ratlam 457001"
-     },
-
+     "S.No": 3,
+     "City": "Bhillai",
+     "Region": "Chattisgarh",
+     "Address": "Honeyman Near Singh Bike Point KPS Chowk Nehru Nagar Bhilai , 490020"
+   },
    {
-      "S.No": 63,
-      "City": "Sagar ",
-      "Region": "Madhya Pradesh",
-      "Address": "Praful Tiwari, Aditya Lake View Hotel Sanjay Road Pincode - 470003"
-     }
-]
-
- 
+     "S.No": 4,
+     "City": "Raipur",
+     "Region": "Chattisgarh",
+     "Address": "A-12, youth and hub, NIT chowpaty, Amanaka, Raipur, Chhattisgarh. (492001)"
+   },
+   {
+     "S.No": 5,
+     "City": "Dwarka",
+     "Region": "Delhi",
+     "Address": "Wyn Venture Pvt Ltd Plot no 3 Dwarka Sector 10 Delhi Pincode - 110075"
+   },
+   {
+     "S.No": 6,
+     "City": "Rohini",
+     "Region": "Delhi",
+     "Address": "Cafe Rico, Sec 18, Rohini, Delhi"
+   },
+   {
+     "S.No": 7,
+     "City": "Rohini",
+     "Region": "Delhi",
+     "Address": "Shop no.3 prashant vihar block a-54 opp lancer convent school sector -14 rohini new delhi -110085"
+   },
+   {
+     "S.No": 8,
+     "City": "South Delhi",
+     "Region": "Delhi",
+     "Address": "F 7 , East of Kailash, Opp Metro Station, Next to first Cry, South Delhi"
+   },
+   {
+     "S.No": 9,
+     "City": "Alwar ",
+     "Region": "Gujarat",
+     "Address": "DC 5 , Plot no. 522, Adipur , Gandhidham , Kutch - 370205 (Gujarat)"
+   },
+   {
+     "S.No": 10,
+     "City": "Modasa",
+     "Region": "Gujarat",
+     "Address": "C-5/6 Vandemataram Commerce Hub, Bajkot, Shamlaji-Godhara Rode, Modasa Baypas, Modasa, PinCode 383315"
+   },
+   {
+     "S.No": 11,
+     "City": "Vadodara",
+     "Region": "Gujarat",
+     "Address": "Kashi Vishveshwar Township, Jetalpur Road, Alkapuri, Vadodara (Gujarat)"
+   },
+   {
+     "S.No": 12,
+     "City": "Ambala",
+     "Region": "Haryana",
+     "Address": "Snakkers, Baldev Nagar , Ambala"
+   },
+   {
+     "S.No": 13,
+     "City": "Faridabad",
+     "Region": "Haryana",
+     "Address": "Sco 124 sector 79 OMAXE world street faridabad haryana"
+   },
+   {
+     "S.No": 14,
+     "City": "Ganaur",
+     "Region": "Haryana",
+     "Address": "Bharat Petroleum , Near Malik dharam kanta, Railway Road, Ganaur , Sonipat"
+   },
+   {
+     "S.No": 15,
+     "City": "Gurgaon",
+     "Region": "Haryana",
+     "Address": "Cafeteria green, Sec 74, Gurgaon"
+   },
+   {
+     "S.No": 16,
+     "City": "Gurgaon",
+     "Region": "Haryana",
+     "Address": "JMD Suburbio 2, Sec 67 , Gurugram, (Haryana)"
+   },
+   {
+     "S.No": 17,
+     "City": "Gurgaon",
+     "Region": "Haryana",
+     "Address": "Ellan Miracle Sector 84 Gurugram Pincode - 122004"
+   },
+   {
+     "S.No": 18,
+     "City": "Gurugram",
+     "Region": "Haryana",
+     "Address": "Epin Elan Mall, Ground Floor, Sec 70, Gurugram, (Haryana)"
+   },
+   {
+     "S.No": 19,
+     "City": "Gurugram",
+     "Region": "Haryana",
+     "Address": "Sec 33. Gazebo , infront of Gym, Central Flower Valley, Sohna,Gurugram, (Haryana)"
+   },
+   {
+     "S.No": 20,
+     "City": "Sonipat",
+     "Region": "Haryana",
+     "Address": "Rodeo Drive mall shop no.58 jugnu grill flame tdi city kundli sonipat pin code 131030"
+   },
+   {
+     "S.No": 21,
+     "City": "Paonta Sahib",
+     "Region": "Himanchal Pradesh",
+     "Address": "Dinesh S Plaza, Devinagar Road, Near Vishwakarma chowk, Infront of Pundir Juice Centre, Paonta Sahib\n"
+   },
+   {
+     "S.No": 22,
+     "City": "Rajouri",
+     "Region": "Jammu and Kashmir",
+     "Address": "Mata Vaishno Dhaba,Village Dehri Ralyote,Tehsil Manjakote Distt Rajouri (Jammu and Kashmir)"
+   },
+   {
+     "S.No": 23,
+     "City": "Bengaluru",
+     "Region": "Karnataka",
+     "Address": "Cafe Zaara, 2nd Floor, UB City, Vittal Mallya Road, Bengaluru. 560001"
+   },
+   {
+     "S.No": 24,
+     "City": "Kalaburgi",
+     "Region": "Karnataka",
+     "Address": "Universe fun limited, Near KMF Dooth Dairie, Beside Dominos, Humanabad Road - 585101 (Karnataka)"
+   },
+   {
+     "S.No": 25,
+     "City": "Nagavara",
+     "Region": "Karnataka",
+     "Address": "Fitness Empire - Bhimaneni towers,2nd floor,14th cross road,Above Zudio Chanakya layout,opposites, Manyata Tech Park Rd, Nagavara, Bengaluru, Karnataka 560045, LandMark - Above Zudio Showroom"
+   },
+  
+   {
+     "S.No": 27,
+     "City": "Bhopal",
+     "Region": "Madhya Pradesh",
+     "Address": "Tukkiezzz Casa, E-6, In front of Wellness Forever. Bhopal - Pin code - 462016"
+   },
+   {
+     "S.No": 28,
+     "City": "Damoh",
+     "Region": "Madhya Pradesh",
+     "Address": "Salt n pepper restaurant,near Central school, beside of dr. Manish patel's clinic, Imalia, Damoh, Madhya Pradesh 470661"
+   },
+   {
+     "S.No": 29,
+     "City": "Ratlam",
+     "Region": "Madhya Pradesh",
+     "Address": "64, Rajasva Colony Near NeelKanth Mahadev Mandir Ratlam 457001"
+   },
+   {
+     "S.No": 30,
+     "City": "Sagar ",
+     "Region": "Madhya Pradesh",
+     "Address": "Praful Tiwari, Aditya Lake View Hotel Sanjay Road Pincode - 470003"
+   },
+   {
+     "S.No": 31,
+     "City": "Mumbai",
+     "Region": "Maharashtra",
+     "Address": "Shop No. 6, Opposite Axis Bank, Shital Smit, CHS, Ashok Nagar Kandivali East, Mumbai-400101"
+   },
+   {
+     "S.No": 32,
+     "City": "Nagpur",
+     "Region": "Maharashtra",
+     "Address": "pincode 440024 plot no 69,miry layout opposite paris city, Nagpur Maharashtra"
+   },
+   {
+     "S.No": 33,
+     "City": "Nanded",
+     "Region": "Maharashtra",
+     "Address": "\"Anand Nagar Rd, Vasant Nagar, Hyder Bagh, Dashmesh Nagar, Anand Nagar, Nanded, Nanded-Waghala, Maharashtra 431602\nPhone: 091755 59713\n\nhttps://share.google/gSC3jbJb5ryA1gMqT\""
+   },
+   {
+     "S.No": 34,
+     "City": "Nashik",
+     "Region": "Maharashtra",
+     "Address": "\"Shop No.9,Ground floor,\nRoongta Futurex Appartment,\nRD Circle, Govind Nagar-CCM Link Road, Karmayogi Nagar Nashik422009\""
+   },
+   {
+     "S.No": 35,
+     "City": "Banga",
+     "Region": "Punjab",
+     "Address": " NEAR CANARA BANK,MAIN ROAD, Shaheed Bhagat Singh Nagar, Banga, Punjab, pincode -144505"
+   },
+   {
+     "S.No": 36,
+     "City": "Dhuri",
+     "Region": "Punjab",
+     "Address": "Karam Enterprises, Anaj Mandi Road, Near Harman Sweets"
+   },
+   {
+     "S.No": 37,
+     "City": "Fategarh",
+     "Region": "Punjab",
+     "Address": "Motia Khan Back Side Prema Welding Works Opp Avtar Foundery  GT Road. 147301"
+   },
+   {
+     "S.No": 38,
+     "City": "Hoshiarpur - Punjab",
+     "Region": "Punjab",
+     "Address": "Tibrewala's farm chownk near banjarbagh, banjar bagh,Hoshiarpur,Punjab 146001"
+   },
+   {
+     "S.No": 39,
+     "City": "Jalandhar",
+     "Region": "Punjab",
+     "Address": "Shop no 10, Cannt County, Jamsher Road, Near Sufi Pind, Jalandhar (Punjab)"
+   },
+   {
+     "S.No": 40,
+     "City": "kharar",
+     "Region": "Punjab",
+     "Address": "https://share.google/vBG6VsTQg1N6iiJrM\nRaj Royal Dhaba ,Chd, Ludhiana Rd, near Raja Dhaba, Pohlo Majra, Punjab 140802"
+   },
+   {
+     "S.No": 41,
+     "City": "Mohali",
+     "Region": "Punjab",
+     "Address": "Shop no -20,new green wood society,sec-125, sunny enclave mohali Punjab 140301"
+   },
+   {
+     "S.No": 42,
+     "City": "Rupnagar",
+     "Region": "Punjab",
+     "Address": "Bela Chowk, Bela Road , Rupnagar Punjab Pincode - 140001"
+   },
+   {
+     "S.No": 43,
+     "City": "Sirhind Fatehgarh Sahib",
+     "Region": "Punjab",
+     "Address": "Adjoing Punjabi Rasoi, Master Ji Sweets, Chandigarh Road, Village Badali Ala Singh, Sirhind Fatehgarh Sahib, Punjab - 140406"
+   },
+   {
+     "S.No": 44,
+     "City": "Alwar ",
+     "Region": "Rajasthan",
+     "Address": "Khadak Singh दा ढाबा  Rest Area – 125 Milestone (RHS) Delhi–Jaipur–Vadodara–Mumbai Expressway (NE4) Village Pinan, Alwar, Rajasthan – 301413"
+   },
+   {
+     "S.No": 45,
+     "City": "Ganganagar",
+     "Region": "Rajasthan",
+     "Address": "1-C Ravindra Path Near Chanderlpok Dhabha Sri Ganganagar - 335001"
+   },
+   {
+     "S.No": 46,
+     "City": "Sikar",
+     "Region": "Rajasthan",
+     "Address": "Poonam Associates , Rampura ka Rasta, POLO Ground , Hari ram Bahad Marg, Sikar (Rajasthan) 332001"
+   },
+   {
+     "S.No": 47,
+     "City": "Madurai",
+     "Region": "Tamil Nadu",
+     "Address": "519/2,Aarthi complex,11th East cross street,Annanagr"
+   },
+   {
+     "S.No": 48,
+     "City": "Hyderabad",
+     "Region": "Telangana",
+     "Address": "7-1/GH/NRC/43/6 Beside Sadhana Infinity International School, Nallagandla, Hyderabad - 502034"
+   },
+   {
+     "S.No": 49,
+     "City": "Hyderabad",
+     "Region": "Telangana",
+     "Address": "Store no. 17A ,Ground floor, fairmount fortune one mall, 317 B, Czech Colony, Sanath Nagar, Hyderabad, Telangana 500018.Landmark:Near Erragadda Metro Station"
+   },
+   {
+     "S.No": 50,
+     "City": "Agra",
+     "Region": "Uttar Pradesh",
+     "Address": "Shop No.- S-4, Sadar Bazar, Taj Road, The Master Chef Restaurant, Agra Cantt, Agra (UP)"
+   },
+   {
+     "S.No": 51,
+     "City": "Ghaziabad",
+     "Region": "Uttar Pradesh",
+     "Address": "H-226 Govindpuram Ghaziabaad Near Kusum Venkat Hall."
+   },
+   {
+     "S.No": 52,
+     "City": "Kanpur",
+     "Region": "Uttar Pradesh",
+     "Address": "Near KDA Bazaar, Dr Chaudhary Building, Jajmau, Kanpur-208007"
+   },
+   {
+     "S.No": 53,
+     "City": "Lucknow",
+     "Region": "Uttar Pradesh",
+     "Address": "The Cuisine Cafe, Gomti Nagar, Lucknow (UP)"
+   },
+   {
+     "S.No": 54,
+     "City": "Lucknow",
+     "Region": "Uttar Pradesh",
+     "Address": "River Front Cafe, Shop 5A, Marine Drive, Gomti River Front , Lucknow Uttar Pradesh ,226010"
+   },
+   {
+     "S.No": 55,
+     "City": "Noida",
+     "Region": "Uttar Pradesh",
+     "Address": "D 2006, 20th Floor D Tower, Logix Blossom Country, Sector 137, Noida 201304"
+   },
+   {
+     "S.No": 56,
+     "City": "Noida ",
+     "Region": "Uttar Pradesh",
+     "Address": "Sec 122, Opp DPS 201316, Noida (UP)"
+   },
+   {
+     "S.No": 57,
+     "City": "Saharanpur",
+     "Region": "Uttar Pradesh",
+     "Address": "Momos Streat, Delhi Road, opp South City, Saharanpur (UP)"
+   },
+   {
+     "S.No": 58,
+     "City": "Haldwani",
+     "Region": "Uttrakhand",
+     "Address": "Chandramauli Group, 38, Ward 12, Shankar Hospital , Rampur Road, Haldwani"
+   },
+   {
+     "S.No": 59,
+     "City": "Haldwani",
+     "Region": "Uttrakhand",
+     "Address": "D58 Chandramauli Group, 38, Ward 12, Shankar Hospital , Rampur Road, Haldwani "
+   },
+   {
+     "S.No": 60,
+     "City": "Kashipur",
+     "Region": "Uttrakhand",
+     "Address": "Shop no 1, Katoratal Road, Kashipur (Uttrakhand)"
+   },
+   {
+     "S.No": 61,
+     "City": "Vikas Nagar",
+     "Region": "Uttrakhand",
+     "Address": "Scooffle, Near Sanguine Public School, Dehradoon (Uttrakhand)"
+   },
+   {
+     "S.No": 62,
+     "City": "Siliguri",
+     "Region": "West Bengal",
+     "Address": "BBD colony,Post office - Pradhan nagar City- Siliguri Dist :- Darjeeling Pin:- 734003 West Bengal"
+   },
+   {
+     "S.No": 63,
+     "City": "South 24 Parganas",
+     "Region": "West Bengal",
+     "Address": "10/48, Paraui das Para Road, Nabapally 10th lane, Sarsoona, PO:-Sarsoona, Dist:- South 24 Parganas, WB:-0700061"
+   }
+ ]
