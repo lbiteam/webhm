@@ -109,13 +109,17 @@
   },
   "franchiseSection": {
     "badge": "Business Opportunity",
-    "title": "Franchise Models Built To Scale",
-    "description": "Own the world's first honey-based ice cream business, designed for various cities, budgets, and ambitions. Our system-driven, product-led model comes fully supported for consistent growth.",
+    "title": "Our Franchise Models",
+    "description": "Choose the format that fits your budget and location.",
+    "investmentLabel": "Investment",
+    "selectModel": "Select Model",
+    "popularBadge": "POPULAR",
     "models": {
       "basic": {
-        "name": "Ice Cream Cart",
-        "tagline": "Perfect Start",
+        "name": "Mobile Business",
+        "tagline": "Ice Cream Cart",
         "investment": "₹3.20 Lakhs",
+        "cardFeatures": { "1": "Custom branded cart", "2": "Basic product range", "3": "Low investment start" },
         "features": {
           "1": "Small retail outlet",
           "2": "Basic product range",
@@ -126,9 +130,10 @@
       },
       "medium": {
         "name": "Ice Cream Parlour",
-        "tagline": "Growing Business",
+        "tagline": "Flagship Store",
         "investment": "₹10-15 Lakhs",
         "popular": "MOST POPULAR",
+        "cardFeatures": { "1": "Flagship store setup", "2": "Premium interior design", "3": "Regional exclusivity" },
         "features": {
           "1": "Medium-sized store",
           "2": "Full product range",
@@ -141,8 +146,9 @@
       },
       "bigger": {
         "name": "Cafe",
-        "tagline": "Premium Partner",
+        "tagline": "Medium Sized Store",
         "investment": "₹25-30 Lakhs",
+        "cardFeatures": { "1": "Full product range", "2": "Territory exclusivity", "3": "Dedicated account manager" },
         "features": {
           "1": "Flagship store",
           "2": "Complete product portfolio",
@@ -261,11 +267,12 @@
     "franchise": "Franchise",
     "gifting": "Gifting",
     "ourMedia": "Our Media",
+    "privacyPolicy": "Privacy Policy",
     "storeLocator": "Store Locator",
     "contactUs": "Contact Us",
     "followUs": "Follow Us",
     "tagline": "The House of Premium Products",
-    "copyright": "© 2025 Honeyman Foods Private Limited. All rights reserved."
+    "copyright": "© 2026 Honeyman Foods Private Limited. All rights reserved."
   },
   "notFound": {
     "title": "404",
@@ -463,7 +470,7 @@
       },
       "cart2": {
         "name": "Ice Cream Cart",
-        "size": "outoor Scooping"
+        "size": "Indoor Scooping"
         
       },
       "cart3": {

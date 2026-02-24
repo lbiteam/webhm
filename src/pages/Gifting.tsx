@@ -18,21 +18,17 @@ import giftBox5 from "@/assets/gifting/gift-4box.webp";
 import giftBag from "@/assets/gifting/honeyman-packaging.webp";
 
 
-import roseday from "@/assets/calendar/Rose-Day.webp"
-import proposeday from "@/assets/calendar/Propose-Day.webp"
-import chocolateday from "@/assets/calendar/Chocolate-Day.webp"
-import teddyday from "@/assets/calendar/Teddy-Day.webp"
-import promiseday from "@/assets/calendar/Promise-Day.webp"
-import hugday from "@/assets/calendar/Hug-Day.webp"
-import Kissday from "@/assets/calendar/Kiss-Day.webp"
-import valentinesday from "@/assets/calendar/Valentine's-Day.webp"
+import holiDehan from "@/assets/calendar/holi-dehan.webp";
+import holi from "@/assets/calendar/holi.webp";
+
+import gudiPadwa from "@/assets/calendar/GUDI-PADWA.webp";
+import ramdanMubarak from "@/assets/calendar/ramdan mubarak.webp";
 
 import basketImg from "@/assets/gifting/basket.webp";
 import bottlesImg from "@/assets/gifting/bottles.webp";
 import boxesImg from "@/assets/gifting/boxes.webp";
 import roseBackground from "@/assets/gifting/rose-background.webp";
-import rosePetals from "@/assets/gifting/rose-petals.webp";
-import roseflow from "@/assets/gifting/single-rose.webp"
+import rosePetals from "@/assets/gifting/HOLI-BG.webp";
 
 
 const Gifting = () => {
@@ -106,44 +102,8 @@ const Gifting = () => {
     setCurrentSlide((prev) => (prev - 1 + giftingCategories.length) % giftingCategories.length);
   };
 
-  /* Falling roses configuration - different delays and durations for natural flow */
-  const fallingPetals = [
-    { left: '5%', size: 40, duration: 12, delay: 0 },
-    { left: '15%', size: 48, duration: 15, delay: 2 },
-    { left: '25%', size: 48, duration: 14, delay: 4 },
-    { left: '35%', size: 46, duration: 18, delay: 1 },
-    { left: '50%', size: 40, duration: 13, delay: 5 },
-    { left: '60%', size: 44, duration: 11, delay: 3 },
-    { left: '75%', size: 47, duration: 16, delay: 6 },
-    { left: '85%', size: 42, duration: 20, delay: 2 },
-    { left: '92%', size: 45, duration: 14, delay: 4 },
-  ];
-
   return (
     <div className="min-h-screen bg-[#faf8f5] relative">
-      {/* Falling roses overlay - fixed, non-interactive */}
-      <div className="fixed inset-0 pointer-events-none z-50 overflow-hidden">
-        {fallingPetals.map((petal, i) => (
-          <div
-            key={i}
-            className="absolute animate-fall-rose"
-            style={{
-              left: petal.left,
-              top: '-5%',
-              width: petal.size,
-              height: petal.size,
-              animationDuration: `${petal.duration}s`,
-              animationDelay: `${petal.delay}s`,
-            }}
-          >
-            <img
-              src={roseflow}
-              alt=""
-              className="w-full h-full object-contain opacity-70"
-            />
-          </div>
-        ))}
-      </div>
       <Header />
       
       {/* Hero Section */}
@@ -160,7 +120,7 @@ const Gifting = () => {
           <div className="absolute inset-0 " />
         </div>
         {/* Happy Valentine Day - slightly center right */}
-        <div className="absolute right-[10%] sm:right-[12%] md:right-[15%] lg:right-[18%] xl:right-[20%] top-[60%] -translate-y-1/2 z-10 text-right">
+        {/* <div className="absolute right-[10%] sm:right-[12%] md:right-[15%] lg:right-[18%] xl:right-[20%] top-[60%] -translate-y-1/2 z-10 text-right">
           <div
             className="text-white font-medium tracking-wide leading-tight"
             style={{ fontFamily: "Cinzel, serif" }}
@@ -173,7 +133,7 @@ const Gifting = () => {
           <p className="text-white/90 text-xl sm:text-sm mt-3 sm:mt-4 max-w-[180px] sm:max-w-[220px] ml-auto italic font-sans">
              happy valentine's week!
           </p>
-        </div>
+        </div> */}
         {/* <div className="relative z-10 container mx-auto px-6 h-full flex items-center">
           <div className="max-w-2xl pt-20">
             <div className="flex items-center gap-2 mb-6">
@@ -201,26 +161,26 @@ const Gifting = () => {
         {/* <div className="absolute bottom-0 left-0 right-0 h-24 bg-gradient-to-t from-[#faf8f5] to-transparent"></div> */}
       </section>
 
-      {/* Promotional Banner */}
-      <section className="bg-[#a90a1f] py-4 relative overflow-hidden">
-        <div className="absolute inset-0 opacity-20">
-          <div className="absolute top-0 left-10 text-4xl animate-pulse">❤️</div>
-          <div className="absolute top-0 right-10 text-4xl animate-pulse">❤️</div>
-          <div className="absolute top-1 left-1/4 text-2xl">🎈</div>
-          <div className="absolute top-1 right-1/4 text-2xl">🎈</div>
+      {/* Holi Promotional Banner */}
+      <section className="py-4 relative overflow-hidden bg-gradient-to-r from-[#87CEEB] via-[#ffb6c1] to-[#fef08a]">
+        <div className="absolute inset-0 opacity-30">
+          <div className="absolute top-0 left-10 text-3xl animate-pulse">🎨</div>
+          <div className="absolute top-0 right-10 text-3xl animate-pulse">🌈</div>
+          <div className="absolute top-1 left-1/4 text-2xl">🪷</div>
+          <div className="absolute top-1 right-1/4 text-2xl">🌸</div>
           <div className="absolute bottom-1 left-1/3 text-2xl">🎁</div>
-          <div className="absolute bottom-1 right-1/3 text-2xl">🎁</div>
+          <div className="absolute bottom-1 right-1/3 text-2xl">🍯</div>
         </div>
         <div className="container mx-auto px-6 relative z-10">
-          <div className="flex items-center justify-center gap-6 text-white">
-            <div className="hidden md:flex items-center gap-2 bg-[#ffffff] px-4 py-2 rounded-lg border border-[#AD2E0F]/40"> 
-              <span className="text-[#AD2E0F] font-bold text-sm uppercase tracking-wider">Free Delivery</span>
+          <div className="flex items-center justify-center gap-6">
+            <div className="hidden md:flex items-center gap-2 bg-white/90 px-4 py-2 rounded-lg border border-[#c2410c]/30 shadow-sm">
+              <span className="text-amber-700 font-bold text-sm uppercase tracking-wider">Free Delivery</span>
             </div>
-            <p className="text-center font-medium text-sm md:text-base text-[#ffffff]">
-              🎉 <span className="font-bold">{t("giftingPage.promoBanner")}</span> <span className="text-[#ffffff] font-cinzel">{t("giftingPage.freeDelivery")}</span> {t("giftingPage.promoBannerCont")}
+            <p className="text-center font-medium text-sm md:text-base text-[#1e293b]">
+              🎨 <span className="font-bold">Celebrate Holi with Sweet Gifts</span> — <span className="font-cinzel text-[#7c2d12]">Spread colours of joy with honey &amp; sweets. Free delivery</span> on orders above ₹999
             </p>
-            <div className="hidden md:flex items-center gap-2 bg-[#ffffff] px-4 py-2 rounded-lg border border-[#AD2E0F]/40">
-              <span className="text-[#AD2E0F] font-bold text-sm uppercase tracking-wider">Free Delivery</span>
+            <div className="hidden md:flex items-center gap-2 bg-white/90 px-4 py-2 rounded-lg border border-[#c2410c]/30 shadow-sm">
+              <span className="text-amber-700 font-bold text-sm uppercase tracking-wider">Free Delivery</span>
             </div>
           </div>
         </div>
@@ -228,30 +188,24 @@ const Gifting = () => {
 
       
 
-      {/* Celebration Calendar */}
+      {/* Festival & occasion calendar – fixed labels (no language switch) */}
       <section className="py-16 bg-[#faf8f5]">
         <div className="container mx-auto px-6">
           <div className="text-center mb-12">
             <h2 className="font-display text-3xl md:text-4xl text-[#2a1810] mb-3">
-              {t("giftingPage.celebrationsTitle")}
+              Festivals &amp; Occasions
             </h2>
             <p className="text-[#5a4a42]">
-              {t("giftingPage.celebrationsSubtitle")}
+              Sweeten the moments that matter
             </p>
           </div>
 
           <div className="grid grid-cols-2 md:grid-cols-4 gap-4 md:gap-6">
             {[
-
-              { date: "07", month: "FEB", name: t("giftingPage.celebrations.roseday"), color: "from-[#a90a1f] to-[#c0204d]" },
-              { date: "08", month: "FEB", name: t("giftingPage.celebrations.proposeday"), color: "from-[#a90a1f] to-[#c0204d]" },
-              { date: "09", month: "FEB", name: t("giftingPage.celebrations.chocolateday"), color: "from-[#a90a1f] to-[#c0204d]" },
-              { date: "10", month: "FEB", name: t("giftingPage.celebrations.teddyday"), color: "from-[#a90a1f] to-[#c0204d]" },
-              { date: "11", month: "FEB", name: t("giftingPage.celebrations.promiseday"), color: "from-[#a90a1f] to-[#c0204d]" },
-              { date: "12", month: "FEB", name: t("giftingPage.celebrations.hugday"), color: "from-[#a90a1f] to-[#c0204d]" },
-              { date: "13", month: "FEB", name: t("giftingPage.celebrations.kissday"), color: "from-[#a90a1f] to-[#c0204d]" },  
-              { date: "14", month: "FEB", name: t("giftingPage.celebrations.valentinesday"), color: "from-[#a90a1f] to-[#c0204d]" },
-          
+              { date: "03", month: "MAR", ord: "RD", name: "Holika Dahan", image: holiDehan, color: "from-amber-500 to-orange-500" },
+              { date: "04", month: "MAR", ord: "TH", name: "Holi", image: holi, color: "from-amber-500 to-orange-500" },
+              { date: "19", month: "MAR", ord: "TH", name: "Gudi Padwa", image: gudiPadwa, color: "from-amber-500 to-amber-600" },
+              { date: "20", month: "MAR", ord: "TH", name: "Ramadan Mubarak", image: ramdanMubarak, color: "from-amber-500 to-amber-600" },
             ].map((celebration, index) => (
               <div 
                 key={index}
@@ -259,22 +213,13 @@ const Gifting = () => {
               >
                 <div className={`absolute top-0 left-0 right-0 bg-gradient-to-r ${celebration.color} text-white text-center py-2 text-xs font-bold uppercase tracking-wider`}>
                   <span className="text-lg font-cinzel">{celebration.date}</span>
-                  <sup className="text-[10px] ml-0.5 font-cinzel">{celebration.month === "DEC" ? "TH" : celebration.month === "JAN" && celebration.date === "1" ? "ST" : "TH"}</sup>
+                  <sup className="text-[10px] ml-0.5 font-cinzel">{celebration.ord}</sup>
                   <span className="ml-1 font-cinzel">{celebration.month}</span>
                 </div>
                 <div className="pt-14 pb-4 px-4">
                   <div className="aspect-[4/3] bg-gradient-to-br from-[#f5f0eb] to-[#e8e0d8] rounded-xl mb-4 flex items-center justify-center overflow-hidden group-hover:scale-105 transition-transform duration-300">
                     <img 
-                      src={
-                        index === 0 ? roseday :
-                        index === 1 ? proposeday :
-                        index === 2 ? chocolateday :
-                        index === 3 ? teddyday :
-                        index === 4 ? promiseday :
-                        index === 5 ? hugday :
-                        index === 6 ? Kissday :
-                        index === 7 ? valentinesday : ""
-                      }
+                      src={celebration.image}
                       alt={celebration.name}
                       className="w-full h-full object-cover"
                     />
@@ -293,10 +238,10 @@ const Gifting = () => {
 
       {/* What We Offer */}
       <section 
-          className="py-20 relative bg-cover bg-center bg-no-repeat"
+          className="py-20 relative bg-cover  bg-no-repeat"
           style={{ backgroundImage: `url(${roseBackground})` }}
         >
-        <div className="absolute inset-0 bg-[#faf8f5]/90"></div>
+        <div className="absolute inset-0 bg-[#faf8f5]/80"></div>
         <div className="container mx-auto px-6 relative z-10">
           <div className="text-center mb-14">
             <div className="flex items-center justify-center gap-4 mb-6">
@@ -424,7 +369,7 @@ const Gifting = () => {
         className="py-24 relative bg-cover bg-center bg-no-repeat"
         style={{ backgroundImage: `url(${rosePetals})` }}
       >
-        <div className="absolute inset-0 bg-[#faf8f5]/80"></div>
+        <div className="absolute inset-0 bg-[#faf8f5]/60"></div>
         <div className="container mx-auto px-6 relative z-10">
           <div className="text-center mb-16">
             <span className="text-[#dd385d] font-medium tracking-widest uppercase text-sm">{t("giftingPage.categories.badge")}</span>
@@ -531,7 +476,7 @@ const Gifting = () => {
       </section>
 
       {/* Why Choose Section */}
-      <section className="py-24 bg-[#710002]">
+      <section className="py-24 bg-gradient-to-r from-[#87CEEB] via-[#ffb6c1] to-[#710002]">
         <div className="container mx-auto px-6">
           <div className="text-center mb-16">
             <h2 className="font-display text-4xl md:text-5xl text-white mb-4">
@@ -604,12 +549,12 @@ const Gifting = () => {
       </section>
 
       {/* CTA Section */}
-      <section className="py-20 bg-[#f1747c]">
+      <section className="py-20 bg-gradient-to-r from-[#87CEEB] via-[#ffb6c1] to-[#fef08a]">
         <div className="container mx-auto px-6 text-center">
-          <h2 className="font-display text-3xl md:text-5xl text-white mb-6">
+          <h2 className="font-display text-3xl md:text-5xl text-[#83171a] mb-6">
             {t("giftingPage.ctaTitle")}
           </h2>
-          <p className="text-white/90 max-w-xl mx-auto mb-10 text-lg">
+          <p className="text-[#83171a]/90 max-w-xl mx-auto mb-10 text-lg">
             {t("giftingPage.ctaDescription")}
           </p>
           <div className="flex flex-wrap justify-center gap-4">

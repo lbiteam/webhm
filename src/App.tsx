@@ -10,8 +10,12 @@ import Contact from "./pages/Contact";
 import Franchise from "./pages/Franchise";
 import Gifting from "./pages/Gifting";
 import Products from "./pages/Products";
+import PrivacyPolicy from "./pages/PrivacyPolicy";
 import NotFound from "./pages/NotFound";
-import FloatingOrderButton from "./components/FloatingOrderButton";
+import Blog from "./pages/Blog";
+import HoneyBenefits from "./pages/blog/HoneyBenefits";
+import OrganicVsWildHoney from "./pages/blog/OrganicVsWildHoney";
+import HowToIdentifyPureHoney from "./pages/blog/HowToIdentifyPureHoney";
 import AnalyticsTracker from "./components/AnalyticsTracker";
 
 const queryClient = new QueryClient();
@@ -31,10 +35,14 @@ const App = () => (
             <Route path="/franchise" element={<Franchise />} />
             <Route path="/gifting" element={<Gifting />} />
             <Route path="/products" element={<Products />} />
+            <Route path="/privacy-policy" element={<PrivacyPolicy />} />
+            {/* <Route path="/blog" element={<Blog />} />
+          <Route path="/blog/7-benefits-of-honey" element={<HoneyBenefits />} />
+          <Route path="/blog/organic-vs-wild-honey" element={<OrganicVsWildHoney />} />
+          <Route path="/blog/how-to-identify-pure-honey" element={<HowToIdentifyPureHoney />} /> */}
             {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
             <Route path="*" element={<NotFound />} />
           </Routes>
-          <FloatingOrderButton />
         </BrowserRouter>
       </TooltipProvider>
     </LanguageProvider>

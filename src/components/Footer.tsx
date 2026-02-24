@@ -14,7 +14,7 @@ const Footer = () => {
     { name: t("footer.aboutUs"), href: "/about-us" },
     { name: t("footer.franchise"), href: "/franchise" },
     { name: t("footer.gifting"), href: "/gifting" },
-    { name: t("footer.ourMedia"), href: "/about-us#media-coverage" },
+    { name: t("footer.privacyPolicy"), href: "/privacy-policy" },
     { name: t("footer.storeLocator"), href: "/franchise#store-locator" },
     { name: t("footer.contactUs"), href: "/contact-us" },
   ];
@@ -31,7 +31,7 @@ const Footer = () => {
       <div 
         className="relative pt-12 pb-8"
         style={{
-          backgroundColor: isGiftingPage ? '#710002' : '#ffe248',
+          backgroundColor: isGiftingPage ? '#83171a' : '#ffe248',
           backgroundImage: isGiftingPage ? 'none' : `url(${honeyDipper})`,
           backgroundSize: 'cover',
           backgroundPosition: 'center',
@@ -139,7 +139,7 @@ const Footer = () => {
       </div>
 
       {/* Copyright Bar */}
-      <div className={`py-4 ${isGiftingPage ? 'bg-[#f1747c]' : 'bg-[#f9dc8d]'}`}>
+      <div className={`py-4 ${isGiftingPage ? 'bg-gradient-to-r from-[#87CEEB] via-[#ffb6c1] to-[#fef08a]' : 'bg-[#f9dc8d]'}`}>
         <div className="container mx-auto px-6">
           <p className="text-center text-[#2a1810] text-xs md:text-sm font-medium">
             {t("footer.copyright")}

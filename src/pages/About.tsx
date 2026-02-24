@@ -22,7 +22,7 @@ import Amazon from "@/assets/Shopping logo/amazon-logo.webp";
 import Snapdeal from "@/assets/Shopping logo/snapdeal-logo.webp";
 import blinkit from "@/assets/Shopping logo/blinkit-logo.webp";
 import store from "@/assets/Shopping logo/hm.png";
-
+import Honeyjourney from "@/components/Honeyjourney";
 // Catalogue & Media
 import catalogueImage from "@/assets/honeyman-catalogue.webp";
 import mediaAni from "@/assets/media/media-ani.webp";
@@ -41,6 +41,7 @@ import socialPost9 from "@/assets/about-us/honeyman-hyderbad.webp";
 import socialPost10 from "@/assets/about-us/honeyman-multiflower.webp";
 import socialPost11 from "@/assets/about-us/honeyman-sauces.webp";
 import socialPost12 from "@/assets/about-us/honeyman-world-no.1.webp";
+
 
 const About = () => {
   const { t } = useLanguage();
@@ -274,6 +275,8 @@ const mediaLogos = [
         </div>
       </section>
 
+      <Honeyjourney />
+
       {/* Combined Vision & Features Section */}
       <section className="py-20 bg-cream relative overflow-hidden">
         {/* Background image with shading - positioned to show bottom of image */}
@@ -324,77 +327,12 @@ const mediaLogos = [
         </div>
       </section>
 
-      {/* Catalogue Download Section */}
-      <section className="py-16 bg-[#8c3100]/90 relative overflow-hidden">
-        <div className="absolute inset-0 opacity-10">
-          <div className="absolute top-10 left-10 w-32 h-32 border border-honey rounded-full" />
-          <div className="absolute bottom-10 right-10 w-48 h-48 border border-honey rounded-full" />
-        </div>
-        
-        <div className="container mx-auto px-6 relative z-10">
-          {/* floating bees over the catalogue area */}
-          <Bee className="absolute -left-6 top-8 z-20 animate-float" size={40} />
-          <Bee className="absolute right-10 top-6 z-20 animate-float" size={32} />
-          <Bee className="absolute left-1/2 -translate-x-1/2 bottom-6 z-20 animate-float" size={28} />
-          <div className="grid md:grid-cols-2 gap-12 items-center">
-            <div className="relative max-w-sm mx-auto md:mx-0">
-              <div className="absolute -inset-4 bg-honey/30 rounded-2xl transform rotate-6" />
-              <img 
-                src={catalogueImage} 
-                alt="Honeyman Catalogue" 
-                className="relative rounded-xl shadow-2xl w-full"
-              />
-            </div>
-            
-            <div className="text-center md:text-left space-y-6">
-              <h2 className="font-display text-4xl font-bold text-white">
-                {t("aboutPage.catalogueTitle")}
-              </h2>
-              <p className="text-white/80 text-lg leading-relaxed">
-                {t("aboutPage.catalogueDescription")}
-              </p>
-              <a 
-                href="https://honeymanstore.com/wp-content/uploads/2025/12/Honeyman-Magazine-1.pdf"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="inline-flex items-center gap-3 bg-honey hover:bg-honey-dark text-foreground font-semibold px-8 py-4 rounded-full transition-all shadow-lg hover:shadow-xl"
-              >
-                <Download className="w-5 h-5" />
-                {t("aboutPage.downloadCatalogue")}
-              </a>
-            </div>
-          </div>
-        </div>
-      </section>
+  
+
+    
 
       {/* Where We Are - Platform Logos */}
-      <section className="py-20 bg-gradient-to-b from-honey/10 to-cream relative overflow-hidden">
-        <div className="container mx-auto px-6">
-          <div className="text-center mb-12">
-            <h2 className="font-display text-4xl font-bold text-primary mb-2">{t("aboutPage.platformsTitle")}</h2>
-          </div>
-          
-          <div className="flex flex-wrap justify-center items-center gap-12 max-w-5xl mx-auto">
-            {platforms.map((platform) => (
-              <div 
-                key={platform.name}
-                className="group relative flex items-center justify-center h-24 transition-all duration-300 hover:scale-110 cursor-pointer"
-              >
-                <img 
-                  src={platform.logo} 
-                  alt={platform.name}
-                  onClick={() => window.open(platform.link, '_blank')}
-                  className="max-h-20 max-w-48 object-contain drop-shadow-md group-hover:drop-shadow-lg rounded-lg"
-                />
-              </div>
-            ))}
-          </div>
-          
-          <div className="text-center mt-12">
-            <p className="text-foreground font-semibold text-lg">{t("aboutPage.orderNow")}</p>
-          </div>
-        </div>
-      </section>
+    
 
       {/* Awards & Recognition */}
       <section className="relative overflow-hidden bg-[#8c3100]/90">
@@ -570,6 +508,49 @@ const mediaLogos = [
                   <p className="text-xs text-muted-foreground">Cities Reached</p>
                 </div>
               </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+        {/* Catalogue Download Section */}
+        <section className="py-16 bg-[#8c3100]/90 relative overflow-hidden">
+        <div className="absolute inset-0 opacity-10">
+          <div className="absolute top-10 left-10 w-32 h-32 border border-honey rounded-full" />
+          <div className="absolute bottom-10 right-10 w-48 h-48 border border-honey rounded-full" />
+        </div>
+        
+        <div className="container mx-auto px-6 relative z-10">
+          {/* floating bees over the catalogue area */}
+          <Bee className="absolute -left-6 top-8 z-20 animate-float" size={40} />
+          <Bee className="absolute right-10 top-6 z-20 animate-float" size={32} />
+          <Bee className="absolute left-1/2 -translate-x-1/2 bottom-6 z-20 animate-float" size={28} />
+          <div className="grid md:grid-cols-2 gap-12 items-center">
+            <div className="relative max-w-sm mx-auto md:mx-0">
+              <div className="absolute -inset-4 bg-honey/30 rounded-2xl transform rotate-6" />
+              <img 
+                src={catalogueImage} 
+                alt="Honeyman Catalogue" 
+                className="relative rounded-xl shadow-2xl w-full"
+              />
+            </div>
+            
+            <div className="text-center md:text-left space-y-6">
+              <h2 className="font-display text-4xl font-bold text-white">
+                {t("aboutPage.catalogueTitle")}
+              </h2>
+              <p className="text-white/80 text-lg leading-relaxed">
+                {t("aboutPage.catalogueDescription")}
+              </p>
+              <a 
+                href="https://honeymanstore.com/wp-content/uploads/2025/12/Honeyman-Magazine-1.pdf"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex items-center gap-3 bg-honey hover:bg-honey-dark text-foreground font-semibold px-8 py-4 rounded-full transition-all shadow-lg hover:shadow-xl"
+              >
+                <Download className="w-5 h-5" />
+                {t("aboutPage.downloadCatalogue")}
+              </a>
             </div>
           </div>
         </div>
