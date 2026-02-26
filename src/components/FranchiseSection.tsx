@@ -4,7 +4,8 @@ import { X } from "lucide-react";
 import Bee from "@/components/Bee";
 import iceCreamCart from "@/assets/franchise/ice-cream-cart.webp";
 import iceCreamParlour from "@/assets/franchise/ice-cream-parlour.webp";
-import cafeBanner from "@/assets/website-banners/mission-2026-banner/mid.webp";
+import cafeBanner from "@/assets/cafe-image.webp";
+import sectionBg from "@/assets/website-banners/mission-2026-banner/banner.webp";
 
 type ModelKey = "basic" | "medium" | "bigger";
 
@@ -27,7 +28,7 @@ const modelMeta: Record<
   basic: {
     name: "Ice Cream Cart",
     tagline: "Affordable Investment",
-    investment: "₹3.20 Lakhs",
+    investment: "₹2.75 - 3.2L",
     cardFeatures: [
       "Custom branded cart",
       "Basic product range",
@@ -43,8 +44,8 @@ const modelMeta: Record<
   },
   medium: {
     name: "Ice Cream Parlour",
-    tagline: "Flagship Store",
-    investment: "₹10-15 Lakhs",
+    tagline: "Mid-size Investment",
+    investment: "₹8-15L",
     cardFeatures: [
       "Flagship parlour setup",
       "Premium interior design",
@@ -62,8 +63,8 @@ const modelMeta: Record<
   },
   bigger: {
     name: "Cafe Honeyman",
-    tagline: "Premium Cafe ",
-    investment: "₹25-30 Lakhs",
+    tagline: "Premium Investment",
+    investment: "₹21-25L",
     cardFeatures: [
       "Full product range",
       "Territory exclusivity",
@@ -86,33 +87,6 @@ const FranchiseSection = () => {
   const { pathname } = useLocation();
   const [selectedModel, setSelectedModel] = useState<ModelKey | null>(null);
 
-  const models = [
-    {
-      key: "basic",
-      popular: false,
-      headerBg: "bg-stone-700",
-      titleColor: "text-white",
-      subtitleColor: "text-honey",
-      buttonStyle: "border border-honey text-honey hover:bg-honey hover:text-black",
-    },
-    {
-      key: "medium",
-      popular: true,
-      headerBg: "bg-honey",
-      titleColor: "text-black",
-      subtitleColor: "text-black/75",
-      buttonStyle: "bg-honey text-black font-bold hover:bg-honey-dark",
-    },
-    {
-      key: "bigger",
-      popular: false,
-      headerBg: "bg-stone-700",
-      titleColor: "text-white",
-      subtitleColor: "text-honey",
-      buttonStyle: "border border-honey text-honey hover:bg-honey hover:text-black",
-    },
-  ] as const;
-
   useEffect(() => {
     const onEscape = (e: KeyboardEvent) => {
       if (e.key === "Escape") setSelectedModel(null);
@@ -128,72 +102,105 @@ const FranchiseSection = () => {
   }, [selectedModel]);
 
   return (
-    <section id="franchise-models" className="py-20 bg-[#fff7ed] text-white">
-      <div className="container mx-auto px-6">
-        <div className="text-center mb-16">
-          <h2 className="section-title text-4xl md:text-5xl">
-            Our Franchise Models
-          </h2>
-          <p className="text-gray-400 mt-2">
-            Choose the format that fits your budget and location.
-          </p>
-        </div>
-
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-          {models.map((m) => {
-            const meta = modelMeta[m.key];
-            const cardFeatures = meta.cardFeatures.length
-              ? meta.cardFeatures
-              : meta.features.slice(0, 3);
-            return (
-              <div
-                key={m.key}
-                className={`bg-stone-800 rounded-2xl overflow-hidden border transition transform hover:-translate-y-2 ${
-                  m.popular
-                    ? "border-2 border-honey scale-105 shadow-2xl relative"
-                    : "border-stone-700 hover:border-honey"
-                }`}
-              >
-                {m.popular && (
-                  <div className="absolute top-0 right-0 bg-honey text-black text-xs font-bold px-3 py-1">
-                    MOST POPULAR
-                  </div>
-                )}
-                <div className={`${m.headerBg} p-4 text-center`}>
-                  <h3 className={`text-xl font-bold ${m.titleColor}`}>{meta.name}</h3>
-                  <p className={`text-sm font-semibold ${m.subtitleColor}`}>
-                    {meta.tagline}
-                  </p>
+    <section
+      id="franchise-models"
+      className="py-16 md:py-20 text-white relative bg-cover bg-center bg-no-repeat"
+      style={{
+        backgroundImage: `linear-gradient(rgba(15, 15, 15, 0.85), rgba(15, 15, 15, 0.85)), url(${sectionBg})`,
+      }}
+    >
+      <div className="container mx-auto px-4 md:px-6 max-w-6xl">
+        <div className="flex flex-col lg:flex-row gap-8 lg:gap-10 items-stretch">
+          {/* Left column – premium card (Cafe Honeyman) */}
+          <div className="flex-[1.1] flex">
+            <div className="w-full bg-[#f5f0e1] border-4 border-[#f0980a] rounded-xl text-[#222] flex flex-col overflow-hidden shadow-xl">
+              <div className="relative p-1">
+                <img
+                  src={modelImages.bigger}
+                  alt={modelMeta.bigger.name}
+                  className="w-full h-[280px] sm:h-[320px] md:h-[380px] object-cover rounded-t-lg object-top"
+                />
+                <div className="absolute bottom-0 left-1/2 -translate-x-1/2 translate-y-1/2 bg-[#f0980a] text-white font-semibold text-lg sm:text-xl md:text-2xl px-4 py-2 sm:px-6 sm:py-2.5 rounded-full whitespace-nowrap z-10 shadow-md">
+                  {modelMeta.bigger.name.toUpperCase()}
                 </div>
-                <div className="p-8">
-                  <div className="text-center mb-6">
-                    <span className="text-gray-400 text-sm">
-                      Investment
-                    </span>
-                    <div className="text-3xl font-bold text-white">
-                      {meta.investment}
-                    </div>
-                   
+              </div>
+              <div className="pt-10 pb-6 px-6 flex flex-col flex-1 items-center text-center">
+                <h3 className="text-2xl sm:text-3xl md:text-4xl font-bold mb-2">{modelMeta.bigger.investment}</h3>
+                <p className="text-sm text-[#444] flex-1 max-w-sm">{modelMeta.bigger.tagline}</p>
+                <button
+                  type="button"
+                  onClick={() => setSelectedModel("bigger")}
+                  className="mt-5 bg-[#f0980a] hover:bg-[#3a4a35] text-white font-semibold text-xs uppercase tracking-wide py-2.5 px-6 rounded-full transition"
+                >
+                  Know More
+                </button>
+              </div>
+            </div>
+          </div>
+
+          {/* Right column – header + two small cards */}
+          <div className="flex-1 flex flex-col justify-between gap-6 lg:gap-8">
+            <div className="text-center">
+              <h2 className="font-display text-2xl sm:text-3xl md:text-4xl uppercase tracking-wide mb-3">
+                Our Franchise Models
+              </h2>
+              <p className="text-sm text-gray-300 max-w-[90%] mx-auto uppercase leading-relaxed">
+                Choose the format that fits your budget and location. Join India&apos;s trusted honey‑sweetened ice cream &amp; cafe brand.
+              </p>
+            </div>
+
+            <div className="flex flex-col sm:flex-row gap-4 sm:gap-5 flex-1">
+              {/* Small card – Ice Cream Cart */}
+              <div className="flex-1 bg-[#f5f0e1] border-4 border-[#f0980a] rounded-xl text-[#222] flex flex-col overflow-hidden shadow-lg">
+                <div className="relative p-1">
+                  <img
+                    src={modelImages.basic}
+                    alt={modelMeta.basic.name}
+                    className="w-full h-[160px] sm:h-[180px] object-cover rounded-t-lg"
+                  />
+                  <div className="absolute bottom-0 left-1/2 -translate-x-1/2 translate-y-1/2 bg-[#f0980a] text-white font-semibold text-sm px-3 py-1.5 rounded-full whitespace-nowrap z-10 shadow-md">
+                    {modelMeta.basic.name.toUpperCase()}
                   </div>
-                  <ul className="space-y-3 text-gray-300 text-sm mb-8">
-                    {cardFeatures.map((feature, i) => (
-                      <li key={i} className="flex items-start">
-                        <i className="fas fa-check text-honey mt-1 mr-2 flex-shrink-0" />
-                        {feature}
-                      </li>
-                    ))}
-                  </ul>
+                </div>
+                <div className="pt-8 pb-4 px-4 flex flex-col flex-1 items-center text-center">
+                  <h3 className="text-xl sm:text-2xl font-bold mb-1">{modelMeta.basic.investment}</h3>
+                  <p className="text-xs text-[#444] flex-1">{modelMeta.basic.tagline}</p>
                   <button
                     type="button"
-                    onClick={() => setSelectedModel(m.key)}
-                    className={`block w-full text-center py-3 rounded transition ${m.buttonStyle}`}
+                    onClick={() => setSelectedModel("basic")}
+                    className="mt-4 bg-[#f0980a] hover:bg-[#3a4a35] text-white font-semibold text-xs uppercase tracking-wide py-2 px-5 rounded-full transition"
                   >
                     Know More
                   </button>
                 </div>
               </div>
-            );
-          })}
+
+              {/* Small card – Ice Cream Parlour */}
+              <div className="flex-1 bg-[#f5f0e1] border-4 border-[#f0980a] rounded-xl text-[#222] flex flex-col overflow-hidden shadow-lg">
+                <div className="relative p-1">
+                  <img
+                    src={modelImages.medium}
+                    alt={modelMeta.medium.name}
+                    className="w-full h-[160px] sm:h-[180px] object-cover rounded-t-lg"
+                  />
+                  <div className="absolute bottom-0 left-1/2 -translate-x-1/2 translate-y-1/2 bg-[#f0980a] text-white font-semibold text-sm px-3 py-1.5 rounded-full whitespace-nowrap z-10 shadow-md">
+                    {modelMeta.medium.name.toUpperCase()}
+                  </div>
+                </div>
+                <div className="pt-8 pb-4 px-4 flex flex-col flex-1 items-center text-center">
+                  <h3 className="text-xl sm:text-2xl font-bold mb-1">{modelMeta.medium.investment}</h3>
+                  <p className="text-xs text-[#444] flex-1">{modelMeta.medium.tagline}</p>
+                  <button
+                    type="button"
+                    onClick={() => setSelectedModel("medium")}
+                    className="mt-4 bg-[#f0980a] hover:bg-[#3a4a35] text-white font-semibold text-xs uppercase tracking-wide py-2 px-5 rounded-full transition"
+                  >
+                    Know More
+                  </button>
+                </div>
+              </div>
+            </div>
+          </div>
         </div>
       </div>
 
@@ -348,7 +355,7 @@ const FranchiseSection = () => {
                       What we look for in a parlour partner
                     </h3>
                     <ul className="list-disc pl-5 space-y-1">
-                      <li>250–600 sq. ft. carpet area in a high‑potential location.</li>
+                      <li>150–450 sq. ft. carpet area in a high‑potential location.</li>
                       <li>High streets, malls, food courts or dense residential clusters.</li>
                       <li>Ability to manage a small team of 3–5 people.</li>
                       <li>Drive to deliver a premium guest experience.</li>
@@ -396,7 +403,7 @@ const FranchiseSection = () => {
                       Ideal Cafe Honeyman partner
                     </h3>
                     <ul className="list-disc pl-5 space-y-1">
-                      <li>800–1,500 sq. ft. in a prime, visible location.</li>
+                      <li>500 - 800 SQ FT in a prime, visible location.</li>
                       <li>High streets, tech parks, malls or premium neighbourhoods.</li>
                       <li>Ability to lead a 6–10 member hospitality team.</li>
                       <li>Vision to build a community‑driven, premium cafe destination.</li>

@@ -55,9 +55,9 @@ const Index = () => {
         <OuroutletsGallery />
         <PartnerSuccessStoriesSection />
         {/* <RecentBlogs /> */}
-       
-        <FAQSection />
         <HoneymanStoreSection />
+        <FAQSection />
+      
         <ReadyToStartSection />
 
         {/* Commented out: previous home sections */}

@@ -1,4 +1,4 @@
-import { useState, useEffect } from "react";
+import { useState, useEffect, useRef } from "react";
 import { ChevronLeft, ChevronRight, Gift, Heart, Briefcase, Sparkles, Leaf, Star } from "lucide-react";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
@@ -87,11 +87,121 @@ const Gifting = () => {
     },
   ];
 
+  const holiCanvasRef = useRef<HTMLDivElement>(null);
+
   useEffect(() => {
     const timer = setInterval(() => {
       setCurrentSlide((prev) => (prev + 1) % giftingCategories.length);
     }, 5000);
     return () => clearInterval(timer);
+  }, []);
+
+  /* Holi premium animation overlay – falling particles + click burst */
+  useEffect(() => {
+    const container = holiCanvasRef.current;
+    if (!container) return;
+
+    const colors = [
+      "rgba(255,77,109,0.6)",
+      "rgba(255,190,11,0.6)",
+      "rgba(131,56,236,0.6)",
+      "rgba(58,134,255,0.6)",
+      "rgba(255,0,110,0.6)",
+    ];
+
+    const canvas = document.createElement("canvas");
+    container.appendChild(canvas);
+    const ctx = canvas.getContext("2d");
+    if (!ctx) return;
+
+    const setCanvasSize = () => {
+      canvas.width = window.innerWidth;
+      canvas.height = window.innerHeight;
+    };
+    setCanvasSize();
+
+    let particles: { x: number; y: number; radius: number; color: string; speedY: number; speedX: number }[] = [];
+
+    const initParticles = () => {
+      particles = [];
+      for (let i = 0; i < 60; i++) {
+        particles.push({
+          x: Math.random() * canvas.width,
+          y: Math.random() * canvas.height,
+          radius: Math.random() * 6 + 3,
+          color: colors[Math.floor(Math.random() * colors.length)],
+          speedY: Math.random() * 0.5 + 0.3,
+          speedX: (Math.random() - 0.5) * 0.4,
+        });
+      }
+    };
+    initParticles();
+
+    let rafId: number;
+    const animate = () => {
+      ctx.clearRect(0, 0, canvas.width, canvas.height);
+      particles.forEach((p) => {
+        p.y += p.speedY;
+        p.x += p.speedX;
+        if (p.y > canvas.height) {
+          p.y = -10;
+          p.x = Math.random() * canvas.width;
+        }
+        ctx.beginPath();
+        ctx.arc(p.x, p.y, p.radius, 0, Math.PI * 2);
+        ctx.fillStyle = p.color;
+        ctx.shadowColor = p.color;
+        ctx.shadowBlur = 20;
+        ctx.fill();
+      });
+      rafId = requestAnimationFrame(animate);
+    };
+    animate();
+
+    const onResize = () => {
+      setCanvasSize();
+      initParticles();
+    };
+    window.addEventListener("resize", onResize);
+
+    const onClick = (e: MouseEvent) => {
+      for (let i = 0; i < 25; i++) {
+        const sparkle = document.createElement("div");
+        sparkle.style.cssText = [
+          "position:fixed",
+          "width:8px",
+          "height:8px",
+          "border-radius:50%",
+          "pointer-events:none",
+          "z-index:10000",
+          "left:" + e.clientX + "px",
+          "top:" + e.clientY + "px",
+          "background:" + colors[Math.floor(Math.random() * colors.length)],
+        ].join(";");
+        document.body.appendChild(sparkle);
+        const angle = Math.random() * 2 * Math.PI;
+        const distance = Math.random() * 120;
+        sparkle.animate(
+          [
+            { transform: "translate(0,0)", opacity: 1 },
+            {
+              transform: `translate(${Math.cos(angle) * distance}px, ${Math.sin(angle) * distance}px)`,
+              opacity: 0,
+            },
+          ],
+          { duration: 900, easing: "ease-out" }
+        );
+        setTimeout(() => sparkle.remove(), 900);
+      }
+    };
+    document.addEventListener("click", onClick);
+
+    return () => {
+      cancelAnimationFrame(rafId);
+      window.removeEventListener("resize", onResize);
+      document.removeEventListener("click", onClick);
+      if (container.contains(canvas)) container.removeChild(canvas);
+    };
   }, []);
 
   const nextSlide = () => {
@@ -104,6 +214,12 @@ const Gifting = () => {
 
   return (
     <div className="min-h-screen bg-[#faf8f5] relative">
+      {/* Holi premium animation overlay – full page */}
+      <div
+        ref={holiCanvasRef}
+        className="fixed inset-0 w-full h-full pointer-events-none z-[9999]"
+        aria-hidden
+      />
       <Header />
       
       {/* Hero Section */}

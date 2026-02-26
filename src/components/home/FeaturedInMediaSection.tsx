@@ -23,7 +23,7 @@ const MEDIA_LINKS: { name: string; link: string }[] = [
   { name: "Google News", link: "https://news.google.com/search?q=Honeyman%20Revolutionizes&hl=en-IN&gl=IN&ceid=IN:en" },
   { name: "UP 18 News", link: "https://up18news.com/honeyman-revolutionizes-india-food-industry-with-honey-sweetned-products-announces-nationwide-franchise-expansion/" },
   { name: "RepublicNews Today", link: "https://republicnewstoday.com/honeyman-revolutionizes-indias-food-industry-with-honey-sweetened-products-announces-nationwide-franchise-expansion/" },
-  { name: "News21", link: "#" },
+  { name: "News21", link: "" },
   { name: "Sangri Today", link: "https://www.sangritoday.com/spotlight/honeyman-revolutionizes-indias-food-industry-with-honey-sweetened-products-announces-nationwide-franchise-expansion" },
   { name: "Startup News", link: "https://startupnews.fyi/2025/07/28/honeyman-revolutionizes-indias-food-industry-with-honey-sweetened-products-announces-nationwide-franchise-expansion/" },
   { name: "Daily Bulletin", link: "https://dailybulletin.co.in/index.php/business/honeyman-revolutionizes-indias-food-industry-with-honey-sweetened-products-announces-nationwide-franchise-expansion/" },
@@ -52,7 +52,7 @@ for (const path in mediaLogoModules) {
   const match = mediaBySlug[slug];
   mediaItems.push({
     src,
-    link: match ? match.link : "#",
+    link: match ? match.link : "",
     alt: match ? match.name : filename,
   });
 }
@@ -61,7 +61,7 @@ const FeaturedInMediaSection = () => (
   <section className="py-16 bg-white border-t border-amber-100 overflow-hidden">
     <div className="container mx-auto px-6 mb-10">
       <div className="text-center">
-        <span className="text-amber-500 text-xs font-bold uppercase tracking-widest bg-amber-50 px-4 py-1 rounded-full border border-amber-100">
+        <span className="section-title text-4xl md:text-5xl">
           Featured In Major Media
         </span>
       </div>

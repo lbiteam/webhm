@@ -16,7 +16,7 @@ const testimonials = [
   {
     quote:
       "I started with a single cart in 2023. The ROI was so quick I upgraded to a Parlour within 11 months. The product quality is unmatched.",
-    name: "Rajesh Kumar",
+    name: "Pranav Chaudhary",
     location: "Hyderabad",
     initials: "RK",
     stars: 5,
@@ -25,7 +25,7 @@ const testimonials = [
   {
     quote:
       "The support team is incredible. From interior design to the grand opening, they handled everything. I just had to focus on sales.",
-    name: "Priya Desai",
+    name: "Nitu Chopra",
     location: "Gurgaon",
     initials: "PD",
     stars: 5,
@@ -34,8 +34,8 @@ const testimonials = [
   {
     quote:
       "We run a Cafe model in Bangalore. The best part is the automated supply chain. We never run out of stock even on weekends.",
-    name: "Amit Menon",
-    location: "Bangalore",
+    name: "Sachin segal",
+    location: "Nanded",
     initials: "AM",
     stars: 5,
     half: true,

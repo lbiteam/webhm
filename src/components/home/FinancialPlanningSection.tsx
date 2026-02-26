@@ -114,14 +114,14 @@ const FinancialPlanningSection = ({ inModal }: FinancialPlanningSectionProps) =>
                       type === "parlour" ? "bg-amber-200 text-amber-900" : "bg-amber-100 text-amber-800"
                     }`}
                   >
-                    {type === "cart" ? "₹3-5L" : type === "parlour" ? "₹10-15L" : "₹20-30L"}
+                    {type === "cart" ? "₹2.75-3.2L" : type === "parlour" ? "₹8-15L" : "₹21-25L"}
                   </span>
                 </div>
                 <h3 className="font-bold text-xl text-gray-900">
                   {type === "cart" ? "Ice Cream Cart" : type === "parlour" ? "Ice Cream Parlour" : "Cafe Store"}
                 </h3>
                 <p className="text-sm text-gray-500 mb-3">
-                  {type === "cart" ? "30" : type === "parlour" ? "150" : "400+"} sq ft space
+                  {type === "cart" ? "6X3X7.5" : type === "parlour" ? "150-450" : "500-800"} sq ft space
                 </p>
                 <div className="text-sm text-gray-700 font-medium">
                   Rev: {type === "cart" ? "₹2.5-3.5L" : type === "parlour" ? "₹5-8L" : "₹10-15L"}/mo
@@ -229,7 +229,7 @@ const FinancialPlanningSection = ({ inModal }: FinancialPlanningSectionProps) =>
           </div>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-8">
+        <div className="w-full">
           <div className="bg-white rounded-3xl shadow-sm border border-amber-100 p-8 relative overflow-hidden">
             <h4 className="font-extrabold text-xl text-gray-900 mb-6 flex items-center">
               <i className="fas fa-wallet text-amber-500 mr-3 text-2xl" /> Investment Breakdown
@@ -261,7 +261,7 @@ const FinancialPlanningSection = ({ inModal }: FinancialPlanningSectionProps) =>
               </div>
             </div>
           </div>
-          <div className="bg-white rounded-3xl shadow-md border-t-8 border-amber-500 p-8 relative overflow-hidden">
+          {/* <div className="bg-white rounded-3xl shadow-md border-t-8 border-amber-500 p-8 relative overflow-hidden">
             <h4 className="font-extrabold text-xl text-gray-900 mb-6 flex items-center">
               <i className="fas fa-chart-line text-amber-500 mr-3 text-2xl" /> Monthly Profitability
             </h4>
@@ -297,10 +297,10 @@ const FinancialPlanningSection = ({ inModal }: FinancialPlanningSectionProps) =>
                 </span>
               </div>
             </div>
-          </div>
+          </div> */}
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+        {/* <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
           <div className="bg-white rounded-2xl p-6 text-center border border-amber-100 shadow-sm">
             <p className="text-xs text-gray-500 uppercase font-bold tracking-wider mb-2">
               Est. Payback Period
@@ -325,7 +325,7 @@ const FinancialPlanningSection = ({ inModal }: FinancialPlanningSectionProps) =>
               {netProfit > 0 ? "₹" + profit5Year.toFixed(1) + " Lakhs" : "₹0"}
             </p>
           </div>
-        </div>
+        </div> */}
       </div>
     </Wrapper>
   );

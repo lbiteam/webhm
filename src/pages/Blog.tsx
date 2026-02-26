@@ -1,3 +1,4 @@
+import { useState, useMemo } from "react";
 import { Link } from "react-router-dom";
 import { Helmet } from "react-helmet-async";
 import { Calendar, ChevronRight } from "lucide-react";
@@ -6,12 +7,21 @@ import Footer from "@/components/Footer";
 import { blogPosts } from "@/data/blogData";
 
 const Blog = () => {
+  const categories = useMemo(() => {
+    const cats = Array.from(new Set(blogPosts.map((p) => p.category)));
+    return ["All", ...cats];
+  }, []);
+
+  const [active, setActive] = useState("All");
+
+  const filtered = active === "All" ? blogPosts : blogPosts.filter((p) => p.category === active);
+
   return (
     <>
-      <Helmet>
+      {/* <Helmet>
         <title>Blog | Honeyman - Pure Honey & Wellness</title>
         <meta name="description" content="Read the latest articles about honey, health, wellness, and beekeeping from Honeyman — India's most trusted honey brand." />
-      </Helmet>
+      </Helmet> */}
 
       <div className="min-h-screen bg-background">
         <Header />
@@ -29,10 +39,29 @@ const Blog = () => {
             </div>
           </section>
 
+          {/* Category Filter */}
+          <div className="container mx-auto px-4 mb-10">
+            <div className="flex flex-wrap gap-3 justify-center">
+              {categories.map((cat) => (
+                <button
+                  key={cat}
+                  onClick={() => setActive(cat)}
+                  className={`px-5 py-2 rounded-full text-sm font-semibold border transition-all duration-300 ${
+                    active === cat
+                      ? "bg-primary text-primary-foreground border-primary shadow-md"
+                      : "bg-card text-muted-foreground border-border hover:border-primary hover:text-primary"
+                  }`}
+                >
+                  {cat}
+                </button>
+              ))}
+            </div>
+          </div>
+
           {/* Blog Grid */}
           <div className="container mx-auto px-4">
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-              {blogPosts.map((post) => (
+              {filtered.map((post) => (
                 <Link
                   key={post.slug}
                   to={`/blog/${post.slug}`}
@@ -69,6 +98,9 @@ const Blog = () => {
                 </Link>
               ))}
             </div>
+            {filtered.length === 0 && (
+              <p className="text-center text-muted-foreground py-12 text-lg">No posts in this category yet.</p>
+            )}
           </div>
         </main>
 
