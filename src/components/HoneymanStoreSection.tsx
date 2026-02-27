@@ -42,7 +42,7 @@ const HoneymanStoreSection = () => {
           {/* Right side - Content */}
           <div className="space-y-6 flex flex-col justify-center h-full">
             <div className="space-y-4">
-              <h2 className="section-title text-4xl md:text-5xl">
+              <h2 className="font-display text-2xl sm:text-3xl md:text-4xl uppercase tracking-wide mb-3">
                 {t("honeymanStoreSection.title")}
                 <span className="block text-primary mt-2">{t("honeymanStoreSection.titleHighlight")}</span>
               </h2>

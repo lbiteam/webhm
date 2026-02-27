@@ -1,4 +1,5 @@
 import { useState } from "react";
+import { useNavigate } from "react-router-dom";
 import { Send, Loader2 } from "lucide-react";
 import { useToast } from "@/hooks/use-toast";
 import { useLanguage } from "@/contexts/LanguageContext";
@@ -58,6 +59,7 @@ const labelClass =
 const FranchiseBannerForm = () => {
   const { t } = useLanguage();
   const { toast } = useToast();
+  const navigate = useNavigate();
   const [formData, setFormData] = useState<BannerFormData>({
     name: "",
     email: "",
@@ -142,12 +144,9 @@ const FranchiseBannerForm = () => {
       }
 
       if (supabaseSuccess || zohoSuccess) {
-        toast({
-          title: t("contactPage.toast.success"),
-          description: t("contactPage.toast.successDesc").replace("{name}", formData.name),
-          duration: 5000,
-        });
         setFormData({ name: "", email: "", phone: "", city: "", preferredModel: "" });
+        navigate("/thank-you");
+        return;
       } else {
         toast({
           title: t("contactPage.toast.error") || "Submission Error",
@@ -196,7 +195,7 @@ const FranchiseBannerForm = () => {
               onChange={handleChange}
               maxLength={100}
               required
-              placeholder="John Doe"
+              placeholder="Your Name"
               className={inputClass}
             />
           </div>
@@ -227,7 +226,7 @@ const FranchiseBannerForm = () => {
             onChange={handleChange}
             maxLength={20}
             required
-            placeholder="+91 98765 43210"
+            placeholder="+91 1234567890"
             className={inputClass}
           />
         </div>
@@ -252,9 +251,9 @@ const FranchiseBannerForm = () => {
             className={`${inputClass} text-gray-700`}
           >
             <option value="">Select model</option>
-            <option value="Smart Cart (₹3.20L)">Smart Cart (₹3.20L)</option>
-            <option value="Ice Cream Parlour (₹10-15L)">Ice Cream Parlour (₹10-15L)</option>
-            <option value="Cafe Store (₹25-30L)">Cafe Store (₹25-30L)</option>
+            <option value="Ice Cream Cart (₹3.20L)">Ice Cream Cart (₹3.2L)</option>
+            <option value="Ice Cream Parlour (₹8-15L)">Ice Cream Parlour (₹8-15L)</option>
+            <option value="Cafe Honeyman (₹21-25L)">Cafe Honeyman (₹21-25L)</option>
           </select>
         </div>
         <button

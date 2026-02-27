@@ -143,7 +143,7 @@ const Header = () => {
 
           <div className="hidden lg:flex items-center space-x-5">
             <Link
-              to="/franchise"
+              to="/contact-us"
               className="bg-gradient-to-br from-amber-400 via-amber-500 to-amber-600 hover:from-amber-500 hover:to-amber-700 text-white font-bold text-sm py-3 px-7 rounded-full transition shadow-lg hover:shadow-xl transform hover:-translate-y-0.5"
             >
               Apply Now <i className="fas fa-arrow-up transform rotate-45 ml-2 text-xs" />

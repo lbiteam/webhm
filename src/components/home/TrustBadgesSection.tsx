@@ -24,9 +24,9 @@ const TrustBadgesSection = () => (
           <div className="w-16 h-16 bg-white rounded-full flex items-center justify-center mx-auto mb-5 text-amber-500 text-3xl shadow-md">
             <i className="fas fa-money-bill" />
           </div>
-          <h3 className="font-bold text-lg text-gray-900 mb-2">No Royalty Model</h3>
+          <h3 className="font-bold text-lg text-gray-900 mb-2">Profitable Partnership</h3>
           <p className="text-sm text-gray-600 leading-relaxed">
-          Enjoy 100% profit ownership with zero royalty or hidden charges. Your earnings stay with you, helping you achieve faster return on investment.
+          A structured franchise system focused on sustainable margins and long-term success.
           </p>
         </div>
         <div className="p-6 rounded-2xl bg-amber-50 hover:bg-amber-100 transition duration-300 shadow-sm border border-amber-100">

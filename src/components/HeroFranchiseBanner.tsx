@@ -22,7 +22,7 @@ const HeroFranchiseBanner = () => {
           </span>
           <p className="text-xl md:text-2xl text-white mb-6 font-semibold leading-relaxed drop-shadow-md">
             <span className="border-l-4 border-amber-500 pl-4 py-1 block bg-black/20 rounded-r-lg">
-              Zero Royalty, <br />
+            High Margin Business Model <br />
               Premium Positioning, Honey-Based Innovation
             </span>
           </p>
@@ -31,14 +31,10 @@ const HeroFranchiseBanner = () => {
               className=" block font-display text-yellow-400 text-4xl md:text-5xl lg:text-[64px] Tracking-wide drop-shadow-lg "
               style={{ textShadow: "0 3px 16px rgba(0,0,0,0.18)" }}
             >
-              THAT'S HONEYMAN FRANCHISE
+              OWN A HONEYMAN FRANCHISE
             </span>
           </div>
-          <p className="text-xl md:text-2xl text-white mb-8 font-semibold leading-relaxed drop-shadow-md">
-            <span className="border-l-4 border-amber-500 pl-4 py-1 block bg-black/20 rounded-r-lg">
-              Own a Honeyman franchise and step into a fast-growing market
-            </span>
-          </p>
+        
           <div className="flex flex-col space-y-4 text-gray-100 mb-10 drop-shadow-md">
             <div className="flex items-center">
               <i className="fas fa-hexagon text-amber-400 mr-3" />
@@ -51,16 +47,16 @@ const HeroFranchiseBanner = () => {
            
           </div>
           <div className="flex flex-col sm:flex-row space-y-4 sm:space-y-0 sm:space-x-4 mt-8">
-            <button
+            {/* <button
               type="button"
               onClick={() => window.dispatchEvent(new CustomEvent("open-financial-planning"))}
               className="bg-gradient-to-br from-amber-400 via-amber-500 to-amber-600 hover:from-amber-500 hover:to-amber-700 text-white font-bold py-4 px-8 rounded-xl transition flex items-center justify-center shadow-xl transform hover:-translate-y-1"
             >
               Calculate Your Investment &rarr;
-            </button>
+            </button> */}
             <Link
               to="https://honeymanstore.com/wp-content/uploads/2026/02/Honeyman-1.pdf"
-              className="bg-white/10 backdrop-blur-sm border-2 border-amber-400 text-white hover:bg-amber-400 hover:text-black font-bold py-4 px-8 rounded-xl transition flex items-center justify-center shadow-lg"
+              className="bg-gradient-to-br from-amber-400 via-amber-500 to-amber-600 hover:from-amber-500 hover:to-amber-700 text-white font-bold py-4 px-8 rounded-xl transition flex items-center justify-center shadow-xl transform hover:-translate-y-1"
             >
               Download Brochure
             </Link>
@@ -69,7 +65,7 @@ const HeroFranchiseBanner = () => {
           {/* Stat circles: 100+ Cities | 160+ Outlets | 17+ States – same style as High ROI model */}
           <div className="flex flex-wrap items-center justify-start gap-4 sm:gap-5 mt-10">
             <div className="rounded-full w-24 h-24 sm:w-28 sm:h-28 flex flex-col items-center justify-center text-center shadow-2xl border-4 border-white bg-gradient-to-br from-amber-100 to-yellow-200">
-              <span className="text-xl sm:text-2xl font-bold leading-none text-amber-900">100+</span>
+              <span className="text-xl sm:text-2xl font-bold leading-none text-amber-900">25+</span>
               <span className="text-[10px] sm:text-xs font-extrabold mt-1 text-amber-900 uppercase">Cities</span>
             </div>
             <div className="rounded-full w-24 h-24 sm:w-28 sm:h-28 flex flex-col items-center justify-center text-center shadow-2xl border-4 border-white bg-gradient-to-br from-amber-100 to-yellow-200">

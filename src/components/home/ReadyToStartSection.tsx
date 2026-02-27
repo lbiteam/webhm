@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 const ReadyToStartSection = () => (
   <section className="py-10 bg-[#f9b11f]">
     <div className="container mx-auto px-6 text-center">
-      <h2 className="text-4xl md:text-5xl font-extrabold text-white mb-6 drop-shadow-md">
+      <h2 className="font-display text-2xl sm:text-3xl md:text-4xl uppercase tracking-wide mb-3 text-white mb-6 drop-shadow-md">
         Ready to Start Your Journey?
       </h2>
       <p className="text-xl text-amber-100 mb-10 max-w-2xl mx-auto font-medium">

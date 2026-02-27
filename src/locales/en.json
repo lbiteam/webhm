@@ -197,12 +197,12 @@
   "honeymanStoreSection": {
     "title": "Explore Our Complete",
     "titleHighlight": "Collection at Honeyman Store",
-    "description": "While this site showcases our story, heritage, and values, our complete range of premium honey products, delicious spreads, and specialty items are available at our dedicated e-commerce store.",
+    "description": "Our complete range of premium honey products, delicious spreads, and specialty items are available at our dedicated e-commerce store.",
     "features": {
-      "1": "100% Pure & Organic Honey",
-      "2": "Wide Variety of Products",
-      "3": "Fast & Secure Checkout",
-      "4": "Nationwide Delivery"
+      "1": "🍯Pure & Flavoured Honey Range",
+      "2": "🍓 Artisanal Jams & Spreads",
+      "3": "🌿 Herbal Tonics & Wellness Blends",
+      "4": "🍨 Honey-Infused Ice Creams & Desserts"
     },
     "visitStore": "Visit Honeyman Store",
     "subtext": "Discover all our products, special offers, and exclusive deals on our e-commerce platform.",
@@ -410,7 +410,7 @@
       "parlour": {
         "name": "Ice Cream Parlour",
         "tagline": "Premium Experience",
-        "investment": "₹10-15 Lakhs",
+        "investment": "₹8-15 Lakhs",
         "popular": "MOST POPULAR",
         "features": {
           "1": "Flagship store setup",
@@ -424,7 +424,7 @@
       "standing": {
         "name": "Cafe",
         "tagline": "Event Partner",
-        "investment": "₹25-30 Lakhs",
+        "investment": "₹21-25 Lakhs",
         "features": {
           "1": "Medium-sized store",
           "2": "Full product range",

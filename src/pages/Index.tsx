@@ -72,7 +72,7 @@ const Index = () => {
         {/*  */}
         {/* <ReviewsSection /> */}
       </main>
-      <FinancialPlanningModal />
+      {/* <FinancialPlanningModal /> */}
       <Footer />
     </div>
   );

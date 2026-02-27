@@ -5,6 +5,7 @@ import Bee from "@/components/Bee";
 import iceCreamCart from "@/assets/franchise/ice-cream-cart.webp";
 import iceCreamParlour from "@/assets/franchise/ice-cream-parlour.webp";
 import cafeBanner from "@/assets/cafe-image.webp";
+import cafeOutlet from "@/assets/cafe-outlet.webp";
 import sectionBg from "@/assets/website-banners/mission-2026-banner/banner.webp";
 
 type ModelKey = "basic" | "medium" | "bigger";
@@ -35,7 +36,7 @@ const modelMeta: Record<
       "Low investment start",
     ],
     features: [
-      "Small retail footprint with high mobility",
+      "Small retail footprint",
       "Basic yet profitable product range",
       "Training & operational support",
       "Marketing materials and launch support",
@@ -237,7 +238,7 @@ const FranchiseSection = () => {
               <Bee className="absolute bottom-32 right-8 z-10 pointer-events-none opacity-60" size={20} />
               <div className="aspect-[4/3] w-full bg-amber-50 overflow-hidden">
                 <img
-                  src={modelImages[selectedModel]}
+                  src={selectedModel === "bigger" ? cafeOutlet : modelImages[selectedModel]}
                   alt={modelMeta[selectedModel].name}
                   className="w-full h-full object-cover"
                 />
@@ -260,7 +261,7 @@ const FranchiseSection = () => {
                       irresistible profitability.
                     </p>
                     <p>
-                      With over <strong>160+ successful locations</strong> already thriving across India, Honeyman is
+                      With over <strong>100+ successful locations</strong> already thriving across India, Honeyman is
                       a trusted household name. Now you can take our signature honey‑infused ice creams
                       directly to the crowds—local markets, corporate parks, events and more.
                     </p>
@@ -276,12 +277,9 @@ const FranchiseSection = () => {
                       </li>
                       <li>
                         <strong>Guilt‑free, premium indulgence:</strong> Naturally sweetened with premium Honeyman
-                        honey—healthier desserts that practically sell themselves.
+                        honey-based products that practically sell themselves.
                       </li>
-                      <li>
-                        <strong>Ultimate mobility:</strong> Go where the demand is—festivals, campuses, busy
-                        streets, private events and more.
-                      </li>
+                      
                     </ul>
                     <h3 className="font-semibold text-amber-600 mt-4">Unmatched franchisee support</h3>
                     <ul className="list-disc pl-5 space-y-1">
@@ -357,7 +355,7 @@ const FranchiseSection = () => {
                     <ul className="list-disc pl-5 space-y-1">
                       <li>150–450 sq. ft. carpet area in a high‑potential location.</li>
                       <li>High streets, malls, food courts or dense residential clusters.</li>
-                      <li>Ability to manage a small team of 3–5 people.</li>
+                      <li>Ability to manage a small team of 1-2 people.</li>
                       <li>Drive to deliver a premium guest experience.</li>
                     </ul>
                   </div>
@@ -372,18 +370,18 @@ const FranchiseSection = () => {
                     <p>
                       As customers move away from artificial syrups and refined sugar, Cafe Honeyman offers a
                       sophisticated, health‑conscious alternative without compromising on taste—backed by our{" "}
-                      <strong>160+ locations</strong> across India.
+                      <strong>100+ locations</strong> across India.
                     </p>
                     <h3 className="font-semibold text-amber-600 mt-4">
                       The Cafe Honeyman advantage
                     </h3>
                     <ul className="list-disc pl-5 space-y-1">
                       <li>
-                        <strong>A menu unlike any other:</strong> Honey‑glazed lattes, artisanal teas, honey‑infused
+                        <strong>A menu unlike any other:</strong> Honey‑glazed lattes, artisanal tea, honey‑infused
                         pastries and savoury bites.
                       </li>
                       <li>
-                        <strong>Dual revenue streams:</strong> Dine‑in cafe + retail sales of Honeyman FMCG products.
+                        <strong>Dual revenue streams:</strong> Cafe and retail sales of Honeyman FMCG products.
                       </li>
                       <li>
                         <strong>Premium ambience:</strong> Warm, modern interiors built for professionals, friends and
@@ -405,8 +403,8 @@ const FranchiseSection = () => {
                     <ul className="list-disc pl-5 space-y-1">
                       <li>500 - 800 SQ FT in a prime, visible location.</li>
                       <li>High streets, tech parks, malls or premium neighbourhoods.</li>
-                      <li>Ability to lead a 6–10 member hospitality team.</li>
-                      <li>Vision to build a community‑driven, premium cafe destination.</li>
+                      <li>Ability to lead a 1-3 member hospitality team.</li>
+                      <li>Vision to build a written‑driven, premium cafe destination.</li>
                     </ul>
                   </div>
                 )}

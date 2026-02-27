@@ -3,37 +3,65 @@ import { useState, useEffect } from "react";
 import Bee from "@/components/Bee";
 import cafe3dModel from "@/assets/Cafe 3d Model copy.webp";
 import honeyBg from "@/assets/honey-bg.webp";
-
-/* Fluent UI 3D emoji base – encode folder names for URLs */
-const FLUENT_3D = "https://raw.githubusercontent.com/microsoft/fluentui-emoji/main/assets";
-const icon3d = (name: string, file: string) => `${FLUENT_3D}/${encodeURIComponent(name)}/3D/${file}`;
+import iconNoRoyalty from "@/assets/icon-we-set-up/no -royalty.png";
+import iconPremiumQuality from "@/assets/icon-we-set-up/Premiu-quality.png";
+import iconBrand from "@/assets/icon-we-set-up/Brand.png";
+import iconTransparentInvestment from "@/assets/icon-we-set-up/Transparent-Investment.png";
+import iconEasyToUse from "@/assets/icon-we-set-up/easy-to-use.png";
+import iconComputeMarketing from "@/assets/icon-we-set-up/compute-marketing.png";
+import iconPropertyLocation from "@/assets/benifts-icon/Property & location support.webp";
+import iconStaffHiring from "@/assets/benifts-icon/Staff hiring & training.webp";
+import iconDesignInterior from "@/assets/benifts-icon/Design & Interior.webp";
+import iconMarketing from "@/assets/benifts-icon/Marketing.webp";
+import iconLogistics from "@/assets/benifts-icon/Logistics & supply chain.webp";
+import iconPosSupport from "@/assets/benifts-icon/POS system support.webp";
 
 interface StoreOperative {
   City: string;
   Region?: string;
 }
 
-/* Include items with 3D icons – used for left/right benefits (pick 6) */
+/* Include items with local benefit icons – used for left/right benefits (pick 6) */
 const includesItems = [
-  { text: "Property & location support", icon: icon3d("World map", "world_map_3d.png") },
-  { text: "Staff & hiring support", icon: icon3d("Busts in silhouette", "busts_in_silhouette_3d.png") },
-  { text: "Design &  Interior support", icon: icon3d("Hammer and wrench", "hammer_and_wrench_3d.png") },
-  { text: "Ops support", icon: icon3d("Shopping cart", "shopping_cart_3d.png") },
-  { text: "Logistics & supply chain", icon: icon3d("Delivery truck", "delivery_truck_3d.png") },
-  { text: "POS system support", icon: icon3d("Laptop", "laptop_3d.png") },
+  { text: "Property & location support", icon: iconPropertyLocation },
+  { text: "Staff hiring & training", icon: iconStaffHiring },
+  { text: "Design and Interior", icon: iconDesignInterior },
+  { text: "Marketing support", icon: iconMarketing },
+  { text: "Logistics & supply chain", icon: iconLogistics },
+  { text: "POS system support", icon: iconPosSupport },
 ];
 
 const leftIncludeItems = includesItems.slice(0, 3);
 const rightIncludeItems = includesItems.slice(3, 6);
 
-/* Why Choose Honeyman – feature cards (preview 12 style, Honeyman terms + honey colors) */
+/* Why Choose Honeyman – feature cards using local assets from icon-we-set-up */
 const whyChooseItems = [
-  { title: "No Royalty", desc: "100% Profit Ownership", icon: icon3d("Money bag", "money_bag_3d.png") },
-  { title: "Premium Quality", desc: "Honey-Based Products", icon: icon3d("Factory", "factory_3d.png") },
-  { title: "Strong Brand Identity", desc: "Growing Demand", icon: icon3d("Cook", "cook_3d.png") },
-  { title: "Transparent", desc: "Investment Structure", icon: icon3d("Chart increasing", "chart_increasing_3d.png") },
-  { title: "Easy-to-Operate System", desc: "Smooth Operations", icon: icon3d("Open book", "open_book_3d.png") },
-  { title: "Complete Marketing", desc: " And POS Support", icon: icon3d("Laptop", "laptop_3d.png") },
+  {
+    title: "High margin Model",
+    desc: "Low operational complexity with strong profit potential",
+    icon: iconNoRoyalty,
+    sizeClass: "w-14 h-14 sm:w-[72px] sm:h-[72px]",
+  },
+  {
+    title: "Honey-based products",
+    desc: "A healthier alternative to refined sugar",
+    icon: iconPremiumQuality,
+    sizeClass: "w-14 h-14 sm:w-[72px] sm:h-[72px]",
+  },
+  {
+    title: "Strong Brand Identity",
+    desc: "Distinct positioning with growing demand",
+    icon: iconBrand,
+    sizeClass: "w-14 h-14 sm:w-[72px] sm:h-[72px]",
+  },
+
+  {
+    title: "Easy to Operate",
+    desc: "Complete system & operational support",
+    icon: iconEasyToUse,
+    sizeClass: "w-14 h-14 sm:w-[72px] sm:h-[72px]",
+  },
+ 
 ];
 
 const WeSetYouUpSection = () => {
@@ -80,7 +108,7 @@ const WeSetYouUpSection = () => {
           <span className="inline-flex items-center gap-2 bg-amber-100 text-amber-800 text-xs font-bold px-4 py-2 rounded-full uppercase tracking-widest border-2 border-amber-200 shadow-sm">
             You Are Never Alone
           </span>
-          <h2 className="text-2xl md:text-3xl font-bold uppercase tracking-wide text-[#423324] mt-4 mb-2">
+          <h2 className="font-display text-2xl sm:text-3xl md:text-4xl uppercase tracking-wide text-[#423324] mt-4 mb-2">
             We Set You Up to Succeed
           </h2>
           <p className="text-gray-600 text-sm max-w-xl mx-auto leading-relaxed">
@@ -88,13 +116,13 @@ const WeSetYouUpSection = () => {
           </p>
         </div>
 
-        {/* Benefits grid: left col (3 include items) | center image | right col (3 include items) */}
-        <div className="flex flex-col lg:flex-row justify-between items-center gap-8 lg:gap-6 mb-14">
-          <div className="flex flex-col gap-5 flex-1 w-full lg:max-w-[280px]">
+        {/* Benefits grid: left col (3 include items) | center image | right col (3 include items) – symmetrical icon + text */}
+        <div className="flex flex-col lg:flex-row justify-between items-stretch lg:items-center gap-8 lg:gap-6 mb-14">
+          <div className="flex flex-col gap-5 flex-1 w-full lg:max-w-[280px] min-w-0 items-center lg:items-stretch">
             {leftIncludeItems.map((item, i) => (
               <div
                 key={i}
-                className="flex items-center gap-4 justify-end lg:flex-row-reverse lg:text-right py-2 px-4 rounded-[30px] hover:bg-white/50 hover:scale-[1.02] transition-all duration-300"
+                className="flex items-center gap-4 justify-center text-center lg:justify-start lg:text-left py-2 px-4 rounded-[30px] hover:bg-white/50 hover:scale-[1.02] transition-all duration-300"
               >
                 <img src={item.icon} alt="" className="w-11 h-11 object-contain flex-shrink-0 drop-shadow-md hover:rotate-[5deg] hover:scale-110 transition-transform" />
                 <span className="font-medium text-sm text-[#333]">{item.text}</span>
@@ -108,11 +136,11 @@ const WeSetYouUpSection = () => {
             className="w-96 sm:w-96 flex-shrink-0 drop-shadow-[0_15px_25px_rgba(0,0,0,0.15)] animate-float order-first lg:order-none"
           />
 
-          <div className="flex flex-col gap-5 flex-1 w-full lg:max-w-[280px]">
+          <div className="flex flex-col gap-5 flex-1 w-full lg:max-w-[280px] min-w-0 items-center lg:items-stretch">
             {rightIncludeItems.map((item, i) => (
               <div
                 key={i}
-                className="flex items-center gap-4 py-2 px-4 rounded-[30px] hover:bg-white/50 hover:scale-[1.02] transition-all duration-300"
+                className="flex items-center gap-4 justify-center text-center lg:justify-start lg:text-left py-2 px-4 rounded-[30px] hover:bg-white/50 hover:scale-[1.02] transition-all duration-300"
               >
                 <img src={item.icon} alt="" className="w-11 h-11 object-contain flex-shrink-0 drop-shadow-md hover:rotate-[5deg] hover:scale-110 transition-transform" />
                 <span className="font-medium text-sm text-[#333]">{item.text}</span>
@@ -122,7 +150,7 @@ const WeSetYouUpSection = () => {
         </div>
 
         {/* Why Choose Honeyman – preview 12 style with honey colors */}
-        <h2 className="font-display text-2xl md:text-3xl uppercase tracking-wide text-honey-dark text-center mb-12 mt-12">
+        <h2 className="font-display text-2xl sm:text-3xl md:text-4xl uppercase tracking-wide text-honey-dark text-center mb-12 mt-12">
           Why Choose Honeyman?
         </h2>
         <div className="flex flex-wrap justify-center gap-6 sm:gap-8 mb-16">
@@ -134,7 +162,7 @@ const WeSetYouUpSection = () => {
               <img
                 src={item.icon}
                 alt=""
-                className="w-14 h-14 sm:w-[70px] sm:h-[70px] object-contain mb-4 drop-shadow-[0_8px_10px_rgba(0,0,0,0.15)] group-hover:-translate-y-1 transition-transform duration-300"
+                className={`${item.sizeClass ?? "w-14 h-14 sm:w-[70px] sm:h-[70px]"} object-contain mb-4 drop-shadow-[0_8px_10px_rgba(0,0,0,0.15)] group-hover:-translate-y-1 transition-transform duration-300`}
               />
               <h3 className="text-sm font-semibold text-gray-900 leading-snug text-center min-h-[2.25rem] flex items-center justify-center">
                 {item.title}
@@ -181,7 +209,7 @@ const WeSetYouUpSection = () => {
 
         {/* Our Operative Cities – unchanged */}
         <div className="mb-4">
-          <h3 className="section-title text-xl md:text-2xl text-center text-[#f9b11f]">
+          <h3 className="font-display text-lg sm:text-xl md:text-2xl uppercase tracking-wide text-[#f9b11f] text-center">
             Our Operative Cities
           </h3>
           <p className="text-gray-600 text-center max-w-xl mx-auto mb-6 text-sm">

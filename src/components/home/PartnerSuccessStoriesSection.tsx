@@ -33,7 +33,7 @@ const testimonials = [
   },
   {
     quote:
-      "We run a Cafe model in Bangalore. The best part is the automated supply chain. We never run out of stock even on weekends.",
+      "We run a Cafe model in Nanded. The best part is the automated supply chain. We never run out of stock even on weekends.",
     name: "Sachin segal",
     location: "Nanded",
     initials: "AM",
@@ -156,7 +156,7 @@ const PartnerSuccessStoriesSection = () => {
                     : "opacity-0 translate-x-5 pointer-events-none"
                 }`}
               >
-                <h2 className="text-xl md:text-2xl lg:text-3xl font-bold text-foreground leading-tight mb-3 tracking-tight">
+                <h2 className="text-lg text-muted-foreground leading-relaxed">
                   &quot;{t.quote}&quot;
                 </h2>
                 <p className="text-base text-muted-foreground font-medium">

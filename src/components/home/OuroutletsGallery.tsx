@@ -76,7 +76,7 @@ const OuroutletsGallery = () => {
           <span className="inline-block px-3 sm:px-4 py-2 bg-honey/20 rounded-full text-honey-dark font-medium text-xs sm:text-sm mb-4">
             {t("franchisePage.outletsGallery.badge")}
           </span>
-          <h2 className="section-title text-4xl md:text-5xl">{t("franchisePage.outletsGallery.title")}</h2>
+          <h2 className="font-display text-2xl sm:text-3xl md:text-4xl uppercase tracking-wide mb-3">{t("franchisePage.outletsGallery.title")}</h2>
           <p className="text-muted-foreground max-w-2xl mx-auto text-sm sm:text-base">
             {t("franchisePage.outletsGallery.description")}
           </p>

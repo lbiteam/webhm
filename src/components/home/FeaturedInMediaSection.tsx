@@ -61,7 +61,7 @@ const FeaturedInMediaSection = () => (
   <section className="py-16 bg-white border-t border-amber-100 overflow-hidden">
     <div className="container mx-auto px-6 mb-10">
       <div className="text-center">
-        <span className="section-title text-4xl md:text-5xl">
+        <span className="font-display text-2xl sm:text-3xl md:text-4xl uppercase tracking-wide mb-3">
           Featured In Major Media
         </span>
       </div>

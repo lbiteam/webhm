@@ -10,7 +10,7 @@ const Footer = () => {
   const isGiftingPage = useLocation().pathname === "/gifting";
 
   const footerLinks = [
-    { name: t("footer.store"), href: "/#products" },
+    { name: t("footer.store"), href: "/products" },
     { name: t("footer.aboutUs"), href: "/about-us" },
     { name: t("footer.franchise"), href: "/franchise" },
     { name: t("footer.gifting"), href: "/gifting" },

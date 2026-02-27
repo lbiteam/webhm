@@ -1,4 +1,5 @@
 import { useState } from "react";
+import { useNavigate } from "react-router-dom";
 import { Mail, Phone, MapPin, Clock, Send, Loader2 } from "lucide-react";
 import { useToast } from "@/hooks/use-toast";
 import Header from "@/components/Header";
@@ -85,6 +86,7 @@ interface ContactFormData {
 const Contact = () => {
   const { t } = useLanguage();
   const { toast } = useToast();
+  const navigate = useNavigate();
   const [formData, setFormData] = useState<ContactFormData>({
     name: "",
     email: "",
@@ -185,15 +187,8 @@ const Contact = () => {
         }
       }
 
-      // Show success if at least one submission succeeded
+      // Show success: redirect to thank-you page instead of toast
       if (supabaseSuccess || zohoSuccess) {
-        toast({
-          title: t("contactPage.toast.success"),
-          description: t("contactPage.toast.successDesc").replace("{name}", formData.name),
-          duration: 5000,
-        });
-
-        // Reset form
         setFormData({
           name: "",
           email: "",
@@ -202,6 +197,8 @@ const Contact = () => {
           subject: "",
           message: "",
         });
+        navigate("/thank-you");
+        return;
       } else {
         // If both failed, show error but still reset form
         toast({
