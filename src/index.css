@@ -2,44 +2,46 @@
 @tailwind components;
 @tailwind utilities;
 
-/* Definition of the design system. All colors, gradients, fonts, etc should be defined here. 
-All colors MUST be HSL.
-*/
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700;800&family=DM+Sans:wght@300;400;500;600;700&display=swap');
 
 @layer base {
   :root {
-    /* Warm, sophisticated palette inspired by the design */
-    --background: 36 44% 96%;
-    --foreground: 0 0% 18%;
+    --background: 40 60% 97%;
+    --foreground: 30 10% 15%;
 
-    --card: 33 40% 94%;
-    --card-foreground: 0 0% 18%;
+    --card: 40 50% 94%;
+    --card-foreground: 30 10% 15%;
 
-    --popover: 36 44% 96%;
-    --popover-foreground: 0 0% 18%;
+    --popover: 40 60% 97%;
+    --popover-foreground: 30 10% 15%;
 
-    --primary: 0 0% 18%;
-    --primary-foreground: 36 44% 96%;
+    --primary: 38 80% 50%;
+    --primary-foreground: 40 60% 97%;
 
-    --secondary: 25 30% 70%;
-    --secondary-foreground: 0 0% 18%;
+    --secondary: 35 40% 85%;
+    --secondary-foreground: 30 10% 15%;
 
-    --muted: 33 30% 88%;
-    --muted-foreground: 0 0% 40%;
+    --muted: 38 30% 90%;
+    --muted-foreground: 30 10% 40%;
 
-    --accent: 140 20% 50%;
-    --accent-foreground: 36 44% 96%;
+    --accent: 30 70% 40%;
+    --accent-foreground: 40 60% 97%;
 
     --destructive: 0 84% 60%;
-    --destructive-foreground: 36 44% 96%;
+    --destructive-foreground: 40 60% 97%;
 
-    --border: 33 25% 85%;
-    --input: 33 25% 85%;
-    --ring: 0 0% 18%;
+    --border: 38 30% 85%;
+    --input: 38 30% 85%;
+    --ring: 38 80% 50%;
 
     --radius: 1rem;
 
-    /* Custom design tokens */
+    --honey-gold: 38 80% 50%;
+    --honey-amber: 30 70% 40%;
+    --honey-light: 40 60% 92%;
+    --honey-dark: 30 30% 20%;
+    --honey-cream: 42 50% 95%;
+
     --tag-financing: 210 50% 75%;
     --tag-lifestyle: 140 20% 70%;
     --tag-community: 25 35% 60%;
@@ -48,57 +50,10 @@ All colors MUST be HSL.
     --tag-creativity: 330 40% 75%;
     --tag-growth: 50 45% 70%;
 
-    /* Polish design tokens */
-    --cream: 40 40% 90%;
-    --cream-foreground: 0 0% 18%;
-    --surface-elevated: 36 44% 98%;
     --shadow-soft: 0 0% 0%;
-    --transition-smooth: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-  }
-
-  .dark {
-    --background: 0 0% 10%;
-    --foreground: 36 44% 96%;
-
-    --card: 0 0% 14%;
-    --card-foreground: 36 44% 96%;
-
-    --popover: 0 0% 10%;
-    --popover-foreground: 36 44% 96%;
-
-    --primary: 36 44% 96%;
-    --primary-foreground: 0 0% 18%;
-
-    --secondary: 25 15% 30%;
-    --secondary-foreground: 36 44% 96%;
-
-    --muted: 0 0% 20%;
-    --muted-foreground: 0 0% 60%;
-
-    --accent: 140 20% 45%;
-    --accent-foreground: 36 44% 96%;
-
-    --destructive: 0 62% 50%;
-    --destructive-foreground: 36 44% 96%;
-
-    --border: 0 0% 20%;
-    --input: 0 0% 20%;
-    --ring: 36 44% 96%;
-
-    /* Dark mode tag colors */
-    --tag-financing: 210 40% 45%;
-    --tag-lifestyle: 140 20% 40%;
-    --tag-community: 25 30% 40%;
-    --tag-wellness: 280 25% 45%;
-    --tag-travel: 195 40% 45%;
-    --tag-creativity: 330 35% 45%;
-    --tag-growth: 50 40% 45%;
-
-    /* Dark mode polish tokens */
-    --cream: 40 20% 25%;
-    --cream-foreground: 36 44% 96%;
-    --surface-elevated: 0 0% 16%;
-    --shadow-soft: 0 0% 0%;
+    --surface-elevated: 40 50% 98%;
+    --cream: 42 50% 92%;
+    --cream-foreground: 30 10% 15%;
   }
 }
 
@@ -108,7 +63,8 @@ All colors MUST be HSL.
   }
 
   body {
-    @apply bg-background text-foreground font-sans antialiased;
+    @apply bg-background text-foreground antialiased;
+    font-family: 'DM Sans', system-ui, sans-serif;
   }
 
   html {
@@ -116,7 +72,8 @@ All colors MUST be HSL.
   }
 
   h1, h2, h3, h4, h5, h6 {
-    @apply font-serif tracking-tight;
+    font-family: 'Playfair Display', Georgia, serif;
+    @apply tracking-tight;
   }
 }
 
@@ -130,136 +87,98 @@ All colors MUST be HSL.
     box-shadow: 0 20px 40px -10px hsl(var(--shadow-soft) / 0.15);
   }
 
-  .pill-nav {
-    @apply rounded-full bg-[hsl(var(--surface-elevated))] backdrop-blur-lg border border-border/50;
-  }
-
   .floating-button {
-    @apply w-12 h-12 rounded-full bg-[hsl(var(--cream)/0.9)] backdrop-blur-sm flex items-center justify-center text-[hsl(var(--cream-foreground))] hover:bg-[hsl(var(--cream))] hover:scale-110 transition-all duration-300;
-    box-shadow: 0 4px 12px -2px hsl(var(--shadow-soft) / 0.15);
+    @apply w-12 h-12 rounded-full flex items-center justify-center transition-all duration-300;
+    background: hsl(var(--honey-gold));
+    color: hsl(var(--primary-foreground));
+    box-shadow: 0 4px 12px -2px hsl(var(--honey-gold) / 0.4);
   }
 
-  /* Animation keyframes */
+  .floating-button:hover {
+    transform: scale(1.1);
+    box-shadow: 0 6px 20px -2px hsl(var(--honey-gold) / 0.5);
+  }
+
+  /* Animations */
   @keyframes fadeIn {
-    from {
-      opacity: 0;
-    }
-    to {
-      opacity: 1;
-    }
+    from { opacity: 0; }
+    to { opacity: 1; }
   }
 
   @keyframes slideUp {
-    from {
-      opacity: 0;
-      transform: translateY(20px);
-    }
-    to {
-      opacity: 1;
-      transform: translateY(0);
-    }
+    from { opacity: 0; transform: translateY(30px); }
+    to { opacity: 1; transform: translateY(0); }
   }
 
   @keyframes slideDown {
-    from {
-      opacity: 0;
-      transform: translateY(-20px);
-    }
-    to {
-      opacity: 1;
-      transform: translateY(0);
-    }
+    from { opacity: 0; transform: translateY(-20px); }
+    to { opacity: 1; transform: translateY(0); }
   }
 
   @keyframes scaleIn {
-    from {
-      opacity: 0;
-      transform: scale(0.95);
-    }
-    to {
-      opacity: 1;
-      transform: scale(1);
-    }
+    from { opacity: 0; transform: scale(0.95); }
+    to { opacity: 1; transform: scale(1); }
   }
 
-  .animate-fade-in {
-    animation: fadeIn 0.5s ease-out;
+  @keyframes panelReveal {
+    from { opacity: 0; transform: scaleY(0.95); }
+    to { opacity: 1; transform: scaleY(1); }
   }
 
-  .animate-slide-up {
-    animation: slideUp 0.6s ease-out;
+  @keyframes shimmer {
+    0% { background-position: -200% 0; }
+    100% { background-position: 200% 0; }
   }
 
-  .animate-slide-down {
-    animation: slideDown 0.6s ease-out;
+  @keyframes float {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-8px); }
   }
 
-  .animate-scale-in {
-    animation: scaleIn 0.5s ease-out;
+  @keyframes honeeDrip {
+    0% { transform: translateY(-10px); opacity: 0; }
+    50% { opacity: 1; }
+    100% { transform: translateY(0); opacity: 1; }
   }
 
-  /* Stagger animations */
-  .stagger-1 {
-    animation-delay: 0.1s;
-    opacity: 0;
-    animation-fill-mode: forwards;
+  .animate-fade-in { animation: fadeIn 0.6s ease-out; }
+  .animate-slide-up { animation: slideUp 0.7s ease-out; }
+  .animate-slide-down { animation: slideDown 0.6s ease-out; }
+  .animate-scale-in { animation: scaleIn 0.5s ease-out; }
+  .animate-panel-reveal { animation: panelReveal 0.8s ease-out; }
+  .animate-float { animation: float 3s ease-in-out infinite; }
+  .animate-honey-drip { animation: honeeDrip 0.8s ease-out; }
+
+  .animate-shimmer {
+    background: linear-gradient(90deg, transparent, hsl(var(--honey-gold) / 0.15), transparent);
+    background-size: 200% 100%;
+    animation: shimmer 3s infinite;
   }
 
-  .stagger-2 {
-    animation-delay: 0.2s;
-    opacity: 0;
-    animation-fill-mode: forwards;
+  .stagger-1 { animation-delay: 0.1s; opacity: 0; animation-fill-mode: forwards; }
+  .stagger-2 { animation-delay: 0.2s; opacity: 0; animation-fill-mode: forwards; }
+  .stagger-3 { animation-delay: 0.3s; opacity: 0; animation-fill-mode: forwards; }
+  .stagger-4 { animation-delay: 0.4s; opacity: 0; animation-fill-mode: forwards; }
+  .stagger-5 { animation-delay: 0.5s; opacity: 0; animation-fill-mode: forwards; }
+  .stagger-6 { animation-delay: 0.6s; opacity: 0; animation-fill-mode: forwards; }
+
+  .tag-financing { @apply bg-[hsl(var(--tag-financing))] text-primary; }
+  .tag-lifestyle { @apply bg-[hsl(var(--tag-lifestyle))] text-primary; }
+  .tag-community { @apply bg-[hsl(var(--tag-community))] text-primary; }
+  .tag-wellness { @apply bg-[hsl(var(--tag-wellness))] text-primary; }
+  .tag-travel { @apply bg-[hsl(var(--tag-travel))] text-primary; }
+  .tag-creativity { @apply bg-[hsl(var(--tag-creativity))] text-primary; }
+  .tag-growth { @apply bg-[hsl(var(--tag-growth))] text-primary; }
+
+  .honey-gradient {
+    background: linear-gradient(135deg, hsl(var(--honey-gold)), hsl(var(--honey-amber)));
   }
 
-  .stagger-3 {
-    animation-delay: 0.3s;
-    opacity: 0;
-    animation-fill-mode: forwards;
+  .hover-lift {
+    @apply transition-all duration-300;
   }
-
-  .stagger-4 {
-    animation-delay: 0.4s;
-    opacity: 0;
-    animation-fill-mode: forwards;
-  }
-
-  .stagger-5 {
-    animation-delay: 0.5s;
-    opacity: 0;
-    animation-fill-mode: forwards;
-  }
-
-  .stagger-6 {
-    animation-delay: 0.6s;
-    opacity: 0;
-    animation-fill-mode: forwards;
-  }
-
-  .tag-financing {
-    @apply bg-[hsl(var(--tag-financing))] text-primary;
-  }
-
-  .tag-lifestyle {
-    @apply bg-[hsl(var(--tag-lifestyle))] text-primary;
-  }
-
-  .tag-community {
-    @apply bg-[hsl(var(--tag-community))] text-primary;
-  }
-
-  .tag-wellness {
-    @apply bg-[hsl(var(--tag-wellness))] text-primary;
-  }
-
-  .tag-travel {
-    @apply bg-[hsl(var(--tag-travel))] text-primary;
-  }
-
-  .tag-creativity {
-    @apply bg-[hsl(var(--tag-creativity))] text-primary;
-  }
-
-  .tag-growth {
-    @apply bg-[hsl(var(--tag-growth))] text-primary;
+  .hover-lift:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 12px 30px -8px hsl(var(--honey-gold) / 0.3);
   }
 }
