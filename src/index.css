@@ -4,6 +4,10 @@
 
 @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700;800&family=DM+Sans:wght@300;400;500;600;700&display=swap');
 
+@import url("https://fonts.googleapis.com/css2?family=DM+Sans&display=swap");
+
+@import url("https://fonts.googleapis.com/css2?family=Playfair+Display&display=swap");
+
 @layer base {
   :root {
     --background: 40 60% 97%;
@@ -24,7 +28,7 @@
     --muted: 38 30% 90%;
     --muted-foreground: 30 10% 40%;
 
-    --accent: 30 70% 40%;
+    --accent: 25 89% 31%;
     --accent-foreground: 40 60% 97%;
 
     --destructive: 0 84% 60%;
