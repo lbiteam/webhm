@@ -139,7 +139,7 @@ const Footer = () => {
       </div>
 
       {/* Copyright Bar */}
-      <div className={`py-4 ${isGiftingPage ? 'bg-gradient-to-r from-[#87CEEB] via-[#ffb6c1] to-[#fef08a]' : 'bg-[#f9dc8d]'}`}>
+      <div className="py-4 bg-[#f9dc8d]">
         <div className="container mx-auto px-6">
           <p className="text-center text-[#2a1810] text-xs md:text-sm font-medium">
             {t("footer.copyright")}

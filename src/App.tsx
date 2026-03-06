@@ -44,6 +44,9 @@ const App = () => (
           <Route path="/blog/organic-vs-wild-honey" element={<OrganicVsWildHoney />} />
           <Route path="/blog/how-to-identify-pure-honey" element={<HowToIdentifyPureHoney />} /> */}
             {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
+            {/* <Route path="/blog/7-benefits-of-honey" element={<HoneyBenefits />} />
+          <Route path="/blog/organic-vs-wild-honey" element={<OrganicVsWildHoney />} />
+          <Route path="/blog/how-to-identify-pure-honey" element={<HowToIdentifyPureHoney />} /> */}
             <Route path="*" element={<NotFound />} />
           </Routes>
         </BrowserRouter>

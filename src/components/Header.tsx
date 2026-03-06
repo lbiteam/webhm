@@ -35,7 +35,7 @@ const Header = () => {
               hello@honeyman.in
             </span>
             <span className="flex items-center">
-              <i className="fas fa-phone-alt text-amber-500 mr-2" />
+              <i className="fas fa-phone text-amber-500 mr-2" />
               +91 96503 05025 (HQ)
             </span>
             <span className="flex items-center">

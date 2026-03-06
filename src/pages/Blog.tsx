@@ -26,11 +26,11 @@ const Blog = () => {
       <div className="min-h-screen bg-background">
         <Header />
 
-        <main className="pt-28 pb-16">
+        <main className="pt-0 pb-16">
           {/* Hero Banner */}
-          <section className="bg-gradient-honey py-12 md:py-16 mb-12">
+          <section className="bg-[#f9dc8d]/40 py-12 md:py-16 mb-12">
             <div className="container mx-auto px-4 text-center">
-              <h1 className="font-display text-4xl md:text-5xl font-bold text-primary-foreground mb-3">
+              <h1 className="font-display text-2xl sm:text-3xl md:text-4xl uppercase tracking-wide mb-3">
                 🍯 Honeyman Blog
               </h1>
               <p className="text-primary-foreground/80 text-lg max-w-xl mx-auto">

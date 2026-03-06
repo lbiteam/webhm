@@ -20,7 +20,7 @@ const ReadyToStartSection = () => (
           href="tel:+919650305025"
           className="bg-transparent text-white px-10 py-5 rounded-full font-extrabold text-lg hover:bg-white/20 transition border-2 border-white w-full sm:w-auto text-center"
         >
-          <i className="fas fa-phone-alt mr-2" /> Call Us
+          <i className="fas fa-phone mr-2" /> Call Us
         </a>
       </div>
     </div>

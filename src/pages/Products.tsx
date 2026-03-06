@@ -3,6 +3,9 @@ import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import { useLanguage } from "@/contexts/LanguageContext";
 
+// Hero banner
+import productGroupHero from "@/assets/Product group Png  copy.webp";
+
 // Product images
 import himalayan from "@/assets/Products/himalayan-honey.webp";
 import vantulsi from "@/assets/Products/organic-honey.webp";
@@ -56,7 +59,7 @@ const ProductCard = ({ product }: { product: Product }) => (
       <img
         src={product.image}
         alt={product.name}
-        className="w-full h-full object-contain p-6 transition-transform duration-700 group-hover:scale-110"
+        className="mx-auto my-auto w-fit h-fit object-center p-6 transition-transform duration-700 group-hover:scale-100 flex items-center justify-center"
       />
     </div>
     <h4 className="text-lg font-bold text-gray-800 mb-1">{product.name}</h4>
@@ -71,19 +74,14 @@ export default function Products() {
       <Header />
       
       <main className="flex-1">
-      {/* --- HERO SECTION: full viewport below header, responsive video --- */}
-      <section className="relative w-full overflow-hidden pt-24 bg-[#f9dc8d]/40 min-h-[calc(100vh-6rem)] flex items-center justify-center">
-        <div className="absolute inset-0">
-          <video
-            autoPlay
-            loop
-            muted
-            playsInline
-            className="w-full h-full object-contain md:object-cover"
-          >
-            <source src="/videos/hm-video.webm" type="video/webm" />
-            Your browser does not support the video tag.
-          </video>
+      {/* --- HERO SECTION: full viewport below header, banner image --- */}
+      <section className="relative w-full overflow-hidden pt-24 bg-[#f9dc8d]/40 min-h-[calc(100vh-6rem)]">
+        <div className="absolute inset-0 ">
+          <img
+            src={productGroupHero}
+            alt="Honeyman products"
+            className="w-full h-full object-cover object-bottom"
+          />
         </div>
       </section>
 

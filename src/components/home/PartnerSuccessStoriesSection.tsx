@@ -25,7 +25,7 @@ const testimonials = [
   {
     quote:
       "The support team is incredible. From interior design to the grand opening, they handled everything. I just had to focus on sales.",
-    name: "Nitu Chopra",
+    name: "Ritu Chopra",
     location: "Gurgaon",
     initials: "PD",
     stars: 5,
