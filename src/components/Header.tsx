@@ -57,7 +57,7 @@ const Header = () => {
               About
             </Link>
             <Link
-              to="/wellness"
+              to="/blog"
               className="hover:text-amber-600 transition-colors"
             >
               Blog
