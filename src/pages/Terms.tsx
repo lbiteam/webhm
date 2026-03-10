@@ -129,6 +129,7 @@ const Terms = () => {
           </section>
         </div>
       </main>
+      <Footer />
     </div>
   );
 };

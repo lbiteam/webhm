@@ -80,6 +80,7 @@ const Blogs = () => {
           </div>
         )}
       </main>
+      <Footer />
     </div>
   );
 };

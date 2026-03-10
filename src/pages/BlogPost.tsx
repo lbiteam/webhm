@@ -130,6 +130,7 @@ const BlogPost = () => {
           </article>
         </div>
       </main>
+      <Footer />
     </div>
   );
 };
