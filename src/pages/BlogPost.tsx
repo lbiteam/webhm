@@ -1,5 +1,6 @@
 import { useParams, Link, Navigate } from "react-router-dom";
 import Header from "@/components/Header";
+import Footer from "@/components/Footer";
 import { getBlogById, blogs, blogCategories } from "@/data/blogs";
 
 const BlogPost = () => {
@@ -129,6 +130,7 @@ const BlogPost = () => {
           </article>
         </div>
       </main>
+      <Footer />
     </div>
   );
 };

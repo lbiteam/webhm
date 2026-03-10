@@ -102,8 +102,8 @@ const HeroSection = () => {
               />
             ))}
 
-            {/* Overlay */}
-            <div className={`absolute inset-0 ${panel.overlayColor} transition-opacity duration-500`} />
+            {/* Dark gradient overlay for text readability */}
+            <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/40 to-black/10" />
 
             {/* Content */}
             <div className="absolute inset-0 flex flex-col justify-end p-8 lg:p-10 text-white ">
@@ -170,7 +170,7 @@ const HeroSection = () => {
                 }`}
               />
             ))}
-            <div className={`absolute inset-0 ${panel.overlayColor}`} />
+            <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/40 to-black/10" />
             <div className="absolute inset-0 flex flex-col justify-end p-6 text-white">
               <span className="text-xs font-bold tracking-[0.3em] uppercase text-amber-300 mb-1">
                 {panel.subtitle}

@@ -1,4 +1,5 @@
 import Header from "@/components/Header";
+import Footer from "@/components/Footer";
 
 const timeline = [
   { year: "1971", title: "The Legacy Begins", desc: "Founded in memory of S. Jagjit Singh Kapoor (Honeyking)." },
@@ -136,6 +137,7 @@ const About = () => {
           </div>
         </section>
       </main>
+      <Footer />
     </div>
   );
 };

@@ -1,4 +1,5 @@
 import Header from "@/components/Header";
+import Footer from "@/components/Footer";
 import { Mail, MapPin, Phone } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { useState } from "react";
@@ -125,7 +126,7 @@ const Contact = () => {
                   </div>
                   <div>
                     <h3 className="font-semibold mb-1">Email</h3>
-                    <p className="text-muted-foreground">hello@perspective.blog</p>
+              <p className="text-muted-foreground">hello@honeyman.in</p>
                     <p className="text-muted-foreground text-sm">We'll respond within 24 hours</p>
                   </div>
                 </div>
@@ -135,8 +136,8 @@ const Contact = () => {
                   </div>
                   <div>
                     <h3 className="font-semibold mb-1">Location</h3>
-                    <p className="text-muted-foreground">San Francisco, CA</p>
-                    <p className="text-muted-foreground text-sm">Remote-first team</p>
+                    <p className="text-muted-foreground">Gurugram, HQ 122018</p>
+                    <p className="text-muted-foreground text-sm">India</p>
                   </div>
                 </div>
                 <div className="flex items-start gap-4">
@@ -145,8 +146,8 @@ const Contact = () => {
                   </div>
                   <div>
                     <h3 className="font-semibold mb-1">Phone</h3>
-                    <p className="text-muted-foreground">+1 (555) 123-4567</p>
-                    <p className="text-muted-foreground text-sm">Mon-Fri, 9am-5pm PST</p>
+                    <p className="text-muted-foreground">+91 96503 05025</p>
+                    <p className="text-muted-foreground text-sm">Mon-Sat, 10am-7pm IST</p>
                   </div>
                 </div>
               </div>
@@ -178,6 +179,7 @@ const Contact = () => {
           </div>
         </div>
       </main>
+      <Footer />
     </div>
   );
 };
