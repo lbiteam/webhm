@@ -118,11 +118,12 @@ const WeSetYouUpSection = () => {
 
         {/* Benefits grid: left col (3 include items) | center image | right col (3 include items) – symmetrical icon + text */}
         <div className="flex flex-col lg:flex-row justify-between items-stretch lg:items-center gap-8 lg:gap-6 mb-14">
-          <div className="flex flex-col gap-5 flex-1 w-full lg:max-w-[280px] min-w-0 items-center lg:items-stretch">
+          {/* Desktop (lg+): split into left/right columns */}
+          <div className="hidden lg:flex flex-col gap-5 flex-1 w-full lg:max-w-[280px] min-w-0 items-stretch">
             {leftIncludeItems.map((item, i) => (
               <div
                 key={i}
-                className="flex items-center gap-4 justify-center text-center lg:justify-start lg:text-left py-2 px-4 rounded-[30px] hover:bg-white/50 hover:scale-[1.02] transition-all duration-300"
+                className="flex items-center gap-4 justify-start text-left py-2 px-4 rounded-[30px] hover:bg-white/50 hover:scale-[1.02] transition-all duration-300"
               >
                 <img src={item.icon} alt="" className="w-11 h-11 object-contain flex-shrink-0 drop-shadow-md hover:rotate-[5deg] hover:scale-110 transition-transform" />
                 <span className="font-medium text-sm text-[#333]">{item.text}</span>
@@ -133,16 +134,33 @@ const WeSetYouUpSection = () => {
           <img
             src={cafe3dModel}
             alt="Cafe Honeyman"
-            className="w-96 sm:w-96 flex-shrink-0 drop-shadow-[0_15px_25px_rgba(0,0,0,0.15)] animate-float order-first lg:order-none"
+            className="w-96 sm:w-96 flex-shrink-0 drop-shadow-[0_15px_25px_rgba(0,0,0,0.15)] animate-float order-first lg:order-none mx-auto"
           />
 
-          <div className="flex flex-col gap-5 flex-1 w-full lg:max-w-[280px] min-w-0 items-center lg:items-stretch">
+          <div className="hidden lg:flex flex-col gap-5 flex-1 w-full lg:max-w-[280px] min-w-0 items-stretch">
             {rightIncludeItems.map((item, i) => (
               <div
                 key={i}
-                className="flex items-center gap-4 justify-center text-center lg:justify-start lg:text-left py-2 px-4 rounded-[30px] hover:bg-white/50 hover:scale-[1.02] transition-all duration-300"
+                className="flex items-center gap-4 justify-start text-left py-2 px-4 rounded-[30px] hover:bg-white/50 hover:scale-[1.02] transition-all duration-300"
               >
                 <img src={item.icon} alt="" className="w-11 h-11 object-contain flex-shrink-0 drop-shadow-md hover:rotate-[5deg] hover:scale-110 transition-transform" />
+                <span className="font-medium text-sm text-[#333]">{item.text}</span>
+              </div>
+            ))}
+          </div>
+
+          {/* Small + tablet (<lg): one centered column to avoid zig-zag */}
+          <div className="lg:hidden flex flex-col gap-4 w-full max-w-[420px] mx-auto">
+            {includesItems.map((item, i) => (
+              <div
+                key={i}
+                className="flex items-center gap-4 justify-start text-left py-2 px-4 rounded-[30px] hover:bg-white/50 hover:scale-[1.02] transition-all duration-300"
+              >
+                <img
+                  src={item.icon}
+                  alt=""
+                  className="w-11 h-11 object-contain flex-shrink-0 drop-shadow-md hover:rotate-[5deg] hover:scale-110 transition-transform"
+                />
                 <span className="font-medium text-sm text-[#333]">{item.text}</span>
               </div>
             ))}

@@ -252,7 +252,7 @@ export default function Products() {
             {t("productsPage.footerDescription")}
           </p>
           <a 
-            href="https://honeymanstore.com" 
+            href="https://honeymanstore.com" target="_blank" rel="noopener noreferrer"
             className="inline-block bg-[#ffe248] text-[#8c3100] font-black px-12 py-4 rounded-full shadow-lg hover:bg-[#f9dc8d] transition-colors uppercase tracking-widest"
           >
             {t("productsPage.goToStore")}
