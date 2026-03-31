@@ -741,7 +741,7 @@
     "sending": "भेज रहे हैं...",
     "sendMessageButton": "संदेश भेजें",
     "companyName": "हनीमैन फूड्स प्राइवेट लिमिटेड",
-    "companyAddress": "यूनिट नंबर 106, पहली मंजिल, IRIS टेक पार्क, सेक्टर – 48,<br />गुरुग्राम – सोहना रोड, गुरुग्राम – 122018",
+    "companyAddress": "677/4 T.S-1  S. No. 301, Railway Road, GURU NANAKPURA,Doraha, Ludhiana, Punjab, 141421",
     "contactInfoTitle": "संपर्क जानकारी",
     "contactInfoDescription": "निम्नलिखित चैनलों में से किसी के माध्यम से हमसे संपर्क करें। हमारी टीम आपकी सभी प्रश्नों में सहायता के लिए तैयार है।",
     "contactMethods": {
@@ -754,8 +754,8 @@
         "details": ["hello@honeyman.in", "support@honeyman.in"]
       },
       "address": {
-        "title": "पता",
-        "details": ["HONEYMAN मुख्यालय", "गुरुग्राम, भारत"]
+        "title": "गुरुग्राम पता",
+        "details": ["HONEYMAN Gurgaon Head Office", "Unit No. 106, First Floor, IRIS Tech Park, Sector – 48,Gurugram – Sohna Road, Gurugram – 122018"]
       },
       "hours": {
         "title": "व्यावसायिक घंटे",

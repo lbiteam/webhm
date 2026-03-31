@@ -407,7 +407,7 @@ const Contact = () => {
                 </p>
               </div>
 
-              <div className="grid sm:grid-cols-2 gap-6">
+              <div className="grid sm:grid-cols-1 gap-6">
                 {[
                   { icon: Phone, title: t("contactPage.contactMethods.phone.title"), details: ["+91 96503 05025"] },
                   { icon: Mail, title: t("contactPage.contactMethods.email.title"), details: ["hello@honeyman.in", "support@honeyman.in"] },
@@ -430,17 +430,17 @@ const Contact = () => {
               </div>
 
               {/* Map */}
-              <div className="bg-card rounded-xl overflow-hidden shadow-soft">
+              {/* <div className="bg-card rounded-xl overflow-hidden shadow-soft">
                 <iframe
                   title="Honeyman Foods Location"
                   width="100%"
                   height="400"
                   style={{ border: 0 }}
                   loading="lazy"
-                  src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d65501.87132426831!2d77.0392392!3d28.4183872!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x390d233662c2b4f1%3A0xf0f85bfc0d1005b5!2sHoneyman%20Foods%20Pvt.%20Ltd!5e1!3m2!1sen!2sin!4v1765800965824!5m2!1sen!2sin"
+                  src="https://www.google.com/maps/embed?pb=!1m17!1m12!1m3!1d3427.998106927928!2d76.05981427558201!3d30.774632574564013!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m2!1m1!2zMzDCsDQ2JzI4LjciTiA3NsKwMDMnNDQuNiJF!5e0!3m2!1sen!2sin!4v1774937811804!5m2!1sen!2sin"
                   referrerPolicy="no-referrer-when-downgrade"
                 ></iframe>
-              </div>
+              </div> */}
             </div>
           </div>
         </div>

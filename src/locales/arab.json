@@ -720,7 +720,7 @@
       "sending": "جارٍ الإرسال...",
       "sendMessageButton": "أرسل الرسالة",
       "companyName": "شركة هوفيمان فودز الخاصة المحدودة",
-      "companyAddress": "الوحدة رقم 106، الطابق الأول، مجمع آيريس تيك بارك، القطاع 48،<br />طريق جوروغرام-سوهنا، جوروغرام – 122018",
+      "companyAddress": "677/4 T.S-1  S. No. 301, Railway Road, GURU NANAKPURA,Doraha, Ludhiana, Punjab, 141421",
       "contactInfoTitle": "معلومات الاتصال",
       "contactInfoDescription": "تواصل معنا عبر أي من القنوات التالية. فريقنا جاهز لمساعدتك في جميع استفساراتك.",
       "contactMethods": {
@@ -733,8 +733,8 @@
           "details": ["hello@honeyman.in", "support@honeyman.in"]
         },
         "address": {
-          "title": "العنوان",
-          "details": ["المقر الرئيسي لهوفيمان", "جوروغرام، الهند"]
+          "title": "جوروغرام العنوان",
+          "details": ["HONEYMAN Gurgaon Head Office", "Unit No. 106, First Floor, IRIS Tech Park, Sector – 48,Gurugram – Sohna Road, Gurugram – 122018"]
         },
         "hours": {
           "title": "ساعات العمل",

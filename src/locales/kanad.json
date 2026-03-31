@@ -720,7 +720,7 @@
       "sending": "ಕಳುಹಿಸಲಾಗುತ್ತಿದೆ...",
       "sendMessageButton": "ಸಂದೇಶ ಕಳುಹಿಸಿ",
       "companyName": "ಹನಿಮಾನ್ ಫುಡ್ಸ್ ಪ್ರೈವೇಟ್ ಲಿಮಿಟೆಡ್.",
-      "companyAddress": "ಯೂನಿಟ್ ನಂ. 106, ಮೊದಲ ಮಹಡಿ, ಐರಿಸ್ ಟೆಕ್ ಪಾರ್ಕ್, ಸೆಕ್ಟರ್ – 48,<br />ಗುರುಗ್ರಾಮ – ಸೋಹ್ನಾ ರಸ್ತೆ, ಗುರುಗ್ರಾಮ – 122018",
+      "companyAddress": "677/4 T.S-1  S. No. 301, Railway Road, GURU NANAKPURA,Doraha, Ludhiana, Punjab, 141421",
       "contactInfoTitle": "ಸಂಪರ್ಕ ಮಾಹಿತಿ",
       "contactInfoDescription": "ಕೆಳಗಿನ ಯಾವುದೇ ಚಾನಲ್ ಮೂಲಕ ನಮ್ಮನ್ನು ಸಂಪರ್ಕಿಸಿ. ನಿಮ್ಮ ಎಲ್ಲಾ ಪ್ರಶ್ನೆಗಳಿಗೆ ಸಹಾಯ ಮಾಡಲು ನಮ್ಮ ತಂಡ ಸಿದ್ಧವಿದೆ.",
       "contactMethods": {
@@ -733,8 +733,8 @@
           "details": ["hello@honeyman.in", "support@honeyman.in"]
         },
         "address": {
-          "title": "ವಿಳಾಸ",
-          "details": ["ಹನಿಮಾನ್ ಹೆಡ್ಕ್ವಾರ್ಟರ್ಸ್", "ಗುರುಗ್ರಾಮ, ಭಾರತ"]
+          "title": "ಗುರುಗ್ರಾಮ ವಿಳಾಸ",
+          "details": ["HONEYMAN Gurgaon Head Office", "Unit No. 106, First Floor, IRIS Tech Park, Sector – 48,Gurugram – Sohna Road, Gurugram – 122018"]
         },
         "hours": {
           "title": "ವ್ಯಾಪಾರ ಗಂಟೆಗಳು",

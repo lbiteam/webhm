@@ -720,7 +720,7 @@
       "sending": "পাঠানো হচ্ছে...",
       "sendMessageButton": "বার্তা পাঠান",
       "companyName": "হানিম্যান ফুডস প্রাইভেট লিমিটেড",
-      "companyAddress": "ইউনিট নং ১০৬, প্রথম তলা, আইরিস টেক পার্ক, সেক্টর – ৪৮,<br />গুড়গাঁও – সোহনা রোড, গুড়গাঁও – ১২২০১৮",
+      "companyAddress": "677/4 T.S-1  S. No. 301, Railway Road, GURU NANAKPURA,Doraha, Ludhiana, Punjab, 141421",
       "contactInfoTitle": "যোগাযোগের তথ্য",
       "contactInfoDescription": "নিম্নলিখিত যে কোনো চ্যানেলের মাধ্যমে আমাদের সাথে যোগাযোগ করুন। আপনার সমস্ত প্রশ্নে সাহায্য করতে আমাদের দল প্রস্তুত।",
       "contactMethods": {
@@ -733,8 +733,8 @@
           "details": ["হ্যালো@হানিম্যান.ইন", "সাপোর্ট@হানিম্যান.ইন"]
         },
         "address": {
-          "title": "ঠিকানা",
-          "details": ["হানিম্যান সদর দপ্তর", "গুড়গাঁও, ভারত"]
+          "title": "গুড়গাঁও ঠিকানা",
+          "details": ["HONEYMAN Gurgaon Head Office", "Unit No. 106, First Floor, IRIS Tech Park, Sector – 48,Gurugram – Sohna Road, Gurugram – 122018"]
         },
         "hours": {
           "title": "ব্যবসায়িক ঘণ্টা",

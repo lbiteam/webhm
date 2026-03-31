@@ -735,7 +735,7 @@
       "sending": "ਭੇਜ ਰਿਹਾ ਹੈ...",
       "sendMessageButton": "ਸੰਦੇਸ਼ ਭੇਜੋ",
       "companyName": "ਹਨੀਮੈਨ ਫੂਡਜ਼ ਪ੍ਰਾਈਵੇਟ ਲਿਮਿਟੇਡ",
-      "companyAddress": "ਯੂਨਿਟ ਨੰ. 106, ਪਹਿਲੀ ਮੰਜ਼ਿਲ, ਆਈਰਿਸ ਟੈਕ ਪਾਰਕ, ਸੈਕਟਰ – 48,<br />ਗੁੜਗਾਵ – ਸੋਹਨਾ ਰੋਡ, ਗੁੜਗਾਵ – 122018",
+      "companyAddress": "677/4 T.S-1  S. No. 301, Railway Road, GURU NANAKPURA,Doraha, Ludhiana, Punjab, 141421",
       "contactInfoTitle": "ਸੰਪਰਕ ਜਾਣਕਾਰੀ",
       "contactInfoDescription": "ਹੇਠ ਲਿਖੇ ਕਿਸੇ ਵੀ ਚੈਨਲ ਰਾਹੀਂ ਸਾਡੇ ਨਾਲ ਸੰਪਰਕ ਕਰੋ। ਤੁਹਾਡੇ ਸਾਰੇ ਸਵਾਲਾਂ ਵਿੱਚ ਤੁਹਾਡੀ ਮਦਦ ਕਰਨ ਲਈ ਸਾਡੀ ਟੀਮ ਤਿਆਰ ਹੈ।",
       "contactMethods": {
@@ -748,8 +748,8 @@
           "details": ["hello@honeyman.in", "support@honeyman.in"]
         },
         "address": {
-          "title": "ਪਤਾ",
-          "details": ["ਹਨੀਮੈਨ ਹੈੱਡਕੁਆਰਟਰ", "ਗੁੜਗਾਵ, ਭਾਰਤ"]
+          "title": "ਗੁੜਗਾਵ ਪਤਾ",
+          "details": ["HONEYMAN Gurgaon Head Office", "Unit No. 106, First Floor, IRIS Tech Park, Sector – 48,Gurugram – Sohna Road, Gurugram – 122018"]
         },
         "hours": {
           "title": "ਕਾਰੋਬਾਰੀ ਘੰਟੇ",
