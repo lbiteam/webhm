@@ -1,6 +1,8 @@
-import { Link } from "react-router-dom";
 import FranchiseBannerForm from "@/components/FranchiseBannerForm";
-import webbanner from "@/assets/website-banners/mission-2026-banner/banner.webp"
+import webbanner from "@/assets/website-banners/mission-2026-banner/banner.webp";
+
+const BROCHURE_PDF_URL =
+  "https://honeymanstore.com/wp-content/uploads/2026/02/Honeyman-1.pdf";
 
 const HeroFranchiseBanner = () => {
   return (
@@ -54,12 +56,21 @@ const HeroFranchiseBanner = () => {
             >
               Calculate Your Investment &rarr;
             </button> */}
-            <Link
-              to="https://honeymanstore.com/wp-content/uploads/2026/02/Honeyman-1.pdf"
+            <a
+              href={BROCHURE_PDF_URL}
+              target="_blank"
+              rel="noopener noreferrer"
+              onClick={() => {
+                window.gtag?.("event", "download_brochure_click", {
+                  event_category: "engagement",
+                  event_label: "hero_franchise_banner",
+                  link_url: BROCHURE_PDF_URL,
+                });
+              }}
               className="bg-gradient-to-br from-amber-400 via-amber-500 to-amber-600 hover:from-amber-500 hover:to-amber-700 text-white font-bold py-4 px-8 rounded-xl transition flex items-center justify-center shadow-xl transform hover:-translate-y-1"
             >
               Download Brochure
-            </Link>
+            </a>
           </div>
 
           {/* Stat circles: 100+ Cities | 160+ Outlets | 17+ States – same style as High ROI model */}

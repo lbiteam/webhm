@@ -29,6 +29,56 @@ if (!zohoClientId || !zohoClientSecret || !zohoRefreshToken) {
 
 const supabase = createClient(supabaseUrl || '', supabaseKey || '');
 
+const DEFAULT_COUNTRY_CODE = "+91";
+
+/** Common dialing codes (default India); used for mandatory country-code dropdown. */
+const DIALING_CODES: { value: string; label: string }[] = [
+  { value: "+91", label: "India (+91)" },
+  { value: "+1", label: "United States (+1)" },
+  { value: "+44", label: "United Kingdom (+44)" },
+  { value: "+971", label: "UAE (+971)" },
+  { value: "+966", label: "Saudi Arabia (+966)" },
+  { value: "+974", label: "Qatar (+974)" },
+  { value: "+965", label: "Kuwait (+965)" },
+  { value: "+973", label: "Bahrain (+973)" },
+  { value: "+968", label: "Oman (+968)" },
+  { value: "+65", label: "Singapore (+65)" },
+  { value: "+60", label: "Malaysia (+60)" },
+  { value: "+61", label: "Australia (+61)" },
+  { value: "+64", label: "New Zealand (+64)" },
+  { value: "+86", label: "China (+86)" },
+  { value: "+81", label: "Japan (+81)" },
+  { value: "+82", label: "South Korea (+82)" },
+  { value: "+66", label: "Thailand (+66)" },
+  { value: "+84", label: "Vietnam (+84)" },
+  { value: "+62", label: "Indonesia (+62)" },
+  { value: "+63", label: "Philippines (+63)" },
+  { value: "+92", label: "Pakistan (+92)" },
+  { value: "+880", label: "Bangladesh (+880)" },
+  { value: "+94", label: "Sri Lanka (+94)" },
+  { value: "+977", label: "Nepal (+977)" },
+  { value: "+975", label: "Bhutan (+975)" },
+  { value: "+33", label: "France (+33)" },
+  { value: "+49", label: "Germany (+49)" },
+  { value: "+39", label: "Italy (+39)" },
+  { value: "+34", label: "Spain (+34)" },
+  { value: "+31", label: "Netherlands (+31)" },
+  { value: "+41", label: "Switzerland (+41)" },
+  { value: "+353", label: "Ireland (+353)" },
+  { value: "+27", label: "South Africa (+27)" },
+  { value: "+254", label: "Kenya (+254)" },
+  { value: "+234", label: "Nigeria (+234)" },
+  { value: "+20", label: "Egypt (+20)" },
+];
+
+function formatFullPhone(countryCode: string, localPhone: string): string {
+  const cc = countryCode.trim();
+  const local = localPhone.replace(/\s/g, "").trim();
+  if (!cc && !local) return "";
+  if (!local) return cc;
+  return `${cc} ${local}`;
+}
+
 // Zoho CRM API Function - Calls serverless function to avoid CORS
 const createZohoLead = async (formData: ContactFormData): Promise<boolean> => {
   try {
@@ -77,6 +127,7 @@ const createZohoLead = async (formData: ContactFormData): Promise<boolean> => {
 interface ContactFormData {
   name: string;
   email: string;
+  countryCode: string;
   phone: string;
   location: string;
   subject: string;
@@ -90,6 +141,7 @@ const Contact = () => {
   const [formData, setFormData] = useState<ContactFormData>({
     name: "",
     email: "",
+    countryCode: DEFAULT_COUNTRY_CODE,
     phone: "",
     location: "",
     subject: "",
@@ -127,6 +179,28 @@ const Contact = () => {
       return;
     }
 
+    const countryCode = formData.countryCode.trim() || DEFAULT_COUNTRY_CODE;
+    if (!countryCode) {
+      toast({
+        title: t("contactPage.toast.requiredFields"),
+        description: t("contactPage.toast.requiredFieldsDesc"),
+        variant: "destructive",
+      });
+      return;
+    }
+
+    const localPhone = formData.phone.replace(/\s/g, "").trim();
+    if (!localPhone) {
+      toast({
+        title: t("contactPage.toast.requiredFields"),
+        description: t("contactPage.toast.requiredFieldsDesc"),
+        variant: "destructive",
+      });
+      return;
+    }
+
+    const fullPhone = formatFullPhone(countryCode, formData.phone);
+
     // Check if Supabase is configured
     if (!supabaseUrl || !supabaseKey) {
       toast({
@@ -152,7 +226,7 @@ const Contact = () => {
             .insert({
               name: formData.name.trim(),
               email: formData.email.trim(),
-              phone: formData.phone.trim() || null,
+              phone: fullPhone || null,
               location: formData.location.trim() || null,
               subject: formData.subject || null,
               message: formData.message.trim(),
@@ -175,7 +249,7 @@ const Contact = () => {
       // Submit to Zoho CRM via serverless function
       if (zohoClientId && zohoClientSecret && zohoRefreshToken) {
         try {
-          const zohoResult = await createZohoLead(formData);
+          const zohoResult = await createZohoLead({ ...formData, phone: fullPhone });
           if (zohoResult) {
             zohoSuccess = true;
           } else {
@@ -192,6 +266,7 @@ const Contact = () => {
         setFormData({
           name: "",
           email: "",
+          countryCode: DEFAULT_COUNTRY_CODE,
           phone: "",
           location: "",
           subject: "",
@@ -214,6 +289,7 @@ const Contact = () => {
         setFormData({
           name: "",
           email: "",
+          countryCode: DEFAULT_COUNTRY_CODE,
           phone: "",
           location: "",
           subject: "",
@@ -296,23 +372,45 @@ const Contact = () => {
 
                 <div className="grid sm:grid-cols-2 gap-5">
                   <div>
-                    <label htmlFor="phone" className="block text-sm font-medium text-foreground mb-2">
-                      {t("contactPage.phone")}<span className="text-destructive">*</span>
-                    </label>
-                    
-                    <input
-                      type="tel"
-                      id="phone"
-                      name="phone"
-                      value={formData.phone}
-                      onChange={handleChange}
-                      maxLength={20}
-                      required={true}
-                      className="w-full px-4 py-3 rounded-lg border border-border bg-background text-foreground placeholder:text-muted-foreground focus:ring-2 focus:ring-primary focus:border-transparent transition-all"
-                      placeholder={t("contactPage.phonePlaceholder")}
-                    />
+                    <span className="block text-sm font-medium text-foreground mb-2">
+                      {t("contactPage.phone")} <span className="text-destructive">*</span>
+                    </span>
+                    <div className="flex gap-2">
+                      <label htmlFor="countryCode" className="sr-only">
+                        Country code
+                      </label>
+                      <select
+                        id="countryCode"
+                        name="countryCode"
+                        value={formData.countryCode}
+                        onChange={handleChange}
+                        required
+                        className="shrink-0 w-[min(11rem,42vw)] sm:w-40 px-3 py-3 rounded-lg border border-border bg-background text-foreground text-sm focus:ring-2 focus:ring-primary focus:border-transparent transition-all"
+                      >
+                        {DIALING_CODES.map(({ value, label }) => (
+                          <option key={value} value={value}>
+                            {label}
+                          </option>
+                        ))}
+                      </select>
+                      <input
+                        type="tel"
+                        id="phone"
+                        name="phone"
+                        value={formData.phone}
+                        onChange={handleChange}
+                        maxLength={10}
+                        required
+                        autoComplete="tel-national"
+                        className="min-w-[300px] flex-1 px-4 py-3 rounded-lg border border-border bg-background text-foreground placeholder:text-muted-foreground focus:ring-2 focus:ring-primary focus:border-transparent transition-all"
+                        placeholder={t("contactPage.phonePlaceholder")}
+                      />
+                    </div>
                   </div>
-                  <div>
+                 
+                </div>
+                
+                <div>
                     <label htmlFor="location" className="block text-sm font-medium text-foreground mb-2">
                       {t("contactPage.location")}
                     </label>
@@ -327,8 +425,7 @@ const Contact = () => {
                       placeholder={t("contactPage.locationPlaceholder")}
                     />
                   </div>
-                </div>
-                
+
 
                 <div>
                   <label htmlFor="subject" className="block text-sm font-medium text-foreground mb-2">

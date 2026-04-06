@@ -724,7 +724,7 @@
     "email": "ईमेल",
     "emailPlaceholder": "your@email.com",
     "phone": "फोन",
-    "phonePlaceholder": "+91 1234567890",
+    "phonePlaceholder": "1234567890",
     "location": "स्थान",
     "locationPlaceholder": "आपका शहर या स्थान",
     "subject": "विषय",

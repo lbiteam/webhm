@@ -1,5 +1,11 @@
 import { Link } from "react-router-dom";
 
+const READY_TO_START_CALL_TEL = "tel:+919650305025";
+const READY_TO_START_CALL_E164 = "+919650305025";
+
+/** Short delay so gtag can dispatch before `tel:` handoff (often drops the hit otherwise). */
+const CALL_TRACKING_DELAY_MS = 150;
+
 const ReadyToStartSection = () => (
   <section className="py-10 bg-[#f9b11f]">
     <div className="container mx-auto px-6 text-center">
@@ -17,20 +23,24 @@ const ReadyToStartSection = () => (
           Apply Now
         </Link>
         <a
-  href="tel:+919650305025"
-  className="bg-transparent text-white px-10 py-5 rounded-full font-extrabold text-lg hover:bg-white/20 transition border-2 border-white w-full sm:w-auto text-center"
-  onClick={() => {
-    // Send the event to Google Analytics
-    window.gtag?.("event", "call_us_click", {
-      event_category: "engagement",
-      event_label: "call_button",
-      phone_number: "+919650305025",
-      page_location: window.location.href,
-    });
-  }}
->
-  <i className="fas fa-phone mr-2" /> Call Us
-</a>
+          href={READY_TO_START_CALL_TEL}
+          className="bg-transparent text-white px-10 py-5 rounded-full font-extrabold text-lg hover:bg-white/20 transition border-2 border-white w-full sm:w-auto text-center"
+          onClick={(e) => {
+            e.preventDefault();
+            window.gtag?.("event", "call_us_click", {
+              event_category: "engagement",
+              event_label: "ready_to_start_call_us",
+              phone_number: READY_TO_START_CALL_E164,
+              page_location: window.location.href,
+              placement: "ready_to_start_section",
+            });
+            window.setTimeout(() => {
+              window.location.href = READY_TO_START_CALL_TEL;
+            }, CALL_TRACKING_DELAY_MS);
+          }}
+        >
+          <i className="fas fa-phone mr-2" /> Call Us
+        </a>
       </div>
     </div>
   </section>

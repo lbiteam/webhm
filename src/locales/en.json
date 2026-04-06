@@ -725,7 +725,7 @@
     "email": "Email",
     "emailPlaceholder": "your@email.com",
     "phone": "Phone",
-    "phonePlaceholder": "+91 1234567890",
+    "phonePlaceholder": " 1234567890",
     "location": "Location",
     "locationPlaceholder": "Your city or location",
     "subject": "Subject",
