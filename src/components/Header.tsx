@@ -138,6 +138,11 @@ const Header = () => {
                   {t("header.contact")} <i className="fas fa-chevron-down ml-1.5 text-[9px]" />
                 </Link>
               </li>
+              <li>
+                <Link to="/careers" className="hover:text-amber-600 transition">
+                  Careers
+                </Link>
+              </li>
             </ul>
           </div>
 
@@ -186,6 +191,9 @@ const Header = () => {
             </Link>
             <Link to="/contact-us" className="font-bold text-gray-800 py-3 border-b border-amber-50" onClick={() => setMobileMenuOpen(false)}>
               {t("header.contact")}
+            </Link>
+            <Link to="/careers" className="font-bold text-gray-800 py-3 border-b border-amber-50" onClick={() => setMobileMenuOpen(false)}>
+              Careers
             </Link>
             <Link
               to="/franchise"
