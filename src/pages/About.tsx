@@ -231,7 +231,7 @@ const mediaLogos = [
                   <p className="text-sm text-muted-foreground">{t("aboutPage.yearsLegacy")}</p>
                 </div>
                 <div className="text-center">
-                  <span className="text-4xl font-display font-bold text-primary">160+</span>
+                  <span className="text-4xl font-display font-bold text-primary">180+</span>
                   <p className="text-sm text-muted-foreground">{t("aboutPage.storesNationwide")}</p>
                 </div>
                 <div className="text-center">
@@ -543,7 +543,7 @@ const mediaLogos = [
                 {t("aboutPage.catalogueDescription")}
               </p>
               <a 
-                href="https://honeymanstore.com/wp-content/uploads/2025/12/Honeyman-Magazine-1.pdf"
+                href="https://honeymanstore.com/wp-content/uploads/2026/04/Honeyman-Magazine-1.pdf"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="inline-flex items-center gap-3 bg-honey hover:bg-honey-dark text-foreground font-semibold px-8 py-4 rounded-full transition-all shadow-lg hover:shadow-xl"

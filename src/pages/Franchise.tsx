@@ -317,7 +317,7 @@ const Franchise = () => {
             <div className="flex items-center gap-4">
               <Store className="w-16 h-16 text-foreground" />
               <div>
-                <h2 className="font-display text-5xl md:text-6xl font-bold text-foreground">160+</h2>
+                <h2 className="font-display text-5xl md:text-6xl font-bold text-foreground">180+</h2>
                 <p className="text-foreground/80 font-medium">{t("franchisePage.outlets")}</p>
               </div>
             </div>
@@ -551,9 +551,9 @@ const Franchise = () => {
             <button className="bg-foreground text-white px-6 py-3 rounded-xl font-medium hover:bg-foreground/90 transition-all" onClick={() => window.location.href = '/contact-us'}>
               {t("franchisePage.applyNow")}
             </button>
-            <button className="border-2 border-foreground text-foreground px-6 py-3 rounded-xl font-medium hover:bg-foreground/10 transition-all" onClick={() => window.location.href = 'https://honeymanstore.com/wp-content/uploads/2025/12/franchise-pdf-1.pdf'}>
+            {/* <button className="border-2 border-foreground text-foreground px-6 py-3 rounded-xl font-medium hover:bg-foreground/10 transition-all" onClick={() => window.location.href = 'https://honeymanstore.com/wp-content/uploads/2025/12/franchise-pdf-1.pdf'}>
               {t("franchisePage.downloadBrochure")}
-            </button>
+            </button> */}
           </div>
         </div>
       </section>

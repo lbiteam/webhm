@@ -40,7 +40,7 @@ const HeroFranchiseBanner = () => {
           <div className="flex flex-col space-y-4 text-gray-100 mb-10 drop-shadow-md">
             <div className="flex items-center">
               <i className="fas fa-hexagon text-amber-400 mr-3" />
-              <span className="font-medium text-lg">3 Investment Models from ₹3.2 Lakhs</span>
+              <span className="font-medium text-lg">3 Investment Models from ₹4 Lakhs</span>
             </div>
             <div className="flex items-center">
               <i className="fas fa-hexagon text-amber-400 mr-3" />
@@ -80,7 +80,7 @@ const HeroFranchiseBanner = () => {
               <span className="text-[10px] sm:text-xs font-extrabold mt-1 text-amber-900 uppercase">Cities</span>
             </div>
             <div className="rounded-full w-24 h-24 sm:w-28 sm:h-28 flex flex-col items-center justify-center text-center shadow-2xl border-4 border-white bg-gradient-to-br from-amber-100 to-yellow-200">
-              <span className="text-xl sm:text-2xl font-bold leading-none text-amber-900">160+</span>
+              <span className="text-xl sm:text-2xl font-bold leading-none text-amber-900">180+</span>
               <span className="text-[10px] sm:text-xs font-extrabold mt-1 text-amber-900 uppercase">Outlets</span>
             </div>
             <div className="rounded-full w-24 h-24 sm:w-28 sm:h-28 flex flex-col items-center justify-center text-center shadow-2xl border-4 border-white bg-gradient-to-br from-amber-100 to-yellow-200">

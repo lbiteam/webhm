@@ -118,7 +118,7 @@
       "basic": {
         "name": "Mobile Business",
         "tagline": "Ice Cream Cart",
-        "investment": "₹3.20 Lakhs",
+        "investment": "₹4 Lakhs",
         "cardFeatures": { "1": "Custom branded cart", "2": "Basic product range", "3": "Low investment start" },
         "features": {
           "1": "Small retail outlet",
@@ -131,7 +131,7 @@
       "medium": {
         "name": "Ice Cream Parlour",
         "tagline": "Flagship Store",
-        "investment": "₹10-15 Lakhs",
+        "investment": "₹15-20 Lakhs",
         "popular": "MOST POPULAR",
         "cardFeatures": { "1": "Flagship store setup", "2": "Premium interior design", "3": "Regional exclusivity" },
         "features": {
@@ -147,7 +147,7 @@
       "bigger": {
         "name": "Cafe",
         "tagline": "Medium Sized Store",
-        "investment": "₹25-30 Lakhs",
+        "investment": "₹25-30 Lakhs", 
         "cardFeatures": { "1": "Full product range", "2": "Territory exclusivity", "3": "Dedicated account manager" },
         "features": {
           "1": "Flagship store",
@@ -410,7 +410,7 @@
       "parlour": {
         "name": "Ice Cream Parlour",
         "tagline": "Premium Experience",
-        "investment": "₹8-15 Lakhs",
+        "investment": "₹15-20 Lakhs",
         "popular": "MOST POPULAR",
         "features": {
           "1": "Flagship store setup",
@@ -424,7 +424,7 @@
       "standing": {
         "name": "Cafe",
         "tagline": "Event Partner",
-        "investment": "₹21-25 Lakhs",
+        "investment": "₹25-30 Lakhs",
         "features": {
           "1": "Medium-sized store",
           "2": "Full product range",
@@ -438,7 +438,7 @@
       "cart": {
         "name": "Ice Cream Cart",
         "tagline": "Mobile Business",
-        "investment": "₹3.20 Lakhs",
+        "investment": "₹4 Lakhs",  
         "features": {
           "1": "Custom branded cart",
           "2": "Basic product range",
