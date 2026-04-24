@@ -2,7 +2,7 @@ import FranchiseBannerForm from "@/components/FranchiseBannerForm";
 import webbanner from "@/assets/website-banners/mission-2026-banner/banner.webp";
 
 const BROCHURE_PDF_URL =
-  "https://honeymanstore.com/wp-content/uploads/2026/02/Honeyman-1.pdf";
+  "https://honeymanstore.com/wp-content/uploads/2026/04/Honeyman_Franchise.pdf";
 
 const HeroFranchiseBanner = () => {
   return (
@@ -20,7 +20,7 @@ const HeroFranchiseBanner = () => {
       <div className="container mx-auto px-6 relative z-10 flex flex-col lg:flex-row items-center justify-between">
         <div className="w-full lg:w-1/2 text-white mb-16 lg:mb-0">
           <span className="text-amber-400 font-extrabold uppercase tracking-widest text-sm mb-4 block drop-shadow-md">
-            <i className="fas fa-check-circle mr-2" /> 160+ SUCCESSFUL STORES
+            <i className="fas fa-check-circle mr-2" /> 180+ SUCCESSFUL STORES
           </span>
           <p className="text-xl md:text-2xl text-white mb-6 font-semibold leading-relaxed drop-shadow-md">
             <span className="border-l-4 border-amber-500 pl-4 py-1 block bg-black/20 rounded-r-lg">
