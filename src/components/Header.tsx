@@ -1,20 +1,22 @@
 import { useState } from "react";
 import { Link } from "react-router-dom";
-import { Menu, X } from "lucide-react";
+import { Menu, Phone, X } from "lucide-react";
 import logo from "@/assets/Honeyman-logo.webp";
+
+const SUPPORT_TEL = "+91 9289947025";
+const SUPPORT_DISPLAY = "+91 96503 05025";
 
 const Header = () => {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
 
   return (
-    <header className="sticky top-0 z-50 bg-white/95 backdrop-blur border-b border-amber-100 shadow-sm">
-      {/* Top bar */}
-      <div className="hidden lg:flex bg-[#97430b] text-[#ffffff] text-[11px] py-2 border-b border-amber-100">
-        <div className="container mx-auto px-6 flex justify-between items-center">
+    <header className="sticky top-0 z-50 w-full font-sans shadow-md">
+      <div className="hidden lg:flex bg-white text-gray-500 text-[11px] py-2 border-b border-amber-100">
+        <div className="container mx-auto px-6 flex justify-between items-center gap-4">
           <span className="font-medium">
-            India's leading premium honey brand — now 160+ stores strong nationwide.
+            India&apos;s leading premium honey brand — now 180+ stores strong nationwide.
           </span>
-          <div className="flex items-center space-x-6">
+          <div className="flex items-center flex-wrap justify-end gap-x-6 gap-y-1 shrink-0">
             <span className="flex items-center">
               <span className="mr-2 text-amber-500">📍</span> Gurugram, HQ 122018
             </span>
@@ -22,7 +24,7 @@ const Header = () => {
               <span className="mr-2 text-amber-500">✉</span> hello@honeyman.in
             </span>
             <span className="flex items-center">
-              <span className="mr-2 text-amber-500">📞</span> +91 96503 05025
+              <span className="mr-2 text-amber-500">📞</span> {SUPPORT_DISPLAY}
             </span>
             <span className="flex items-center">
               <span className="mr-2 text-amber-500">🕐</span> Mon - Sat: 10:00 to 19:00
@@ -31,174 +33,146 @@ const Header = () => {
         </div>
       </div>
 
-      {/* Main nav */}
-      <div className="bg-white">
-        <div className="container mx-auto px-4 lg:px-6 flex items-center justify-between py-2">
-          <Link to="/" className="flex items-center shrink-0">
+      <div className="bg-[#97430b] text-white flex items-center justify-between gap-2 px-3 sm:px-4 py-2 relative">
+        {/* Left: Customer support */}
+        <a
+          href={`tel:${SUPPORT_TEL}`}
+          className="hidden sm:flex flex-col items-center justify-center border border-white/60 rounded px-2 sm:px-3 py-1 text-[10px] sm:text-xs font-bold shrink-0 hover:bg-white/10 transition-colors"
+        >
+          <div className="flex items-center gap-1 text-amber-300">
+            <Phone size={14} fill="currentColor" strokeWidth={0} aria-hidden />
+            <span className="text-xs sm:text-sm tracking-wide whitespace-nowrap">
+              {SUPPORT_TEL}
+            </span>
+          </div>
+          <div className="text-white tracking-wider mt-0.5 text-center leading-tight">
+            FOR CUSTOMER SUPPORT
+          </div>
+        </a>
+
+        {/* Mobile: compact phone */}
+        <a
+          href={`tel:${SUPPORT_DISPLAY}`}
+          className="sm:hidden flex items-center justify-center rounded-full border border-white/60 w-10 h-10 shrink-0 text-amber-300 hover:bg-white/10 transition-colors"
+          aria-label={`Call ${SUPPORT_DISPLAY}`}
+        >
+          <Phone size={18} fill="currentColor" strokeWidth={0} />
+        </a>
+
+        {/* Center: nav + logo */}
+        <nav className="hidden lg:flex items-center justify-center gap-5 xl:gap-8 text-sm font-extrabold tracking-wider uppercase flex-1">
+          <Link to="/" className="hover:text-amber-300 transition-colors">
+            Home
+          </Link>
+          <Link to="/about-us" className="hover:text-amber-300 transition-colors">
+            About
+          </Link>
+
+          <Link
+            to="/"
+            className="w-20 h-20 xl:w-24 xl:h-24 bg-white rounded-full flex items-center justify-center z-10 mx-1 xl:mx-2 shadow-lg transform translate-y-2 border-[3px] border-[#97430b] shrink-0"
+            aria-label="Honeyman home"
+          >
             <img
               src={logo}
               alt="Honeyman"
-              className="h-16 sm:h-12 md:h-20 w-auto object-contain scale-[1.75]"
+              className="rounded-full w-full h-full object-contain p-1"
             />
           </Link>
 
-          {/* Desktop Nav */}
-          <nav className="hidden lg:flex items-center rounded-full px-8 py-3.5 shadow-sm border border-amber-200 bg-gradient-to-r from-amber-100 to-yellow-100 space-x-8 text-amber-900 font-bold text-[13px]">
-            <Link
-              to="/"
-              className="hover:text-amber-600 transition-colors"
-            >
-              Home
-            </Link>
-            <Link
-              to="/about"
-              className="hover:text-amber-600 transition-colors"
-            >
-              About
-            </Link>
-            <Link
-              to="/blog"
-              className="hover:text-amber-600 transition-colors"
-            >
-              Blog
-            </Link>
-            <a
-              href="https://honeymanfranchise.com"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="hover:text-amber-600 transition-colors"
-            >
-              Franchise
-            </a>
-            <a
-              href="https://honeymanstore.com"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="hover:text-amber-600 transition-colors"
-            >
-              Store
-            </a>
-            <a
-              href="https://honeymangifting.com"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="hover:text-amber-600 transition-colors"
-            >
-              Gifting
-            </a>
-            <Link
-              to="/contact"
-              className="hover:text-amber-600 transition-colors"
-            >
-              Contact
-            </Link>
-          </nav>
-
-          {/* Social links desktop */}
-          <div className="hidden lg:flex items-center space-x-3 text-gray-400 border-l border-gray-200 pl-4">
-            <a
-              href="https://instagram.com/honeyman"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="w-9 h-9 rounded-full border border-amber-200 hover:border-amber-500 hover:bg-amber-50 transition-all flex items-center justify-center"
-            >
-              <svg className="w-4 h-4" fill="#974309" viewBox="0 0 24 24"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.052.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98C8.333 23.986 8.741 24 12 24c3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 100 12.324 6.162 6.162 0 000-12.324zM12 16a4 4 0 110-8 4 4 0 010 8zm6.406-11.845a1.44 1.44 0 100 2.881 1.44 1.44 0 000-2.881z"/></svg>
-            </a>
-            <a
-              href="https://facebook.com/honeyman"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="w-9 h-9 rounded-full border border-amber-200 hover:border-amber-500 hover:bg-amber-50 transition-all flex items-center justify-center"
-            >
-              <svg className="w-4 h-4" fill="#974309" viewBox="0 0 24 24"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg>
-            </a>
-            <a
-              href="https://youtube.com/honeyman"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="w-9 h-9 rounded-full border border-amber-200 hover:border-amber-500 hover:bg-amber-50 transition-all flex items-center justify-center"
-            >
-              <svg className="w-4 h-4" fill="#974309" viewBox="0 0 24 24"><path d="M23.498 6.186a3.016 3.016 0 00-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 00.502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 002.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 002.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/></svg>
-            </a>
-          </div>
-
-          {/* Mobile menu button */}
-          <button
-            onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
-            className="lg:hidden w-10 h-10 rounded-full flex items-center justify-center hover:bg-[hsl(var(--honey-light))] transition-colors"
+          <Link to="/blog" className="hover:text-amber-300 transition-colors">
+            Blog
+          </Link>
+          <a
+            href="https://honeymanstore.com"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="hover:text-amber-300 transition-colors"
           >
-            {mobileMenuOpen ? <X className="w-5 h-5" /> : <Menu className="w-5 h-5" />}
-          </button>
+            Store
+          </a>
+        </nav>
+
+        {/* Mobile / tablet: logo center */}
+        <div className="flex lg:hidden flex-1 justify-center min-w-0">
+          <Link
+            to="/"
+            className="w-14 h-14 sm:w-16 sm:h-16 bg-white rounded-full flex items-center justify-center shadow-lg border-[3px] border-white/90 shrink-0"
+          >
+            <img
+              src={logo}
+              alt="Honeyman"
+              className="rounded-full w-full h-full object-contain p-0.5"
+            />
+          </Link>
         </div>
+
+        {/* Right: enquiries (same number — single business line) */}
+        <a
+          href={`tel:${SUPPORT_TEL}`}
+          className="hidden sm:flex flex-col items-center justify-center border border-white/60 rounded px-2 sm:px-3 py-1 text-[10px] sm:text-xs font-bold shrink-0 hover:bg-white/10 transition-colors"
+        >
+          <div className="flex items-center gap-1 text-amber-300">
+            <Phone size={14} fill="currentColor" strokeWidth={0} aria-hidden />
+            <span className="text-xs sm:text-sm tracking-wide whitespace-nowrap">
+              {SUPPORT_DISPLAY}
+            </span>
+          </div>
+          <div className="text-white tracking-wider mt-0.5 text-center leading-tight">
+            STORE & ORDERS
+          </div>
+        </a>
+
+        <button
+          type="button"
+          onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
+          className="lg:hidden w-10 h-10 rounded-full flex items-center justify-center border border-white/40 hover:bg-white/10 transition-colors shrink-0"
+          aria-expanded={mobileMenuOpen}
+          aria-label={mobileMenuOpen ? "Close menu" : "Open menu"}
+        >
+          {mobileMenuOpen ? <X className="w-5 h-5" /> : <Menu className="w-5 h-5" />}
+        </button>
       </div>
 
-      {/* Mobile menu */}
       {mobileMenuOpen && (
-        <div className="lg:hidden bg-white border-t border-amber-100 shadow-xl animate-slide-down">
-          <nav className="container mx-auto px-4 py-4 space-y-2">
+        <div className="lg:hidden border-t border-white/20 bg-[#8a3d0a]">
+          <nav className="px-4 py-3 space-y-1">
             <Link
               to="/"
               onClick={() => setMobileMenuOpen(false)}
-              className="block py-3 text-sm font-bold text-gray-800 border-b border-amber-50"
+              className="block py-3 text-sm font-bold tracking-wide uppercase border-b border-white/10 hover:text-amber-300"
             >
               Home
             </Link>
             <Link
-              to="/about"
+              to="/about-us"
               onClick={() => setMobileMenuOpen(false)}
-              className="block py-3 text-sm font-bold text-gray-800 border-b border-amber-50"
+              className="block py-3 text-sm font-bold tracking-wide uppercase border-b border-white/10 hover:text-amber-300"
             >
               About
             </Link>
             <Link
               to="/blog"
               onClick={() => setMobileMenuOpen(false)}
-              className="block py-3 text-sm font-bold text-gray-800 border-b border-amber-50"
+              className="block py-3 text-sm font-bold tracking-wide uppercase border-b border-white/10 hover:text-amber-300"
             >
               Blog
             </Link>
             <a
-              href="https://honeymanfranchise.com"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="block py-3 text-sm font-bold text-gray-800 border-b border-amber-50"
-            >
-              Franchise
-            </a>
-            <a
               href="https://honeymanstore.com"
               target="_blank"
               rel="noopener noreferrer"
-              className="block py-3 text-sm font-bold text-gray-800 border-b border-amber-50"
+              className="block py-3 text-sm font-bold tracking-wide uppercase border-b border-white/10 hover:text-amber-300"
             >
               Store
             </a>
             <a
-              href="https://honeymangifting.com"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="block py-3 text-sm font-bold text-gray-800 border-b border-amber-50"
+              href={`tel:${SUPPORT_TEL}`}
+              className="flex items-center gap-2 py-3 text-sm font-bold text-amber-300"
             >
-              Gifting
+              <Phone size={16} fill="currentColor" strokeWidth={0} />
+              {SUPPORT_DISPLAY}
             </a>
-            <Link
-              to="/contact"
-              onClick={() => setMobileMenuOpen(false)}
-              className="block py-3 text-sm font-bold text-gray-800 border-b border-amber-50"
-            >
-              Contact
-            </Link>
-            <div className="flex items-center space-x-3 pt-3 border-t border-amber-100">
-              <a href="https://instagram.com/honeyman" target="_blank" rel="noopener noreferrer" className="w-9 h-9 rounded-full border border-amber-200 flex items-center justify-center">
-                <svg className="w-4 h-4" fill="currentColor" viewBox="0 0 24 24"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.052.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98C8.333 23.986 8.741 24 12 24c3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 100 12.324 6.162 6.162 0 000-12.324zM12 16a4 4 0 110-8 4 4 0 010 8zm6.406-11.845a1.44 1.44 0 100 2.881 1.44 1.44 0 000-2.881z"/></svg>
-              </a>
-              <a href="https://facebook.com/honeyman" target="_blank" rel="noopener noreferrer" className="w-9 h-9 rounded-full border border-amber-200 flex items-center justify-center">
-                <svg className="w-4 h-4" fill="currentColor" viewBox="0 0 24 24"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg>
-              </a>
-              <a href="https://youtube.com/honeyman" target="_blank" rel="noopener noreferrer" className="w-9 h-9 rounded-full border border-amber-200 flex items-center justify-center">
-                <svg className="w-4 h-4" fill="currentColor" viewBox="0 0 24 24"><path d="M23.498 6.186a3.016 3.016 0 00-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 00.502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 002.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 002.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/></svg>
-              </a>
-            </div>
           </nav>
         </div>
       )}

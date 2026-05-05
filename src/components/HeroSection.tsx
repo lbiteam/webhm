@@ -2,8 +2,10 @@ import { useState, useEffect } from "react";
 import { ArrowRight } from "lucide-react";
 import franchise1 from "@/assets/cafe-1.webp";
 import franchise2 from "@/assets/cafe-image.webp";
+import franchise3 from "@/assets/honeyman-cart-model-1.webp";
 import storeProducts from "@/assets/store-products (2).webp";
 import storeProducts3 from "@/assets/store-products(3).webp";
+import storeProducts4 from "@/assets/store-3.webp";
 import gifting1 from "@/assets/gifting-1.webp";
 import gifting2 from "@/assets/gifting-2.webp";
 import gifting3 from "@/assets/gifting-3.webp";
@@ -24,10 +26,10 @@ const panels: PanelData[] = [
   {
     title: "Franchise",
     subtitle: "Own a Honeyman Cafe",
-    description: "Join India's fastest growing honey franchise. 160+ stores and counting.",
+    description: "Join India's fastest growing honey franchise. 180+ stores and counting.",
     link: "https://honeymanfranchise.com",
     linkText: "Explore Franchise",
-    images: [franchise1, franchise2],
+    images: [franchise1, franchise2, franchise3],
     bgColor: "from-amber-900/80 to-amber-700/60",
     overlayColor: "",
   },
@@ -37,7 +39,7 @@ const panels: PanelData[] = [
     description: "Pure, natural honey and specialty products delivered to your doorstep.",
     link: "https://honeymanstore.com",
     linkText: "Shop Now",
-    images: [storeProducts, storeProducts3],
+    images: [storeProducts, storeProducts3, storeProducts4],
     bgColor: "from-yellow-800/80 to-yellow-600/60",
     overlayColor: "",
   },
@@ -103,7 +105,7 @@ const HeroSection = () => {
             ))}
 
             {/* Dark gradient overlay for text readability */}
-            <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/40 to-black/10" />
+            <div className="absolute inset-0 bg-gradient-to-t from-black/40 via-black/30 to-black/20" />
 
             {/* Content */}
             <div className="absolute inset-0 flex flex-col justify-end p-8 lg:p-10 text-white ">

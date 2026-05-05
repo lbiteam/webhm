@@ -7,7 +7,6 @@ import Index from "./pages/Index";
 import Blogs from "./pages/Blogs";
 import BlogPost from "./pages/BlogPost";
 import About from "./pages/About";
-import Contact from "./pages/Contact";
 import Privacy from "./pages/Privacy";
 import Terms from "./pages/Terms";
 import NotFound from "./pages/NotFound";
@@ -24,10 +23,9 @@ const App = () => (
           <Route path="/" element={<Index />} />
           <Route path="/blog" element={<Blogs />} />
           <Route path="/blog/:id" element={<BlogPost />} />
-          <Route path="/about" element={<About />} />
-          <Route path="/contact" element={<Contact />} />
-          <Route path="/privacy" element={<Privacy />} />
-          <Route path="/terms" element={<Terms />} />
+          <Route path="/about-us" element={<About />} />
+          <Route path="/privacy-policy" element={<Privacy />} />
+        
           <Route path="*" element={<NotFound />} />
         </Routes>
       </BrowserRouter>

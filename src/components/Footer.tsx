@@ -3,7 +3,7 @@ import logo from "@/assets/Honeyman-logo.webp";
 
 const Footer = () => {
   return (
-    <footer className="bg-[#97430b] text-white/80 mt-16">
+    <footer className="bg-[#97430b] text-white/80 ">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
         <div className="grid grid-cols-2 md:grid-cols-4 gap-8 mb-8">
           <div>
@@ -21,9 +21,8 @@ const Footer = () => {
           <div>
             <h3 className="font-semibold text-white mb-4">Company</h3>
             <ul className="space-y-2 text-sm">
-              <li><Link to="/about" className="hover:text-amber-400 transition-colors">About Us</Link></li>
+              <li><Link to="/about-us" className="hover:text-amber-400 transition-colors">About Us</Link></li>
               <li><Link to="/blog" className="hover:text-amber-400 transition-colors">Blog</Link></li>
-              <li><Link to="/contact" className="hover:text-amber-400 transition-colors">Contact</Link></li>
             </ul>
           </div>
           <div>
@@ -38,15 +37,18 @@ const Footer = () => {
               <a href="https://youtube.com/@honeymanstore" target="_blank" rel="noopener noreferrer" className="w-10 h-10 rounded-full border border-white/20 hover:border-amber-400 hover:bg-amber-400/10 transition-all flex items-center justify-center">
                 <svg className="w-4 h-4" fill="currentColor" viewBox="0 0 24 24"><path d="M23.498 6.186a3.016 3.016 0 00-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 00.502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 002.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 002.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/></svg>
               </a>
+              <a href="https://www.linkedin.com/in/dr-shahzada-singh-kapoor-31228019/?skipRedirect=true" target="_blank" rel="noopener noreferrer" className="w-10 h-10 rounded-full border border-white/20 hover:border-amber-400 hover:bg-amber-400/10 transition-all flex items-center justify-center">
+                <svg className="w-4 h-4" fill="currentColor" viewBox="0 0 24 24"><path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/></svg>
+              </a>
             </div>
             <ul className="space-y-2 text-sm">
-              <li><Link to="/privacy" className="hover:text-amber-400 transition-colors">Privacy Policy</Link></li>
-              <li><Link to="/terms" className="hover:text-amber-400 transition-colors">Terms of Service</Link></li>
+              <li><Link to="/privacy-policy" className="hover:text-amber-400 transition-colors">Privacy Policy</Link></li>
+             
             </ul>
           </div>
         </div>
-        <div className="pt-8 border-t border-white/10 text-center text-sm text-white/40">
-          <p>© 2025 Honeyman. All rights reserved. Delivering Purity Since 1980.</p>
+        <div className="pt-8 border-t border-white/10 text-center text-sm text-white">
+          <p>© 2026 Honeyman. All rights reserved. Delivering Purity Since 1980.</p>
         </div>
       </div>
     </footer>

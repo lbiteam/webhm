@@ -10,126 +10,167 @@ const Privacy = () => {
         {/* Hero Section */}
         <div className="mb-12 space-y-4">
           <h1 className="text-4xl md:text-5xl font-bold leading-tight animate-slide-down">
-            Privacy Policy
+            Privacy Policy for Honeyman
           </h1>
           <p className="text-muted-foreground animate-slide-up stagger-1">
-            Last updated: March 20, 2025
+            Last Updated: February 21, 2026
           </p>
         </div>
 
         <div className="prose prose-lg max-w-none space-y-8">
-          <section>
-            <h2 className="text-2xl font-bold mb-4">Introduction</h2>
+          <section className="space-y-4">
             <p className="text-muted-foreground">
-              At Perspective, we take your privacy seriously. This Privacy Policy explains how we collect, 
-              use, disclose, and safeguard your information when you visit our website and subscribe to our newsletter.
+              At Honeyman (accessible from{" "}
+              <a
+                href="https://honeyman.in"
+                className="text-amber-800 underline underline-offset-2 hover:text-amber-950"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                https://honeyman.in
+              </a>
+              ), one of our main priorities is the privacy of our visitors. This Privacy Policy document
+              contains types of information that is collected and recorded by Honeyman and how we use it.
+            </p>
+            <p className="text-muted-foreground">
+              If you have additional questions or require more information about our Privacy Policy, do not
+              hesitate to contact us at{" "}
+              <a
+                href="mailto:info@honeyman.in"
+                className="text-amber-800 underline underline-offset-2 hover:text-amber-950"
+              >
+                info@honeyman.in
+              </a>
+              .
             </p>
           </section>
 
           <section>
-            <h2 className="text-2xl font-bold mb-4">Information We Collect</h2>
-            <h3 className="text-xl font-semibold mb-3 mt-6">Personal Information</h3>
+            <h2 className="text-2xl font-bold mb-4">1. Information We Collect</h2>
             <p className="text-muted-foreground mb-4">
-              We may collect personal information that you voluntarily provide to us when you:
+              We collect several different types of information for various purposes to provide and improve
+              our service to you.
             </p>
-            <ul className="list-disc pl-6 space-y-2 text-muted-foreground">
-              <li>Subscribe to our newsletter</li>
-              <li>Contact us through our contact form</li>
-              <li>Comment on our articles</li>
-              <li>Create an account on our website</li>
+            <h3 className="text-xl font-semibold mb-3 text-foreground">Personal Identification Information</h3>
+            <p className="text-muted-foreground mb-3">
+              While using our site, particularly when inquiring about franchise opportunities or making a
+              purchase, we may ask you to provide us with certain personally identifiable information such as:
+            </p>
+            <ul className="list-disc pl-6 space-y-2 text-muted-foreground mb-6">
+              <li>Full Name</li>
+              <li>Email Address</li>
+              <li>Phone Number</li>
+              <li>Shipping and Billing Address</li>
+              <li>Business/Professional Details (for Franchise applications)</li>
             </ul>
-            <p className="text-muted-foreground mt-4">
-              This information may include your name, email address, and any other information you choose to provide.
-            </p>
-
-            <h3 className="text-xl font-semibold mb-3 mt-6">Automatically Collected Information</h3>
+            <h3 className="text-xl font-semibold mb-3 text-foreground">Log Files</h3>
             <p className="text-muted-foreground">
-              When you visit our website, we may automatically collect certain information about your device, 
-              including information about your web browser, IP address, time zone, and some of the cookies 
-              installed on your device.
+              Honeyman follows a standard procedure of using log files. These files log visitors when they
+              visit websites. The information collected includes internet protocol (IP) addresses, browser
+              type, Internet Service Provider (ISP), date and time stamp, and referring/exit pages.
             </p>
           </section>
 
           <section>
-            <h2 className="text-2xl font-bold mb-4">How We Use Your Information</h2>
+            <h2 className="text-2xl font-bold mb-4">2. How We Use Your Information</h2>
             <p className="text-muted-foreground mb-4">
-              We use the information we collect to:
+              We use the information we collect in various ways, including to:
             </p>
             <ul className="list-disc pl-6 space-y-2 text-muted-foreground">
-              <li>Send you our newsletter and marketing communications</li>
-              <li>Respond to your comments and questions</li>
-              <li>Improve our website and content</li>
-              <li>Analyze usage patterns and trends</li>
-              <li>Protect against fraudulent or illegal activity</li>
-            </ul>
-          </section>
-
-          <section>
-            <h2 className="text-2xl font-bold mb-4">Cookies and Tracking Technologies</h2>
-            <p className="text-muted-foreground">
-              We use cookies and similar tracking technologies to track activity on our website and store 
-              certain information. You can instruct your browser to refuse all cookies or to indicate when 
-              a cookie is being sent. However, if you do not accept cookies, you may not be able to use 
-              some portions of our website.
-            </p>
-          </section>
-
-          <section>
-            <h2 className="text-2xl font-bold mb-4">Data Security</h2>
-            <p className="text-muted-foreground">
-              We implement appropriate technical and organizational security measures to protect your 
-              personal information. However, please note that no method of transmission over the Internet 
-              or method of electronic storage is 100% secure.
-            </p>
-          </section>
-
-          <section>
-            <h2 className="text-2xl font-bold mb-4">Your Rights</h2>
-            <p className="text-muted-foreground mb-4">
-              Depending on your location, you may have certain rights regarding your personal information, including:
-            </p>
-            <ul className="list-disc pl-6 space-y-2 text-muted-foreground">
-              <li>The right to access your personal information</li>
-              <li>The right to rectification of inaccurate information</li>
-              <li>The right to erasure of your personal information</li>
-              <li>The right to withdraw consent</li>
-              <li>The right to data portability</li>
+              <li>Provide, operate, and maintain our website.</li>
+              <li>Improve, personalize, and expand our product offerings.</li>
+              <li>Understand and analyze how you use our website.</li>
+              <li>Develop new products, services, features, and functionality.</li>
+              <li>Process transactions and manage your orders.</li>
+              <li>
+                Communicate with you, either directly or through one of our partners, for customer service,
+                updates, and marketing/promotional purposes.
+              </li>
+              <li>Evaluate and process Franchise Inquiries for the Honeyman brand.</li>
             </ul>
           </section>
 
           <section>
-            <h2 className="text-2xl font-bold mb-4">Third-Party Services</h2>
+            <h2 className="text-2xl font-bold mb-4">3. Cookies and Web Beacons</h2>
             <p className="text-muted-foreground">
-              Our website may contain links to third-party websites. We are not responsible for the privacy 
-              practices of these third-party sites. We encourage you to read their privacy policies.
+              Like any other website, Honeyman uses &quot;cookies&quot;. These cookies are used to store
+              information including visitors&apos; preferences, and the pages on the website that the visitor
+              accessed or visited. The information is used to optimize the users&apos; experience by customizing
+              our web page content based on visitors&apos; browser type and/or other information.
             </p>
           </section>
 
           <section>
-            <h2 className="text-2xl font-bold mb-4">Children's Privacy</h2>
+            <h2 className="text-2xl font-bold mb-4">4. Third-Party Privacy Policies</h2>
             <p className="text-muted-foreground">
-              Our website is not intended for children under the age of 13. We do not knowingly collect 
-              personal information from children under 13.
+              Honeyman&apos;s Privacy Policy does not apply to other advertisers or websites. Thus, we are
+              advising you to consult the respective Privacy Policies of these third-party ad servers (such as
+              Google or social media platforms) for more detailed information.
             </p>
           </section>
 
           <section>
-            <h2 className="text-2xl font-bold mb-4">Changes to This Privacy Policy</h2>
+            <h2 className="text-2xl font-bold mb-4">5. Data Protection Rights</h2>
+            <p className="text-muted-foreground mb-4">
+              We want to make sure you are fully aware of all of your data protection rights. Every user is
+              entitled to the following:
+            </p>
+            <ul className="list-disc pl-6 space-y-2 text-muted-foreground">
+              <li>
+                <strong className="text-foreground font-semibold">The right to access:</strong> You have the
+                right to request copies of your personal data.
+              </li>
+              <li>
+                <strong className="text-foreground font-semibold">The right to rectification:</strong> You have
+                the right to request that we correct any information you believe is inaccurate.
+              </li>
+              <li>
+                <strong className="text-foreground font-semibold">The right to erasure:</strong> You have the
+                right to request that we erase your personal data, under certain conditions.
+              </li>
+              <li>
+                <strong className="text-foreground font-semibold">The right to object to processing:</strong> You
+                have the right to object to our processing of your personal data, especially for direct
+                marketing.
+              </li>
+            </ul>
+          </section>
+
+          <section>
+            <h2 className="text-2xl font-bold mb-4">6. Children&apos;s Information</h2>
             <p className="text-muted-foreground">
-              We may update our Privacy Policy from time to time. We will notify you of any changes by 
-              posting the new Privacy Policy on this page and updating the "Last updated" date.
+              Another part of our priority is adding protection for children while using the internet. We
+              encourage parents and guardians to observe, participate in, and/or monitor and guide their online
+              activity. Honeyman does not knowingly collect any Personal Identifiable Information from children
+              under the age of 13.
+            </p>
+          </section>
+
+          <section>
+            <h2 className="text-2xl font-bold mb-4">7. Consent</h2>
+            <p className="text-muted-foreground">
+              By using our website, you hereby consent to our Privacy Policy and agree to its Terms and
+              Conditions.
             </p>
           </section>
 
           <section>
             <h2 className="text-2xl font-bold mb-4">Contact Us</h2>
-            <p className="text-muted-foreground">
-              If you have any questions about this Privacy Policy, please contact us at:
+            <p className="text-muted-foreground mb-4">
+              If you have any questions about this Privacy Policy, please contact us:
             </p>
-            <p className="text-muted-foreground mt-4">
-              Email: privacy@perspective.blog<br />
-              Address: San Francisco, CA
-            </p>
+            <ul className="list-none pl-0 space-y-2 text-muted-foreground">
+              <li>
+                By email:{" "}
+                <a
+                  href="mailto:hello@honeyman.in"
+                  className="text-amber-800 underline underline-offset-2 hover:text-amber-950"
+                >
+                  hello@honeyman.in
+                </a>
+              </li>
+              
+            </ul>
           </section>
         </div>
       </main>

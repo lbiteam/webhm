@@ -14,6 +14,214 @@ const BlogPost = () => {
   return (
     <div className="min-h-screen bg-background animate-fade-in">
       <Header />
+
+      {/* Custom styles for rich blog content (tables, callouts, research notes, etc.) */}
+      <style>{`
+        .blog-content h2 {
+          font-size: 1.75rem;
+          font-weight: 700;
+          color: hsl(var(--honey-dark, 30 60% 20%));
+          margin-top: 2.5rem;
+          margin-bottom: 1rem;
+          padding-bottom: 0.5rem;
+          border-bottom: 2px solid #f5d98b;
+          line-height: 1.3;
+        }
+        .blog-content h3 {
+          font-size: 1.35rem;
+          font-weight: 700;
+          color: #8B6914;
+          margin-top: 1.75rem;
+          margin-bottom: 0.75rem;
+          line-height: 1.4;
+        }
+        .blog-content p {
+          color: #555;
+          line-height: 1.8;
+          margin-bottom: 1.1rem;
+          font-size: 1.05rem;
+        }
+        .blog-content strong {
+          color: #1a1a2e;
+          font-weight: 600;
+        }
+        .blog-content em {
+          color: #666;
+        }
+        .blog-content ul, .blog-content ol {
+          margin: 1rem 0 1.5rem 0;
+          padding-left: 1.5rem;
+        }
+        .blog-content ul li, .blog-content ol li {
+          color: #555;
+          line-height: 1.7;
+          margin-bottom: 0.5rem;
+          padding-left: 0.25rem;
+        }
+        .blog-content ul li::marker {
+          color: #d4a017;
+          font-weight: bold;
+        }
+
+        /* Comparison Table */
+        .blog-content table.comparison-table {
+          width: 100%;
+          border-collapse: collapse;
+          margin: 1.5rem 0 2rem 0;
+          border-radius: 8px;
+          overflow: hidden;
+          box-shadow: 0 1px 3px rgba(212, 160, 23, 0.15);
+          font-size: 0.95rem;
+        }
+        .blog-content table.comparison-table thead {
+          background: #1a1a2e;
+        }
+        .blog-content table.comparison-table thead th {
+          color: #d4a017;
+          font-weight: 700;
+          text-align: left;
+          padding: 0.85rem 1rem;
+          font-size: 0.95rem;
+          letter-spacing: 0.02em;
+        }
+        .blog-content table.comparison-table tbody td {
+          padding: 0.75rem 1rem;
+          border-bottom: 1px solid #f5e9c8;
+          color: #555;
+          vertical-align: top;
+        }
+        .blog-content table.comparison-table tbody tr:nth-child(odd) {
+          background: #fdf3dc;
+        }
+        .blog-content table.comparison-table tbody tr:nth-child(even) {
+          background: #ffffff;
+        }
+        .blog-content table.comparison-table tbody td:first-child {
+          font-weight: 600;
+          color: #1a1a2e;
+        }
+        .blog-content table.comparison-table tbody tr:last-child td {
+          border-bottom: none;
+        }
+
+        /* Callout (italic emphasized quote) */
+        .blog-content blockquote.callout {
+          background: #fdf3dc;
+          border-left: 5px solid #d4a017;
+          padding: 1rem 1.25rem;
+          margin: 1.75rem 0;
+          border-radius: 0 8px 8px 0;
+          color: #7a5c00;
+          font-style: italic;
+          font-size: 1.05rem;
+          line-height: 1.7;
+        }
+        .blog-content blockquote.callout em {
+          color: #7a5c00;
+        }
+
+        /* Research note */
+        .blog-content .research-note {
+          background: #e8f5e9;
+          border-left: 5px solid #2e7d32;
+          padding: 1rem 1.25rem;
+          margin: 1.25rem 0;
+          border-radius: 0 8px 8px 0;
+          color: #1b5e20;
+          font-size: 0.98rem;
+          line-height: 1.7;
+        }
+        .blog-content .research-note strong {
+          color: #2e7d32;
+          margin-right: 0.25rem;
+        }
+        .blog-content .research-note em {
+          color: #1b5e20;
+        }
+
+        /* Real-life relevance block */
+        .blog-content .real-life {
+          background: #f5d98b;
+          border-left: 5px solid #d4a017;
+          padding: 1rem 1.25rem;
+          margin: 1.25rem 0;
+          border-radius: 0 8px 8px 0;
+          color: #5c3d00;
+          font-size: 0.98rem;
+          line-height: 1.7;
+        }
+        .blog-content .real-life strong {
+          color: #8b6914;
+          margin-right: 0.25rem;
+        }
+
+        /* Scenario blocks (Ravi vs Priya) */
+        .blog-content .scenario-block {
+          padding: 1rem 1.25rem;
+          margin: 1rem 0;
+          border-radius: 0 8px 8px 0;
+        }
+        .blog-content .scenario-block p {
+          margin-bottom: 0;
+          color: inherit;
+        }
+        .blog-content .scenario-red {
+          background: #fef2f2;
+          border-left: 5px solid #cc0000;
+          color: #7f1d1d;
+        }
+        .blog-content .scenario-green {
+          background: #f0fdf4;
+          border-left: 5px solid #007700;
+          color: #14532d;
+        }
+        .blog-content .scenario-block strong {
+          color: inherit;
+        }
+
+        /* CTA Block (gold-on-dark) */
+        .blog-content .cta-block {
+          background: linear-gradient(135deg, #1a1a2e 0%, #2a2a4e 100%);
+          color: #ffffff;
+          padding: 2rem 1.5rem;
+          margin: 2rem 0;
+          border-radius: 12px;
+          text-align: center;
+          box-shadow: 0 4px 16px rgba(0,0,0,0.15);
+        }
+        .blog-content .cta-block h3 {
+          color: #d4a017;
+          font-size: 1.5rem;
+          margin: 0 0 0.75rem 0;
+          padding-bottom: 0;
+          border-bottom: none;
+        }
+        .blog-content .cta-block p {
+          color: #f5e9c8;
+          margin-bottom: 0.5rem;
+          font-size: 1.05rem;
+        }
+        .blog-content .cta-block strong {
+          color: #d4a017;
+        }
+        .blog-content .cta-block em {
+          color: #f5d98b;
+        }
+
+        /* Mobile responsive table */
+        @media (max-width: 640px) {
+          .blog-content table.comparison-table {
+            font-size: 0.85rem;
+          }
+          .blog-content table.comparison-table thead th,
+          .blog-content table.comparison-table tbody td {
+            padding: 0.5rem 0.6rem;
+          }
+          .blog-content h2 { font-size: 1.45rem; }
+          .blog-content h3 { font-size: 1.15rem; }
+        }
+      `}</style>
+
       <main className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
         {/* Breadcrumb */}
         <nav className="mb-6 text-sm text-muted-foreground animate-slide-down">
@@ -89,9 +297,9 @@ const BlogPost = () => {
             <h1 className="text-3xl md:text-4xl font-bold mb-6 leading-tight">{blog.title}</h1>
             <p className="text-lg text-muted-foreground mb-8 leading-relaxed">{blog.excerpt}</p>
 
-            {/* Blog Content */}
+            {/* Blog Content - using custom blog-content class for rich styling */}
             <div
-              className="prose prose-amber max-w-none prose-headings:font-bold prose-h2:text-2xl prose-h2:mt-8 prose-h2:mb-4 prose-p:text-muted-foreground prose-p:leading-relaxed"
+              className="blog-content max-w-none"
               dangerouslySetInnerHTML={{ __html: blog.content }}
             />
 
@@ -104,6 +312,12 @@ const BlogPost = () => {
                 </a>
                 <a href={`https://www.facebook.com/sharer/sharer.php?quote=${encodeURIComponent(blog.title)}`} target="_blank" rel="noopener noreferrer" className="w-10 h-10 rounded-full bg-amber-100 hover:bg-amber-200 flex items-center justify-center transition-colors">
                   <span className="text-sm font-bold text-amber-800">f</span>
+                </a>
+                <a href={`https://www.linkedin.com/sharing/share-offsite/?url=${encodeURIComponent(typeof window !== 'undefined' ? window.location.href : '')}`} target="_blank" rel="noopener noreferrer" className="w-10 h-10 rounded-full bg-amber-100 hover:bg-amber-200 flex items-center justify-center transition-colors">
+                  <span className="text-sm font-bold text-amber-800">in</span>
+                </a>
+                <a href={`https://api.whatsapp.com/send?text=${encodeURIComponent(blog.title + ' - ' + (typeof window !== 'undefined' ? window.location.href : ''))}`} target="_blank" rel="noopener noreferrer" className="w-10 h-10 rounded-full bg-amber-100 hover:bg-amber-200 flex items-center justify-center transition-colors">
+                  <span className="text-sm font-bold text-amber-800">W</span>
                 </a>
               </div>
             </div>

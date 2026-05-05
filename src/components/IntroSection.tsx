@@ -8,18 +8,16 @@ const IntroSection = () => {
         Delivering Purity Since 1980
       </h2>
       <p className="text-lg text-muted-foreground leading-relaxed max-w-3xl mx-auto animate-slide-up stagger-1">
-        From hive to home, Honeyman brings you the finest natural honey and honey-based products. 
-        Whether you're looking to own a franchise, shop premium products, or send the perfect gift — 
-        we've got something sweet for everyone.
+      At Honeyman, every drop tells a story of purity, tradition, and trust. From golden raw honey to wholesome honey-based gifts, we bring nature's finest straight to your family's table. Whether you're shopping for everyday goodness, searching for the perfect gift, or exploring a rewarding franchise opportunity, Honeyman promises quality you can taste and a legacy you can rely on. Sweetness, the way nature intended.
       </p>
       <div className="flex flex-wrap justify-center gap-6 mt-10 animate-slide-up stagger-2">
         <div className="text-center">
-          <span className="text-3xl md:text-4xl font-bold text-[hsl(var(--honey-gold))]">160+</span>
+          <span className="text-3xl md:text-4xl font-bold text-[hsl(var(--honey-gold))]">180+</span>
           <p className="text-sm text-muted-foreground mt-1">Stores Nationwide</p>
         </div>
         <div className="w-px bg-border" />
         <div className="text-center">
-          <span className="text-3xl md:text-4xl font-bold text-[hsl(var(--honey-gold))]">40+</span>
+          <span className="text-3xl md:text-4xl font-bold text-[hsl(var(--honey-gold))]">46+</span>
           <p className="text-sm text-muted-foreground mt-1">Years of Trust</p>
         </div>
         <div className="w-px bg-border" />
