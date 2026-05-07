@@ -185,10 +185,10 @@ export const blogs: Blog[] = [
   {
     id: "honeyman-franchise-1000-store-mission",
     title: "Want to Own a Honeyman Store? Here's How the 1000 Store Mission Opens Doors for You",
-    excerpt: "Honeyman is on a mission to open 1,000 stores across India and beyond. With 180+ stores already live in 25+ cities, discover how to start your own Honeyman franchise — investment, ROI, support, and step-by-step process explained.",
+    excerpt: "Honeyman is on a mission to open 1,000 stores across India and beyond. With 80+ stores already live in 25+ cities, discover how to start your own Honeyman franchise — investment, ROI, support, and step-by-step process explained.",
     content: `<p>Somewhere right now, someone just like you is reading this and thinking: <em>"I want to build something of my own. I want a business that gives me independence, income, and purpose — but I don't want to bet everything on an untested idea."</em></p>
     <p>If that's you, you're about to read something that could change your trajectory.</p>
-    <p><strong>Honeyman</strong> — India's first honey-based food and lifestyle brand — has launched one of the most ambitious franchise missions in the country's food industry: <strong>1,000 stores across India and globally</strong>. And they're not starting from scratch. With <strong>180+ stores already operational in 25+ cities</strong>, this isn't a pitch deck promise. It's a train that's already moving — and the best seats are filling fast.</p>
+    <p><strong>Honeyman</strong> — India's first honey-based food and lifestyle brand — has launched one of the most ambitious franchise missions in the country's food industry: <strong>1,000 stores across India and globally</strong>. And they're not starting from scratch. With <strong>80+ stores already operational in 25+ cities</strong>, this isn't a pitch deck promise. It's a train that's already moving — and the best seats are filling fast.</p>
     <p>This blog is your complete guide to understanding the Honeyman Franchise opportunity, from investment and returns to the step-by-step process of becoming a franchise partner.</p>
   
     <h2>About Honeyman: More Than a Honey Brand</h2>
@@ -212,7 +212,7 @@ export const blogs: Blog[] = [
     <p>Most brands announce expansion targets before building the backend. Honeyman did it the other way round. The company already operates its own <strong>state-of-the-art production factory</strong>, employs <strong>100+ direct and indirect staff</strong>, and has dedicated in-house teams for franchise development, AI-driven marketing, daily operations support, and specialised interior design. The engine is built. It just needs more stores to fuel.</p>
   
     <h3>Early Mover Advantage Is Real</h3>
-    <p>With 180+ stores live and a target of 1,000, roughly <strong>800+ territories are still available</strong> across India and internationally. Franchise partners who join now get first pick of prime locations in their city — and lock in brand-building momentum before the market saturates. In franchising, timing is everything. The partners who joined brands like Haldiram's, Chai Point, or Amul early didn't just get a store — they got an appreciating asset.</p>
+    <p>With 80+ stores live and a target of 1,000, roughly <strong>800+ territories are still available</strong> across India and internationally. Franchise partners who join now get first pick of prime locations in their city — and lock in brand-building momentum before the market saturates. In franchising, timing is everything. The partners who joined brands like Haldiram's, Chai Point, or Amul early didn't just get a store — they got an appreciating asset.</p>
   
     <h3>The Market Tailwind Is Massive</h3>
     <div class="research-note">
@@ -283,7 +283,7 @@ export const blogs: Blog[] = [
       <li><strong>Parlour (150–450 sq):</strong> High streets, busy markets, residential clusters, near schools and colleges</li>
       <li><strong>Café (500 - 800 SQ FT):</strong> Premium high streets, destination malls, standalone locations, Tier 1 and Tier 2 cities</li>
     </ul>
-    <p>Honeyman franchises are currently operational across <strong>25+ cities in India</strong> — from metros like Delhi, Mumbai, and Bangalore to fast-growing Tier 2 markets. The brand actively supports location scouting and provides guidance on site selection.</p>
+    <p>Honeyman franchises are currently operational across <strong>25+ cities in India</strong> — from metros like Delhi, Kolkata, and Bangalore to fast-growing Tier 2 markets. The brand actively supports location scouting and provides guidance on site selection.</p>
   
     <h2>Support & Training Provided</h2>
     <p>This is where Honeyman's infrastructure investment pays off for franchise partners. The support isn't just a training manual and a phone number — it's a <strong>turnkey ecosystem</strong>:</p>
@@ -367,7 +367,7 @@ export const blogs: Blog[] = [
     <p>The total investment for a Honeyman Franchise ranges from approximately <strong>₹4 lakh to ₹30 lakh</strong>, depending on the format (cart, parlour, or café) and location. This is a turnkey investment that includes franchise fees, store design, equipment, initial inventory, and launch marketing support. Contact Honeyman directly for current, format-specific pricing.</p>
   
     <h3>2. What is the Honeyman 1,000 store mission?</h3>
-    <p>Honeyman has set an ambitious target to expand to <strong>1,000 stores across India and globally</strong>. With 180+ stores already operational in 25+ cities and a fully integrated backend infrastructure (own factory, 100+ staff, in-house design and marketing teams), the brand is actively onboarding franchise partners to reach this milestone. This creates a significant early-mover opportunity for entrepreneurs.</p>
+    <p>Honeyman has set an ambitious target to expand to <strong>1,000 stores across India and globally</strong>. With 80+ stores already operational in 25+ cities and a fully integrated backend infrastructure (own factory, 100+ staff, in-house design and marketing teams), the brand is actively onboarding franchise partners to reach this milestone. This creates a significant early-mover opportunity for entrepreneurs.</p>
   
     <h3>3. What franchise models does Honeyman offer?</h3>
     <p>Honeyman offers three franchise formats: <strong>cart (30+ sq ft)</strong> for high-footfall zones like malls and stations, <strong>Parlour (150–450 sq)</strong> for high streets and market areas, and <strong>Café Honeyman (500 - 800 SQ FT)</strong> for premium experiential retail locations. Each format is designed for different budgets and city types.</p>
@@ -382,7 +382,7 @@ export const blogs: Blog[] = [
     <p>Honeyman provides a <strong>fully integrated, turnkey support system</strong> including: in-house store design and build-out, comprehensive product and operations training, AI-driven marketing and social media support, centralised supply chain from their own factory, ongoing operations assistance, exclusive territory protection, and continuous R&D-driven product innovation.</p>
   
     <h3>7. Is Honeyman one of the best food franchise opportunities in 2026?</h3>
-    <p>Honeyman is widely recognised as one of India's fastest-growing food franchise brands. With a unique honey-based USP, an accessible investment range of ₹10–20 lakh, 180+ operational stores, exports to the USA/UAE/UK, and a 1,000-store expansion mission, the brand combines low entry cost with high differentiation and massive market tailwind — making it a compelling franchise opportunity in 2026.</p>`,
+    <p>Honeyman is widely recognised as one of India's fastest-growing food franchise brands. With a unique honey-based USP, an accessible investment range of ₹10–20 lakh, 80+ operational stores, exports to the USA/UAE/UK, and a 1,000-store expansion mission, the brand combines low entry cost with high differentiation and massive market tailwind — making it a compelling franchise opportunity in 2026.</p>`,
     category: "Franchise",
     image: blog5,
     date: "2026-05-05",
