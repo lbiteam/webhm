@@ -185,10 +185,10 @@ export const blogs: Blog[] = [
   {
     id: "honeyman-franchise-1000-store-mission",
     title: "Want to Own a Honeyman Store? Here's How the 1000 Store Mission Opens Doors for You",
-    excerpt: "Honeyman is on a mission to open 1,000 stores across India and beyond. With 80+ stores already live in 25+ cities, discover how to start your own Honeyman franchise — investment, ROI, support, and step-by-step process explained.",
+    excerpt: "Honeyman is on a mission to open 1,000 stores across India and beyond. With 180+ stores operational in 25+ cities, discover how to start your own Honeyman franchise — investment, ROI, support, and step-by-step process explained.",
     content: `<p>Somewhere right now, someone just like you is reading this and thinking: <em>"I want to build something of my own. I want a business that gives me independence, income, and purpose — but I don't want to bet everything on an untested idea."</em></p>
     <p>If that's you, you're about to read something that could change your trajectory.</p>
-    <p><strong>Honeyman</strong> — India's first honey-based food and lifestyle brand — has launched one of the most ambitious franchise missions in the country's food industry: <strong>1,000 stores across India and globally</strong>. And they're not starting from scratch. With <strong>80+ stores already operational in 25+ cities</strong>, this isn't a pitch deck promise. It's a train that's already moving — and the best seats are filling fast.</p>
+    <p><strong>Honeyman</strong> — India's first honey-based food and lifestyle brand — has launched one of the most ambitious franchise missions in the country's food industry: <strong>1,000 stores across India and globally</strong>. And they're not starting from scratch. With <strong>180+ stores operational in 25+ cities</strong>, this isn't a pitch deck promise. It's a train that's already moving — and the best seats are filling fast.</p>
     <p>This blog is your complete guide to understanding the Honeyman Franchise opportunity, from investment and returns to the step-by-step process of becoming a franchise partner.</p>
   
     <h2>About Honeyman: More Than a Honey Brand</h2>
@@ -382,7 +382,7 @@ export const blogs: Blog[] = [
     <p>Honeyman provides a <strong>fully integrated, turnkey support system</strong> including: in-house store design and build-out, comprehensive product and operations training, AI-driven marketing and social media support, centralised supply chain from their own factory, ongoing operations assistance, exclusive territory protection, and continuous R&D-driven product innovation.</p>
   
     <h3>7. Is Honeyman one of the best food franchise opportunities in 2026?</h3>
-    <p>Honeyman is widely recognised as one of India's fastest-growing food franchise brands. With a unique honey-based USP, an accessible investment range of ₹10–20 lakh, 80+ operational stores, exports to the USA/UAE/UK, and a 1,000-store expansion mission, the brand combines low entry cost with high differentiation and massive market tailwind — making it a compelling franchise opportunity in 2026.</p>`,
+    <p>Honeyman is widely recognised as one of India's fastest-growing food franchise brands. With a unique honey-based USP, an accessible investment range of ₹10–20 lakh, 180+ operational stores, exports to the USA/UAE/UK, and a 1,000-store expansion mission, the brand combines low entry cost with high differentiation and massive market tailwind — making it a compelling franchise opportunity in 2026.</p>`,
     category: "Franchise",
     image: blog5,
     date: "2026-05-05",
