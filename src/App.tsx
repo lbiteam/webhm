@@ -9,6 +9,7 @@ import BlogPost from "./pages/BlogPost";
 import About from "./pages/About";
 import Privacy from "./pages/Privacy";
 import Terms from "./pages/Terms";
+import SitemapXml from "./pages/SitemapXml";
 import NotFound from "./pages/NotFound";
 
 const queryClient = new QueryClient();
@@ -25,7 +26,7 @@ const App = () => (
           <Route path="/blog/:id" element={<BlogPost />} />
           <Route path="/about-us" element={<About />} />
           <Route path="/privacy-policy" element={<Privacy />} />
-        
+          <Route path="/sitemap.xml" element={<SitemapXml />} />
           <Route path="*" element={<NotFound />} />
         </Routes>
       </BrowserRouter>
