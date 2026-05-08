@@ -93,6 +93,8 @@ const Header = () => {
           </a>
         </nav>
 
+        
+
         {/* Mobile / tablet: logo center */}
         <div className="flex lg:hidden flex-1 justify-center min-w-0">
           <Link
@@ -109,7 +111,7 @@ const Header = () => {
 
         {/* Right: enquiries (same number — single business line) */}
         <a
-          href={`tel:${SUPPORT_TEL}`}
+          href={`tel:${SUPPORT_DISPLAY}`}
           className="hidden sm:flex flex-col items-center justify-center border border-white/60 rounded px-2 sm:px-3 py-1 text-[10px] sm:text-xs font-bold shrink-0 hover:bg-white/10 transition-colors"
         >
           <div className="flex items-center gap-1 text-amber-300">
@@ -119,7 +121,7 @@ const Header = () => {
             </span>
           </div>
           <div className="text-white tracking-wider mt-0.5 text-center leading-tight">
-            STORE & ORDERS
+            Franchise Enquiries
           </div>
         </a>
 
