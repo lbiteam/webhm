@@ -112,10 +112,10 @@ const HeroSection = () => {
               <div className={`transform transition-all duration-500 ${
                 hoveredPanel === index ? "translate-y-0 opacity-100" : "translate-y-2"
               }`}>
-                <span className="text-xs font-bold tracking-[0.3em] uppercase text-amber-300 mb-2 block animate-slide-up">
+                <span className="text-xs font-bold tracking-[0.3em] uppercase text-amber-300 mb-2 block animate-slide-up text-white">
                   {panel.subtitle}
                 </span>
-                <h2 className="text-4xl lg:text-5xl xl:text-6xl font-bold mb-3 leading-tight">
+                <h2 className="text-4xl lg:text-5xl xl:text-6xl font-bold mb-3 leading-tight ">
                   {panel.title}
                 </h2>
                 <p className={`text-sm lg:text-base text-white/80 mb-6 max-w-xs transition-all duration-500 ${
