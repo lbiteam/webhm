@@ -651,7 +651,7 @@ Today, the third generation of the Kapoor family carries this legacy forward thr
                     Apply for Franchise
                   </a>
                   <a
-                    href="https://honeymanstore.com/wp-content/uploads/2026/05/Franchise-PPT_compressed.pdf"
+                    href="https://honeymanstore.com/wp-content/uploads/2026/05/Model-Franchise-PPT._compressed.pdf"
                     target="_blank"
                     rel="noopener noreferrer"
                     className="inline-flex items-center justify-center px-7 py-3 rounded-full font-bold transition border"
