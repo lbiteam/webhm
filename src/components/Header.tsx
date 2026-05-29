@@ -59,21 +59,20 @@ const Header = () => {
       {/* ── Main header bar ── */}
       <div className="bg-[#97430b] text-white flex items-center gap-2 px-3 sm:px-4 md:px-5 lg:px-6 py-2 relative min-h-[3.25rem] sm:min-h-[3.5rem] md:min-h-[4rem] lg:min-h-[4.5rem]">
         {/* ── Left section ── */}
+        <div className="flex items-center justify-start gap-2 lg:gap-4 lg:flex-1 lg:min-w-0">
+          {/* Mobile: compact phone icon */}
+          <a
+            href={`tel:${SUPPORT_DISPLAY.replace(/\s/g, "")}`}
+            className="sm:hidden flex items-center justify-center rounded-full border border-white/60 w-10 h-10 shrink-0 text-amber-300 hover:bg-white/10 transition-colors"
+            aria-label={`Call ${SUPPORT_DISPLAY}`}
+          >
+            <Phone size={18} fill="currentColor" strokeWidth={0} />
+          </a>
 
-        {/* Mobile: compact phone icon */}
-        <a
-          href={`tel:${SUPPORT_DISPLAY.replace(/\s/g, "")}`}
-          className="sm:hidden flex items-center justify-center rounded-full border border-white/60 w-10 h-10 shrink-0 text-amber-300 hover:bg-white/10 transition-colors"
-          aria-label={`Call ${SUPPORT_DISPLAY}`}
-        >
-          <Phone size={18} fill="currentColor" strokeWidth={0} />
-        </a>
-
-        {/* sm+: stylish phone badge + "Join" badge, scaled down on smaller screens */}
-        <div className="hidden sm:flex lg:flex-1 lg:min-w-0 items-center justify-start gap-1 md:gap-2 lg:gap-4 origin-left scale-[0.52] sm:scale-[0.52] md:scale-[0.68] lg:scale-100">
+          {/* sm+: stylish phone badge, scaled down on smaller screens */}
           <a
             href={`tel:${SUPPORT_TEL}`}
-            className="shrink-0 flex flex-col items-center justify-center py-0.5 hover:opacity-95 transition-opacity focus:outline-none focus-visible:ring-2 focus-visible:ring-[#fccc2c] focus-visible:ring-offset-2 focus-visible:ring-offset-[#97430b] rounded-sm"
+            className="hidden sm:flex shrink-0 flex-col items-center justify-center py-0.5 origin-left scale-[0.52] md:scale-[0.68] lg:scale-100 hover:opacity-95 transition-opacity focus:outline-none focus-visible:ring-2 focus-visible:ring-[#fccc2c] focus-visible:ring-offset-2 focus-visible:ring-offset-[#97430b] rounded-sm"
             aria-label={`Call customer support ${SUPPORT_TEL}`}
           >
             <div className="relative flex flex-col items-center gap-0 pb-0.5">
@@ -92,27 +91,25 @@ const Header = () => {
             </div>
           </a>
 
-          {/* "Join the revolution" — desktop only */}
+          {/* "Join the revolution" — shown on xl+ where there is room */}
           <div
-            className="hidden lg:flex relative flex-col items-center justify-center shrink-0 font-[Impact,Arial_Black,sans-serif] py-1"
+            className="hidden xl:flex relative flex-col items-center justify-center shrink-0 font-[Impact,Arial_Black,sans-serif] py-1 w-[11rem]"
             role="group"
             aria-label="Join the global revolution against refined sugar"
           >
-            <div className="relative z-[1] -mb-2 bg-[#fccc2c] text-[#4a2e15] font-black uppercase px-2.5 py-0.5 -rotate-[4deg] border-2 border-[#4a2e15] shadow-[2px_3px_6px_rgba(0,0,0,0.15)] text-lg leading-none tracking-wide">
+            <div className="relative z-[3] -mb-1.5 bg-[#fccc2c] text-[#4a2e15] font-black uppercase px-3 py-0.5 -rotate-[4deg] border-2 border-[#4a2e15] shadow-[2px_3px_6px_rgba(0,0,0,0.15)] text-lg leading-none tracking-wide">
               JOIN
             </div>
-            <div className="relative z-[2] bg-[#4a2e15] text-[#fccc2c] font-black uppercase tracking-[0.08em] px-2.5 py-1 shadow-[1px_2px_5px_rgba(0,0,0,0.2)] text-xs whitespace-nowrap text-center leading-none">
+            <div className="relative z-[2] bg-[#4a2e15] text-[#fccc2c] font-black uppercase tracking-[0.08em] px-3 py-1 shadow-[1px_2px_5px_rgba(0,0,0,0.2)] text-[11px] whitespace-nowrap text-center leading-none">
               The Global Revolution
             </div>
-            <div className="relative z-[3] -mt-1.5 bg-[#fccc2c] text-[#4a2e15] font-black uppercase tracking-[0.06em] px-2.5 py-1 rotate-[3deg] border-2 border-[#4a2e15] shadow-[1px_2px_5px_rgba(0,0,0,0.2)] text-xs whitespace-nowrap leading-none">
+            <div className="relative z-[1] -mt-1.5 bg-[#fccc2c] text-[#4a2e15] font-black uppercase tracking-[0.06em] px-3 py-1 rotate-[3deg] border-2 border-[#4a2e15] shadow-[1px_2px_5px_rgba(0,0,0,0.2)] text-[11px] whitespace-nowrap leading-none">
               Against Refined Sugar
             </div>
           </div>
         </div>
 
-        {/* ── Center: Logo ── */}
-
-        {/* Mobile / tablet logo */}
+        {/* ── Center: Logo (mobile / tablet) ── */}
         <div className="flex lg:hidden flex-1 justify-center min-w-0 px-1">
           <Link
             to="/"
@@ -126,9 +123,9 @@ const Header = () => {
           </Link>
         </div>
 
-        {/* Desktop: nav + logo centered via absolute positioning */}
+        {/* ── Center: nav + logo (desktop, in normal flow so nothing overlaps) ── */}
         <nav
-          className="hidden lg:flex absolute left-1/2 top-1/2 z-20 w-max max-w-[calc(100vw-1.5rem)] -translate-x-1/2 -translate-y-1/2 items-center justify-center gap-4 xl:gap-6 2xl:gap-8 text-sm font-extrabold tracking-wider uppercase whitespace-nowrap pointer-events-none [&_a]:pointer-events-auto"
+          className="hidden lg:flex shrink-0 items-center justify-center gap-4 xl:gap-6 2xl:gap-8 text-sm font-extrabold tracking-wider uppercase whitespace-nowrap"
           aria-label="Main navigation"
         >
           <Link to="/" className="hover:text-amber-300 transition-colors">
@@ -165,30 +162,28 @@ const Header = () => {
         </nav>
 
         {/* ── Right section ── */}
-        <div className="flex items-center justify-end gap-2 sm:shrink-0 lg:flex-1 lg:min-w-0">
+        <div className="flex items-center justify-end gap-2 lg:gap-4 lg:flex-1 lg:min-w-0">
           {/* sm+: stylish franchise badge, scaled down on smaller screens */}
-          <div className="hidden sm:flex items-center origin-right scale-[0.52] sm:scale-[0.52] md:scale-[0.68] lg:scale-100">
-            <a
-              href={`tel:${SUPPORT_DISPLAY.replace(/\s/g, "")}`}
-              className="shrink-0 flex flex-col items-center justify-center py-0.5 hover:opacity-95 transition-opacity focus:outline-none focus-visible:ring-2 focus-visible:ring-[#fccc2c] focus-visible:ring-offset-2 focus-visible:ring-offset-[#97430b] rounded-sm"
-              aria-label={`Call for franchise enquiries ${SUPPORT_DISPLAY}`}
-            >
-              <div className="relative flex flex-col items-center gap-0 pb-0.5">
-                <div className="relative z-[2] flex items-center gap-3 bg-[#fccc2c] text-[#4a2e15] font-black uppercase tracking-wide px-4 py-2 -rotate-3 border-[3px] border-[#4a2e15] shadow-[4px_6px_15px_rgba(0,0,0,0.15)] text-lg xl:text-xl whitespace-nowrap font-[Impact,Arial_Black,sans-serif]">
-                  <Phone
-                    className="size-7 shrink-0 text-[#4a2e15]"
-                    fill="currentColor"
-                    strokeWidth={0}
-                    aria-hidden
-                  />
-                  <span>{SUPPORT_DISPLAY}</span>
-                </div>
-                <div className="relative z-[1] mt-2.5 bg-[#4a2e15] text-[#fccc2c] font-black uppercase tracking-[0.12em] px-5 py-1.5 rotate-2 border-[3px] border-[#fccc2c] shadow-[2px_4px_10px_rgba(0,0,0,0.2)] text-sm whitespace-nowrap font-[Impact,Arial_Black,sans-serif] leading-tight">
-                  For Franchise Enquiries
-                </div>
+          <a
+            href={`tel:${SUPPORT_DISPLAY.replace(/\s/g, "")}`}
+            className="hidden sm:flex shrink-0 flex-col items-center justify-center py-0.5 origin-right scale-[0.52] md:scale-[0.68] lg:scale-100 hover:opacity-95 transition-opacity focus:outline-none focus-visible:ring-2 focus-visible:ring-[#fccc2c] focus-visible:ring-offset-2 focus-visible:ring-offset-[#97430b] rounded-sm"
+            aria-label={`Call for franchise enquiries ${SUPPORT_DISPLAY}`}
+          >
+            <div className="relative flex flex-col items-center gap-0 pb-0.5">
+              <div className="relative z-[2] flex items-center gap-3 bg-[#fccc2c] text-[#4a2e15] font-black uppercase tracking-wide px-4 py-2 -rotate-3 border-[3px] border-[#4a2e15] shadow-[4px_6px_15px_rgba(0,0,0,0.15)] text-lg xl:text-xl whitespace-nowrap font-[Impact,Arial_Black,sans-serif]">
+                <Phone
+                  className="size-7 shrink-0 text-[#4a2e15]"
+                  fill="currentColor"
+                  strokeWidth={0}
+                  aria-hidden
+                />
+                <span>{SUPPORT_DISPLAY}</span>
               </div>
-            </a>
-          </div>
+              <div className="relative z-[1] mt-2.5 bg-[#4a2e15] text-[#fccc2c] font-black uppercase tracking-[0.12em] px-5 py-1.5 rotate-2 border-[3px] border-[#fccc2c] shadow-[2px_4px_10px_rgba(0,0,0,0.2)] text-sm whitespace-nowrap font-[Impact,Arial_Black,sans-serif] leading-tight">
+                For Franchise Enquiries
+              </div>
+            </div>
+          </a>
 
           <button
             type="button"
