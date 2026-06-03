@@ -6,6 +6,20 @@ import logo from "@/assets/Honeyman-logo.webp";
 const SUPPORT_TEL = "+91 9289947025";
 const SUPPORT_DISPLAY = "+91 96503 05025";
 
+declare function gtag(...args: unknown[]): void;
+
+type PhoneLabel = "customer_support" | "call_for_franchise";
+
+const trackPhoneClick = (label: PhoneLabel, number: string) => {
+  if (typeof gtag !== "undefined") {
+    gtag("event", "phone_call_click", {
+      event_category: "contact",
+      event_label: label,
+      phone_number: number,
+    });
+  }
+};
+
 const Header = () => {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const menuRef = useRef<HTMLDivElement>(null);
@@ -65,6 +79,7 @@ const Header = () => {
             href={`tel:${SUPPORT_DISPLAY.replace(/\s/g, "")}`}
             className="sm:hidden flex items-center justify-center rounded-full border border-white/60 w-10 h-10 shrink-0 text-amber-300 hover:bg-white/10 transition-colors"
             aria-label={`Call ${SUPPORT_DISPLAY}`}
+            onClick={() => trackPhoneClick("customer_support", SUPPORT_DISPLAY)}
           >
             <Phone size={18} fill="currentColor" strokeWidth={0} />
           </a>
@@ -74,6 +89,7 @@ const Header = () => {
             href={`tel:${SUPPORT_TEL}`}
             className="hidden sm:flex shrink-0 flex-col items-center justify-center py-0.5 origin-left scale-[0.52] md:scale-[0.68] lg:scale-100 hover:opacity-95 transition-opacity focus:outline-none focus-visible:ring-2 focus-visible:ring-[#fccc2c] focus-visible:ring-offset-2 focus-visible:ring-offset-[#97430b] rounded-sm"
             aria-label={`Call customer support ${SUPPORT_TEL}`}
+            onClick={() => trackPhoneClick("customer_support", SUPPORT_TEL)}
           >
             <div className="relative flex flex-col items-center gap-0 pb-0.5">
               <div className="relative z-[2] flex items-center gap-3 bg-[#fccc2c] text-[#4a2e15] font-black uppercase tracking-wide px-4 py-2 -rotate-3 border-[3px] border-[#4a2e15] shadow-[4px_6px_15px_rgba(0,0,0,0.15)] text-lg xl:text-xl whitespace-nowrap font-[Impact,Arial_Black,sans-serif]">
@@ -169,6 +185,7 @@ const Header = () => {
             href={`tel:${SUPPORT_DISPLAY.replace(/\s/g, "")}`}
             className="hidden sm:flex shrink-0 flex-col items-center justify-center py-0.5 origin-right scale-[0.52] md:scale-[0.68] lg:scale-100 hover:opacity-95 transition-opacity focus:outline-none focus-visible:ring-2 focus-visible:ring-[#fccc2c] focus-visible:ring-offset-2 focus-visible:ring-offset-[#97430b] rounded-sm"
             aria-label={`Call for franchise enquiries ${SUPPORT_DISPLAY}`}
+            onClick={() => trackPhoneClick("call_for_franchise", SUPPORT_DISPLAY)}
           >
             <div className="relative flex flex-col items-center gap-0 pb-0.5">
               <div className="relative z-[2] flex items-center gap-3 bg-[#fccc2c] text-[#4a2e15] font-black uppercase tracking-wide px-4 py-2 -rotate-3 border-[3px] border-[#4a2e15] shadow-[4px_6px_15px_rgba(0,0,0,0.15)] text-lg xl:text-xl whitespace-nowrap font-[Impact,Arial_Black,sans-serif]">
@@ -255,6 +272,7 @@ const Header = () => {
             <a
               href={`tel:${SUPPORT_TEL}`}
               className="flex items-center gap-2 py-2 text-sm font-bold text-amber-300 hover:text-amber-200 transition-colors"
+              onClick={() => trackPhoneClick("customer_support", SUPPORT_TEL)}
             >
               <Phone size={16} fill="currentColor" strokeWidth={0} />
               <span>{SUPPORT_TEL}</span>
@@ -265,6 +283,7 @@ const Header = () => {
             <a
               href={`tel:${SUPPORT_DISPLAY.replace(/\s/g, "")}`}
               className="flex items-center gap-2 py-2 text-sm font-bold text-amber-300 hover:text-amber-200 transition-colors"
+              onClick={() => trackPhoneClick("call_for_franchise", SUPPORT_DISPLAY)}
             >
               <Phone size={16} fill="currentColor" strokeWidth={0} />
               <span>{SUPPORT_DISPLAY}</span>
