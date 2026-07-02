@@ -159,6 +159,7 @@ const Header = () => {
           >
             Store
           </a>
+          
         </nav>
 
         {/* ── Right section ── */}

@@ -168,6 +168,20 @@ const Index = () => {
           </div>
         </div>
       </footer>
+
+      {/* Floating Store Locator button — icon-only on mobile, labelled on larger screens */}
+      <a
+        href="https://www.honeymanfranchise.com/store-locator"
+        aria-label="Store Locator"
+        title="Store Locator"
+        className="fixed bottom-6 right-6 z-50 inline-flex items-center justify-center gap-2 h-12 w-12 sm:w-auto sm:px-5 sm:py-3 rounded-full honey-gradient text-white font-semibold shadow-lg hover:scale-105 transition-transform"
+      >
+        <svg className="w-5 h-5 shrink-0" fill="none" stroke="currentColor" strokeWidth="2" viewBox="0 0 24 24">
+          <path strokeLinecap="round" strokeLinejoin="round" d="M17.657 16.657L13.414 20.9a2 2 0 01-2.828 0l-4.243-4.243a8 8 0 1111.314 0z" />
+          <circle cx="12" cy="11" r="3" strokeLinecap="round" strokeLinejoin="round" />
+        </svg>
+        <span className="hidden sm:inline">Store Locator</span>
+      </a>
     </div>
   );
 };

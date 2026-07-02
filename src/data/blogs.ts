@@ -3,6 +3,7 @@ import blog2 from "@/assets/blog-2.webp" ;
 import blog3 from "@/assets/blog-3.webp" ;
 import blog4 from "@/assets/blog-4.webp" ;
 import blog5 from "@/assets/blog-5.webp" ;
+import blog7 from "@/assets/blog-7.webp" ;
 export interface Blog {
   id: string;
   title: string;
@@ -24,6 +25,228 @@ export const blogCategories = [
 ];
 
 export const blogs: Blog[] = [
+  {
+  id: "ice-cream-cafe-franchise-guide-india-2026",
+  title: "Complete Guide to Starting a Successful Ice Cream Café Franchise in India (2026)",
+  excerpt: "A practical, step-by-step franchise guide to ice cream café setup in India — covering the business plan, investment, location, staffing, marketing, and the franchise support that makes the difference.",
+  content: `<p>Walk past any busy market in India on a warm evening and you will notice something. The dessert counters are full. Families are sharing sundaes, students are clicking photos of their cones, and couples are settling into corner seats with milkshakes. The ice cream café has quietly become one of the most loved spaces in the modern Indian neighbourhood.</p>
+  <p>This is not a passing trend. India's appetite for indulgent, shareable desserts is growing fast, and the country's young, social, experience-hungry population is fuelling it. People no longer want just an ice cream. They want a place to sit, relax, and feel good. That shift — from a product to an experience — is exactly why the ice cream café industry is booming.</p>
+  <p>Café culture has spread far beyond the metros. Tier 2 and Tier 3 cities are now home to thriving dessert spots, and customers there are just as willing to spend on quality and ambience. Add rising disposable incomes, the habit of "eating out" as entertainment, and the power of social media to turn a pretty dessert into free marketing, and you have a recipe for a <strong>strong, scalable business</strong>.</p>
+  <p>This guide is written for you — the aspiring entrepreneur. Whether you are a first-time business owner or an investor looking for a profitable business with year-round demand, this is your complete roadmap. And along the way, we will show you why a brand like <strong>Honeyman Ice Cream Café</strong> offers one of the most balanced franchise opportunities in the country right now.</p>
+
+  <h2>Why Invest in an Ice Cream Café Franchise?</h2>
+  <p>Before we get into the "how", it helps to understand the "why". An ice cream café franchise is not just an emotional choice — it is a <strong>smart business decision</strong> backed by solid reasons.</p>
+
+  <h3>A Growing Dessert Industry</h3>
+  <p>The Indian dessert and frozen treat market is expanding year after year. Younger consumers treat dessert as a regular outing, not a rare luxury. As more people move to cities and incomes rise, spending on cafés and sweet indulgences keeps climbing. Investing now means entering a market that still has <strong>plenty of room to grow</strong>.</p>
+
+  <h3>Year-Round Demand</h3>
+  <p>Many people assume ice cream sells only in summer. The modern café format changes that. By offering hot beverages, waffles, brownies, shakes, sundaes, and seasonal specials, a well-designed café keeps customers coming through winter and monsoon too. This balanced menu turns a seasonal product into a <strong>year-round business</strong>.</p>
+
+  <h3>Brand Recognition</h3>
+  <p>When you open under a trusted franchise, you start with a head start. Customers already know the name, the quality, and what to expect. You skip the long, expensive struggle of building trust from zero. That recognition translates directly into <strong>faster footfall and quicker sales</strong>.</p>
+
+  <h3>Lower Risk Than Starting from Scratch</h3>
+  <p>Building an independent café means testing recipes, finding suppliers, designing branding, and learning every lesson the hard way. A franchise gives you a <strong>proven system</strong>. The product works, the model is tested, and someone has already solved the common problems. This dramatically lowers your risk of failure.</p>
+
+  <h3>Better Return on Investment</h3>
+  <p>Ice cream and dessert items carry healthy profit margins. The ingredients are affordable, the preparation is simple, and the perceived value is high. A scoop that costs little to make can sell at an attractive price, especially when served in an inviting space. <strong>Strong margins plus steady volume</strong> create a genuinely profitable business.</p>
+
+  <h3>Scalability</h3>
+  <p>Once you understand how to run one outlet well, opening a second or third becomes far easier. The systems are repeatable. Many successful franchise owners begin with a single store and grow into a small network. That scalability is what turns a café into <strong>long-term wealth</strong>.</p>
+
+  <h2>Step-by-Step Guide to Starting an Ice Cream Café Franchise</h2>
+  <p>Here is a clear, practical, eight-step process to take you from idea to grand opening.</p>
+
+  <h3>Step 1: Research the Market</h3>
+  <p>Every strong business begins with research. Before you invest a single rupee, study your local market closely.</p>
+  <p>Start by understanding who lives and moves around your target area. Are there families, students, working professionals, or shoppers? Next, look at the competition. Visit nearby dessert shops and cafés. Notice what they do well, where they fall short, and what customers complain about. Those gaps are your opportunity.</p>
+  <p>Also pay attention to local tastes and price expectations. What sells in a college hub may differ from what sells in a family neighbourhood. Good research helps you choose the right brand, location, and menu mix from day one.</p>
+
+  <h3>Step 2: Choose the Right Franchise Brand</h3>
+  <p>This decision shapes everything that follows. The right franchise partner can make your journey smooth, while the wrong one can drain your time and money.</p>
+  <p>When comparing brands, look beyond the logo. Ask about product quality, customer reputation, and consistency across outlets. Study the franchise terms carefully, including fees, royalties, and contract length. Most importantly, <strong>examine the support system</strong>. A brand that simply takes your fee and disappears is a risk. A brand that walks with you through setup, training, and daily operations is a true partner.</p>
+  <p>This is where <strong>Honeyman Ice Cream Café</strong> stands out — offering premium products paired with hands-on support, which we will explore in detail later.</p>
+
+  <h3>Step 3: Create a Business Plan</h3>
+  <p>A business plan turns your dream into a measurable project. Cover these four areas:</p>
+  <ul>
+    <li><strong>Investment:</strong> List every upfront cost — franchise fee, interiors, equipment, furniture, and first stock. Be realistic and add a small buffer for surprises.</li>
+    <li><strong>Operating costs:</strong> Monthly running expenses — rent, salaries, electricity, raw materials, packaging, and marketing. This number tells you how much you must earn each month to stay steady.</li>
+    <li><strong>Revenue projections:</strong> Estimate daily customers and average bill value. Build a cautious estimate and an optimistic one so you understand both ends.</li>
+    <li><strong>Break-even analysis:</strong> The point where total income covers total investment and costs. For a well-located dessert café, this milestone often arrives within the first <strong>one to two years</strong>.</li>
+  </ul>
+  <p>A clear business plan is also essential if you ever approach a bank or investor for funding.</p>
+
+  <h3>Step 4: Choose the Best Location</h3>
+  <p>In the café world, location is not everything — but it is close. The right spot can fill your seats, while the wrong one can quietly drain your savings.</p>
+  <ul>
+    <li><strong>Footfall:</strong> Choose places where people naturally gather and walk. High foot traffic means more spontaneous visits.</li>
+    <li><strong>Visibility:</strong> Your café should be easy to spot from the road. A storefront hidden in a corner is a storefront people forget.</li>
+    <li><strong>Parking:</strong> Easy parking encourages families and groups to stop by, especially in the evening.</li>
+    <li><strong>Nearby schools and colleges:</strong> Students are loyal dessert lovers and frequent visitors. Being close to educational hubs guarantees a steady young crowd.</li>
+    <li><strong>Shopping areas and high streets:</strong> Shoppers are already in a spending mood, and a sweet treat fits perfectly into their outing.</li>
+  </ul>
+  <blockquote class="callout">Take your time with this step. A slightly higher rent in a great location often pays for itself many times over.</blockquote>
+
+  <h3>Step 5: Store Design and Setup</h3>
+  <p>People come for the ice cream, but they stay for the experience. A thoughtful store design turns first-time visitors into regulars and gives them a reason to share photos online.</p>
+  <ul>
+    <li><strong>Interior design:</strong> Aim for a warm, clean, and inviting feel. Good lighting, pleasant colours, and a few photo-friendly corners go a long way.</li>
+    <li><strong>Branding:</strong> Keep signage, colours, menu boards, and packaging consistent with the franchise identity. Uniform branding builds trust and recall.</li>
+    <li><strong>Seating:</strong> Offer a comfortable mix for couples, families, and small groups. Comfortable guests stay longer and order more.</li>
+    <li><strong>Equipment:</strong> Invest in reliable freezers, display counters, blenders, and serving tools. Quality equipment keeps your product fresh and service fast.</li>
+    <li><strong>Kitchen layout:</strong> Plan a smooth, efficient workflow so staff can prepare and serve quickly, especially during busy evening rushes.</li>
+  </ul>
+  <p>A good franchise will guide you through this entire process so your outlet looks professional and matches the brand standard.</p>
+
+  <h3>Step 6: Hire and Train Staff</h3>
+  <p>Your team is the face of your café. Friendly, well-trained staff can lift an average outlet into a beloved local favourite.</p>
+  <ul>
+    <li><strong>Customer service:</strong> Teach your team to greet warmly, serve patiently, and handle complaints gracefully. A smile is the cheapest and most powerful marketing tool you have.</li>
+    <li><strong>Food safety and hygiene:</strong> Cleanliness is non-negotiable. Train staff in proper handling, storage, and cleaning routines to protect both customers and your reputation.</li>
+    <li><strong>POS systems:</strong> A modern point-of-sale system speeds up billing, tracks sales, and reduces errors. Make sure every staff member is comfortable using it.</li>
+  </ul>
+  <p>Start with a lean team and grow as your business grows. Quality always beats quantity when it comes to people.</p>
+
+  <h3>Step 7: Marketing Before Launch</h3>
+  <p>Smart marketing should begin well before your doors open. The goal is to create excitement so that opening day feels like an event, not a quiet start.</p>
+  <ul>
+    <li><strong>Social media:</strong> Set up Instagram and Facebook pages early. Share teasers, behind-the-scenes photos, and a countdown to your launch.</li>
+    <li><strong>Influencer marketing:</strong> Invite local food bloggers for a preview. Their honest posts can reach thousands of nearby dessert lovers quickly.</li>
+    <li><strong>Google Business Profile:</strong> Create and verify your listing so customers can find you on Maps and Search from day one.</li>
+    <li><strong>Local promotions:</strong> Distribute flyers, partner with nearby schools or offices, and announce a special opening offer.</li>
+    <li><strong>Meta Ads:</strong> Targeted ads on Facebook and Instagram let you reach people in your exact area at a low cost.</li>
+  </ul>
+
+  <h3>Step 8: Grand Opening Strategy</h3>
+  <p>Your grand opening sets the tone for everything that follows. Make it memorable.</p>
+  <p>Plan a launch offer that feels generous — a discount, a free add-on, or a buy-one-get-one deal. Create a festive atmosphere with music, decorations, and perhaps a small event for kids and families. Encourage every visitor to follow your pages and tag you in their photos, turning your first guests into your first promoters.</p>
+  <blockquote class="callout">Deliver flawless service on day one. A strong first impression spreads fast through word of mouth and reviews, giving your café powerful momentum from the very start.</blockquote>
+
+  <h2>Investment Required</h2>
+  <p>One of the first questions every aspiring owner asks: <em>how much money do I need?</em> The honest answer is that it depends on your city, store size, and format. Still, a clear estimate helps you plan.</p>
+  <table class="comparison-table">
+    <thead>
+      <tr><th>Cost Component</th><th>Estimated Range</th></tr>
+    </thead>
+    <tbody>
+      <tr><td>Franchise Fee</td><td>Included in package</td></tr>
+      <tr><td>Interior & Store Design</td><td>₹4–8 lakh</td></tr>
+      <tr><td>Equipment & Fixtures</td><td>₹3–6 lakh</td></tr>
+      <tr><td>Initial Inventory</td><td>₹1–3 lakh</td></tr>
+      <tr><td>Working Capital (3 months)</td><td>₹2–5 lakh</td></tr>
+      <tr><td>Marketing & Launch</td><td>₹1–2 lakh</td></tr>
+      <tr><td>Licences & Legal</td><td>₹50,000–1 lakh</td></tr>
+      <tr><td><strong>Total (Standard Outlet)</strong></td><td><strong>₹16–32 lakh (approx.)</strong></td></tr>
+    </tbody>
+  </table>
+  <p>Please treat these figures as a starting reference, not a fixed quote. A compact kiosk or express format can cost considerably less, making it a genuine <strong>low investment franchise option</strong> for first-time entrepreneurs. The exact investment always varies by location and store format, which is why a personalised discussion with your franchise partner is so valuable.</p>
+
+  <h2>Franchise Support You Should Expect</h2>
+  <p>A franchise fee should buy you far more than a brand name. It should buy you a <strong>partner</strong>. Before signing with anyone, make sure these forms of support are clearly promised:</p>
+  <ul>
+    <li><strong>Store design assistance:</strong> Help with layout, interiors, and branding so your outlet looks professional from day one</li>
+    <li><strong>Staff training:</strong> Structured training in product preparation, customer service, hygiene, and operations</li>
+    <li><strong>Product sourcing:</strong> A reliable supply of consistent, high-quality ingredients and products</li>
+    <li><strong>Marketing support:</strong> Ready-to-use creatives, campaign guidance, and brand materials</li>
+    <li><strong>Operational guidance:</strong> Clear systems and processes for daily running</li>
+    <li><strong>Technology support:</strong> POS systems, billing, and reporting tools</li>
+    <li><strong>Vendor management:</strong> Pre-approved vendors and supply relationships</li>
+    <li><strong>Ongoing business consultation:</strong> Regular guidance to solve problems, improve numbers, and grow</li>
+  </ul>
+  <p><strong>Honeyman Ice Cream Café</strong> is built around exactly this kind of partnership. From the moment you join, the focus is on setting you up properly and then staying with you — because your success is the brand's success too.</p>
+
+  <h2>Common Mistakes to Avoid</h2>
+  <p>Learning from others' mistakes is far cheaper than making your own. Here are the pitfalls that most often hurt new café owners:</p>
+  <ul>
+    <li><strong>Poor location:</strong> Choosing a cheap but low-traffic spot to save rent is a costly trap. Empty tables earn nothing.</li>
+    <li><strong>Weak marketing:</strong> Some owners assume good food will market itself. It will not. Steady, simple marketing keeps customers flowing in.</li>
+    <li><strong>Underestimating working capital:</strong> Running out of cash in the early months is a common reason cafés close. Always keep a healthy reserve.</li>
+    <li><strong>Poor customer service:</strong> One rude experience can cost you a customer for life — plus everyone they tell.</li>
+    <li><strong>Inconsistent quality:</strong> If taste or portion changes from visit to visit, trust breaks down. Consistency builds loyal regulars.</li>
+    <li><strong>Ignoring online reviews:</strong> Reviews are today's word of mouth. Respond politely, fix genuine issues, and thank happy customers.</li>
+  </ul>
+
+  <h2>How to Make Your Ice Cream Café More Profitable</h2>
+  <p>Opening your café is the beginning. Making it consistently profitable is the real goal. A few smart habits can lift your earnings without huge extra cost:</p>
+  <ul>
+    <li><strong>Upselling:</strong> Train staff to gently suggest a topping, an upgrade, or a larger size. Small additions add up to big monthly gains.</li>
+    <li><strong>Combo offers:</strong> Bundle popular items at an attractive price. Combos increase the average bill and feel like great value.</li>
+    <li><strong>Seasonal specials:</strong> Launch limited-time flavours and festive treats. They create excitement and earn free social media buzz.</li>
+    <li><strong>Delivery partnerships:</strong> List your café on food delivery apps. This opens a whole new revenue stream from your same kitchen.</li>
+    <li><strong>Loyalty programs:</strong> Reward repeat visits with points or free treats. Loyal customers spend more and bring friends.</li>
+    <li><strong>Community events:</strong> Host birthday celebrations, small gatherings, or school tie-ups. These fill quiet hours and build local love.</li>
+    <li><strong>Cross-selling:</strong> Pair ice cream with waffles, brownies, coffee, or shakes. A varied menu keeps sales strong across all seasons.</li>
+  </ul>
+
+  <h2>Why Choose Honeyman Ice Cream Café?</h2>
+  <p>By now you understand what makes an ice cream café franchise succeed. So how does Honeyman fit into that picture? Here is what makes this partnership worth a serious look:</p>
+  <ul>
+    <li><strong>Premium-quality products:</strong> Rich, fresh, and genuinely enjoyable products that keep customers coming back. Quality is the heart of the brand.</li>
+    <li><strong>Affordable franchise investment:</strong> Flexible formats keep the entry barrier reasonable, making it accessible to ambitious first-time entrepreneurs.</li>
+    <li><strong>Attractive profit potential:</strong> Healthy margins, a varied menu, and year-round demand create a genuinely rewarding business model.</li>
+    <li><strong>Comprehensive franchise support:</strong> From store design to staff training to ongoing guidance — you are supported at every stage.</li>
+    <li><strong>Strong branding:</strong> A clean, modern, and memorable identity helps your outlet stand out and build trust quickly.</li>
+    <li><strong>Innovative menu:</strong> A thoughtful mix of ice creams, desserts, and beverages keeps the experience fresh and appeals to a wide range of customers.</li>
+    <li><strong>Marketing assistance:</strong> Ready brand materials and campaign guidance help you attract customers without starting from scratch.</li>
+    <li><strong>Operational training:</strong> Clear systems and hands-on training make daily running smoother, even if you are new to the food business.</li>
+    <li><strong>Growth-focused partnership:</strong> Honeyman views every franchise owner as a long-term partner, invested in your steady, sustainable growth.</li>
+  </ul>
+  <blockquote class="callout">In short, Honeyman blends premium quality with practical support — giving aspiring owners a balanced and credible path into the dessert business.</blockquote>
+
+  <h2>Conclusion</h2>
+  <p>Starting an ice cream café franchise in India is one of the most exciting and accessible business opportunities available today. The market is growing, demand is strong throughout the year, and the franchise model lets you build on a proven system instead of starting alone.</p>
+  <p>The path is clear: research your market, choose the right brand, build a solid business plan, pick a great location, design an inviting space, train a caring team, market with confidence, and open with a bang. Avoid the common mistakes, keep your quality consistent, and use simple strategies to grow your profits over time.</p>
+  <p>If you are ready to step into a business you can feel proud of, <strong>Honeyman Ice Cream Café</strong> is ready to walk that journey with you. With premium products, a reasonable investment, and genuine end-to-end support, it offers a dependable foundation for your entrepreneurial dream.</p>
+
+  <div class="cta-block">
+    <h3>🍦 Ready to Take the First Step?</h3>
+    <p>Reach out to the <strong>Honeyman Ice Cream Café</strong> team today to explore franchise opportunities, request a detailed investment breakdown for your city, and discover how we can help you build a profitable, future-ready café.</p>
+    <p><strong>Your sweet success story starts now → <a href="https://www.honeyman.in/" target="_blank" rel="noopener noreferrer">honeyman.in</a></strong></p>
+  </div>
+
+  <h2>Frequently Asked Questions</h2>
+
+  <h3>1. How much investment is needed to start an ice cream café franchise?</h3>
+  <p>For a standard outlet in India, the total investment usually ranges from around <strong>₹16 lakh to ₹32 lakh</strong>, covering the franchise fee, interiors, equipment, inventory, and working capital. Smaller kiosk or express formats can cost noticeably less, while premium metro locations sit at the higher end. The exact figure depends on your city and store format.</p>
+
+  <h3>2. Is an ice cream franchise profitable?</h3>
+  <p>Yes, it can be very profitable. Ice cream and dessert items carry healthy margins because ingredient costs are low while perceived value is high. With a good location, consistent quality, and steady marketing, a well-run café can generate strong and reliable returns.</p>
+
+  <h3>3. What location is best for an ice cream café?</h3>
+  <p>The best locations have high footfall and clear visibility — high streets, shopping areas, and spots near schools and colleges. Easy parking and a young, social crowd nearby are big advantages. A great location often justifies a slightly higher rent.</p>
+
+  <h3>4. How long does it take to recover the investment?</h3>
+  <p>For a well-located and well-run café, the break-even point often arrives within the <strong>first one to two years</strong>. Your exact timeline depends on location, costs, pricing, and how effectively you market and manage daily operations.</p>
+
+  <h3>5. What franchise support should I expect?</h3>
+  <p>You should expect support with store design, staff training, product sourcing, marketing, daily operations, technology, and vendor management — plus ongoing business consultation. A strong partner like Honeyman stays involved well beyond opening day.</p>
+
+  <h3>6. Can I start without food industry experience?</h3>
+  <p>Absolutely. A major benefit of the franchise model is that it gives you a proven system and structured training. With the right brand guiding you on products, operations, and service, prior food industry experience is helpful but not essential.</p>
+
+  <h3>7. How many employees are required?</h3>
+  <p>A small café can often run with around <strong>3 to 6 staff members</strong>, depending on size and footfall. It is wise to start lean with a quality team and add people as your sales and busy hours grow.</p>
+
+  <h3>8. How important is marketing?</h3>
+  <p>Marketing is essential, not optional. Even excellent products need visibility. A mix of social media, a Google Business Profile, local promotions, and targeted Meta Ads keeps a healthy flow of customers coming through your doors.</p>
+
+  <h3>9. What licenses are required?</h3>
+  <p>You will typically need an <strong>FSSAI food licence</strong>, a local shop and establishment registration, and <strong>GST registration</strong>, along with any municipal or fire safety approvals relevant to your area. Requirements vary by location, so always confirm locally. A good franchise partner can guide you through this process.</p>
+
+  <h3>10. Is an ice cream café only a summer business?</h3>
+  <p>No. While summer brings peak sales, a modern café format keeps earning year-round by offering hot beverages, waffles, brownies, shakes, and seasonal treats. A balanced menu turns a seasonal product into a <strong>stable, all-season business</strong>.</p>
+
+  <h3>11. How can I increase profits?</h3>
+  <p>Boost profits through upselling, combo offers, seasonal specials, delivery app partnerships, loyalty programs, community events, and cross-selling desserts and beverages. Together, these simple strategies raise your average bill value and keep sales strong all year round.</p>`,
+  category: "Franchise",
+  image: blog7,
+  date: "2026-06-15",
+  readTime: "10 min read",
+}
+  ,
+  
   {
     id: "honeyman-brand-journey-mission-vision",
     title: "Meet the Brand Behind the Jar: The Honeyman Journey, Mission & Vision Explained",
@@ -1000,6 +1223,7 @@ export const blogs: Blog[] = [
     date: "2026-02-10",
     readTime: "7 min read",
   },
+  ,
  
  
   
