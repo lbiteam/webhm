@@ -349,7 +349,7 @@ export const blogs: Blog[] = [
   <h3>11. How can I increase profits?</h3>
   <p>Boost profits through upselling, combo offers, seasonal specials, delivery app partnerships, loyalty programs, community events, and cross-selling desserts and beverages. Together, these simple strategies raise your average bill value and keep sales strong all year round.</p>`,
   category: "Franchise",
-  image: blog8,
+  image: blog7,
   date: "2026-06-15",
   readTime: "10 min read",
 }
@@ -509,7 +509,7 @@ export const blogs: Blog[] = [
     <h3>7. Is Honeyman a fast-growing food franchise in India?</h3>
     <p>Yes. With 180+ stores across 25+ cities, its own manufacturing facility, 100+ employees, and exports to the USA, UAE, and UK, Honeyman is one of India's fastest-growing food franchise brands. The brand operates in a rapidly expanding market — India's honey industry is projected to cross ₹4,000 crore by 2027 — and is targeting 1,000 global stores, making it a compelling franchise opportunity for entrepreneurs.</p>`,
     category: "Honey Facts",
-    image: blog7,
+    image: "https://images.unsplash.com/photo-1558642452-9d2a7deb7f62?w=800",
     date: "2026-05-05",
     readTime: "9 min read",
   },
