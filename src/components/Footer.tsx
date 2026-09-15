@@ -8,7 +8,7 @@ const Footer = () => {
         <div className="grid grid-cols-2 md:grid-cols-4 gap-8 mb-8">
           <div>
             <img src={logo} alt="Honeyman" className="h-16 sm:h-12 md:h-20 w-auto object-contain scale-[1.75]" />
-            <p className="text-sm text-white/60">Delivering Purity Since 1980</p>
+            <p className="text-sm text-white/60">Delivering Purity Since 1984</p>
           </div>
           <div>
             <h3 className="font-semibold text-white mb-4">Explore</h3>
@@ -48,7 +48,7 @@ const Footer = () => {
           </div>
         </div>
         <div className="pt-8 border-t border-white/10 text-center text-sm text-white">
-          <p>© 2026 Honeyman. All rights reserved. Delivering Purity Since 1980.</p>
+          <p>© 2026 Honeyman. All rights reserved. Delivering Purity Since 1984.</p>
         </div>
       </div>
     </footer>

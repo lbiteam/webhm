@@ -5,7 +5,7 @@ const IntroSection = () => {
     <section className="max-w-4xl mx-auto py-16 md:py-20 px-4 animate-fade-in text-center">
       <img src={logo} alt="Honeyman" className="h-28 md:h-36 mx-auto mb-8 animate-float" />
       <h2 className="text-3xl md:text-4xl font-bold leading-tight animate-slide-up mb-6">
-        Delivering Purity Since 1980
+        Delivering Purity Since 1984
       </h2>
       <p className="text-lg text-muted-foreground leading-relaxed max-w-3xl mx-auto animate-slide-up stagger-1">
       At Honeyman, every drop tells a story of purity, tradition, and trust. From golden raw honey to wholesome honey-based gifts, we bring nature's finest straight to your family's table. Whether you're shopping for everyday goodness, searching for the perfect gift, or exploring a rewarding franchise opportunity, Honeyman promises quality you can taste and a legacy you can rely on. Sweetness, the way nature intended.
